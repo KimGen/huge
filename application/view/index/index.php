@@ -2,18 +2,20 @@
     <p><small><em>Software obstétrico propiedad intelectual Dr. Rudecindo Lagos, Maternidad Hospital Regional de Temuco, Facultad de Medicina Universidad de La Frontera Temuco - Chile</em></small></p>
     <div class="row">
         <div class="col-4">
-            <div class="card-block">
-                <h5>Ingresar a la plataforma</h5>
-                <div class="form-group">
-                    <label for="user.email">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="user.email">
-                </div>
-                <div class="form-group">
-                    <label for="user.password">Contraseña</label>
-                    <input type="password" class="form-control" id="user.password">
-                </div>
-                <div class="btn-group" role="group">
-                    <a class="btn btn-primary" href="#consulta">Ingresar</a><a class="btn btn-secondary" href="#registro">Registrar</a>
+            <div class="card">
+                <div class="card-block">
+                    <h5>Ingresar a la plataforma</h5>
+                    <div class="form-group">
+                        <label for="user.email">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="user.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="user.password">Contraseña</label>
+                        <input type="password" class="form-control" id="user.password">
+                    </div>
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-primary" href="#consulta">Ingresar</a><a class="btn btn-secondary" href="#registro">Registrar</a>
+                    </div>
                 </div>
             </div>
         </div>
