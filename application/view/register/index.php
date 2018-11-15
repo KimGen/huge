@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Formulario solicitud registro de usuarios</h1>
+    <h1>Registro de usuarios</h1>
     <?php $this->renderFeedbackMessages(); ?>
     <form method="post" action="<?php echo Config::get('URL'); ?>register/register_action">
         <div class="card">
