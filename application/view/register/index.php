@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card mt-3">
             <div class="card-header">
                 Identificación del profesional
             </div>
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card mt-3">
             <div class="card-header">
                 Verificación de registro
             </div>
