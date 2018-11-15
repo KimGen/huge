@@ -133,24 +133,24 @@ return array(
      * EMAIL_SMTP_AUTH: leave this true unless your SMTP service does not need authentication
      */
     'EMAIL_USED_MAILER' => 'phpmailer',
-    'EMAIL_USE_SMTP' => false,
-    'EMAIL_SMTP_HOST' => 'yourhost',
+    'EMAIL_USE_SMTP' => true,
+    'EMAIL_SMTP_HOST' => 'smtp.gmail.com',
     'EMAIL_SMTP_AUTH' => true,
-    'EMAIL_SMTP_USERNAME' => 'yourusername',
-    'EMAIL_SMTP_PASSWORD' => 'yourpassword',
+    'EMAIL_SMTP_USERNAME' => 'consultaecografica@gmail.com',
+    'EMAIL_SMTP_PASSWORD' => 'consulta',
     'EMAIL_SMTP_PORT' => 465,
     'EMAIL_SMTP_ENCRYPTION' => 'ssl',
     /**
      * Configuration for: Email content data
      */
     'EMAIL_PASSWORD_RESET_URL' => 'login/verifypasswordreset',
-    'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'no-reply@example.com',
-    'EMAIL_PASSWORD_RESET_FROM_NAME' => 'My Project',
-    'EMAIL_PASSWORD_RESET_SUBJECT' => 'Password reset for PROJECT XY',
-    'EMAIL_PASSWORD_RESET_CONTENT' => 'Please click on this link to reset your password: ',
+    'EMAIL_PASSWORD_RESET_FROM_EMAIL' => 'consultaecografica@gmail.com',
+    'EMAIL_PASSWORD_RESET_FROM_NAME' => 'Crecimiento Fetal',
+    'EMAIL_PASSWORD_RESET_SUBJECT' => 'Restablecer contraseña',
+    'EMAIL_PASSWORD_RESET_CONTENT' => 'Por favor, haga click sobre el siguiente link para reiniciar su contraseña: ',
     'EMAIL_VERIFICATION_URL' => 'register/verify',
-    'EMAIL_VERIFICATION_FROM_EMAIL' => 'no-reply@example.com',
-    'EMAIL_VERIFICATION_FROM_NAME' => 'My Project',
-    'EMAIL_VERIFICATION_SUBJECT' => 'Account activation for PROJECT XY',
-    'EMAIL_VERIFICATION_CONTENT' => 'Please click on this link to activate your account: ',
+    'EMAIL_VERIFICATION_FROM_EMAIL' => 'consultaecografica@gmail.com',
+    'EMAIL_VERIFICATION_FROM_NAME' => 'Crecimiento Fetal',
+    'EMAIL_VERIFICATION_SUBJECT' => 'Activacion de cuenta',
+    'EMAIL_VERIFICATION_CONTENT' => 'Por favor, haga click sobre el siguiente link para activar su cuenta: ',
 );
