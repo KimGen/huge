@@ -71,11 +71,11 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col"><img id="captcha" src="<?php echo Config::get('URL'); ?>register/showCaptcha" /><a href="#" onclick="document.getElementById('captcha').src = '<?php echo Config::get('URL'); ?>register/showCaptcha?' + Math.random(); return false">Recargar captcha</a></div>
+                    <div class="col"><img class="img-thumbnail" id="captcha" src="<?php echo Config::get('URL'); ?>register/showCaptcha" /></div>
                     <div class="form-group col"> <label for="captcha">Captcha</label> <input type="text" class="form-control" name="captcha" required /> </div>
                 </div>
+                <button type="submit" class="btn btn-primary">Registrar cuenta</button>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Registrar cuenta</button>
     </form>
 </div>
