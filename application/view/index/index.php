@@ -14,7 +14,7 @@
                         <input type="password" class="form-control" id="user.password">
                     </div>
                     <div class="btn-group" role="group">
-                        <button class="btn-outline-primary">Ingresar</button>
+                        <button class="btn btn-outline-primary">Ingresar</button>
                         <button class="btn btn-outline-info">Registrar</button>
                     </div>
                 </div>
