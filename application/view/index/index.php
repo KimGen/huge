@@ -1,5 +1,5 @@
 <div class="container">
-    <p><small><em>Software obstétrico propiedad intelectual Dr. Rudecindo Lagos, Maternidad Hospital Regional de Temuco, Facultad de Medicina Universidad de La Frontera Temuco - Chile</em></small></p>
+    <p class="text-center"><small><em>Software obstétrico propiedad intelectual Dr. Rudecindo Lagos, Maternidad Hospital Regional de Temuco, Facultad de Medicina Universidad de La Frontera Temuco - Chile</em></small></p>
     <div class="row">
         <div class="col-4">
             <div class="card">
@@ -26,7 +26,7 @@
             <img src="https://servidor.crecimientofetal.cl/img/feto-computador.png" class="img-fluid">
         </div>
     </div>
-    <div class="row bg-faded rounded">
+    <div class="row bg-light rounded">
         <div class="col-12">
             <p class="text-center"><small><em>Herramientas informáticas (aplicación web y apps para smartphone), tienen como objetivo principal favorecer cálculo y análisis preliminar de <strong>DATOS</strong> ecográfico obtenidos en el examen. Datos procesados en referencia a estándares internacionales de uso habitual, que de forma protocolizada son convertidos en <strong>INFORMACIÓN</strong> clínica. El uso de esta información es de exclusiva responsabilidad de quien realiza y certifica el examen y dependerá del <strong>JUCIO CLÍNICO</strong> del ecografista.</em></small></p>
         </div>
