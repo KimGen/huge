@@ -1,18 +1,27 @@
 <div class="container">
-    <h1>IndexController/index</h1>
-    <div class="box">
-
-        <!-- echo out the system feedback (error and success messages) -->
-        <?php $this->renderFeedbackMessages(); ?>
-
-        <h3>What happens here ?</h3>
-        <p>
-            This is the homepage. As no real URL-route (like /register/index) is provided, the app uses the default
-            controller and the default action, defined in application/config/config.php, by default it's
-            IndexController and index()-method. So, the app will load application/controller/IndexController.php and
-            run index() from that file. Easy. That index()-method (= the action) has just one line of code inside
-            ($this->view->render('index/index');) that loads application/view/index/index.php, which is basically
-            this text you are reading right now.
-        </p>
+    <p><small><em>Software obstétrico propiedad intelectual Dr. Rudecindo Lagos, Maternidad Hospital Regional de Temuco, Facultad de Medicina Universidad de La Frontera Temuco - Chile</em></small></p>
+    <div class="row">
+        <div class="col-4">
+            <div class="card-block">
+                <h5>Ingresar a la plataforma</h5>
+                <div class="form-group">
+                    <label for="user.email">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="user.email">
+                </div>
+                <div class="form-group">
+                    <label for="user.password">Contraseña</label>
+                    <input type="password" class="form-control" id="user.password">
+                </div>
+                <div class="btn-group" role="group">
+                    <a class="btn btn-primary" href="#consulta">Ingresar</a><a class="btn btn-secondary" href="#registro">Registrar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <p class="text-justify text-azul"><small><em>Sitio web diseñado para profesionales de la salud (médicos) vinculados con la vigilancia del control prenatal.<br>El objetivo de esta aplicación es facilitar a los educandos y profesionales en formación, valoración de datos obstétricos ecográficos relacionados con la vigilancia del crecimiento fetal.<br>Actualmente el software consta de tres módulos, estrechamente interrelacionados entre sí, módulos mediante los cuales se pretende orientar al examinador en los tópicos que a continuación se señalan:<br><br>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Determinación ecográfica de la edad gestacional<br>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valoración de biometrías y crecimiento fetal<br>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flujometria Doppler Materno / Fetal básico.</em></small></p>
+        </div>
+        <div class="col-3">
+            <img src="https://servidor.crecimientofetal.cl/img/feto-computador.png" class="img-fluid">
+        </div>
     </div>
 </div>

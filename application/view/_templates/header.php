@@ -11,14 +11,14 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
-            <a class="navbar-brand" href="<?php echo Config::get('URL'); ?>">HUGEx</a>
+            <a class="navbar-brand" href="<?php echo Config::get('URL'); ?>">CrecimientoFetal.cl</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHome" aria-controls="navbarHome" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarHome">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item <?php if (View::checkForActiveController($filename, "index")) { echo 'active'; } ?>">
-                        <a class="nav-link" href="<?php echo Config::get('URL'); ?>">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?php echo Config::get('URL'); ?>">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <?php if (Session::userIsLoggedIn()) { ?>
                         <li class="nav-item <?php if (View::checkForActiveController($filename, "dashboard")) { echo 'active'; } ?>">
@@ -29,7 +29,7 @@
                         </li>
                     <?php } else { ?>
                         <li class="nav-item <?php if (View::checkForActiveController($filename, "register/index")) { echo 'active'; } ?>">
-                            <a class="nav-link" href="<?php echo Config::get('URL'); ?>register/index">Register</a>
+                            <a class="nav-link" href="<?php echo Config::get('URL'); ?>register/index">Crear cuenta</a>
                         </li>
                     <?php } ?>
                 </ul>
@@ -38,14 +38,14 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo Session::get('user_name'); ?> </a>
                             <div class="dropdown-menu" aria-labelledby="navbarUser">
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/index">My Account</a>
+                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/index">Mi cuenta</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/changeUserRole">Change account type</a>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editAvatar">Edit your avatar</a>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editusername">Edit my username</a>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/edituseremail">Edit my email</a>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/changePassword">Change Password</a>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>login/logout">Logout</a>
+                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editAvatar">Cambiar mi foto</a>
+                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editusername">Cambiar mi nombre de usuario</a>
+                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/edituseremail">Cambiar mi email</a>
+                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/changePassword">Cambiar mi contraseña</a>
+                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>login/logout">Salir</a>
                                 <div class="dropdown-divider"></div>
                                 <?php if (Session::get("user_account_type") == 7) : ?>
                                     <a class="dropdown-item <?php if (View::checkForActiveController($filename, "admin")) {echo 'active';} ?>" href="<?php echo Config::get('URL'); ?>admin/">Admin</a>
@@ -56,7 +56,7 @@
                 <?php } else { ?>
                     <ul class="navbar-nav">
                         <li class="nav-item <?php if (View::checkForActiveController($filename, "login/index")) { echo 'active'; } ?>">
-                            <a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo Config::get('URL'); ?>login/index">Login</a>
+                            <a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo Config::get('URL'); ?>login/index">Ingresar</a>
                         </li>
                     </ul>
                 <?php } ?>
