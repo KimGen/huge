@@ -14,7 +14,8 @@
                         <input type="password" class="form-control" id="user.password">
                     </div>
                     <div class="btn-group" role="group">
-                        <a class="btn btn-primary" href="#consulta">Ingresar</a><a class="btn btn-secondary" href="#registro">Registrar</a>
+                        <button class="btn-outline-primary">Ingresar</button>
+                        <button class="btn btn-outline-info">Registrar</button>
                     </div>
                 </div>
             </div>
@@ -32,3 +33,5 @@
         </div>
     </div>
 </div>
+<style>
+</style>
