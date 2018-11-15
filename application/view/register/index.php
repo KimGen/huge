@@ -3,8 +3,10 @@
     <?php $this->renderFeedbackMessages(); ?>
     <form method="post" action="<?php echo Config::get('URL'); ?>register/register_action">
         <div class="card">
+            <div class="card-header">
+                Identificación de la cuenta
+            </div>
             <div class="card-body">
-                <h5 class="card-title">Identificación de la cuenta</h5>
                 <div class="row">
                     <div class="form-group col"> <label for="contact-username">Nombre de usuario</label> <input pattern="[a-zA-Z0-9]{2,64}" name="user_name" class="form-control" id="contact-username" type="text" required><small class="form-text text-muted">Un nombre para identificar cuenta en la plataforma, sin espacios (ej: drJuan)</small></div>
                     <div class="form-group col"> <label for="contact-name">Nombre, Apellido</label> <input class="form-control" id="contact-name" type="text"><small class="form-text text-muted">Nombre real</small></div>
@@ -21,8 +23,10 @@
             </div>
         </div>
         <div class="card">
+            <div class="card-header">
+                Identificación del profesional
+            </div>
             <div class="card-body">
-                <h5 class="card-title">Identificación del profesional</h5>
                 <div class="row">
                     <div class="form-group col"> <label for="contact-country">Nacionalidad</label> <input class="form-control" id="contact-country" type="text"> </div>
                     <div class="form-group col"> <label for="contact-job-location">Pais</label> <input class="form-control" id="contact-job-location" type="text"> </div>
@@ -62,8 +66,10 @@
             </div>
         </div>
         <div class="card">
+            <div class="card-header">
+                Verificación de registro
+            </div>
             <div class="card-body">
-                <h5 class="card-title">Verificación de registro</h5>
                 <div class="row">
                     <div class="col"><img id="captcha" src="<?php echo Config::get('URL'); ?>register/showCaptcha" /><a href="#" onclick="document.getElementById('captcha').src = '<?php echo Config::get('URL'); ?>register/showCaptcha?' + Math.random(); return false">Recargar captcha</a></div>
                     <div class="form-group col"> <label for="captcha">Captcha</label> <input type="text" class="form-control" name="captcha" required /> </div>
