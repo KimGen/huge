@@ -63,22 +63,22 @@
                                 <div class="form-group col-3">
                                     <label for="user.email">Región (solo para Chile)</label>
                                     <select class="form-control" id="pacientes.region">
-                                        <option value="1">No<option>
-                                        <option value="2">Tarapacá<option>
-                                        <option value="3">Antofagasta<option>
-                                        <option value="4">Atacama<option>
-                                        <option value="5">Coquimbo<option>
-                                        <option value="6">Valparaíso<option>
-                                        <option value="7">Libertador General Bernardo O'Higgins<option>
-                                        <option value="8">Maule<option>
-                                        <option value="9">Bío Bío<option>
-                                        <option value="10">La Araucanía<option>
-                                        <option value="11">Los Lagos<option>
-                                        <option value="12">Aisén del General Carlos Ibáñez del Campo<option>
-                                        <option value="13">Magallanes y Antártica Chilena<option>
-                                        <option value="14">Metropolitana de Santiago<option>
-                                        <option value="15">Los Ríos<option>
-                                        <option value="16">Arica y Parinacota<option>
+                                        <option value="1">No</option>
+                                        <option value="2">Tarapacá</option>
+                                        <option value="3">Antofagasta</option>
+                                        <option value="4">Atacama</option>
+                                        <option value="5">Coquimbo</option>
+                                        <option value="6">Valparaíso</option>
+                                        <option value="7">Libertador General Bernardo O'Higgins</option>
+                                        <option value="8">Maule</option>
+                                        <option value="9">Bío Bío</option>
+                                        <option value="10">La Araucanía</option>
+                                        <option value="11">Los Lagos</option>
+                                        <option value="12">Aisén del General Carlos Ibáñez del Campo</option>
+                                        <option value="13">Magallanes y Antártica Chilena</option>
+                                        <option value="14">Metropolitana de Santiago</option>
+                                        <option value="15">Los Ríos</option>
+                                        <option value="16">Arica y Parinacota</option>
                                     </select>
                                 </div>
                             </div>
