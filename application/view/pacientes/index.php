@@ -8,8 +8,8 @@
                 <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.eliminar"><i class="fas fa-trash"></i></button>
             </div>
         </div>
-        <div class="col-5">
-            <h4 class="text-left my-3">Administrador de Pacientes</h4>
+        <div class="col-7">
+            <h4 class="text-right my-3">Administrador de Pacientes</h4>
         </div>
         <div class="col-12">
             <div class="card">
