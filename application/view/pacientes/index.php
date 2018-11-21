@@ -11,12 +11,12 @@
         <div class="col-4">
             <div class="row">
                 <div class="form-group col">
-                    <label for="user.email">RUT</label>
+                    <label for="user.rut">RUT</label>
                     <input type="number" class="form-control" id="pacientes.rut">
                 </div>
                 <div class="form-group col">
-                    <label for="user.email">Apellidos</label>
-                    <input type="number" class="form-control" id="pacientes.rut">
+                    <label for="user.apellidos">Apellidos</label>
+                    <input type="text" class="form-control" id="pacientes.apellidos">
                 </div>
             </div>
         </div>
