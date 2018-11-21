@@ -141,7 +141,7 @@
                 region: $("#pacientes\\.region").val()
             }
 
-            $.post( "pacientes/new", paciente).done(function( data ) {
+            $.post( "new", paciente).done(function( data ) {
                 $("#pacientes\\.rut").val("");
                 $("#pacientes\\.nombres").val("");
                 $("#pacientes\\.apellidos").val("");
@@ -193,7 +193,7 @@
     });
 
     function maketable(){
-        $.get( "pacientes/get").done(function( data ) {
+        $.get( "get").done(function( data ) {
             $("#pacientes\\.rut").val("");
             $("#pacientes\\.nombres").val("");
             $("#pacientes\\.apellidos").val("");
@@ -202,7 +202,6 @@
             $("#pacientes\\.prevision").val("");
             $("#pacientes\\.nacionalidad").val("");
             $("#pacientes\\.region").val("");
-            maketable();
         });
     }
 </script>
