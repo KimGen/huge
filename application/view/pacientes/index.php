@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="col-5">
-            <h5 class="text-right">Administrador de Pacientes</h5>
+            <h4 class="text-right my-3">Administrador de Pacientes</h4>
         </div>
         <div class="col-12">
             <div class="card">
