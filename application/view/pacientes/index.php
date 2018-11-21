@@ -3,9 +3,9 @@
         <div class="col-5">
             <div class="btn-group m-3" role="group">
                 <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.nuevo"><i class="fas fa-plus"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.cancelar"><i class="fas fa-ban"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.eliminar"><i class="fas fa-trash"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.cancelar"><i class="fas fa-ban"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.eliminar"><i class="fas fa-trash"></i></button>
             </div>
         </div>
         <div class="col-7">
@@ -99,6 +99,9 @@
     $(document).ready(function(){
         $("#button\\.paciente\\.nuevo").on("click", function(){
             $("#interface\\.pacientes").removeClass("d-none");
+            $("#button\\.paciente\\.nuevo").addClass("d-none");
+            $("#button\\.paciente\\.guardar").removeClass("d-none");
+            $("#button\\.paciente\\.cancelar").removeClass("d-none");
             $("#pacientes\\.rut").value("");
             $("#pacientes\\.nombres").value("");
             $("#pacientes\\.apellidos").value("");
@@ -111,6 +114,9 @@
 
         $("#button\\.paciente\\.guardar").on("click", function(){
             $("#interface\\.pacientes").addClass("d-none");
+            $("#button\\.paciente\\.nuevo").removeClass("d-none");
+            $("#button\\.paciente\\.guardar").addClass("d-none");
+            $("#button\\.paciente\\.cancelar").addClass("d-none");
             $("#pacientes\\.rut").value("");
             $("#pacientes\\.nombres").value("");
             $("#pacientes\\.apellidos").value("");
@@ -123,6 +129,9 @@
 
         $("#button\\.paciente\\.cancelar").on("click", function(){
             $("#interface\\.pacientes").addClass("d-none");
+            $("#button\\.paciente\\.nuevo").removeClass("d-none");
+            $("#button\\.paciente\\.guardar").addClass("d-none");
+            $("#button\\.paciente\\.cancelar").addClass("d-none");
             $("#pacientes\\.rut").value("");
             $("#pacientes\\.nombres").value("");
             $("#pacientes\\.apellidos").value("");
