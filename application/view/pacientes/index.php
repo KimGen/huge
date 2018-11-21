@@ -1,27 +1,16 @@
 <div class="container">
     <div class="row">
-        <div class="col-4">
+        <div class="col-5">
             <div class="btn-group m-3" role="group">
                 <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.nuevo"><i class="fas fa-plus"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.buscar"><i class="fas fa-search"></i></button>
+                <div class="btn btn-outline-primary btn-lg" id="interface.paciente.buscar"><input type="text" class="form-control" id="pacientes.apellidos" placeholder="buscar"></div>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.cancelar"><i class="fas fa-ban"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.eliminar"><i class="fas fa-trash"></i></button>
             </div>
         </div>
-        <div class="col-4">
-            <div class="row">
-                <div class="form-group col">
-                    <label for="user.rut">RUT</label>
-                    <input type="number" class="form-control" id="pacientes.rut">
-                </div>
-                <div class="form-group col">
-                    <label for="user.apellidos">Apellidos</label>
-                    <input type="text" class="form-control" id="pacientes.apellidos">
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
+        <div class="col-7">
             <h4 class="text-right my-3">Administrador de Pacientes</h4>
         </div>
         <div class="col-12">
@@ -115,6 +104,7 @@
             $("#button\\.paciente\\.nuevo").addClass("d-none");
             $("#button\\.paciente\\.guardar").removeClass("d-none");
             $("#button\\.paciente\\.cancelar").removeClass("d-none");
+            $("#button\\.paciente\\.buscar").addClass("d-none");
             $("#pacientes\\.rut").value("");
             $("#pacientes\\.nombres").value("");
             $("#pacientes\\.apellidos").value("");
@@ -130,6 +120,7 @@
             $("#button\\.paciente\\.nuevo").removeClass("d-none");
             $("#button\\.paciente\\.guardar").addClass("d-none");
             $("#button\\.paciente\\.cancelar").addClass("d-none");
+            $("#button\\.paciente\\.buscar").removeClass("d-none");
             $("#pacientes\\.rut").value("");
             $("#pacientes\\.nombres").value("");
             $("#pacientes\\.apellidos").value("");
@@ -145,6 +136,7 @@
             $("#button\\.paciente\\.nuevo").removeClass("d-none");
             $("#button\\.paciente\\.guardar").addClass("d-none");
             $("#button\\.paciente\\.cancelar").addClass("d-none");
+            $("#button\\.paciente\\.buscar").removeClass("d-none");
             $("#pacientes\\.rut").value("");
             $("#pacientes\\.nombres").value("");
             $("#pacientes\\.apellidos").value("");
@@ -165,6 +157,15 @@
             $("#pacientes\\.prevision").value("");
             $("#pacientes\\.nacionalidad").value("");
             $("#pacientes\\.region").value("");
+        });
+
+        $("#button\\.paciente\\.buscar").on("click", function(){
+            if ($("#interface\\.paciente\\.buscar").hasClass("d-none")){
+                $("#interface\\.paciente\\.buscar").removeClass("d-none");
+            }
+            else{
+                $("#interface\\.paciente\\.buscar").addClass("d-none");
+            }
         });
     })
 </script>
