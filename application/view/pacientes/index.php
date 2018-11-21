@@ -113,14 +113,14 @@
             $("#button\\.paciente\\.guardar").removeClass("d-none");
             $("#button\\.paciente\\.cancelar").removeClass("d-none");
             $("#button\\.paciente\\.buscar").addClass("d-none");
-            $("#pacientes\\.rut").value("");
-            $("#pacientes\\.nombres").value("");
-            $("#pacientes\\.apellidos").value("");
-            $("#pacientes\\.email").value("");
-            $("#pacientes\\.nacimiento").value("");
-            $("#pacientes\\.prevision").value("");
-            $("#pacientes\\.nacionalidad").value("");
-            $("#pacientes\\.region").value("");
+            $("#pacientes\\.rut").val("");
+            $("#pacientes\\.nombres").val("");
+            $("#pacientes\\.apellidos").val("");
+            $("#pacientes\\.email").val("");
+            $("#pacientes\\.nacimiento").val("");
+            $("#pacientes\\.prevision").val("");
+            $("#pacientes\\.nacionalidad").val("");
+            $("#pacientes\\.region").val("");
         });
 
         $("#button\\.paciente\\.guardar").on("click", function(){
@@ -131,25 +131,25 @@
             $("#button\\.paciente\\.buscar").removeClass("d-none");
 
             let paciente = {
-                rut: $("#pacientes\\.rut").value(),
-                nombres: $("#pacientes\\.nombres").value(),
-                apellidos: $("#pacientes\\.apellidos").value(),
-                email: $("#pacientes\\.email").value(),
-                nacimiento: $("#pacientes\\.nacimiento").value(),
-                prevision: $("#pacientes\\.prevision").value(),
-                nacionalidad: $("#pacientes\\.nacionalidad").value(),
-                region: $("#pacientes\\.region").value()
+                rut: $("#pacientes\\.rut").val(),
+                nombres: $("#pacientes\\.nombres").val(),
+                apellidos: $("#pacientes\\.apellidos").val(),
+                email: $("#pacientes\\.email").val(),
+                nacimiento: $("#pacientes\\.nacimiento").val(),
+                prevision: $("#pacientes\\.prevision").val(),
+                nacionalidad: $("#pacientes\\.nacionalidad").val(),
+                region: $("#pacientes\\.region").val()
             }
 
             $.post( "pacientes/new", paciente).done(function( data ) {
-                $("#pacientes\\.rut").value("");
-                $("#pacientes\\.nombres").value("");
-                $("#pacientes\\.apellidos").value("");
-                $("#pacientes\\.email").value("");
-                $("#pacientes\\.nacimiento").value("");
-                $("#pacientes\\.prevision").value("");
-                $("#pacientes\\.nacionalidad").value("");
-                $("#pacientes\\.region").value("");
+                $("#pacientes\\.rut").val("");
+                $("#pacientes\\.nombres").val("");
+                $("#pacientes\\.apellidos").val("");
+                $("#pacientes\\.email").val("");
+                $("#pacientes\\.nacimiento").val("");
+                $("#pacientes\\.prevision").val("");
+                $("#pacientes\\.nacionalidad").val("");
+                $("#pacientes\\.region").val("");
                 maketable();
             });
         });
@@ -160,26 +160,26 @@
             $("#button\\.paciente\\.guardar").addClass("d-none");
             $("#button\\.paciente\\.cancelar").addClass("d-none");
             $("#button\\.paciente\\.buscar").removeClass("d-none");
-            $("#pacientes\\.rut").value("");
-            $("#pacientes\\.nombres").value("");
-            $("#pacientes\\.apellidos").value("");
-            $("#pacientes\\.email").value("");
-            $("#pacientes\\.nacimiento").value("");
-            $("#pacientes\\.prevision").value("");
-            $("#pacientes\\.nacionalidad").value("");
-            $("#pacientes\\.region").value("");
+            $("#pacientes\\.rut").val("");
+            $("#pacientes\\.nombres").val("");
+            $("#pacientes\\.apellidos").val("");
+            $("#pacientes\\.email").val("");
+            $("#pacientes\\.nacimiento").val("");
+            $("#pacientes\\.prevision").val("");
+            $("#pacientes\\.nacionalidad").val("");
+            $("#pacientes\\.region").val("");
         });
 
         $("#button\\.paciente\\.eliminar").on("click", function(){
             $("#interface\\.pacientes").addClass("d-none");
-            $("#pacientes\\.rut").value("");
-            $("#pacientes\\.nombres").value("");
-            $("#pacientes\\.apellidos").value("");
-            $("#pacientes\\.email").value("");
-            $("#pacientes\\.nacimiento").value("");
-            $("#pacientes\\.prevision").value("");
-            $("#pacientes\\.nacionalidad").value("");
-            $("#pacientes\\.region").value("");
+            $("#pacientes\\.rut").val("");
+            $("#pacientes\\.nombres").val("");
+            $("#pacientes\\.apellidos").val("");
+            $("#pacientes\\.email").val("");
+            $("#pacientes\\.nacimiento").val("");
+            $("#pacientes\\.prevision").val("");
+            $("#pacientes\\.nacionalidad").val("");
+            $("#pacientes\\.region").val("");
         });
 
         $("#button\\.paciente\\.buscar").on("click", function(){
@@ -194,14 +194,14 @@
 
     function maketable(){
         $.get( "pacientes/get").done(function( data ) {
-            $("#pacientes\\.rut").value("");
-            $("#pacientes\\.nombres").value("");
-            $("#pacientes\\.apellidos").value("");
-            $("#pacientes\\.email").value("");
-            $("#pacientes\\.nacimiento").value("");
-            $("#pacientes\\.prevision").value("");
-            $("#pacientes\\.nacionalidad").value("");
-            $("#pacientes\\.region").value("");
+            $("#pacientes\\.rut").val("");
+            $("#pacientes\\.nombres").val("");
+            $("#pacientes\\.apellidos").val("");
+            $("#pacientes\\.email").val("");
+            $("#pacientes\\.nacimiento").val("");
+            $("#pacientes\\.prevision").val("");
+            $("#pacientes\\.nacionalidad").val("");
+            $("#pacientes\\.region").val("");
             maketable();
         });
     }
