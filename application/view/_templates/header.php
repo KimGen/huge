@@ -6,6 +6,8 @@
     <link rel="icon" href="data:;base64,=">
     <link rel="stylesheet" href="<?php echo Config::get('URL'); ?>css/bootstrap.min.css">
     <script src="<?php echo Config::get('URL'); ?>js/base.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 </head>
 <body>
     <!-- navbar -->
@@ -22,10 +24,10 @@
                     </li>
                     <?php if (Session::userIsLoggedIn()) { ?>
                         <li class="nav-item <?php if (View::checkForActiveController($filename, "dashboard")) { echo 'active'; } ?>">
-                            <a class="nav-link" href="<?php echo Config::get('URL'); ?>dashboard/index">Dashboard</a>
+                            <a class="nav-link" href="<?php echo Config::get('URL'); ?>pacientes/index">Pacientes</a>
                         </li>
                         <li class="nav-item <?php if (View::checkForActiveController($filename, "note")) { echo 'active'; } ?>">
-                            <a class="nav-link" href="<?php echo Config::get('URL'); ?>note/index">My Notes</a>
+                            <a class="nav-link" href="<?php echo Config::get('URL'); ?>ecografia/index">Ecografia</a>
                         </li>
                     <?php } else { ?>
                         <li class="nav-item <?php if (View::checkForActiveController($filename, "register/index")) { echo 'active'; } ?>">
