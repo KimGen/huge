@@ -198,8 +198,6 @@
             $("#table\\.pacientes").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
-
-
                     var hoy = new Date();
                     var cumpleanos = new Date(value.paciente_nacimiento);
                     var edad = hoy.getFullYear() - cumpleanos.getFullYear();
@@ -208,9 +206,13 @@
                     if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
                         edad--;
                     }
-
-
-                    let fila = '<tr><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + edad +'</td><td>' + value.paciente_prevision +'</td></tr>';
+                    let prevision = "";
+                    $("#pacientes\\.prevision > option").each(function() {
+                        if (this.value == value.paciente_prevision){
+                            prevision = this.text;
+                        }
+                    });
+                    let fila = '<tr><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + edad +' años</td><td>' + prevision +'</td></tr>';
                     $("#table\\.pacientes").append(fila);
                 });
             }
