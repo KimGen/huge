@@ -108,7 +108,7 @@
     $(document).ready(function(){
         $("#button\\.paciente\\.nuevo").on("click", function(){
             $("#interface\\.pacientes").removeClass("d-none");
-            $("#interface\\.paciente\\.buscar").removeClass("d-none");
+            $("#interface\\.paciente\\.buscar").addClass("d-none");
             $("#button\\.paciente\\.nuevo").addClass("d-none");
             $("#button\\.paciente\\.guardar").removeClass("d-none");
             $("#button\\.paciente\\.cancelar").removeClass("d-none");
