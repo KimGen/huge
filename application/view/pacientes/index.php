@@ -9,7 +9,16 @@
             </div>
         </div>
         <div class="col-4">
-            <h4 class="text-right my-3">Administrador de Pacientes</h4>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="user.email">RUT</label>
+                    <input type="number" class="form-control" id="pacientes.rut">
+                </div>
+                <div class="form-group col">
+                    <label for="user.email">Apellidos</label>
+                    <input type="number" class="form-control" id="pacientes.rut">
+                </div>
+            </div>
         </div>
         <div class="col-4">
             <h4 class="text-right my-3">Administrador de Pacientes</h4>
