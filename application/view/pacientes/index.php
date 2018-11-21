@@ -1,17 +1,19 @@
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <div class="btn-group mr-2" role="group">
-                <button type="button" class="btn btn-outline-primary" id="button.paciente.nuevo"><i class="fas fa-plus"></i></button>
-                <button type="button" class="btn btn-secondary" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
-                <button type="button" class="btn btn-secondary" id="button.paciente.cancelar"><i class="fas fa-ban"></i></button>
-                <button type="button" class="btn btn-secondary" id="button.paciente.eliminar"><i class="fas fa-trash"></i></button>
+        <div class="col-5">
+            <div class="btn-group m-3" role="group">
+                <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.nuevo"><i class="fas fa-plus"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.cancelar"><i class="fas fa-ban"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.eliminar"><i class="fas fa-trash"></i></button>
             </div>
+        </div>
+        <div class="col-5">
+            <h5 class="text-right">Administrador de Pacientes</h5>
         </div>
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h5>Administrador de Pacientes</h5>
                     <div class="row">
                         <div class="col-12 d-none" id="interface.pacientes">
                             <div class="row">
