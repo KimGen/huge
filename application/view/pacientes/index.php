@@ -94,7 +94,7 @@
                                     <th scope="col">Previsión</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="table.pacientes">
                                 </tbody>
                             </table>
                         </div>
@@ -194,14 +194,25 @@
 
     function maketable(){
         $.get( "get").done(function( data ) {
-            $("#pacientes\\.rut").val("");
-            $("#pacientes\\.nombres").val("");
-            $("#pacientes\\.apellidos").val("");
-            $("#pacientes\\.email").val("");
-            $("#pacientes\\.nacimiento").val("");
-            $("#pacientes\\.prevision").val("");
-            $("#pacientes\\.nacionalidad").val("");
-            $("#pacientes\\.region").val("");
+            $("#table\\.pacientes").empty();
+            if (Object.keys(data).length > 0) {
+                $.each(data, function(i,value){
+
+
+                    var hoy = new Date();
+                    var cumpleanos = new Date(value.paciente_nacimiento);
+                    var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+                    var m = hoy.getMonth() - cumpleanos.getMonth();
+
+                    if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+                        edad--;
+                    }
+
+
+                    let fila = '<tr><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + edad +'</td><td>' + value.paciente_prevision +'</td></tr>';
+                    $("#table\\.pacientes").append(fila);
+                });
+            }
         });
     }
 </script>
