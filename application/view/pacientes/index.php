@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-5">
+        <div class="col-4">
             <div class="btn-group m-3" role="group">
                 <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.nuevo"><i class="fas fa-plus"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
@@ -8,7 +8,10 @@
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.eliminar"><i class="fas fa-trash"></i></button>
             </div>
         </div>
-        <div class="col-7">
+        <div class="col-4">
+            <h4 class="text-right my-3">Administrador de Pacientes</h4>
+        </div>
+        <div class="col-4">
             <h4 class="text-right my-3">Administrador de Pacientes</h4>
         </div>
         <div class="col-12">
