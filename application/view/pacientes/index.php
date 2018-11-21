@@ -122,14 +122,29 @@
             $("#button\\.paciente\\.guardar").addClass("d-none");
             $("#button\\.paciente\\.cancelar").addClass("d-none");
             $("#button\\.paciente\\.buscar").removeClass("d-none");
-            $("#pacientes\\.rut").value("");
-            $("#pacientes\\.nombres").value("");
-            $("#pacientes\\.apellidos").value("");
-            $("#pacientes\\.email").value("");
-            $("#pacientes\\.nacimiento").value("");
-            $("#pacientes\\.prevision").value("");
-            $("#pacientes\\.nacionalidad").value("");
-            $("#pacientes\\.region").value("");
+
+            let paciente = {
+                rut: $("#pacientes\\.rut").value(),
+                nombres: $("#pacientes\\.nombres").value(),
+                apellidos: $("#pacientes\\.apellidos").value(),
+                email: $("#pacientes\\.email").value(),
+                nacimiento: $("#pacientes\\.nacimiento").value(),
+                prevision: $("#pacientes\\.prevision").value(),
+                nacionalidad: $("#pacientes\\.nacionalidad").value(),
+                region: $("#pacientes\\.region").value()
+            }
+
+            $.post( "pacientes/new", paciente).done(function( data ) {
+                $("#pacientes\\.rut").value("");
+                $("#pacientes\\.nombres").value("");
+                $("#pacientes\\.apellidos").value("");
+                $("#pacientes\\.email").value("");
+                $("#pacientes\\.nacimiento").value("");
+                $("#pacientes\\.prevision").value("");
+                $("#pacientes\\.nacionalidad").value("");
+                $("#pacientes\\.region").value("");
+                maketable();
+            });
         });
 
         $("#button\\.paciente\\.cancelar").on("click", function(){
@@ -168,5 +183,19 @@
                 $("#interface\\.paciente\\.buscar").addClass("d-none");
             }
         });
-    })
+    });
+
+    function maketable(){
+        $.get( "pacientes/get").done(function( data ) {
+            $("#pacientes\\.rut").value("");
+            $("#pacientes\\.nombres").value("");
+            $("#pacientes\\.apellidos").value("");
+            $("#pacientes\\.email").value("");
+            $("#pacientes\\.nacimiento").value("");
+            $("#pacientes\\.prevision").value("");
+            $("#pacientes\\.nacionalidad").value("");
+            $("#pacientes\\.region").value("");
+            maketable();
+        });
+    }
 </script>

@@ -18,4 +18,19 @@ class PacientesController extends Controller
     {
         $this->View->render('pacientes/index');
     }
+
+    public function get()
+    {
+        $this->View->renderJSON(PacientesModel::getAllPacientes());
+    }
+
+    public function new()
+    {
+        $this->View->renderJSON(PacientesModel::createPaciente(Request::post('paciente_rut'), Request::post('paciente_nombre'), Request::post('paciente_apellido'), Request::post('paciente_email'), Request::post('paciente_nacimiento'), Request::post('paciente_prevision'), Request::post('paciente_nacionalidad'), Request::post('paciente_region')));
+    }
+
+    public function update()
+    {
+        $this->View->renderJSON(PacientesModel::updatePaciente(Request::post('paciente_rut'), Request::post('paciente_nombre'), Request::post('paciente_apellido'), Request::post('paciente_email'), Request::post('paciente_nacimiento'), Request::post('paciente_prevision'), Request::post('paciente_nacionalidad'), Request::post('paciente_region')));
+    }
 }
