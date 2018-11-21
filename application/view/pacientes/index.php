@@ -106,6 +106,7 @@
 </div>
 <script>
     $(document).ready(function(){
+        maketable();
         $("#button\\.paciente\\.nuevo").on("click", function(){
             $("#interface\\.pacientes").removeClass("d-none");
             $("#interface\\.paciente\\.buscar").addClass("d-none");
