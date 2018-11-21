@@ -4,7 +4,7 @@
             <div class="btn-group m-3" role="group">
                 <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.nuevo"><i class="fas fa-plus"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.buscar"><i class="fas fa-search"></i></button>
-                <div class="btn btn-outline-primary btn-lg d-none" id="interface.paciente.buscar"><input type="text" class="form-control" id="pacientes.apellidos" placeholder="buscar"></div>
+                <div class="btn btn-outline-primary btn-lg d-none" id="interface.paciente.buscar"><input type="text" class="form-control" id="busqueda.pacientes" placeholder="buscar"></div>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.cancelar"><i class="fas fa-ban"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.eliminar"><i class="fas fa-trash"></i></button>
@@ -131,14 +131,14 @@
             $("#button\\.paciente\\.buscar").removeClass("d-none");
 
             let paciente = {
-                rut: $("#pacientes\\.rut").val(),
-                nombres: $("#pacientes\\.nombres").val(),
-                apellidos: $("#pacientes\\.apellidos").val(),
-                email: $("#pacientes\\.email").val(),
-                nacimiento: $("#pacientes\\.nacimiento").val(),
-                prevision: $("#pacientes\\.prevision").val(),
-                nacionalidad: $("#pacientes\\.nacionalidad").val(),
-                region: $("#pacientes\\.region").val()
+                paciente_rut: $("#pacientes\\.rut").val(),
+                paciente_nombre: $("#pacientes\\.nombres").val(),
+                paciente_apellido: $("#pacientes\\.apellidos").val(),
+                paciente_email: $("#pacientes\\.email").val(),
+                paciente_nacimiento: $("#pacientes\\.nacimiento").val(),
+                paciente_prevision: $("#pacientes\\.prevision").val(),
+                paciente_nacionalidad: $("#pacientes\\.nacionalidad").val(),
+                paciente_region: $("#pacientes\\.region").val()
             }
 
             $.post( "new", paciente).done(function( data ) {
