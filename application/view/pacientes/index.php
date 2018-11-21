@@ -37,41 +37,48 @@
                                 </div>
                                 <div class="form-group col-3">
                                     <label for="user.email">Fecha de Nacimiento</label>
-                                    <input type="email" class="form-control" id="pacientes.nacimiento">
+                                    <input type="date" class="form-control" id="pacientes.nacimiento">
                                 </div>
                                 <div class="form-group col-3">
                                     <label for="user.email">Previsión</label>
-                                    <input type="email" class="form-control" id="pacientes.prevision">
+                                    <select class="form-control" id="pacientes.prevision">
+                                        <option value="1">Fonasa A</option>
+                                        <option value="2">Fonasa B</option>
+                                        <option value="3">Fonasa C</option>
+                                        <option value="4">Fonasa D</option>
+                                        <option value="5">Isapre</option>
+                                    </select>
                                 </div>
                                 <div class="form-group col-3">
                                     <label for="user.email">Nacionalidad</label>
                                     <select class="form-control" id="pacientes.nacionalidad">
-                                        <option>Chilena</option>
-                                        <option>Argentina</option>
-                                        <option>Peruana</option>
-                                        <option>Colombiana</option>
-                                        <option>Venezolana</option>
-                                        <option>Uruguaya</option>
+                                        <option value="1">Chilena</option>
+                                        <option value="2">Argentina</option>
+                                        <option value="3">Peruana</option>
+                                        <option value="4">Colombiana</option>
+                                        <option value="5">Venezolana</option>
+                                        <option value="6">Uruguaya</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
                                     <label for="user.email">Región (solo para Chile)</label>
                                     <select class="form-control" id="pacientes.region">
-                                        <option value="">Tarapacá<option>
-                                        <option value="">Antofagasta<option>
-                                        <option value="">Atacama<option>
-                                        <option value="">Coquimbo<option>
-                                        <option value="">Valparaíso<option>
-                                        <option value="">Libertador General Bernardo O'Higgins<option>
-                                        <option value="">Maule<option>
-                                        <option value="">Bío Bío<option>
-                                        <option value="">La Araucanía<option>
-                                        <option value="">Los Lagos<option>
-                                        <option value="">Aisén del General Carlos Ibáñez del Campo<option>
-                                        <option value="">Magallanes y Antártica Chilena<option>
-                                        <option value="">Metropolitana de Santiago<option>
-                                        <option value="">Los Ríos<option>
-                                        <option value="">Arica y Parinacota<option>
+                                        <option value="1">No<option>
+                                        <option value="2">Tarapacá<option>
+                                        <option value="3">Antofagasta<option>
+                                        <option value="4">Atacama<option>
+                                        <option value="5">Coquimbo<option>
+                                        <option value="6">Valparaíso<option>
+                                        <option value="7">Libertador General Bernardo O'Higgins<option>
+                                        <option value="8">Maule<option>
+                                        <option value="9">Bío Bío<option>
+                                        <option value="10">La Araucanía<option>
+                                        <option value="11">Los Lagos<option>
+                                        <option value="12">Aisén del General Carlos Ibáñez del Campo<option>
+                                        <option value="13">Magallanes y Antártica Chilena<option>
+                                        <option value="14">Metropolitana de Santiago<option>
+                                        <option value="15">Los Ríos<option>
+                                        <option value="16">Arica y Parinacota<option>
                                     </select>
                                 </div>
                             </div>
