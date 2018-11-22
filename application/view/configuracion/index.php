@@ -160,14 +160,14 @@
         $("#button\\.nacionalidad\\.nuevo").on("click", function(){
             $("#button\\.nacionalidad\\.nuevo").addClass("d-none");
             $("#button\\.nacionalidad\\.guardar").removeClass("d-none");
-            $("#button\\.nacionalidad\\.eliminar").removeClass("d-none");
+            $("#button\\.nacionalidad\\.cancelar").removeClass("d-none");
             $("#interface\\.nacionalidad").removeClass("d-none");
             $("#nacionalidad\\.text").val("");
             $("#nacionalidad\\.gentilicio").val("");
         });
         $("#button\\.nacionalidad\\.guardar").on("click", function(){
             $("#button\\.nacionalidad\\.nuevo").removeClass("d-none");
-            $("#button\\.prenacionalidadvision\\.guardar").addClass("d-none");
+            $("#button\\.nacionalidad\\.guardar").addClass("d-none");
             $("#interface\\.nacionalidad").addClass("d-none");
             
             let nacionalidad = {
@@ -188,7 +188,7 @@
         $("#button\\.region\\.nuevo").on("click", function(){
             $("#button\\.region\\.nuevo").addClass("d-none");
             $("#button\\.region\\.guardar").removeClass("d-none");
-            $("#button\\.region\\.eliminar").removeClass("d-none");
+            $("#button\\.region\\.cancelar").removeClass("d-none");
             $("#interface\\.region").removeClass("d-none");
             $("#nacionalidad\\.text").val("");
             $("#region\\.text").val("");
@@ -216,7 +216,7 @@
         $("#button\\.prevision\\.nuevo").on("click", function(){
             $("#button\\.prevision\\.nuevo").addClass("d-none");
             $("#button\\.prevision\\.guardar").removeClass("d-none");
-            $("#button\\.prevision\\.eliminar").removeClass("d-none");
+            $("#button\\.prevision\\.cancelar").removeClass("d-none");
             $("#interface\\.prevision").removeClass("d-none");
             $("#prevision\\.text").val("");
         });
