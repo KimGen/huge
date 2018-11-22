@@ -126,7 +126,7 @@
                                                 <div class="card-body">
                                                     <div class="row">
                                                         <div class="form-group col-12 d-none" id="interface.prevision">
-                                                            <label for="prevision.text">Lugar de control</label>
+                                                            <label for="prevision.text">Nombre de la previsión</label>
                                                             <input type="text" class="form-control" id="prevision.text">
                                                         </div>
                                                         <div class="col-12">
@@ -134,7 +134,7 @@
                                                             <thead class="thead-dark">
                                                                 <tr>
                                                                 <th scope="col">ID</th>
-                                                                <th scope="col">Prevision</th>
+                                                                <th scope="col">Previsión</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody id="table.prevision">
@@ -232,10 +232,26 @@
 
             $.post( "api", prevision).done(function( data ) {
                 $("#prevision\\.text").val("");
-                maketable();
+                makePrevision();
             });
         });
         $("#button\\.prevision\\.eliminar").on("click", function(){
         });
     });
+
+    function makePrevision(){
+        let prevision = {
+            accion: "prevision"
+        }
+
+        $.post( "api").done(function( data ) {
+            $("#table\\.prevision").empty();
+            if (Object.keys(data).length > 0) {
+                $.each(data, function(i,value){
+                    let fila = '<tr><td>' + value.prevision_id + '</td><td>' + value.prevision_text + '</td></tr>';
+                    $("#table\\.prevision").append(fila);
+                });
+            }
+        });
+    }
 </script>
