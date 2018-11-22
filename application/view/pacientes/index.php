@@ -95,6 +95,9 @@
     $(document).ready(function(){
         maketable();
         makeEdad();
+        makeNacionalidad();
+        makeRegion();
+        makePrevision();
         $("#button\\.paciente\\.nuevo").on("click", function(){
             $("#interface\\.pacientes").removeClass("d-none");
             $("#interface\\.paciente\\.buscar").addClass("d-none");
@@ -239,7 +242,7 @@
             }
         });
     }
-
+    
     function makeRegion(){
         let region = {
             accion: "region"
