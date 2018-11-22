@@ -229,7 +229,7 @@
             accion: "nacionalidad"
         }
 
-        $.post( "api", region).done(function( data ) {
+        $.post( "https://crecimientofetal.cl/configuracion/api", region).done(function( data ) {
             $("#pacientes\\.pais").empty();
             $("#pacientes\\.nacionalidad").empty();
             if (Object.keys(data).length > 0) {
@@ -248,7 +248,7 @@
             accion: "region"
         }
 
-        $.post( "api", region).done(function( data ) {
+        $.post( "https://crecimientofetal.cl/configuracion/api", region).done(function( data ) {
             $("#pacientes\\.region").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
@@ -264,7 +264,7 @@
             accion: "prevision"
         }
 
-        $.post( "api", prevision).done(function( data ) {
+        $.post( "https://crecimientofetal.cl/configuracion/api", prevision).done(function( data ) {
             $("#pacientes\\.prevision").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
