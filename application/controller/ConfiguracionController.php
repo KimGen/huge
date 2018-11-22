@@ -19,4 +19,41 @@ class ConfiguracionController extends Controller
     {
         $this->View->render('configuracion/index');
     }
+
+    public function api(){
+        $accion = Request::post('accion');
+        $resultado = "";
+
+        switch ($accion) {
+            case "nacionalidad":
+                $resultado = NacionalidadModel::getAllNacionalidad();
+                break;
+            case "nacionalidadNew":
+                $resultado = NacionalidadModel::createNacionalidad(Request::post('nacionalidad_nombre'),Request::post('nacionalidad_gentilicio'));
+                break;
+            case "nacionalidadEliminar":
+                $resultado = NacionalidadModel::deleteNacionalidad(Request::post('nacionalidad_id'));
+                break;
+            case "region":
+                $resultado = RegionModel::getAllRegion();
+                break;
+            case "regionNew":
+                $resultado = RegionModel::createRegion(Request::post('nacionalidad_nombre'), Request::post('region_text'));
+                break;
+            case "regionEliminar":
+                $resultado = RegionModel::deleteRegion(Request::post('region_id'));
+                break;
+            case "prevision":
+                $resultado = PrevisionModel::getAllPrevision();
+                break;
+            case "previsionNew":
+                $resultado = PrevisionModel::createPrevision(Request::post('prevision_text'));
+                break;
+            case "previsionEliminar":
+                $resultado = PrevisionModel::deletePrevision(Request::post('prevision_id'));
+                break;
+        }
+
+        return $this->View->renderJSON($resultado);
+    }
 }

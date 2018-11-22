@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="form-group col-3">
                                     <label for="user.email">Pais de residencia</label>
-                                    <select class="form-control" id="pacientes.nacionalidad">
+                                    <select class="form-control" id="pacientes.pais">
                                         <option value="1">Chilena</option>
                                         <option value="2">Argentina</option>
                                         <option value="3">Peruana</option>
@@ -93,6 +93,14 @@
                                     <label for="user.email">Correo Electrónico</label>
                                     <input type="email" class="form-control" id="pacientes.email">
                                 </div>
+                                <div class="form-group col-3">
+                                    <label for="user.email">Telefono</label>
+                                    <input type="email" class="form-control" id="pacientes.telefono">
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="user.email">Lugar de control</label>
+                                    <input type="email" class="form-control" id="pacientes.lugar">
+                                </div>
                             </div>
                         </div>
                         <div class="col-12">
@@ -135,6 +143,9 @@
             $("#pacientes\\.prevision").val("");
             $("#pacientes\\.nacionalidad").val("");
             $("#pacientes\\.region").val("");
+            $("#pacientes\\.pais").val("");
+            $("#pacientes\\.telefono").val("");
+            $("#pacientes\\.lugar").val("");
         });
 
         $("#button\\.paciente\\.guardar").on("click", function(){
@@ -152,7 +163,10 @@
                 paciente_nacimiento: $("#pacientes\\.nacimiento").val(),
                 paciente_prevision: $("#pacientes\\.prevision").val(),
                 paciente_nacionalidad: $("#pacientes\\.nacionalidad").val(),
-                paciente_region: $("#pacientes\\.region").val()
+                paciente_region: $("#pacientes\\.region").val(),
+                paciente_pais: $("#pacientes\\.pais").val(),
+                paciente_telefono: $("#pacientes\\.telefono").val(),
+                paciente_lugar: $("#pacientes\\.lugar").val()
             }
 
             $.post( "new", paciente).done(function( data ) {
@@ -164,6 +178,9 @@
                 $("#pacientes\\.prevision").val("");
                 $("#pacientes\\.nacionalidad").val("");
                 $("#pacientes\\.region").val("");
+                $("#pacientes\\.pais").val("");
+                $("#pacientes\\.telefono").val("");
+                $("#pacientes\\.lugar").val("");
                 maketable();
             });
         });
@@ -182,6 +199,9 @@
             $("#pacientes\\.prevision").val("");
             $("#pacientes\\.nacionalidad").val("");
             $("#pacientes\\.region").val("");
+            $("#pacientes\\.pais").val("");
+            $("#pacientes\\.telefono").val("");
+            $("#pacientes\\.lugar").val("");
         });
 
         $("#button\\.paciente\\.eliminar").on("click", function(){
@@ -194,6 +214,9 @@
             $("#pacientes\\.prevision").val("");
             $("#pacientes\\.nacionalidad").val("");
             $("#pacientes\\.region").val("");
+            $("#pacientes\\.pais").val("");
+            $("#pacientes\\.telefono").val("");
+            $("#pacientes\\.lugar").val("");
         });
 
         $("#button\\.paciente\\.buscar").on("click", function(){

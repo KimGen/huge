@@ -27,11 +27,11 @@ class PacientesController extends Controller
 
     public function new()
     {
-        $this->View->renderJSON(PacientesModel::createPaciente(Request::post('paciente_rut'), Request::post('paciente_nombre'), Request::post('paciente_apellido'), Request::post('paciente_email'), Request::post('paciente_nacimiento'), Request::post('paciente_prevision'), Request::post('paciente_nacionalidad'), Request::post('paciente_region')));
+        $this->View->renderJSON(PacientesModel::createPaciente(Request::post('paciente_rut'), Request::post('paciente_nombre'), Request::post('paciente_apellido'), Request::post('paciente_email'), Request::post('paciente_nacimiento'), Request::post('paciente_prevision'), Request::post('paciente_nacionalidad'), Request::post('paciente_region'), Request::post('paciente_pais'), Request::post('paciente_telefono'), Request::post('paciente_lugar')));
     }
 
     public function update()
     {
-        $this->View->renderJSON(PacientesModel::updatePaciente(Request::post('paciente_rut'), Request::post('paciente_nombre'), Request::post('paciente_apellido'), Request::post('paciente_email'), Request::post('paciente_nacimiento'), Request::post('paciente_prevision'), Request::post('paciente_nacionalidad'), Request::post('paciente_region')));
+        $this->View->renderJSON(PacientesModel::updatePaciente(Request::post('paciente_rut'), Request::post('paciente_nombre'), Request::post('paciente_apellido'), Request::post('paciente_email'), Request::post('paciente_nacimiento'), Request::post('paciente_prevision'), Request::post('paciente_nacionalidad'), Request::post('paciente_region'), Request::post('paciente_pais'), Request::post('paciente_telefono'), Request::post('paciente_lugar')));
     }
 }

@@ -44,7 +44,7 @@ class PacientesModel
      * @param string $paciente_text paciente text that will be created
      * @return bool feedback (was the paciente created properly ?)
      */
-    public static function createPaciente($paciente_rut, $paciente_nombre, $paciente_apellido, $paciente_email, $paciente_nacimiento, $paciente_prevision, $paciente_nacionalidad, $paciente_region)
+    public static function createPaciente($paciente_rut, $paciente_nombre, $paciente_apellido, $paciente_email, $paciente_nacimiento, $paciente_prevision, $paciente_nacionalidad, $paciente_region, $paciente_pais, $paciente_telefono, $paciente_lugar)
     {
         if (!$paciente_rut || strlen($paciente_rut) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
@@ -53,9 +53,9 @@ class PacientesModel
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "INSERT INTO pacientes (paciente_rut, paciente_nombre, paciente_apellido, paciente_email, paciente_nacimiento, paciente_prevision, paciente_nacionalidad, paciente_region, user_id) VALUES (:paciente_rut, :paciente_nombre, :paciente_apellido, :paciente_email, :paciente_nacimiento, :paciente_prevision, :paciente_nacionalidad, :paciente_region, :user_id)";
+        $sql = "INSERT INTO pacientes (paciente_rut, paciente_nombre, paciente_apellido, paciente_email, paciente_nacimiento, paciente_prevision, paciente_nacionalidad, paciente_region, paciente_pais, paciente_telefono, paciente_lugar, user_id) VALUES (:paciente_rut, :paciente_nombre, :paciente_apellido, :paciente_email, :paciente_nacimiento, :paciente_prevision, :paciente_nacionalidad, :paciente_region, paciente_pais, paciente_telefono, paciente_lugar, :user_id)";
         $query = $database->prepare($sql);
-        $query->execute(array(':paciente_rut' => $paciente_rut, ':paciente_nombre' => $paciente_nombre, ':paciente_apellido' => $paciente_apellido, ':paciente_email' => $paciente_email, ':paciente_nacimiento' => $paciente_nacimiento, ':paciente_prevision' => $paciente_prevision, ':paciente_nacionalidad' => $paciente_nacionalidad, ':paciente_region' => $paciente_region, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':paciente_rut' => $paciente_rut, ':paciente_nombre' => $paciente_nombre, ':paciente_apellido' => $paciente_apellido, ':paciente_email' => $paciente_email, ':paciente_nacimiento' => $paciente_nacimiento, ':paciente_prevision' => $paciente_prevision, ':paciente_nacionalidad' => $paciente_nacionalidad, ':paciente_region' => $paciente_region, ':paciente_pais' => $paciente_pais, ':paciente_telefono' => $paciente_telefono, ':paciente_lugar' = $paciente_lugar, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;
@@ -80,9 +80,9 @@ class PacientesModel
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "UPDATE pacientes SET paciente_rut = :paciente_rut, paciente_nombre = :paciente_nombre, paciente_apellido = :paciente_apellido, paciente_email = :paciente_email, paciente_nacimiento = :paciente_nacimiento, paciente_prevision = :paciente_prevision, paciente_nacionalidad = :paciente_nacionalidad, paciente_region = :paciente_region WHERE paciente_rut = :paciente_rut AND user_id = :user_id LIMIT 1";
+        $sql = "UPDATE pacientes SET paciente_rut = :paciente_rut, paciente_nombre = :paciente_nombre, paciente_apellido = :paciente_apellido, paciente_email = :paciente_email, paciente_nacimiento = :paciente_nacimiento, paciente_prevision = :paciente_prevision, paciente_nacionalidad = :paciente_nacionalidad, paciente_region = :paciente_region, paciente_pais = :paciente_pais, paciente_telefono = :paciente_telefono, paciente_lugar = :paciente_lugar WHERE paciente_rut = :paciente_rut AND user_id = :user_id LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':paciente_rut' => $paciente_rut, ':paciente_nombre' => $paciente_nombre, ':paciente_apellido' => $paciente_apellido, ':paciente_email' => $paciente_email, ':paciente_nacimiento' => $paciente_nacimiento, ':paciente_prevision' => $paciente_prevision, ':paciente_nacionalidad' => $paciente_nacionalidad, ':paciente_region' => $paciente_region, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':paciente_rut' => $paciente_rut, ':paciente_nombre' => $paciente_nombre, ':paciente_apellido' => $paciente_apellido, ':paciente_email' => $paciente_email, ':paciente_nacimiento' => $paciente_nacimiento, ':paciente_prevision' => $paciente_prevision, ':paciente_nacionalidad' => $paciente_nacionalidad, ':paciente_region' => $paciente_region, ':paciente_pais' => $paciente_pais, ':paciente_telefono' => $paciente_telefono, ':paciente_lugar' = $paciente_lugar, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;
