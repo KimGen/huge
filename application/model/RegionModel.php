@@ -14,7 +14,7 @@ class RegionModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, region_id, region_text FROM region WHERE user_id = :user_id";
+        $sql = "SELECT user_id, region_id, nacionalidad_nombre, region_text FROM region WHERE user_id = :user_id";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id')));
 

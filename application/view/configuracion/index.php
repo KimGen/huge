@@ -267,6 +267,7 @@
 
         $.post( "api", region).done(function( data ) {
             $("#table\\.nacionalidad").empty();
+            $("#nacionalidad\\.text").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
                     let fila = '<tr><td>' + value.nacionalidad_id + '</td><td>' + value.nacionalidad_nombre + '</td><td>' + value.nacionalidad_gentilicio + '</td></tr>';
