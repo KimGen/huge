@@ -83,7 +83,7 @@
                                                     <div class="row">
                                                         <div class="form-group col-6 d-none" id="interface.region">
                                                             <label for="prevision.text">Pais</label>
-                                                            <input type="text" class="form-control" id="nacionalidad.text">
+                                                            <select class="form-control" id="nacionalidad.text"></select>
                                                         </div>
                                                         <div class="form-group col-6 d-none" id="interface.region">
                                                             <label for="prevision.text">Region</label>
@@ -165,7 +165,7 @@
             $("#button\\.nacionalidad\\.guardar").removeClass("d-none");
             $("#button\\.nacionalidad\\.cancelar").removeClass("d-none");
             $("#interface\\.nacionalidad").removeClass("d-none");
-            $("#nacionalidad\\.text").val("");
+            $("#nacionalidad\\.nombre").val("");
             $("#nacionalidad\\.gentilicio").val("");
         });
         $("#button\\.nacionalidad\\.guardar").on("click", function(){
@@ -180,7 +180,7 @@
             }
 
             $.post( "api", nacionalidad).done(function( data ) {
-                $("#nacionalidad\\.text").val("");
+                $("#nacionalidad\\.nombre").val("");
                 $("#nacionalidad\\.gentilicio").val("");
                 makeNacionalidad();
             });
@@ -209,7 +209,7 @@
             
             let region = {
                 accion: "regionNew",
-                nacionalidad_nombre: $("#nacionalidad\\.text").val(),
+                nacionalidad_nombre: $("#nacionalidad\\.text option:selected").text(), 
                 region_text: $("#region\\.text").val(),
             }
 
@@ -271,6 +271,8 @@
                 $.each(data, function(i,value){
                     let fila = '<tr><td>' + value.nacionalidad_id + '</td><td>' + value.nacionalidad_nombre + '</td><td>' + value.nacionalidad_gentilicio + '</td></tr>';
                     $("#table\\.nacionalidad").append(fila);
+                    let option = "<option value=" + i + ">" + value.nacionalidad_nombre + "</option>";
+                    $("#nacionalidad\\.text").append(option);
                 });
             }
         });
