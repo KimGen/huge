@@ -5,19 +5,22 @@
             <div class="card">
                 <div class="card-body">
                     <h5>Ingresar a la plataforma</h5>
-                    <div class="form-group">
-                        <label for="user.email">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="user.email">
-                    </div>
-                    <div class="form-group">
-                        <label for="user.password">Contraseña</label>
-                        <input type="password" class="form-control" id="user.password">
-                    </div>
-                    <input type="hidden" id="user.token" name="csrf_token" value="<?= Csrf::makeToken(); ?>" />
-                    <div class="btn-group" role="group">
-                        <button class="btn btn-outline-primary" id="button.ingresar">Ingresar</button>
-                        <button class="btn btn-outline-info">Registrar</button>
-                    </div>
+                    <form action="<?php echo Config::get('URL'); ?>login/login" method="post">
+                        <div class="form-group">
+                            <label for="user.email">Correo Electrónico</label>
+                            <input type="email" name="user_name" class="form-control" id="user.email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user.password">Contraseña</label>
+                            <input type="password" class="form-control" name="user_password" id="user.password" required>
+                        </div>
+                        <input type="hidden" name="set_remember_me_cookie" class="remember-me-checkbox" />
+                        <input type="hidden" name="csrf_token" value="<?= Csrf::makeToken(); ?>" />
+                        <div class="btn-group" role="group">
+                            <button type="submit" class="btn btn-outline-primary" id="button.ingresar">Ingresar</button>
+                            <button class="btn btn-outline-info">Registrar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -34,19 +37,3 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function(){
-        $("#button\\.ingresar").on("click", function(){
-            let login = {
-                user_name: $("#user\\.email").val(),
-                user_password: $("#user\\.password").val(),
-                csrf_token: $("#user\\.token").val(),
-                set_remember_me_cookie: 0
-            }
-
-            $.post( "login/log", login).done(function( data ) {
-                window.location.assign("pacientes/index");
-            });
-        });
-    });
-</script>
