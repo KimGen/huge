@@ -73,7 +73,7 @@ class LoginController extends Controller
         }
 
         // perform the login method, put result (true or false) into $login_successful
-        $this->View->render(LoginModel::login(Request::post('user_name'), Request::post('user_password'), Request::post('set_remember_me_cookie')));
+        $this->View->renderJSON(LoginModel::login(Request::post('user_name'), Request::post('user_password'), Request::post('set_remember_me_cookie')));
     }
 
     /**
