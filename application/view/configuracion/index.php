@@ -183,6 +183,11 @@
                 maketable();
             });
         });
+        $("#button\\.nacionalidad\\.cancelar").on("click", function(){
+            $("#button\\.nacionalidad\\.nuevo").removeClass("d-none");
+            $("#button\\.nacionalidad\\.guardar").addClass("d-none");
+            $("#interface\\.nacionalidad").addClass("d-none");
+        });
         $("#button\\.prevision\\.eliminar").on("click", function(){
         });
 
@@ -211,6 +216,11 @@
                 maketable();
             });
         });
+        $("#button\\.region\\.cancelar").on("click", function(){
+            $("#button\\.region\\.nuevo").removeClass("d-none");
+            $("#button\\.region\\.guardar").addClass("d-none");
+            $("#interface\\.region").addClass("d-none");
+        });
         $("#button\\.region\\.eliminar").on("click", function(){
         });
 
@@ -236,9 +246,30 @@
                 makePrevision();
             });
         });
+        $("#button\\.prevision\\.cancelar").on("click", function(){
+            $("#button\\.prevision\\.nuevo").removeClass("d-none");
+            $("#button\\.prevision\\.guardar").addClass("d-none");
+            $("#interface\\.prevision").addClass("d-none");
+        });
         $("#button\\.prevision\\.eliminar").on("click", function(){
         });
     });
+
+    function makeRegion(){
+        let region = {
+            accion: "region"
+        }
+
+        $.post( "api", region).done(function( data ) {
+            $("#table\\.region").empty();
+            if (Object.keys(data).length > 0) {
+                $.each(data, function(i,value){
+                    let fila = '<tr><td>' + value.region_id + '</td><td>' + value.nacionalidad_nombre + '</td><td>' + value.region_text + '</td></tr>';
+                    $("#table\\.region").append(fila);
+                });
+            }
+        });
+    }
 
     function makePrevision(){
         let prevision = {
