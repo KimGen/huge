@@ -269,7 +269,7 @@
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
                     let option = "<option value=" + value.prevision_id + ">" + value.prevision_text + "</option>";
-                    $("#pacientes\\.text").append(option);
+                    $("#pacientes\\.prevision").append(option);
                 });
             }
         });
