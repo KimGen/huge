@@ -36,15 +36,15 @@
 </div>
 <script>
     $(document).ready(function(){
-
         $("#button\\.ingresar").on("click", function(){
             let login = {
                 user_name: $("#user\\.email").val(),
                 user_password: $("#user\\.password").val(),
-                csrf_token: $("#user\\.token").val()
+                csrf_token: $("#user\\.token").val(),
+                set_remember_me_cookie: 0
             }
 
-            $.post( "login/login", login).done(function( data ) {
+            $.post( "login/log", login).done(function( data ) {
                 window.location.assign("pacientes/index");
             });
         });

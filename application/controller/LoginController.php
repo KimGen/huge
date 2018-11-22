@@ -63,6 +63,19 @@ class LoginController extends Controller
         }
     }
 
+    public function log()
+    {
+        // check if csrf token is valid
+        if (!Csrf::isTokenValid()) {
+            LoginModel::logout();
+            Redirect::home();
+            exit();
+        }
+
+        // perform the login method, put result (true or false) into $login_successful
+        $this->View->render(LoginModel::login(Request::post('user_name'), Request::post('user_password'), Request::post('set_remember_me_cookie')));
+    }
+
     /**
      * The logout action
      * Perform logout, redirect user to main-page
