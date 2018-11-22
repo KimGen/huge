@@ -13,8 +13,8 @@
                         <label for="user.password">Contraseña</label>
                         <input type="password" class="form-control" id="user.password">
                     </div>
+                    <input type="hidden" id="user.token" name="csrf_token" value="<?= Csrf::makeToken(); ?>" />
                     <div class="btn-group" role="group">
-                        <input type="hidden" id="user.token" name="csrf_token" value="<?= Csrf::makeToken(); ?>" />
                         <button class="btn btn-outline-primary" id="button.ingresar">Ingresar</button>
                         <button class="btn btn-outline-info">Registrar</button>
                     </div>
@@ -44,7 +44,7 @@
                 csrf_token: $("#user\\.token").val()
             }
 
-            $.post( "login/login", paciente).done(function( data ) {
+            $.post( "login/login", login).done(function( data ) {
                 window.location.assign("pacientes/index");
             });
         });
