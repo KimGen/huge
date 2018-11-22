@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="col-7">
-            <h4 class="text-right my-3">Administrador de Pacientes</h4>
+            <h4 class="text-right my-3">Datos de Pacientes</h4>
         </div>
         <div class="col-12">
             <div class="card">
@@ -20,7 +20,7 @@
                         <div class="col-12 d-none" id="interface.pacientes">
                             <div class="row">
                                 <div class="form-group col-3">
-                                    <label for="user.email">RUT</label>
+                                    <label for="user.email">RUT o DNI</label>
                                     <input type="number" class="form-control" id="pacientes.rut">
                                 </div>
                                 <div class="form-group col-3">
@@ -36,17 +36,8 @@
                                     <input type="email" class="form-control" id="pacientes.email">
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Fecha de Nacimiento</label>
-                                    <input type="date" class="form-control" id="pacientes.nacimiento">
-                                </div>
-                                <div class="form-group col-3">
-                                    <label for="user.email">Previsión</label>
-                                    <select class="form-control" id="pacientes.prevision">
-                                        <option value="1">Fonasa A</option>
-                                        <option value="2">Fonasa B</option>
-                                        <option value="3">Fonasa C</option>
-                                        <option value="4">Fonasa D</option>
-                                        <option value="5">Isapre</option>
+                                    <label for="user.email">Edad</label>
+                                    <select class="form-control" id="pacientes.nacimiento">
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
@@ -61,7 +52,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Región (solo para Chile)</label>
+                                    <label for="user.email">Región o Provincia</label>
                                     <select class="form-control" id="pacientes.region">
                                         <option value="1">No</option>
                                         <option value="2">Tarapacá</option>
@@ -79,6 +70,16 @@
                                         <option value="14">Metropolitana de Santiago</option>
                                         <option value="15">Los Ríos</option>
                                         <option value="16">Arica y Parinacota</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="user.email">Previsión</label>
+                                    <select class="form-control" id="pacientes.prevision">
+                                        <option value="1">Fonasa A</option>
+                                        <option value="2">Fonasa B</option>
+                                        <option value="3">Fonasa C</option>
+                                        <option value="4">Fonasa D</option>
+                                        <option value="5">Isapre</option>
                                     </select>
                                 </div>
                             </div>
@@ -107,6 +108,7 @@
 <script>
     $(document).ready(function(){
         maketable();
+        makeEdad();
         $("#button\\.paciente\\.nuevo").on("click", function(){
             $("#interface\\.pacientes").removeClass("d-none");
             $("#interface\\.paciente\\.buscar").addClass("d-none");
@@ -198,24 +200,23 @@
             $("#table\\.pacientes").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
-                    var hoy = new Date();
-                    var cumpleanos = new Date(value.paciente_nacimiento);
-                    var edad = hoy.getFullYear() - cumpleanos.getFullYear();
-                    var m = hoy.getMonth() - cumpleanos.getMonth();
-
-                    if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
-                        edad--;
-                    }
                     let prevision = "";
                     $("#pacientes\\.prevision > option").each(function() {
                         if (this.value == value.paciente_prevision){
                             prevision = this.text;
                         }
                     });
-                    let fila = '<tr><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + edad +' años</td><td>' + prevision +'</td></tr>';
+                    let fila = '<tr><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td></tr>';
                     $("#table\\.pacientes").append(fila);
                 });
             }
         });
+    }
+
+    function makeEdad(){
+        for (i = 10; i < 51; i++) {
+            let option = "<option value=" + i + ">" + i + "</option>";
+            $("#pacientes\\.nacimiento").append(option);
+        }
     }
 </script>

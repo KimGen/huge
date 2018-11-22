@@ -19,7 +19,7 @@
                         <input type="hidden" name="csrf_token" value="<?= Csrf::makeToken(); ?>" />
                         <div class="btn-group" role="group">
                             <button type="submit" class="btn btn-outline-primary" id="button.ingresar">Ingresar</button>
-                            <button class="btn btn-outline-info">Registrar</button>
+                            <button class="btn btn-outline-info" id="">Registrar</button>
                         </div>
                     </form>
                 </div>
