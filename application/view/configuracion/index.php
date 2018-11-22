@@ -38,7 +38,7 @@
                                                 <div class="card-body">
                                                     <div class="row">
                                                         <div class="form-group col-6 d-none" id="interface.nacionalidad">
-                                                            <label for="prevision.text">Nacionalidad</label>
+                                                            <label for="prevision.text">Pais</label>
                                                             <input type="text" class="form-control" id="nacionalidad.nombre">
                                                         </div>
                                                         <div class="form-group col-6 d-none" id="interface.nacionalidad">
@@ -50,7 +50,7 @@
                                                             <thead class="thead-dark">
                                                                 <tr>
                                                                 <th scope="col">ID</th>
-                                                                <th scope="col">Nacionalidad</th>
+                                                                <th scope="col">Pais</th>
                                                                 <th scope="col">Gentilicio</th>
                                                                 </tr>
                                                             </thead>
@@ -82,7 +82,7 @@
                                                 <div class="card-body">
                                                     <div class="row">
                                                         <div class="form-group col-6 d-none" id="interface.region">
-                                                            <label for="prevision.text">Nacionalidad</label>
+                                                            <label for="prevision.text">Pais</label>
                                                             <input type="text" class="form-control" id="nacionalidad.text">
                                                         </div>
                                                         <div class="form-group col-6 d-none" id="interface.region">

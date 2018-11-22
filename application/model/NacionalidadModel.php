@@ -44,7 +44,7 @@ class NacionalidadModel
      * @param string $nacionalidad_text nacionalidad text that will be created
      * @return bool feedback (was the nacionalidad created properly ?)
      */
-    public static function createNote($nacionalidad_nombre,$nacionalidad_gentilicio)
+    public static function createNacionalidad($nacionalidad_nombre,$nacionalidad_gentilicio)
     {
         if (!$nacionalidad_nombre || strlen($nacionalidad_nombre) == 0 || !$nacionalidad_gentilicio || strlen($nacionalidad_gentilicio) == 0) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
@@ -97,7 +97,7 @@ class NacionalidadModel
      * @param int $nacionalidad_id id of the nacionalidad
      * @return bool feedback (was the nacionalidad deleted properly ?)
      */
-    public static function deleteNote($nacionalidad_id)
+    public static function deleteNacionalidad($nacionalidad_id)
     {
         if (!$nacionalidad_id) {
             return false;
