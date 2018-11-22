@@ -32,10 +32,6 @@
                                     <input type="text" class="form-control" id="pacientes.apellidos">
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Correo Electrónico</label>
-                                    <input type="email" class="form-control" id="pacientes.email">
-                                </div>
-                                <div class="form-group col-3">
                                     <label for="user.email">Edad</label>
                                     <select class="form-control" id="pacientes.nacimiento">
                                     </select>
@@ -52,7 +48,18 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Región o Provincia</label>
+                                    <label for="user.email">Pais de residencia</label>
+                                    <select class="form-control" id="pacientes.nacionalidad">
+                                        <option value="1">Chilena</option>
+                                        <option value="2">Argentina</option>
+                                        <option value="3">Peruana</option>
+                                        <option value="4">Colombiana</option>
+                                        <option value="5">Venezolana</option>
+                                        <option value="6">Uruguaya</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="user.email">Región o Provincia de residencia</label>
                                     <select class="form-control" id="pacientes.region">
                                         <option value="1">No</option>
                                         <option value="2">Tarapacá</option>
@@ -81,6 +88,10 @@
                                         <option value="4">Fonasa D</option>
                                         <option value="5">Isapre</option>
                                     </select>
+                                </div>
+                                <div class="form-group col-3">
+                                    <label for="user.email">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="pacientes.email">
                                 </div>
                             </div>
                         </div>
