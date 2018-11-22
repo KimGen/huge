@@ -245,7 +245,7 @@
             accion: "prevision"
         }
 
-        $.post( "api").done(function( data ) {
+        $.post( "api", prevision).done(function( data ) {
             $("#table\\.prevision").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
