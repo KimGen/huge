@@ -14,7 +14,8 @@
                         <input type="password" class="form-control" id="user.password">
                     </div>
                     <div class="btn-group" role="group">
-                        <button class="btn btn-outline-primary">Ingresar</button>
+                        <input type="hidden" id="user.token" name="csrf_token" value="<?= Csrf::makeToken(); ?>" />
+                        <button class="btn btn-outline-primary" id="button.ingresar">Ingresar</button>
                         <button class="btn btn-outline-info">Registrar</button>
                     </div>
                 </div>
@@ -33,5 +34,19 @@
         </div>
     </div>
 </div>
-<style>
-</style>
+<script>
+    $(document).ready(function(){
+
+        $("#button\\.ingresar").on("click", function(){
+            let login = {
+                user_name: $("#user\\.email").val(),
+                user_password: $("#user\\.password").val(),
+                csrf_token: $("#user\\.token").val()
+            }
+
+            $.post( "login/login", paciente).done(function( data ) {
+                window.location.assign("pacientes/index");
+            });
+        });
+    });
+</script>
