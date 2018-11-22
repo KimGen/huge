@@ -39,54 +39,21 @@
                                 <div class="form-group col-3">
                                     <label for="user.email">Nacionalidad</label>
                                     <select class="form-control" id="pacientes.nacionalidad">
-                                        <option value="1">Chilena</option>
-                                        <option value="2">Argentina</option>
-                                        <option value="3">Peruana</option>
-                                        <option value="4">Colombiana</option>
-                                        <option value="5">Venezolana</option>
-                                        <option value="6">Uruguaya</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
                                     <label for="user.email">Pais de residencia</label>
                                     <select class="form-control" id="pacientes.pais">
-                                        <option value="1">Chilena</option>
-                                        <option value="2">Argentina</option>
-                                        <option value="3">Peruana</option>
-                                        <option value="4">Colombiana</option>
-                                        <option value="5">Venezolana</option>
-                                        <option value="6">Uruguaya</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
                                     <label for="user.email">Región o Provincia de residencia</label>
                                     <select class="form-control" id="pacientes.region">
-                                        <option value="1">No</option>
-                                        <option value="2">Tarapacá</option>
-                                        <option value="3">Antofagasta</option>
-                                        <option value="4">Atacama</option>
-                                        <option value="5">Coquimbo</option>
-                                        <option value="6">Valparaíso</option>
-                                        <option value="7">Libertador General Bernardo O'Higgins</option>
-                                        <option value="8">Maule</option>
-                                        <option value="9">Bío Bío</option>
-                                        <option value="10">La Araucanía</option>
-                                        <option value="11">Los Lagos</option>
-                                        <option value="12">Aisén del General Carlos Ibáñez del Campo</option>
-                                        <option value="13">Magallanes y Antártica Chilena</option>
-                                        <option value="14">Metropolitana de Santiago</option>
-                                        <option value="15">Los Ríos</option>
-                                        <option value="16">Arica y Parinacota</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
                                     <label for="user.email">Previsión</label>
                                     <select class="form-control" id="pacientes.prevision">
-                                        <option value="1">Fonasa A</option>
-                                        <option value="2">Fonasa B</option>
-                                        <option value="3">Fonasa C</option>
-                                        <option value="4">Fonasa D</option>
-                                        <option value="5">Isapre</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
@@ -252,5 +219,56 @@
             let option = "<option value=" + i + ">" + i + "</option>";
             $("#pacientes\\.nacimiento").append(option);
         }
+    }
+
+    function makeNacionalidad(){
+        let region = {
+            accion: "nacionalidad"
+        }
+
+        $.post( "api", region).done(function( data ) {
+            $("#pacientes\\.pais").empty();
+            $("#pacientes\\.nacionalidad").empty();
+            if (Object.keys(data).length > 0) {
+                $.each(data, function(i,value){
+                    let option1 = "<option value=" + value.nacionalidad_id + ">" + value.nacionalidad_nombre + "</option>";
+                    let option2 = "<option value=" + value.nacionalidad_id + ">" + value.nacionalidad_gentilicio + "</option>";
+                    $("#pacientes\\.pais").append(option1);
+                    $("#pacientes\\.nacionalidad").append(option2);
+                });
+            }
+        });
+    }
+
+    function makeRegion(){
+        let region = {
+            accion: "region"
+        }
+
+        $.post( "api", region).done(function( data ) {
+            $("#pacientes\\.region").empty();
+            if (Object.keys(data).length > 0) {
+                $.each(data, function(i,value){
+                    let option = "<option value=" + value.region_id + ">" + value.region_text + "</option>";
+                    $("#pacientes\\.region").append(option);
+                });
+            }
+        });
+    }
+
+    function makePrevision(){
+        let prevision = {
+            accion: "prevision"
+        }
+
+        $.post( "api", prevision).done(function( data ) {
+            $("#pacientes\\.prevision").empty();
+            if (Object.keys(data).length > 0) {
+                $.each(data, function(i,value){
+                    let option = "<option value=" + value.prevision_id + ">" + value.prevision_text + "</option>";
+                    $("#pacientes\\.text").append(option);
+                });
+            }
+        });
     }
 </script>
