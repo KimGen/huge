@@ -186,6 +186,7 @@
         $("#button\\.nacionalidad\\.cancelar").on("click", function(){
             $("#button\\.nacionalidad\\.nuevo").removeClass("d-none");
             $("#button\\.nacionalidad\\.guardar").addClass("d-none");
+            $("#button\\.nacionalidad\\.cancelar").addClass("d-none");
             $("#interface\\.nacionalidad").addClass("d-none");
         });
         $("#button\\.prevision\\.eliminar").on("click", function(){
@@ -219,6 +220,7 @@
         $("#button\\.region\\.cancelar").on("click", function(){
             $("#button\\.region\\.nuevo").removeClass("d-none");
             $("#button\\.region\\.guardar").addClass("d-none");
+            $("#button\\.region\\.cancelar").addClass("d-none");
             $("#interface\\.region").addClass("d-none");
         });
         $("#button\\.region\\.eliminar").on("click", function(){
@@ -249,6 +251,7 @@
         $("#button\\.prevision\\.cancelar").on("click", function(){
             $("#button\\.prevision\\.nuevo").removeClass("d-none");
             $("#button\\.prevision\\.guardar").addClass("d-none");
+            $("#button\\.prevision\\.cancelar").addClass("d-none");
             $("#interface\\.prevision").addClass("d-none");
         });
         $("#button\\.prevision\\.eliminar").on("click", function(){
