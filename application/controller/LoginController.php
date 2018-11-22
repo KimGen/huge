@@ -55,25 +55,8 @@ class LoginController extends Controller
                 Redirect::to('pacientes/index');
             }
         } else {
-            if (Request::post('redirect')) {
-                Redirect::to('login?redirect=' . ltrim(urlencode(Request::post('redirect')), '/'));
-            } else {
-                Redirect::to('login/index');
-            }
-        }
-    }
-
-    public function log()
-    {
-        // check if csrf token is valid
-        if (!Csrf::isTokenValid()) {
-            LoginModel::logout();
             Redirect::home();
-            exit();
         }
-
-        // perform the login method, put result (true or false) into $login_successful
-        $this->View->renderJSON(LoginModel::login(Request::post('user_name'), Request::post('user_password'), Request::post('set_remember_me_cookie')));
     }
 
     /**
