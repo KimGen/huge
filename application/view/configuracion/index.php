@@ -158,6 +158,8 @@
 <script>
     $(document).ready(function(){
         makePrevision();
+        makeRegion();
+        makeNacionalidad();
         $("#button\\.nacionalidad\\.nuevo").on("click", function(){
             $("#button\\.nacionalidad\\.nuevo").addClass("d-none");
             $("#button\\.nacionalidad\\.guardar").removeClass("d-none");
@@ -180,7 +182,7 @@
             $.post( "api", nacionalidad).done(function( data ) {
                 $("#nacionalidad\\.text").val("");
                 $("#nacionalidad\\.gentilicio").val("");
-                maketable();
+                makeNacionalidad();
             });
         });
         $("#button\\.nacionalidad\\.cancelar").on("click", function(){
@@ -214,7 +216,7 @@
             $.post( "api", region).done(function( data ) {
                 $("#nacionalidad\\.text").val("");
                 $("#region\\.text").val("");
-                maketable();
+                makeRegion();
             });
         });
         $("#button\\.region\\.cancelar").on("click", function(){
@@ -257,6 +259,22 @@
         $("#button\\.prevision\\.eliminar").on("click", function(){
         });
     });
+
+    function makeNacionalidad(){
+        let region = {
+            accion: "nacionalidad"
+        }
+
+        $.post( "api", region).done(function( data ) {
+            $("#table\\.nacionalidad").empty();
+            if (Object.keys(data).length > 0) {
+                $.each(data, function(i,value){
+                    let fila = '<tr><td>' + value.nacionalidad_id + '</td><td>' + value.nacionalidad_nombre + '</td><td>' + value.nacionalidad_gentilicio + '</td></tr>';
+                    $("#table\\.nacionalidad").append(fila);
+                });
+            }
+        });
+    }
 
     function makeRegion(){
         let region = {
