@@ -157,6 +157,7 @@
 </div>
 <script>
     $(document).ready(function(){
+        makePrevision();
         $("#button\\.nacionalidad\\.nuevo").on("click", function(){
             $("#button\\.nacionalidad\\.nuevo").addClass("d-none");
             $("#button\\.nacionalidad\\.guardar").removeClass("d-none");
