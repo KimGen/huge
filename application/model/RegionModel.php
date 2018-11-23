@@ -27,13 +27,13 @@ class RegionModel
      * @param int $region_id id of the specific region
      * @return object a single object (the result)
      */
-    public static function getRegion($region_id)
+    public static function getRegion()
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, region_id, region_text FROM region WHERE user_id = :user_id AND region_id = :region_id LIMIT 1";
+        $sql = "SELECT user_id, region_id, nacionalidad_nombre, region_text FROM region WHERE user_id = :user_id";
         $query = $database->prepare($sql);
-        $query->execute(array(':user_id' => Session::get('user_id'), ':region_id' => $region_id));
+        $query->execute(array(':user_id' => Session::get('user_id')));
 
         // fetch() is the PDO method that gets a single result
         return $query->fetch();

@@ -37,6 +37,9 @@ class ConfiguracionController extends Controller
             case "region":
                 $resultado = RegionModel::getAllRegion(Request::post('nacionalidad_nombre'));
                 break;
+            case "regionConfig":
+                $resultado = RegionModel::getRegion();
+                break;
             case "regionNew":
                 $resultado = RegionModel::createRegion(Request::post('nacionalidad_nombre'), Request::post('region_text'));
                 break;

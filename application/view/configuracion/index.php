@@ -372,7 +372,7 @@
 
     function makeRegion(){
         let region = {
-            accion: "region"
+            accion: "regionConfig"
         }
 
         $.post( "api", region).done(function( data ) {
