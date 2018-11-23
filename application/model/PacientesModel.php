@@ -82,7 +82,7 @@ class PacientesModel
 
         $sql = "UPDATE pacientes SET paciente_rut = :paciente_rut, paciente_nombre = :paciente_nombre, paciente_apellido = :paciente_apellido, paciente_email = :paciente_email, paciente_nacimiento = :paciente_nacimiento, paciente_prevision = :paciente_prevision, paciente_nacionalidad = :paciente_nacionalidad, paciente_region = :paciente_region, paciente_pais = :paciente_pais, paciente_telefono = :paciente_telefono, paciente_lugar = :paciente_lugar WHERE paciente_rut = :paciente_rut AND user_id = :user_id LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':paciente_rut' => $paciente_rut, ':paciente_nombre' => $paciente_nombre, ':paciente_apellido' => $paciente_apellido, ':paciente_email' => $paciente_email, ':paciente_nacimiento' => $paciente_nacimiento, ':paciente_prevision' => $paciente_prevision, ':paciente_nacionalidad' => $paciente_nacionalidad, ':paciente_region' => $paciente_region, ':paciente_pais' => $paciente_pais, ':paciente_telefono' => $paciente_telefono, ':paciente_lugar' = $paciente_lugar, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':paciente_rut' => $paciente_rut, ':paciente_nombre' => $paciente_nombre, ':paciente_apellido' => $paciente_apellido, ':paciente_email' => $paciente_email, ':paciente_nacimiento' => $paciente_nacimiento, ':paciente_prevision' => $paciente_prevision, ':paciente_nacionalidad' => $paciente_nacionalidad, ':paciente_region' => $paciente_region, ':paciente_pais' => $paciente_pais, ':paciente_telefono' => $paciente_telefono, ':paciente_lugar' => $paciente_lugar, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;
