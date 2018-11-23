@@ -52,6 +52,15 @@ class ConfiguracionController extends Controller
             case "previsionEliminar":
                 $resultado = PrevisionModel::deletePrevision(Request::post('prevision_id'));
                 break;
+            case "lugar":
+                $resultado = LugarModel::getAllLugar();
+                break;
+            case "lugarNew":
+                $resultado = LugarModel::createLugar(Request::post('lugar_text'));
+                break;
+            case "lugarEliminar":
+                $resultado = LugarModel::deleteLugar(Request::post('lugar_id'));
+                break;
         }
 
         return $this->View->renderJSON($resultado);
