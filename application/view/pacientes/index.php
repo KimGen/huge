@@ -52,9 +52,10 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Previsión</label>
-                                    <select class="form-control" id="pacientes.prevision"></select>
+                                    <label for="user.email">Lugar de control</label>
+                                    <select class="form-control" id="pacientes.lugar"></select>
                                 </div>
+
                                 <div class="form-group col-3">
                                     <label for="user.email">Correo Electrónico</label>
                                     <input type="email" class="form-control" id="pacientes.email">
@@ -64,8 +65,8 @@
                                     <input type="email" class="form-control" id="pacientes.telefono">
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Lugar de control</label>
-                                    <select class="form-control" id="pacientes.lugar"></select>
+                                    <label for="user.email">Previsión</label>
+                                    <select class="form-control" id="pacientes.prevision"></select>
                                 </div>
                             </div>
                         </div>
