@@ -36,7 +36,7 @@ class RegionModel
         $query->execute(array(':user_id' => Session::get('user_id')));
 
         // fetch() is the PDO method that gets a single result
-        return $query->fetch();
+        return $query->fetchAll();
     }
 
     /**
