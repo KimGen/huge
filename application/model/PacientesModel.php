@@ -55,7 +55,7 @@ class PacientesModel
 
         $sql = "INSERT INTO pacientes (paciente_rut, paciente_nombre, paciente_apellido, paciente_email, paciente_nacimiento, paciente_prevision, paciente_nacionalidad, paciente_region, paciente_pais, paciente_telefono, paciente_lugar, user_id) VALUES (:paciente_rut, :paciente_nombre, :paciente_apellido, :paciente_email, :paciente_nacimiento, :paciente_prevision, :paciente_nacionalidad, :paciente_region, paciente_pais, paciente_telefono, paciente_lugar, :user_id)";
         $query = $database->prepare($sql);
-        $query->execute(array(':paciente_rut' => $paciente_rut, ':paciente_nombre' => $paciente_nombre, ':paciente_apellido' => $paciente_apellido, ':paciente_email' => $paciente_email, ':paciente_nacimiento' => $paciente_nacimiento, ':paciente_prevision' => $paciente_prevision, ':paciente_nacionalidad' => $paciente_nacionalidad, ':paciente_region' => $paciente_region, ':paciente_pais' => $paciente_pais, ':paciente_telefono' => $paciente_telefono, ':paciente_lugar' = $paciente_lugar, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':paciente_rut' => $paciente_rut, ':paciente_nombre' => $paciente_nombre, ':paciente_apellido' => $paciente_apellido, ':paciente_email' => $paciente_email, ':paciente_nacimiento' => $paciente_nacimiento, ':paciente_prevision' => $paciente_prevision, ':paciente_nacionalidad' => $paciente_nacionalidad, ':paciente_region' => $paciente_region, ':paciente_pais' => $paciente_pais, ':paciente_telefono' => $paciente_telefono, ':paciente_lugar' => $paciente_lugar, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;
