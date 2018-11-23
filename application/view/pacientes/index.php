@@ -242,6 +242,7 @@
                     $("#pacientes\\.pais").append(option);
                     $("#pacientes\\.nacionalidad").append(option);
                 });
+                $("#pacientes\\.pais").prop("selectedIndex", 0).trigger("change");
             }
         });
     }
