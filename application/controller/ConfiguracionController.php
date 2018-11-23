@@ -53,7 +53,7 @@ class ConfiguracionController extends Controller
                 $resultado = PrevisionModel::deletePrevision(Request::post('prevision_id'));
                 break;
             case "lugar":
-                $resultado = LugarModel::getAllLugar();
+                $resultado = LugarModel::getAllLugares();
                 break;
             case "lugarNew":
                 $resultado = LugarModel::createLugar(Request::post('lugar_text'));

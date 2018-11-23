@@ -368,9 +368,8 @@
 
                         $.post( "api", nacionalidad).done(function( data ) {
                             $("#table\\.nacionalidad").empty();
-                            if (Object.keys(data).length > 0) {
-                                makeNacionalidad();
-                            }
+                            makeNacionalidad();
+                            $("#dialog\\.view").modal("hide");
                         });
                     });
                     $("#dialog\\.view").modal("show");
@@ -404,9 +403,8 @@
 
                         $.post( "api", region).done(function( data ) {
                             $("#table\\.region").empty();
-                            if (Object.keys(data).length > 0) {
-                                makeRegion();
-                            }
+                            makeRegion();
+                            $("#dialog\\.view").modal("hide");
                         });
                     });
                     $("#dialog\\.view").modal("show");
@@ -440,9 +438,8 @@
 
                         $.post( "api", prevision).done(function( data ) {
                             $("#table\\.prevision").empty();
-                            if (Object.keys(data).length > 0) {
-                                makePrevision();
-                            }
+                            makePrevision();
+                            $("#dialog\\.view").modal("hide");
                         });
                     });
                     $("#dialog\\.view").modal("show");
@@ -476,9 +473,8 @@
 
                         $.post( "api", lugar).done(function( data ) {
                             $("#table\\.lugar").empty();
-                            if (Object.keys(data).length > 0) {
-                                makeLugar();
-                            }
+                            makeLugar();
+                            $("#dialog\\.view").modal("hide");
                         });
                     });
                     $("#dialog\\.view").modal("show");
