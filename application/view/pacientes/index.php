@@ -20,39 +20,39 @@
                         <div class="col-12 d-none" id="interface.pacientes">
                             <div class="row">
                                 <div class="form-group col-3">
-                                    <label for="user.email">RUT o DNI</label>
+                                    <label for="user.rut">RUT o DNI</label>
                                     <input type="number" class="form-control" id="pacientes.rut">
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Nombres</label>
+                                    <label for="user.nombres">Nombres</label>
                                     <input type="text" class="form-control" id="pacientes.nombres">
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Apellidos</label>
+                                    <label for="user.apellidos">Apellidos</label>
                                     <input type="text" class="form-control" id="pacientes.apellidos">
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Edad</label>
+                                    <label for="user.nacimiento">Edad</label>
                                     <select class="form-control" id="pacientes.nacimiento">
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Pais de origen</label>
+                                    <label for="user.nacionalidad">Pais de origen</label>
                                     <select class="form-control" id="pacientes.nacionalidad">
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Pais de residencia</label>
+                                    <label for="user.pais">Pais de residencia</label>
                                     <select class="form-control" id="pacientes.pais">
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Región o Provincia de residencia</label>
+                                    <label for="user.region">Región o Provincia de residencia</label>
                                     <select class="form-control" id="pacientes.region">
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Lugar de control</label>
+                                    <label for="user.lugar">Lugar de control</label>
                                     <select class="form-control" id="pacientes.lugar"></select>
                                 </div>
 
@@ -61,11 +61,11 @@
                                     <input type="email" class="form-control" id="pacientes.email">
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Telefono</label>
-                                    <input type="email" class="form-control" id="pacientes.telefono">
+                                    <label for="user.telefono">Telefono</label>
+                                    <input type="number" class="form-control" id="pacientes.telefono">
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Previsión</label>
+                                    <label for="user.prevision">Previsión</label>
                                     <select class="form-control" id="pacientes.prevision"></select>
                                 </div>
                             </div>
