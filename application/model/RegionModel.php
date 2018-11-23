@@ -10,13 +10,13 @@ class RegionModel
      * Get all region (region are just example data that the user has created)
      * @return array an array with several objects (the results)
      */
-    public static function getAllRegion()
+    public static function getAllRegion($nacionalidad_nombre)
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, region_id, nacionalidad_nombre, region_text FROM region WHERE user_id = :user_id";
+        $sql = "SELECT user_id, region_id, nacionalidad_nombre, region_text FROM region WHERE user_id = :user_id AND nacionalidad_nombre = : nacionalidad_nombre";
         $query = $database->prepare($sql);
-        $query->execute(array(':user_id' => Session::get('user_id')));
+        $query->execute(array(':nacionalidad_nombre' => $nacionalidad_nombre, ':user_id' => Session::get('user_id')));
 
         // fetchAll() is the PDO method that gets all result rows
         return $query->fetchAll();

@@ -35,7 +35,7 @@ class ConfiguracionController extends Controller
                 $resultado = NacionalidadModel::deleteNacionalidad(Request::post('nacionalidad_id'));
                 break;
             case "region":
-                $resultado = RegionModel::getAllRegion();
+                $resultado = RegionModel::getAllRegion(Request::post('nacionalidad_nombre'));
                 break;
             case "regionNew":
                 $resultado = RegionModel::createRegion(Request::post('nacionalidad_nombre'), Request::post('region_text'));

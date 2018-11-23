@@ -96,7 +96,6 @@
         maketable();
         makeEdad();
         makeNacionalidad();
-        makeRegion();
         makePrevision();
         makeLugar();
         $("#button\\.paciente\\.nuevo").on("click", function(){
@@ -198,6 +197,10 @@
                 $("#interface\\.paciente\\.buscar").addClass("d-none");
             }
         });
+
+        $("#pacientes\\.nacionalidad").on("change", function(){
+            makeRegion();
+        });
     });
 
     function maketable(){
@@ -246,6 +249,7 @@
     function makeRegion(){
         let region = {
             accion: "region"
+            nacionalidad_nombre: $("#pacientes\\.nacionalidad option:selected").text()
         }
 
         $.post( "https://crecimientofetal.cl/configuracion/api", region).done(function( data ) {
