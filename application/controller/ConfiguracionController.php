@@ -29,7 +29,7 @@ class ConfiguracionController extends Controller
                 $resultado = NacionalidadModel::getAllNacionalidad();
                 break;
             case "nacionalidadNew":
-                $resultado = NacionalidadModel::createNacionalidad(Request::post('nacionalidad_nombre'),Request::post('nacionalidad_gentilicio'));
+                $resultado = NacionalidadModel::createNacionalidad(Request::post('nacionalidad_nombre'));
                 break;
             case "nacionalidadEliminar":
                 $resultado = NacionalidadModel::deleteNacionalidad(Request::post('nacionalidad_id'));

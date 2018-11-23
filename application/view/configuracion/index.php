@@ -10,7 +10,7 @@
                         <div class="col-12">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="nacionalidad-tab" data-toggle="tab" href="#nacionalidad" role="tab" aria-controls="nacionalidad" aria-selected="true">Nacionalidad</a>
+                                    <a class="nav-link active" id="nacionalidad-tab" data-toggle="tab" href="#nacionalidad" role="tab" aria-controls="nacionalidad" aria-selected="true">País / Nacionalidad</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="region-tab" data-toggle="tab" href="#region" role="tab" aria-controls="region" aria-selected="false">Region / Provincia</a>
@@ -44,17 +44,12 @@
                                                             <label for="prevision.text">Pais</label>
                                                             <input type="text" class="form-control" id="nacionalidad.nombre">
                                                         </div>
-                                                        <div class="form-group col-6 d-none" id="interface.nacionalidad">
-                                                            <label for="prevision.text">Gentilicio</label>
-                                                            <input type="text" class="form-control" id="nacionalidad.gentilicio">
-                                                        </div>
                                                         <div class="col-12">
                                                         <table class="table table-hover">
                                                             <thead class="thead-dark">
                                                                 <tr>
                                                                 <th scope="col">ID</th>
                                                                 <th scope="col">Pais</th>
-                                                                <th scope="col">Gentilicio</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody id="table.nacionalidad">
@@ -223,7 +218,6 @@
             $("#button\\.nacionalidad\\.cancelar").removeClass("d-none");
             $("#interface\\.nacionalidad").removeClass("d-none");
             $("#nacionalidad\\.nombre").val("");
-            $("#nacionalidad\\.gentilicio").val("");
         });
         $("#button\\.nacionalidad\\.guardar").on("click", function(){
             $("#button\\.nacionalidad\\.nuevo").removeClass("d-none");
@@ -232,13 +226,11 @@
             
             let nacionalidad = {
                 accion: "nacionalidadNew",
-                nacionalidad_nombre: $("#nacionalidad\\.nombre").val(),
-                nacionalidad_gentilicio: $("#nacionalidad\\.gentilicio").val()
+                nacionalidad_nombre: $("#nacionalidad\\.nombre").val()
             }
 
             $.post( "api", nacionalidad).done(function( data ) {
                 $("#nacionalidad\\.nombre").val("");
-                $("#nacionalidad\\.gentilicio").val("");
                 makeNacionalidad();
             });
         });
@@ -350,7 +342,7 @@
             $("#nacionalidad\\.text").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
-                    let fila = '<tr><td>' + value.nacionalidad_id + '</td><td>' + value.nacionalidad_nombre + '</td><td>' + value.nacionalidad_gentilicio + '<button type="button" data-id="' + value.nacionalidad_id + '" class="btn btn-outline-warning px-3 eliminar-nacionalidad float-right"><i class="fas fa-trash"></i></button></td></tr>';
+                    let fila = '<tr><td>' + value.nacionalidad_id + '</td><td>' + value.nacionalidad_nombre + '<button type="button" data-id="' + value.nacionalidad_id + '" class="btn btn-outline-warning px-3 eliminar-nacionalidad float-right"><i class="fas fa-trash"></i></button></td></tr>';
                     $("#table\\.nacionalidad").append(fila);
                     let option = "<option value=" + i + ">" + value.nacionalidad_nombre + "</option>";
                     $("#nacionalidad\\.text").append(option);

@@ -14,7 +14,7 @@ class NacionalidadModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, nacionalidad_id, nacionalidad_nombre, nacionalidad_gentilicio FROM nacionalidad WHERE user_id = :user_id";
+        $sql = "SELECT user_id, nacionalidad_id, nacionalidad_nombre FROM nacionalidad WHERE user_id = :user_id";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id')));
 
@@ -53,9 +53,9 @@ class NacionalidadModel
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "INSERT INTO nacionalidad (nacionalidad_nombre, nacionalidad_gentilicio, user_id) VALUES (:nacionalidad_nombre, :nacionalidad_gentilicio, :user_id)";
+        $sql = "INSERT INTO nacionalidad (nacionalidad_nombre, user_id) VALUES (:nacionalidad_nombre, :user_id)";
         $query = $database->prepare($sql);
-        $query->execute(array(':nacionalidad_gentilicio' => $nacionalidad_gentilicio, ':nacionalidad_nombre' => $nacionalidad_nombre, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':nacionalidad_nombre' => $nacionalidad_nombre, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;

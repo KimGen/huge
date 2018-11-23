@@ -37,7 +37,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-3">
-                                    <label for="user.email">Nacionalidad</label>
+                                    <label for="user.email">Pais de origen</label>
                                     <select class="form-control" id="pacientes.nacionalidad">
                                     </select>
                                 </div>
@@ -235,10 +235,9 @@
             $("#pacientes\\.nacionalidad").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
-                    let option1 = "<option value=" + value.nacionalidad_id + ">" + value.nacionalidad_nombre + "</option>";
-                    let option2 = "<option value=" + value.nacionalidad_id + ">" + value.nacionalidad_gentilicio + "</option>";
-                    $("#pacientes\\.pais").append(option1);
-                    $("#pacientes\\.nacionalidad").append(option2);
+                    let option = "<option value=" + value.nacionalidad_id + ">" + value.nacionalidad_nombre + "</option>";
+                    $("#pacientes\\.pais").append(option);
+                    $("#pacientes\\.nacionalidad").append(option);
                 });
             }
         });
