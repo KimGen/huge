@@ -360,11 +360,11 @@
                     let nacionalidad_id = $(this).data("id");
 
                     $("#dialog\\.title").html("Eliminar nacionalidad");
-                    $("#dialog\\.footer").html('<p class="text-center text-danger">Está seguro de eliminar la nacionalidad?</p>');
+                    $("#dialog\\.body").html('<p class="text-center text-danger">Está seguro de eliminar la nacionalidad?</p>');
                     $("#dialog\\.delete").remove();
                     $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + nacionalidad_id + '">Eliminar</button>');
                     $("#dialog\\.delete").on("click", function(){
-                        let nacionalidad = {accion: "nacionalidadEliminar"}
+                        let nacionalidad = {accion: "nacionalidadEliminar", nacionalidad_id: $(this).data("id")}
 
                         $.post( "api", nacionalidad).done(function( data ) {
                             $("#table\\.nacionalidad").empty();
@@ -396,11 +396,11 @@
                     let region_id = $(this).data("id");
 
                     $("#dialog\\.title").html("Eliminar region");
-                    $("#dialog\\.footer").html('<p class="text-center text-danger">Está seguro de eliminar la región?</p>');
+                    $("#dialog\\.body").html('<p class="text-center text-danger">Está seguro de eliminar la región?</p>');
                     $("#dialog\\.delete").remove();
                     $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + region_id + '">Eliminar</button>');
                     $("#dialog\\.delete").on("click", function(){
-                        let region = {accion: "regionEliminar"}
+                        let region = {accion: "regionEliminar", region_id: $(this).data("id")}
 
                         $.post( "api", region).done(function( data ) {
                             $("#table\\.region").empty();
@@ -432,11 +432,11 @@
                     let prevision_id = $(this).data("id");
 
                     $("#dialog\\.title").html("Eliminar prevision");
-                    $("#dialog\\.footer").html('<p class="text-center text-danger">Está seguro de eliminar la prevision?</p>');
+                    $("#dialog\\.body").html('<p class="text-center text-danger">Está seguro de eliminar la prevision?</p>');
                     $("#dialog\\.delete").remove();
                     $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + prevision_id + '">Eliminar</button>');
                     $("#dialog\\.delete").on("click", function(){
-                        let prevision = {accion: "previsionEliminar"}
+                        let prevision = {accion: "previsionEliminar", prevision_id: $(this).data("id")}
 
                         $.post( "api", prevision).done(function( data ) {
                             $("#table\\.prevision").empty();
@@ -468,11 +468,11 @@
                     let lugar_id = $(this).data("id");
 
                     $("#dialog\\.title").html("Eliminar lugar");
-                    $("#dialog\\.footer").html('<p class="text-center text-danger">Está seguro de eliminar el lugar?</p>');
+                    $("#dialog\\.body").html('<p class="text-center text-danger">Está seguro de eliminar el lugar?</p>');
                     $("#dialog\\.delete").remove();
                     $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + lugar_id + '">Eliminar</button>');
                     $("#dialog\\.delete").on("click", function(){
-                        let lugar = {accion: "lugarEliminar"}
+                        let lugar = {accion: "lugarEliminar", lugar_id: $(this).data("id")}
 
                         $.post( "api", lugar).done(function( data ) {
                             $("#table\\.lugar").empty();
