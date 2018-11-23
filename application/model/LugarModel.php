@@ -10,7 +10,7 @@ class LugarModel
      * Get all lugares (lugares are just example data that the user has created)
      * @return array an array with several objects (the results)
      */
-    public static function getAllNotes()
+    public static function getAllLugares()
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
