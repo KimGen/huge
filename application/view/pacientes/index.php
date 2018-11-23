@@ -53,8 +53,7 @@
                                 </div>
                                 <div class="form-group col-3">
                                     <label for="user.email">Previsión</label>
-                                    <select class="form-control" id="pacientes.prevision">
-                                    </select>
+                                    <select class="form-control" id="pacientes.prevision"></select>
                                 </div>
                                 <div class="form-group col-3">
                                     <label for="user.email">Correo Electrónico</label>
@@ -66,7 +65,7 @@
                                 </div>
                                 <div class="form-group col-3">
                                     <label for="user.email">Lugar de control</label>
-                                    <input type="email" class="form-control" id="pacientes.lugar">
+                                    <select class="form-control" id="pacientes.lugar"></select>
                                 </div>
                             </div>
                         </div>
@@ -98,6 +97,7 @@
         makeNacionalidad();
         makeRegion();
         makePrevision();
+        makeLugar();
         $("#button\\.paciente\\.nuevo").on("click", function(){
             $("#interface\\.pacientes").removeClass("d-none");
             $("#interface\\.paciente\\.buscar").addClass("d-none");
@@ -270,6 +270,22 @@
                 $.each(data, function(i,value){
                     let option = "<option value=" + value.prevision_id + ">" + value.prevision_text + "</option>";
                     $("#pacientes\\.prevision").append(option);
+                });
+            }
+        });
+    }
+
+    function makeLugar(){
+        let lugar = {
+            accion: "lugar"
+        }
+
+        $.post( "https://crecimientofetal.cl/configuracion/api", lugar).done(function( data ) {
+            $("#pacientes\\.lugar").empty();
+            if (Object.keys(data).length > 0) {
+                $.each(data, function(i,value){
+                    let option = "<option value=" + value.lugar_id + ">" + value.lugar_text + "</option>";
+                    $("#pacientes\\.lugar").append(option);
                 });
             }
         });
