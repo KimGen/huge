@@ -248,7 +248,7 @@
     
     function makeRegion(){
         let region = {
-            accion: "region"
+            accion: "region",
             nacionalidad_nombre: $("#pacientes\\.nacionalidad option:selected").text()
         }
 
