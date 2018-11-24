@@ -58,8 +58,11 @@ class EcografiaController extends Controller
             case "furNew":
                 $resultado = FurModel::createFur(Request::post('paciente_rut'),Request::post('fur_fecha'));
                 break;
-            case "nacionalidadEliminar":
-                $resultado = NacionalidadModel::deleteNacionalidad(Request::post('nacionalidad_id'));
+            case "primertrimestre":
+                $resultado = EcografiaModel::getAllEcografias('primertrimestre');
+                break;
+            case "primertrimestreNew":
+                $resultado = EcografiaModel::createEcografia('primertrimestre', Request::post('data'));
                 break;
         }
 
