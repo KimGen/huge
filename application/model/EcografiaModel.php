@@ -58,7 +58,7 @@ class EcografiaModel
         $database = DatabaseFactory::getFactory()->getConnection();
 
         if ($tabla == 'primertrimestre'){
-            $data = json_decode($data,true);
+            $data = json_decode($data);
 
             $sql = "INSERT INTO ecografias (ecografia_fecha, ecografia_eg, ecografia_lcn_mm, ecografia_lcn_eg, ecografia_saco_mm, ecografia_saco_eg, ecografia_utero_uno, ecografia_utero_dos, ecografia_cuerpo, ecografia_saco_txt, ecografia_saco_mm_copia, ecografia_vitelino_txt, ecografia_vitelino_mm, ecografia_embrion_txt, ecografia_lcn_mm_copia, ecografia_fcf, ecografia_anexo_derecho, ecografia_anexo_izquierdo, ecografia_douglas_txt, ecografia_douglas_com, ecografia_com, user_id) VALUES (:ecografia_fecha, :ecografia_eg, :ecografia_lcn_mm, :ecografia_lcn_eg, :ecografia_saco_mm, :ecografia_saco_eg, :ecografia_utero_uno, :ecografia_utero_dos, :ecografia_cuerpo, :ecografia_saco_txt, :ecografia_saco_mm_copia, :ecografia_vitelino_txt, :ecografia_vitelino_mm, :ecografia_embrion_txt, :ecografia_lcn_mm_copia, :ecografia_fcf, :ecografia_anexo_derecho, :ecografia_anexo_izquierdo, :ecografia_douglas_txt, :ecografia_douglas_com, :ecografia_com, :user_id)";
             $query = $database->prepare($sql);
