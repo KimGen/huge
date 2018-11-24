@@ -5,19 +5,22 @@
         <dd class="col-11"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
     </dl>
     <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <?php if ($this->fur) { ?>
-                    <dl class="row">
-                        <dt class="col-1">FUR:</dt>
-                        <dd class="col-11"><?php echo $this->fur->fur_fecha; ?></dd>
-                    </dl>
-                    <?php } else { ?>
-                        <div class="alert alert-danger">Paciente sin FUR!</div>
-                    <?php } ?>
-                </div>
+        <div class="col-5">
+            <div class="btn-group m-3" role="group">
+                <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.nuevo"><i class="fas fa-plus"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.cancelar"><i class="fas fa-ban"></i></button>
             </div>
+        </div>
+        <div class="col-7">
+            <?php if ($this->fur) { ?>
+            <dl class="row">
+                <dt class="col-1">FUR:</dt>
+                <dd class="col-11"><?php echo $this->fur->fur_fecha; ?></dd>
+            </dl>
+            <?php } else { ?>
+                <div class="alert alert-danger">Paciente sin FUR!</div>
+            <?php } ?>
         </div>
     </div>
     <div class="row">
