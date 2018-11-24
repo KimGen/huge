@@ -14,9 +14,13 @@
     <div class="card mb-2">
         <div class="card-body">
             <div class="row">
+            <?php if ($this->paciente) { ?>
+                <dt class="col-1">Nombre:</dt>
+                <dd class="col-5"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
+            <?php } ?>
             <?php if ($this->fur) { ?>
                 <dt class="col-1">FUR:</dt>
-                <dd class="col-11"><?php echo $this->fur->fur_fecha; ?></dd>
+                <dd class="col-5"><?php echo $this->fur->fur_fecha; ?></dd>
             <?php } ?>
             </div>
         </div>
