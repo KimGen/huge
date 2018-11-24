@@ -156,6 +156,20 @@
         </div>
     </div>
 </div>
+<div class="modal" tabindex="-1" role="dialog" id="dialog.view">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="dialog.title"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body" id="dialog.body"></div>
+            <div class="modal-footer" id="dialog.footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     $(document).ready(function(){
         makeTable();
@@ -328,8 +342,27 @@
             $("#table\\.ecografia").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
-                    let fila = '<tr><td>' + value.ecografia_fecha + '</td><td>' + value.ecografia_eg + '</td><td>' + value.ecografia_lcn_mm + '</td><td>' + value.ecografia_saco_mm + '</td></tr>';
+                    let fila = '<tr id="' + value.ecografia_id + '"><td>' + value.ecografia_fecha + '</td><td>' + value.ecografia_eg + '</td><td>' + value.ecografia_lcn_mm + '</td><td>' + value.ecografia_saco_mm + '<button type="button" data-id="' + value.ecografia_id + '" class="btn btn-outline-warning px-3 eliminar-ecografia float-right"><i class="fas fa-trash"></i></button></td></tr>';
                     $("#table\\.ecografia").append(fila);
+                });
+
+                $(".eliminar-ecografia").on("click", function(){
+                    let ecografia_id = $(this).data("id");
+
+                    $("#dialog\\.title").html("Eliminar region");
+                    $("#dialog\\.body").html('<p class="text-center text-danger">Está seguro de eliminar la ecografía?</p>');
+                    $("#dialog\\.delete").remove();
+                    $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + ecografia_id + '">Eliminar</button>');
+                    $("#dialog\\.delete").on("click", function(){
+                        let region = {accion: "primertrimestreDelete", ecografia_id: $(this).data("id")}
+
+                        $.post( "https://crecimientofetal.cl/ecografia/api", region).done(function( data ) {
+                            $("#table\\.ecografia").empty();
+                            makeTable();
+                            $("#dialog\\.view").modal("hide");
+                        });
+                    });
+                    $("#dialog\\.view").modal("show");
                 });
             }
         });
