@@ -215,9 +215,13 @@
                             prevision = this.text;
                         }
                     });
-                    let fila = '<tr><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td></tr>';
+                    let fila = '<tr data-id="' + value.paciente_rut + '"><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td></tr>';
                     $("#table\\.pacientes").append(fila);
                 });
+
+                $("#table\\.pacientes > tr").on("click", function(){
+                    window.location.href = 'https://crecimientofetal.cl/ecografia/index/' + $(this).data("id");
+                })
             }
         });
     }
