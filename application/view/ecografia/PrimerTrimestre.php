@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="ecografia.nacimiento">EG x LCN</label>
-                                    <input type="text" class="form-control" id="ecografia.apellidos">
+                                    <input type="text" class="form-control" id="ecografia.apellidos" disabled>
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="ecografia.nacionalidad">Promedio de Saco</label>
@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="ecografia.pais">EG x Saco</label>
-                                    <input type="text" class="form-control" id="ecografia.apellidos">
+                                    <input type="text" class="form-control" id="ecografia.apellidos" disabled>
                                 </div>
                                 <div class="accordion col-12" id="accordionExample">
                                     <div class="card">
