@@ -158,6 +158,7 @@
 </div>
 <script>
     $(document).ready(function(){
+        makeTable();
         $("#button\\.ecografia\\.nuevo").on("click", function(){
             $("#interface\\.ecografia").removeClass("d-none");
             $("#button\\.ecografia\\.nuevo").addClass("d-none");
@@ -243,7 +244,7 @@
                 $("#ecografia\\.duglas\\.txt").val("");
                 $("#ecografia\\.douglas\\.com").val("");
                 $("#ecografia\\.com").val("");
-                maketable();
+                makeTable();
             });
         });
 
