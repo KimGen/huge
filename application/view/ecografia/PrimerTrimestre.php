@@ -91,13 +91,12 @@
 <script>
     $(document).ready(function(){
         makeTable();
-        $("#button\\.paciente\\.nuevo").on("click", function(){
-            $("#interface\\.pacientes").removeClass("d-none");
-            $("#interface\\.paciente\\.buscar").addClass("d-none");
-            $("#button\\.paciente\\.nuevo").addClass("d-none");
-            $("#button\\.paciente\\.guardar").removeClass("d-none");
-            $("#button\\.paciente\\.cancelar").removeClass("d-none");
-            $("#button\\.paciente\\.buscar").addClass("d-none");
+        $("#button\\.ecografia\\.nuevo").on("click", function(){
+            $("#interface\\.ecografia").removeClass("d-none");
+            $("#button\\.ecografia\\.nuevo").addClass("d-none");
+            $("#button\\.ecografia\\.guardar").removeClass("d-none");
+            $("#button\\.ecografia\\.cancelar").removeClass("d-none");
+            $("#button\\.ecografia\\.buscar").addClass("d-none");
             $("#pacientes\\.rut").val("");
             $("#pacientes\\.nombres").val("");
             $("#pacientes\\.apellidos").val("");
@@ -111,12 +110,12 @@
             $("#pacientes\\.lugar").val("");
         });
 
-        $("#button\\.paciente\\.guardar").on("click", function(){
-            $("#interface\\.pacientes").addClass("d-none");
-            $("#button\\.paciente\\.nuevo").removeClass("d-none");
-            $("#button\\.paciente\\.guardar").addClass("d-none");
-            $("#button\\.paciente\\.cancelar").addClass("d-none");
-            $("#button\\.paciente\\.buscar").removeClass("d-none");
+        $("#button\\.ecografia\\.guardar").on("click", function(){
+            $("#interface\\.ecografia").addClass("d-none");
+            $("#button\\.ecografia\\.nuevo").removeClass("d-none");
+            $("#button\\.ecografia\\.guardar").addClass("d-none");
+            $("#button\\.ecografia\\.cancelar").addClass("d-none");
+            $("#button\\.ecografia\\.buscar").removeClass("d-none");
 
             let paciente = {
                 paciente_rut: $("#pacientes\\.rut").val(),
@@ -128,7 +127,7 @@
                 paciente_nacionalidad: $("#pacientes\\.nacionalidad").val(),
                 paciente_region: $("#pacientes\\.region").val(),
                 paciente_pais: $("#pacientes\\.pais").val(),
-                paciente_telefono: if ($("#pacientes\\.telefono").val() == "") ? 0 : $("#pacientes\\.telefono").val(),
+                paciente_telefono: ($("#pacientes\\.telefono").val() == "") ? 0 : $("#pacientes\\.telefono").val(),
                 paciente_lugar: $("#pacientes\\.lugar").val()
             }
 
@@ -148,12 +147,12 @@
             });
         });
 
-        $("#button\\.paciente\\.cancelar").on("click", function(){
-            $("#interface\\.pacientes").addClass("d-none");
-            $("#button\\.paciente\\.nuevo").removeClass("d-none");
-            $("#button\\.paciente\\.guardar").addClass("d-none");
-            $("#button\\.paciente\\.cancelar").addClass("d-none");
-            $("#button\\.paciente\\.buscar").removeClass("d-none");
+        $("#button\\.ecografia\\.cancelar").on("click", function(){
+            $("#interface\\.ecografia").addClass("d-none");
+            $("#button\\.ecografia\\.nuevo").removeClass("d-none");
+            $("#button\\.ecografia\\.guardar").addClass("d-none");
+            $("#button\\.ecografia\\.cancelar").addClass("d-none");
+            $("#button\\.ecografia\\.buscar").removeClass("d-none");
             $("#pacientes\\.rut").val("");
             $("#pacientes\\.nombres").val("");
             $("#pacientes\\.apellidos").val("");
@@ -165,50 +164,22 @@
             $("#pacientes\\.pais").val("");
             $("#pacientes\\.telefono").val("");
             $("#pacientes\\.lugar").val("");
-        });
-
-        $("#button\\.paciente\\.eliminar").on("click", function(){
-            $("#interface\\.pacientes").addClass("d-none");
-            $("#pacientes\\.rut").val("");
-            $("#pacientes\\.nombres").val("");
-            $("#pacientes\\.apellidos").val("");
-            $("#pacientes\\.email").val("");
-            $("#pacientes\\.nacimiento").val("");
-            $("#pacientes\\.prevision").val("");
-            $("#pacientes\\.nacionalidad").val("");
-            $("#pacientes\\.region").val("");
-            $("#pacientes\\.pais").val("");
-            $("#pacientes\\.telefono").val("");
-            $("#pacientes\\.lugar").val("");
-        });
-
-        $("#button\\.paciente\\.buscar").on("click", function(){
-            if ($("#interface\\.paciente\\.buscar").hasClass("d-none")){
-                $("#interface\\.paciente\\.buscar").removeClass("d-none");
-            }
-            else{
-                $("#interface\\.paciente\\.buscar").addClass("d-none");
-            }
-        });
-
-        $("#pacientes\\.pais").on("change", function(){
-            makeRegion();
         });
     });
 
     function makeTable(){
         $.get( "get").done(function( data ) {
-            $("#table\\.pacientes").empty();
+            $("#table\\.ecografia").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
                     let prevision = "";
-                    $("#pacientes\\.prevision > option").each(function() {
+                    $("#pacientes\\.ecografia > option").each(function() {
                         if (this.value == value.paciente_prevision){
                             prevision = this.text;
                         }
                     });
                     let fila = '<tr><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td></tr>';
-                    $("#table\\.pacientes").append(fila);
+                    $("#table\\.ecografia").append(fila);
                 });
             }
         });
