@@ -10,16 +10,18 @@
         <div class="col-7">
             <h4 class="text-right my-3">Ecografía Obstétrica Primer Trimestre</h4>
         </div>
-        <div class="card mb-2">
-            <div class="card-body">
-                <div class="row">
-                <?php if ($this->fur) { ?>
-                    <dt class="col-1">FUR:</dt>
-                    <dd class="col-11"><?php echo $this->fur->fur_fecha; ?></dd>
-                <?php } ?>
-                </div>
+    </div>
+    <div class="card mb-2">
+        <div class="card-body">
+            <div class="row">
+            <?php if ($this->fur) { ?>
+                <dt class="col-1">FUR:</dt>
+                <dd class="col-11"><?php echo $this->fur->fur_fecha; ?></dd>
+            <?php } ?>
             </div>
         </div>
+    </div>
+    <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
