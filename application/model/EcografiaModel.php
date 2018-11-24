@@ -116,7 +116,7 @@ class EcografiaModel
         $database = DatabaseFactory::getFactory()->getConnection();
 
         if ($tabla == 'primertrimestre'){
-            $sql = "DELETE FROM ecografias WHERE ecografia_id = :ecografia_id AND user_id = :user_id LIMIT 1";
+            $sql = "DELETE FROM primertrimestre WHERE ecografia_id = :ecografia_id AND user_id = :user_id LIMIT 1";
             $query = $database->prepare($sql);
             $query->execute(array(':ecografia_id' => $ecografia_id, ':user_id' => Session::get('user_id')));
         }
