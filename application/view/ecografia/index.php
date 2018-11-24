@@ -1,5 +1,10 @@
 <div class="container">
-    <h5 class="text-primary text-center">Modulos para evaluación ultrasonográfica: determinación de edad gestacional, crecimiento y flujometría Doppler fetal *</h5>
+    <h5 class="text-primary text-center my-2">Modulos para evaluación ultrasonográfica: determinación de edad gestacional, crecimiento y flujometría Doppler fetal *</h5>
+    <div class="row">
+        <div class="col">
+            <p>Paciente: <?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></p>
+        </div>
+    </div>
     <div class="row">
         <div class="col">
             <div class="card">
