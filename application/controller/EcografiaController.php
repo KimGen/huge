@@ -29,8 +29,17 @@ class EcografiaController extends Controller
         }
     }
 
-    public function primertrimestre()
+    public function primertrimestre($paciente = "")
     {
-        $this->View->render('ecografia/PrimerTrimestre');
+        if ($paciente == ""){
+            Session::add('feedback_negative', 'Debe seleccionar un paciente');
+            Redirect::to("pacientes/");
+        }
+        else{
+            $paciente = PacientesModel::getPaciente($paciente);
+            $this->View->render('ecografia/PrimerTrimestre', array(
+                'paciente' => $paciente
+            ));
+        }
     }
 }
