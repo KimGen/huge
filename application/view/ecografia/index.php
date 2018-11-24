@@ -4,26 +4,36 @@
         <dt class="col-1">Paciente:</dt>
         <dd class="col-11"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
     </dl>
-    <div class="card">
+    <div class="card mb-2">
         <div class="card-body">
             <div class="row">
+            <?php if ($this->fur) { ?>
+                <dt class="col-1">FUR:</dt>
+                <dd class="col-11"><?php echo $this->fur->fur_fecha; ?></dd>
+            <?php } else { ?>
                 <div class="col-5">
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.nuevo"><i class="fas fa-plus"></i></button>
-                        <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
-                        <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.cancelar"><i class="fas fa-ban"></i></button>
+                        <button type="button" class="btn btn-outline-primary btn-lg" id="button.fur.nuevo"><i class="fas fa-plus"></i></button>
+                        <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.fur.guardar"><i class="fas fa-save"></i></button>
+                        <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.fur.cancelar"><i class="fas fa-ban"></i></button>
                     </div>
                 </div>
                 <div class="col-7">
-                    <?php if ($this->fur) { ?>
-                    <dl class="row">
-                        <dt class="col-1">FUR:</dt>
-                        <dd class="col-11"><?php echo $this->fur->fur_fecha; ?></dd>
-                    </dl>
-                    <?php } else { ?>
-                        <div class="alert alert-danger">Paciente sin FUR!</div>
-                    <?php } ?>
+                    <div class="alert alert-danger">Paciente sin FUR!</div>
                 </div>
+                <div class="col-12 d-none" id="interface.fur">
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label for="user.rut">Fecha de Ultima Mestruacion</label>
+                            <input type="date" class="form-control" id="fur.fecha">
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="user.nombres">EG</label>
+                            <input type="text" class="form-control" id="fur.eg">
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
             </div>
         </div>
     </div>
@@ -60,3 +70,28 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        <?php if ($this->fur) { ?>
+        <?php } else { ?>
+        $("#button\\.fur\\.nuevo").on("click", funcion(){
+            $("#button\\.fur\\.nuevo").addClass("d-none");
+            $("#button\\.fur\\.guardar").removeClass("d-none");
+            $("#button\\.fur\\.cancelar").removeClass("d-none");
+            $("#interface\\.fur").removeClass("d-none");
+        });
+        $("#button\\.fur\\.guardar").on("click", funcion(){
+            $("#button\\.fur\\.nuevo").removeClass("d-none");
+            $("#button\\.fur\\.guardar").addClass("d-none");
+            $("#button\\.fur\\.cancelar").addClass("d-none");
+            $("#interface\\.fur").addClass("d-none");
+        });
+        $("#button\\.fur\\.cancelar").on("click", funcion(){
+            $("#button\\.fur\\.nuevo").removeClass("d-none");
+            $("#button\\.fur\\.guardar").addClass("d-none");
+            $("#button\\.fur\\.cancelar").addClass("d-none");
+            $("#interface\\.fur").addClass("d-none");
+        });
+        <?php } ?>
+    });
+</script>
