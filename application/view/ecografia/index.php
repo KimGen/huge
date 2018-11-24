@@ -89,7 +89,7 @@
             $("#interface\\.fur").addClass("d-none");
 
             let fur = {
-                accion: "furNew"
+                accion: "furNew",
                 paciente_rut: '<?php echo $this->paciente->paciente_rut; ?>'
                 fur_fecha: $("#fur\\.fecha").val()
             }
