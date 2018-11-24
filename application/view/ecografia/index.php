@@ -90,7 +90,7 @@
 
             let fur = {
                 accion: "furNew",
-                paciente_rut: '<?php echo $this->paciente->paciente_rut; ?>'
+                paciente_rut: '<?php echo $this->paciente->paciente_rut; ?>',
                 fur_fecha: $("#fur\\.fecha").val()
             }
 
