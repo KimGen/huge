@@ -144,8 +144,8 @@
                                     <tr>
                                     <th scope="col">Fecha</th>
                                     <th scope="col">EG</th>
-                                    <th scope="col">LCN</th>
                                     <th scope="col">Saco</th>
+                                    <th scope="col">LCN</th>
                                     </tr>
                                 </thead>
                                 <tbody id="table.ecografia">
@@ -284,11 +284,11 @@
             $("#ecografia\\.utero\\.uno").val("central");
             $("#ecografia\\.utero\\.dos").val("anterior");
             $("#ecografia\\.cuerpo").val("aspecto normal");
-            $("#ecografia\\.saco\\.txt").val("normal");
+            $("#ecografia\\.saco\\.txt").val("normal").trigger("change");
             $("#ecografia\\.saco\\.mm\\.copia").val("");
             $("#ecografia\\.vitelino\\.txt").val("presente");
             $("#ecografia\\.vitelino\\.mm").val("");
-            $("#ecografia\\.embrion\\.txt").val("con act. cardiaca (+)");
+            $("#ecografia\\.embrion\\.txt").val("con act. cardiaca (+)").trigger("change");
             $("#ecografia\\.lcn\\.mm\\.copia").val("");
             $("#ecografia\\.fcf").val("140");
             $("#ecografia\\.anexo\\.derecho").val("aspecto normal");
@@ -363,7 +363,7 @@
             $("#table\\.ecografia").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
-                    let fila = '<tr id="' + value.ecografia_id + '"><td>' + value.ecografia_fecha + '</td><td>' + value.ecografia_eg + '</td><td>' + value.ecografia_lcn_mm + '</td><td>' + value.ecografia_saco_mm + '<button type="button" data-id="' + value.ecografia_id + '" class="btn btn-outline-warning px-3 eliminar-ecografia float-right"><i class="fas fa-trash"></i></button></td></tr>';
+                    let fila = '<tr id="' + value.ecografia_id + '"><td>' + value.ecografia_fecha + '</td><td>' + value.ecografia_eg + '</td><td>' + value.ecografia_saco_mm + '</td><td>' + value.ecografia_lcn_mm + '<button type="button" data-id="' + value.ecografia_id + '" class="btn btn-outline-warning px-3 eliminar-ecografia float-right"><i class="fas fa-trash"></i></button></td></tr>';
                     $("#table\\.ecografia").append(fila);
                 });
 
