@@ -44,7 +44,11 @@
                 <div class="card-body">
                     <h6 class="card-title">Ecografía Obstétrica 1° Trimestre</h6>
                     <p class="card-text">Determinación de edad gestacional</p>
-                    <a href="<?php echo Config::get('URL') . 'ecografia/primertrimestre/' . $this->paciente->paciente_rut; ?>" class="btn btn-primary">Ir a exámen</a>
+                    <?php if ($this->fur) { ?>
+                        <a href="<?php echo Config::get('URL') . 'ecografia/primertrimestre/' . $this->paciente->paciente_rut; ?>" class="btn btn-primary">Ir a exámen</a>
+                    <?php } else { ?>
+                        <a href="#" class="btn btn-danger">Ingrese una FUR</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -54,7 +58,11 @@
                 <div class="card-body">
                     <h6 class="card-title">Ecografía Obstétrica 2° - 3° Trimestre</h6>
                     <p class="card-text">Valoración del crecimiento intrauterino</p>
-                    <a href="#ecoObsSegTrim" class="btn btn-primary">Ir a exámen</a>
+                    <?php if ($this->fur) { ?>
+                        <a href="#ecoObsSegTrim" class="btn btn-primary">Ir a exámen</a>
+                    <?php } else { ?>
+                        <a href="#" class="btn btn-danger">Ingrese una FUR</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -64,7 +72,11 @@
                 <div class="card-body">
                     <h6 class="card-title">Flujometría Doppler Materna y/o Fetal</h6>
                     <p class="card-text">Complemento a la biometría de crecimiento</p>
-                    <a href="#ecoDoppler" class="btn btn-primary">Ir a exámen</a>
+                    <?php if ($this->fur) { ?>
+                        <a href="#ecoDoppler" class="btn btn-primary">Ir a exámen</a>
+                    <?php } else { ?>
+                        <a href="#" class="btn btn-danger">Ingrese una FUR</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
