@@ -26,9 +26,6 @@
                         <li class="nav-item <?php if (View::checkForActiveController($filename, "dashboard")) { echo 'active'; } ?>">
                             <a class="nav-link" href="<?php echo Config::get('URL'); ?>pacientes/index">Pacientes</a>
                         </li>
-                        <li class="nav-item <?php if (View::checkForActiveController($filename, "note")) { echo 'active'; } ?>">
-                            <a class="nav-link" href="<?php echo Config::get('URL'); ?>ecografia/index">Ecografia</a>
-                        </li>
                     <?php } else { ?>
                         <li class="nav-item <?php if (View::checkForActiveController($filename, "register/index")) { echo 'active'; } ?>">
                             <a class="nav-link" href="<?php echo Config::get('URL'); ?>register/index">Crear cuenta</a>
