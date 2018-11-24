@@ -88,13 +88,13 @@
             $("#button\\.fur\\.cancelar").addClass("d-none");
             $("#interface\\.fur").addClass("d-none");
 
-            let fur{
+            let fur = {
                 accion: "furNew"
                 paciente_rut: '<?php echo $this->paciente->paciente_rut; ?>'
                 fur_fecha: $("#fur\\.fecha").val()
             }
 
-            $.post( "https://crecimientofetal.cl/ecografia/api", paciente).done(function( data ) {
+            $.post( "https://crecimientofetal.cl/ecografia/api", fur).done(function( data ) {
                 window.location.href = 'https://crecimientofetal.cl/ecografia/index/<?php echo $this->paciente->paciente_rut; ?>';
             });
         });
