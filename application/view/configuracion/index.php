@@ -352,7 +352,7 @@
                     let nacionalidad_id = $(this).data("id");
 
                     $("#dialog\\.title").html("Eliminar nacionalidad");
-                    $("#dialog\\.body").html('<p class="text-center text-danger">Está seguro de eliminar la nacionalidad?</p>');
+                    $("#dialog\\.body").html('<p class="text-center text-danger">¿Está seguro de eliminar la nacionalidad?</p>');
                     $("#dialog\\.delete").remove();
                     $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + nacionalidad_id + '">Eliminar</button>');
                     $("#dialog\\.delete").on("click", function(){
@@ -387,7 +387,7 @@
                     let region_id = $(this).data("id");
 
                     $("#dialog\\.title").html("Eliminar region");
-                    $("#dialog\\.body").html('<p class="text-center text-danger">Está seguro de eliminar la región?</p>');
+                    $("#dialog\\.body").html('<p class="text-center text-danger">¿Está seguro de eliminar la región?</p>');
                     $("#dialog\\.delete").remove();
                     $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + region_id + '">Eliminar</button>');
                     $("#dialog\\.delete").on("click", function(){
@@ -422,7 +422,7 @@
                     let prevision_id = $(this).data("id");
 
                     $("#dialog\\.title").html("Eliminar prevision");
-                    $("#dialog\\.body").html('<p class="text-center text-danger">Está seguro de eliminar la prevision?</p>');
+                    $("#dialog\\.body").html('<p class="text-center text-danger">¿Está seguro de eliminar la prevision?</p>');
                     $("#dialog\\.delete").remove();
                     $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + prevision_id + '">Eliminar</button>');
                     $("#dialog\\.delete").on("click", function(){
@@ -457,7 +457,7 @@
                     let lugar_id = $(this).data("id");
 
                     $("#dialog\\.title").html("Eliminar lugar");
-                    $("#dialog\\.body").html('<p class="text-center text-danger">Está seguro de eliminar el lugar?</p>');
+                    $("#dialog\\.body").html('<p class="text-center text-danger">¿Está seguro de eliminar el lugar?</p>');
                     $("#dialog\\.delete").remove();
                     $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + lugar_id + '">Eliminar</button>');
                     $("#dialog\\.delete").on("click", function(){

@@ -352,7 +352,7 @@
                     let ecografia_id = $(this).data("id");
 
                     $("#dialog\\.title").html("Eliminar ecografia");
-                    $("#dialog\\.body").html('<p class="text-center text-danger">Está seguro de eliminar la ecografía?</p>');
+                    $("#dialog\\.body").html('<p class="text-center text-danger">¿Está seguro de eliminar la ecografía?</p>');
                     $("#dialog\\.delete").remove();
                     $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + ecografia_id + '">Eliminar</button>');
                     $("#dialog\\.delete").on("click", function(){
