@@ -53,19 +53,19 @@
                                                 <div class="row">
                                                     <div class="form-group col-4">
                                                         <label for="ecografia.rut">Utero Ubicacion 1</label>
-                                                        <input type="date" class="form-control" id="ecografia.rut">
+                                                        <select class="form-control" id="pacientes.lugar"><option value="central">central</option><option value="lateralizado a la izquierda">lateralizado a la izquierda</option><option value="lateralizado a la derecha">lateralizado a la derecha</option></select>
                                                     </div>
                                                     <div class="form-group col-4">
                                                         <label for="ecografia.nombres">Utero Ubicacion 2</label>
-                                                        <input type="text" class="form-control" id="ecografia.nombres" disabled>
+                                                        <select class="form-control" id="pacientes.lugar"><option value="anterior">anterior</option><option value="posterior">posterior</option></select>
                                                     </div>
                                                     <div class="form-group col-4">
                                                         <label for="ecografia.rut">Cuerpo Uternino</label>
-                                                        <input type="date" class="form-control" id="ecografia.rut">
+                                                        <select class="form-control" id="pacientes.lugar"><option value="aspecto normal">aspecto normal</option><option value="nodulo unico">nodulo unico</option><option value="múltiples nódulos">múltiples nódulos</option><option value="malformaciones">malformaciones</option></select>
                                                     </div>
                                                     <div class="form-group col-6">
                                                         <label for="ecografia.nombres">Saco Gestacional</label>
-                                                        <input type="text" class="form-control" id="ecografia.nombres" disabled>
+                                                        <select class="form-control" id="pacientes.lugar"><option value="normal">normal</option><option value="no se observa">no se observa</option><option value="múltiple">múltiple</option><option value="con pseudosaco">con pseudosaco</option><option value="con dpmto.parcial">con dpmto.parcial</option></select>
                                                     </div>
                                                     <div class="form-group col-6">
                                                         <label for="ecografia.rut">mm</label>
@@ -73,7 +73,7 @@
                                                     </div>
                                                     <div class="form-group col-6">
                                                         <label for="ecografia.nombres">Saco Vitelino</label>
-                                                        <input type="text" class="form-control" id="ecografia.nombres" disabled>
+                                                        <select class="form-control" id="pacientes.lugar"><option value="presente">presente</option><option value="no se observa" selected="">no se observa </option></select>
                                                     </div>
                                                     <div class="form-group col-6">
                                                         <label for="ecografia.rut">Medida de saco vitelino</label>
@@ -81,7 +81,7 @@
                                                     </div>
                                                     <div class="form-group col-4">
                                                         <label for="ecografia.nombres">Embrión</label>
-                                                        <input type="text" class="form-control" id="ecografia.nombres" disabled>
+                                                        <select class="form-control" id="pacientes.lugar"><option value="no se observa aun" selected="">no se observa aun</option><option value="act. no evidenciable">act. no evidenciable</option><option value="act. cardiaca evidenciable">act. cardiaca evidenciable</option><option value="con act. cardiaca (+)">con act. cardiaca (+)</option><option value="act. card. y Corp.(+)">act. card. y Corp.(+)</option><option value="act. card. y Corp. (-)">act. card. y Corp. (-)</option></select>
                                                     </div>
                                                     <div class="form-group col-4">
                                                         <label for="ecografia.rut">mm</label>
@@ -93,15 +93,15 @@
                                                     </div>
                                                     <div class="form-group col-6">
                                                         <label for="ecografia.rut">Anexo derecho</label>
-                                                        <input type="date" class="form-control" id="ecografia.rut">
+                                                        <select class="form-control" id="pacientes.lugar"><option value="aspecto normal">aspecto normal</option><option value="masa sólida">masa sólida</option><option value="masa eco negativa">masa eco negativa</option><option value="con ovario">con ovario</option></select>
                                                     </div>
                                                     <div class="form-group col-6">
                                                         <label for="ecografia.nombres">Anexo Izquierdo</label>
-                                                        <input type="text" class="form-control" id="ecografia.nombres" disabled>
+                                                        <select class="form-control" id="pacientes.lugar"><option value="aspecto normal">aspecto normal</option><option value="masa sólida">masa sólida</option><option value="masa eco negativa">masa eco negativa</option><option value="con ovario">con ovario</option></select>
                                                     </div>
                                                     <div class="form-group col-6">
                                                         <label for="ecografia.rut">Douglas</label>
-                                                        <input type="date" class="form-control" id="ecografia.rut">
+                                                        <select class="form-control" id="pacientes.lugar"><option value="libre">libre</option><option value="ocupado">ocupado</option></select>
                                                     </div>
                                                     <div class="form-group col-6">
                                                         <label for="ecografia.nombres">Comentarios Douglas</label>
