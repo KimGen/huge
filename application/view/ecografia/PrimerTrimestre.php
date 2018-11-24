@@ -16,11 +16,13 @@
             <div class="row">
             <?php if ($this->paciente) { ?>
                 <dt class="col-2">Nombre:</dt>
-                <dd class="col-4"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
+                <dd class="col-2"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
             <?php } ?>
             <?php if ($this->fur) { ?>
                 <dt class="col-2">FUR:</dt>
-                <dd class="col-4"><?php echo $this->fur->fur_fecha; ?></dd>
+                <dd class="col-2"><?php echo $this->fur->fur_fecha; ?></dd>
+                <dt class="col-2">FPP:</dt>
+                <dd class="col-2"></dd>
             <?php } ?>
             </div>
         </div>
