@@ -2,12 +2,9 @@
     <div class="row">
         <div class="col-5">
             <div class="btn-group m-3" role="group">
-                <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.nuevo"><i class="fas fa-plus"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.buscar"><i class="fas fa-search"></i></button>
-                <div class="btn btn-outline-primary btn-lg d-none" id="interface.paciente.buscar"><input type="text" class="form-control" id="busqueda.pacientes" placeholder="buscar por rut o apellido"></div>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.cancelar"><i class="fas fa-ban"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.eliminar"><i class="fas fa-trash"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg" id="button.ecografia.nuevo"><i class="fas fa-plus"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.guardar"><i class="fas fa-save"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.cancelar"><i class="fas fa-ban"></i></button>
             </div>
         </div>
         <div class="col-7">
@@ -17,7 +14,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-12 d-none" id="interface.pacientes">
+                        <div class="col-12 d-none" id="interface.ecografia">
                             <div class="row">
                                 <div class="form-group col-3">
                                     <label for="user.rut">RUT o DNI</label>
@@ -71,17 +68,17 @@
                             </div>
                         </div>
                         <div class="col-12">
+                            <h6>Ecografias</h6>
                             <table class="table table-hover">
                                 <thead class="thead-dark">
                                     <tr>
-                                    <th scope="col">RUT</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Apellido</th>
-                                    <th scope="col">Edad</th>
-                                    <th scope="col">Previsión</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">EG</th>
+                                    <th scope="col">LCN</th>
+                                    <th scope="col">Saco</th>
                                     </tr>
                                 </thead>
-                                <tbody id="table.pacientes">
+                                <tbody id="table.ecografia">
                                 </tbody>
                             </table>
                         </div>
@@ -93,11 +90,7 @@
 </div>
 <script>
     $(document).ready(function(){
-        maketable();
-        makeEdad();
-        makeNacionalidad();
-        makePrevision();
-        makeLugar();
+        makeTable();
         $("#button\\.paciente\\.nuevo").on("click", function(){
             $("#interface\\.pacientes").removeClass("d-none");
             $("#interface\\.paciente\\.buscar").addClass("d-none");
@@ -203,7 +196,7 @@
         });
     });
 
-    function maketable(){
+    function makeTable(){
         $.get( "get").done(function( data ) {
             $("#table\\.pacientes").empty();
             if (Object.keys(data).length > 0) {
@@ -216,81 +209,6 @@
                     });
                     let fila = '<tr><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td></tr>';
                     $("#table\\.pacientes").append(fila);
-                });
-            }
-        });
-    }
-
-    function makeEdad(){
-        for (i = 10; i < 51; i++) {
-            let option = "<option value=" + i + ">" + i + "</option>";
-            $("#pacientes\\.nacimiento").append(option);
-        }
-    }
-
-    function makeNacionalidad(){
-        let region = {
-            accion: "nacionalidad"
-        }
-
-        $.post( "https://crecimientofetal.cl/configuracion/api", region).done(function( data ) {
-            $("#pacientes\\.pais").empty();
-            $("#pacientes\\.nacionalidad").empty();
-            if (Object.keys(data).length > 0) {
-                $.each(data, function(i,value){
-                    let option = "<option value=" + value.nacionalidad_id + ">" + value.nacionalidad_nombre + "</option>";
-                    $("#pacientes\\.pais").append(option);
-                    $("#pacientes\\.nacionalidad").append(option);
-                });
-                $("#pacientes\\.pais").prop("selectedIndex", 0).trigger("change");
-            }
-        });
-    }
-    
-    function makeRegion(){
-        let region = {
-            accion: "region",
-            nacionalidad_nombre: $("#pacientes\\.pais option:selected").text()
-        }
-
-        $.post( "https://crecimientofetal.cl/configuracion/api", region).done(function( data ) {
-            $("#pacientes\\.region").empty();
-            if (Object.keys(data).length > 0) {
-                $.each(data, function(i,value){
-                    let option = "<option value=" + value.region_id + ">" + value.region_text + "</option>";
-                    $("#pacientes\\.region").append(option);
-                });
-            }
-        });
-    }
-
-    function makePrevision(){
-        let prevision = {
-            accion: "prevision"
-        }
-
-        $.post( "https://crecimientofetal.cl/configuracion/api", prevision).done(function( data ) {
-            $("#pacientes\\.prevision").empty();
-            if (Object.keys(data).length > 0) {
-                $.each(data, function(i,value){
-                    let option = "<option value=" + value.prevision_id + ">" + value.prevision_text + "</option>";
-                    $("#pacientes\\.prevision").append(option);
-                });
-            }
-        });
-    }
-
-    function makeLugar(){
-        let lugar = {
-            accion: "lugar"
-        }
-
-        $.post( "https://crecimientofetal.cl/configuracion/api", lugar).done(function( data ) {
-            $("#pacientes\\.lugar").empty();
-            if (Object.keys(data).length > 0) {
-                $.each(data, function(i,value){
-                    let option = "<option value=" + value.lugar_id + ">" + value.lugar_text + "</option>";
-                    $("#pacientes\\.lugar").append(option);
                 });
             }
         });

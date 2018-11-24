@@ -23,8 +23,10 @@ class EcografiaController extends Controller
         }
         else{
             $paciente = PacientesModel::getPaciente($paciente);
+            $fur = FurModel::getFur($paciente);
             $this->View->render('ecografia/index', array(
-                'paciente' => $paciente
+                'paciente' => $paciente,
+                'fur' => $fur
             ));
         }
     }
