@@ -41,14 +41,14 @@
                                     <label for="ecografia.pais">EG x Saco</label>
                                     <input type="text" class="form-control" id="ecografia.apellidos">
                                 </div>
-                                <div class="accordion" id="accordionExample">
+                                <div class="accordion col-12" id="accordionExample">
                                     <div class="card">
                                         <div class="card-header" id="headingOne">
                                             <h5 class="mb-0">
                                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Otros datos</button>
                                             </h5>
                                         </div>
-                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="form-group col-4">
@@ -118,6 +118,7 @@
                                 </div>
                             </div>
                         </div>
+                        <hr>
                         <div class="col-12">
                             <h6>Ecografias</h6>
                             <table class="table table-hover">
