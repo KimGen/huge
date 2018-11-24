@@ -6,7 +6,7 @@
     </dl>
     <div class="row">
         <div class="col-5">
-            <div class="btn-group m-3" role="group">
+            <div class="btn-group" role="group">
                 <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.nuevo"><i class="fas fa-plus"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.cancelar"><i class="fas fa-ban"></i></button>
