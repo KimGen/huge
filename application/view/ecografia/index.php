@@ -1,9 +1,8 @@
 <div class="container">
     <h3 class="text-right my-2">Evaluación ultrasonográfica</h3>
-    <h5 class="my-2">Determinación de edad gestacional, crecimiento y flujometría Doppler fetal</h5>
     <dl class="row">
-        <dt class="col-sm-3">Paciente</dt>
-        <dd class="col-sm-9"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
+        <dt class="col-sm-2">Paciente:</dt>
+        <dd class="col-sm-10"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
     </dl>
     <div class="row">
         <div class="col">
