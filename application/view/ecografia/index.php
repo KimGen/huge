@@ -24,11 +24,11 @@
                 <div class="col-12 d-none" id="interface.fur">
                     <div class="row">
                         <div class="form-group col-6">
-                            <label for="user.rut">Fecha de Ultima Mestruacion</label>
+                            <label for="user.fecha">Fecha de Ultima Mestruacion</label>
                             <input type="date" class="form-control" id="fur.fecha">
                         </div>
                         <div class="form-group col-6">
-                            <label for="user.nombres">EG</label>
+                            <label for="user.eg">EG</label>
                             <input type="text" class="form-control" id="fur.eg">
                         </div>
                     </div>
@@ -74,23 +74,37 @@
     $(document).ready(function(){
         <?php if ($this->fur) { ?>
         <?php } else { ?>
-        $("#button\\.fur\\.nuevo").on("click", funcion(){
+        $("#button\\.fur\\.nuevo").on("click", function(){
             $("#button\\.fur\\.nuevo").addClass("d-none");
             $("#button\\.fur\\.guardar").removeClass("d-none");
             $("#button\\.fur\\.cancelar").removeClass("d-none");
             $("#interface\\.fur").removeClass("d-none");
+            $("#fur\\.fecha").val("");
+            $("#fur\\.eg").val("");
         });
-        $("#button\\.fur\\.guardar").on("click", funcion(){
+        $("#button\\.fur\\.guardar").on("click", function(){
             $("#button\\.fur\\.nuevo").removeClass("d-none");
             $("#button\\.fur\\.guardar").addClass("d-none");
             $("#button\\.fur\\.cancelar").addClass("d-none");
             $("#interface\\.fur").addClass("d-none");
+
+            let fur{
+                accion: "furNew"
+                paciente_rut: '<?php echo $this->paciente->paciente_rut; ?>'
+                fur_fecha: $("#fur\\.fecha").val()
+            }
+
+            $.post( "https://crecimientofetal.cl/ecografia/api", paciente).done(function( data ) {
+                window.location.href = 'https://crecimientofetal.cl/ecografia/index/<?php echo $this->paciente->paciente_rut; ?>';
+            });
         });
-        $("#button\\.fur\\.cancelar").on("click", funcion(){
+        $("#button\\.fur\\.cancelar").on("click", function(){
             $("#button\\.fur\\.nuevo").removeClass("d-none");
             $("#button\\.fur\\.guardar").addClass("d-none");
             $("#button\\.fur\\.cancelar").addClass("d-none");
             $("#interface\\.fur").addClass("d-none");
+            $("#fur\\.fecha").val("");
+            $("#fur\\.eg").val("");
         });
         <?php } ?>
     });

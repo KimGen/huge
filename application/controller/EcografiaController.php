@@ -44,4 +44,23 @@ class EcografiaController extends Controller
             ));
         }
     }
+
+    public function api(){
+        $accion = Request::post('accion');
+        $resultado = "";
+
+        switch ($accion) {
+            case "nacionalidad":
+                $resultado = NacionalidadModel::getAllNacionalidad();
+                break;
+            case "furNew":
+                $resultado = FurModel::createFur(Request::post('paciente_rut'),Request::post('fur_fecha'));
+                break;
+            case "nacionalidadEliminar":
+                $resultado = NacionalidadModel::deleteNacionalidad(Request::post('nacionalidad_id'));
+                break;
+        }
+
+        return $this->View->renderJSON($resultado);
+    }
 }
