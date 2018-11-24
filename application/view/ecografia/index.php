@@ -1,11 +1,10 @@
 <div class="container">
-    <h1 class="text-primary text-left my-2">Evaluación ultrasonográfica</h5>
-    <h5 class="text-primary text-center my-2">Determinación de edad gestacional, crecimiento y flujometría Doppler fetal</h5>
-    <div class="row">
-        <div class="col">
-            <p>Paciente: <?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></p>
-        </div>
-    </div>
+    <h3 class="text-right my-2">Evaluación ultrasonográfica</h3>
+    <h5 class="my-2">Determinación de edad gestacional, crecimiento y flujometría Doppler fetal</h5>
+    <dl class="row">
+        <dt class="col-sm-3">Paciente</dt>
+        <dd class="col-sm-9"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
+    </dl>
     <div class="row">
         <div class="col">
             <div class="card">
