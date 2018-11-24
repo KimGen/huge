@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="col-7">
-            <h4 class="text-right my-3">Datos de Pacientes</h4>
+            <h4 class="text-right my-3">Ecografía Obstétrica Primer Trimestre</h4>
         </div>
         <div class="col-12">
             <div class="card">
