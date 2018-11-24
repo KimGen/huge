@@ -332,6 +332,19 @@
         $("#ecografia\\.lcn\\.mm").on("change", function(){
             $("#ecografia\\.lcn\\.mm\\.copia").val($(this).val());
         });
+        //enters
+        $("#ecografia\\.lcn\\.mm").keyup(function( event ) {
+            if ( event.which == 13 ) {
+                event.preventDefault();
+                $("#ecografia\\.saco\\.mm").focus();
+            }
+        });
+        $("#ecografia\\.saco\\.mm").keyup(function( event ) {
+            if ( event.which == 13 ) {
+                event.preventDefault();
+                $("#button\\.ecografia\\.guardar").focus();
+            }
+        });
     });
 
     function makeTable(){
