@@ -19,4 +19,9 @@ class EcografiaController extends Controller
     {
         $this->View->render('ecografia/index');
     }
+
+    public function primertrimestre()
+    {
+        $this->View->render('ecografia/PrimerTrimestre');
+    }
 }

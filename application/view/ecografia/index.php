@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Ecografía Obstétrica 1° Trimestre</h6>
                     <p class="card-text">Determinación de edad gestacional</p>
-                    <a href="#ecoObsPrimTrim" class="btn btn-primary">Ir a exámen</a>
+                    <a href="primertrimestre" class="btn btn-primary">Ir a exámen</a>
                 </div>
             </div>
         </div>
