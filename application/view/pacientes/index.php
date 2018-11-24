@@ -135,7 +135,7 @@
                 paciente_nacionalidad: $("#pacientes\\.nacionalidad").val(),
                 paciente_region: $("#pacientes\\.region").val(),
                 paciente_pais: $("#pacientes\\.pais").val(),
-                paciente_telefono: $("#pacientes\\.telefono").val(),
+                paciente_telefono: if ($("#pacientes\\.telefono").val() == "") ? 0 : $("#pacientes\\.telefono").val(),
                 paciente_lugar: $("#pacientes\\.lugar").val()
             }
 
