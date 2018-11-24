@@ -1,4 +1,5 @@
 <div class="container">
+    <?php $this->renderFeedbackMessages(); ?>
     <div class="row">
         <div class="col-5">
             <div class="btn-group m-3" role="group">
