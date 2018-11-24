@@ -10,6 +10,16 @@
         <div class="col-7">
             <h4 class="text-right my-3">Ecografía Obstétrica Primer Trimestre</h4>
         </div>
+        <div class="card mb-2">
+            <div class="card-body">
+                <div class="row">
+                <?php if ($this->fur) { ?>
+                    <dt class="col-1">FUR:</dt>
+                    <dd class="col-11"><?php echo $this->fur->fur_fecha; ?></dd>
+                <?php } ?>
+                </div>
+            </div>
+        </div>
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -105,7 +115,7 @@
                                                     </div>
                                                     <div class="form-group col-6">
                                                         <label for="ecografia.nombres">Comentarios Douglas</label>
-                                                        <input type="text" class="form-control" id="ecografia.nombres" disabled>
+                                                        <textarea class="form-control" id="ecografia.rut"></textarea>
                                                     </div>
                                                     <div class="form-group col-12">
                                                         <label for="ecografia.rut">Comentarios adicionales</label>
