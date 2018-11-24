@@ -15,9 +15,9 @@ class EcografiaController extends Controller
      * Handles what happens when user moves to URL/index/index - or - as this is the default controller, also
      * when user moves to /index or enter your application at base level
      */
-    public function index($paciente)
+    public function index($paciente = "")
     {
-        if (!$paciente || $paciente == ""){
+        if ($paciente == ""){
             Session::add('feedback_negative', 'Debe seleccionar un paciente');
             Redirect::to("pacientes");
         }
