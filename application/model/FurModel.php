@@ -44,7 +44,7 @@ class FurModel
      * @param string $note_text note text that will be created
      * @return bool feedback (was the note created properly ?)
      */
-    public static function createFur($paciente_rut, fur_fecha)
+    public static function createFur($paciente_rut, $fur_fecha)
     {
         if (!$paciente_rut || strlen($paciente_rut) == 0 || !$fur_fecha || strlen($fur_fecha) == 0 ) {
             Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_CREATION_FAILED'));
