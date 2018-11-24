@@ -52,63 +52,63 @@
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="form-group col-4">
-                                                        <label for="ecografia.rut">Fecha de exámen</label>
+                                                        <label for="ecografia.rut">Utero Ubicacion 1</label>
                                                         <input type="date" class="form-control" id="ecografia.rut">
                                                     </div>
                                                     <div class="form-group col-4">
-                                                        <label for="ecografia.nombres">EG al exámen</label>
+                                                        <label for="ecografia.nombres">Utero Ubicacion 2</label>
                                                         <input type="text" class="form-control" id="ecografia.nombres" disabled>
                                                     </div>
                                                     <div class="form-group col-4">
-                                                        <label for="ecografia.rut">Fecha de exámen</label>
+                                                        <label for="ecografia.rut">Cuerpo Uternino</label>
                                                         <input type="date" class="form-control" id="ecografia.rut">
                                                     </div>
                                                     <div class="form-group col-6">
-                                                        <label for="ecografia.nombres">EG al exámen</label>
+                                                        <label for="ecografia.nombres">Saco Gestacional</label>
                                                         <input type="text" class="form-control" id="ecografia.nombres" disabled>
                                                     </div>
                                                     <div class="form-group col-6">
-                                                        <label for="ecografia.rut">Fecha de exámen</label>
+                                                        <label for="ecografia.rut">mm</label>
                                                         <input type="date" class="form-control" id="ecografia.rut">
                                                     </div>
                                                     <div class="form-group col-6">
-                                                        <label for="ecografia.nombres">EG al exámen</label>
+                                                        <label for="ecografia.nombres">Saco Vitelino</label>
                                                         <input type="text" class="form-control" id="ecografia.nombres" disabled>
                                                     </div>
                                                     <div class="form-group col-6">
-                                                        <label for="ecografia.rut">Fecha de exámen</label>
+                                                        <label for="ecografia.rut">Medida de saco vitelino</label>
                                                         <input type="date" class="form-control" id="ecografia.rut">
                                                     </div>
                                                     <div class="form-group col-4">
-                                                        <label for="ecografia.nombres">EG al exámen</label>
+                                                        <label for="ecografia.nombres">Embrión</label>
                                                         <input type="text" class="form-control" id="ecografia.nombres" disabled>
                                                     </div>
                                                     <div class="form-group col-4">
-                                                        <label for="ecografia.rut">Fecha de exámen</label>
+                                                        <label for="ecografia.rut">mm</label>
                                                         <input type="date" class="form-control" id="ecografia.rut">
                                                     </div>
                                                     <div class="form-group col-4">
-                                                        <label for="ecografia.nombres">EG al exámen</label>
+                                                        <label for="ecografia.nombres">FCF</label>
                                                         <input type="text" class="form-control" id="ecografia.nombres" disabled>
                                                     </div>
                                                     <div class="form-group col-6">
-                                                        <label for="ecografia.rut">Fecha de exámen</label>
+                                                        <label for="ecografia.rut">Anexo derecho</label>
                                                         <input type="date" class="form-control" id="ecografia.rut">
                                                     </div>
                                                     <div class="form-group col-6">
-                                                        <label for="ecografia.nombres">EG al exámen</label>
+                                                        <label for="ecografia.nombres">Anexo Izquierdo</label>
                                                         <input type="text" class="form-control" id="ecografia.nombres" disabled>
                                                     </div>
                                                     <div class="form-group col-6">
-                                                        <label for="ecografia.rut">Fecha de exámen</label>
+                                                        <label for="ecografia.rut">Douglas</label>
                                                         <input type="date" class="form-control" id="ecografia.rut">
                                                     </div>
                                                     <div class="form-group col-6">
-                                                        <label for="ecografia.nombres">EG al exámen</label>
+                                                        <label for="ecografia.nombres">Comentarios Douglas</label>
                                                         <input type="text" class="form-control" id="ecografia.nombres" disabled>
                                                     </div>
                                                     <div class="form-group col-12">
-                                                        <label for="ecografia.rut">Fecha de exámen</label>
+                                                        <label for="ecografia.rut">Comentarios adicionales</label>
                                                         <input type="date" class="form-control" id="ecografia.rut">
                                                     </div>
                                                 </div>
