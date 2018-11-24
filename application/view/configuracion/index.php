@@ -13,7 +13,7 @@
                                     <a class="nav-link active" id="nacionalidad-tab" data-toggle="tab" href="#nacionalidad" role="tab" aria-controls="nacionalidad" aria-selected="true">País</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="region-tab" data-toggle="tab" href="#region" role="tab" aria-controls="region" aria-selected="false">Region / Provincia</a>
+                                    <a class="nav-link" id="region-tab" data-toggle="tab" href="#region" role="tab" aria-controls="region" aria-selected="false">Region / Provincia / Ciudad</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="prevision-tab" data-toggle="tab" href="#prevision" role="tab" aria-controls="prevision" aria-selected="false">Prevision</a>
@@ -93,7 +93,7 @@
                                                                 <tr>
                                                                 <th scope="col">ID</th>
                                                                 <th scope="col">Pais</th>
-                                                                <th scope="col">Region</th>
+                                                                <th scope="col">Region / Ciudad</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody id="table.region">
