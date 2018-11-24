@@ -19,7 +19,7 @@ class EcografiaController extends Controller
     {
         if ($paciente == ""){
             Session::add('feedback_negative', 'Debe seleccionar un paciente');
-            Redirect::to("pacientes");
+            Redirect::to("pacientes/");
         }
         else{
             $this->View->render('ecografia/index');

@@ -205,7 +205,7 @@
     });
 
     function maketable(){
-        $.get( "get").done(function( data ) {
+        $.get( "https://crecimientofetal.cl/pacientes/get").done(function( data ) {
             $("#table\\.pacientes").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
