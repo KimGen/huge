@@ -15,55 +15,34 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12 d-none" id="interface.ecografia">
+                            <h6>Nueva Ecografía</h6>
                             <div class="row">
-                                <div class="form-group col-3">
-                                    <label for="user.rut">RUT o DNI</label>
-                                    <input type="number" class="form-control" id="pacientes.rut">
+                                <div class="form-group col-6">
+                                    <label for="ecografia.rut">Fecha de exámen</label>
+                                    <input type="number" class="form-control" id="ecografia.rut">
                                 </div>
-                                <div class="form-group col-3">
-                                    <label for="user.nombres">Nombres</label>
-                                    <input type="text" class="form-control" id="pacientes.nombres">
+                                <div class="form-group col-6">
+                                    <label for="ecografia.nombres">EG al exámen</label>
+                                    <input type="text" class="form-control" id="ecografia.nombres">
                                 </div>
-                                <div class="form-group col-3">
-                                    <label for="user.apellidos">Apellidos</label>
-                                    <input type="text" class="form-control" id="pacientes.apellidos">
+                                <div class="form-group col-6">
+                                    <label for="ecografia.apellidos">Medida de embrión</label>
+                                    <input type="text" class="form-control" id="ecografia.apellidos">
                                 </div>
-                                <div class="form-group col-3">
-                                    <label for="user.nacimiento">Edad</label>
-                                    <select class="form-control" id="pacientes.nacimiento">
+                                <div class="form-group col-6">
+                                    <label for="ecografia.nacimiento">EG x LCN</label>
+                                    <select class="form-control" id="ecografia.nacimiento">
                                     </select>
                                 </div>
-                                <div class="form-group col-3">
-                                    <label for="user.nacionalidad">Pais de origen</label>
-                                    <select class="form-control" id="pacientes.nacionalidad">
+                                <div class="form-group col-6">
+                                    <label for="ecografia.nacionalidad">Promedio de Saco</label>
+                                    <select class="form-control" id="ecografia.nacionalidad">
                                     </select>
                                 </div>
-                                <div class="form-group col-3">
-                                    <label for="user.pais">Pais de residencia</label>
-                                    <select class="form-control" id="pacientes.pais">
+                                <div class="form-group col-6">
+                                    <label for="ecografia.pais">EG x Saco</label>
+                                    <select class="form-control" id="ecografia.pais">
                                     </select>
-                                </div>
-                                <div class="form-group col-3">
-                                    <label for="user.region">Región o Provincia de residencia</label>
-                                    <select class="form-control" id="pacientes.region">
-                                    </select>
-                                </div>
-                                <div class="form-group col-3">
-                                    <label for="user.lugar">Lugar de control</label>
-                                    <select class="form-control" id="pacientes.lugar"></select>
-                                </div>
-
-                                <div class="form-group col-3">
-                                    <label for="user.email">Correo Electrónico</label>
-                                    <input type="email" class="form-control" id="pacientes.email">
-                                </div>
-                                <div class="form-group col-3">
-                                    <label for="user.telefono">Telefono</label>
-                                    <input type="number" class="form-control" id="pacientes.telefono">
-                                </div>
-                                <div class="form-group col-3">
-                                    <label for="user.prevision">Previsión</label>
-                                    <select class="form-control" id="pacientes.prevision"></select>
                                 </div>
                             </div>
                         </div>
