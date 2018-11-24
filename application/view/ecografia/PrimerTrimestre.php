@@ -136,7 +136,7 @@
                         </div>
                         <hr>
                         <div class="col-12">
-                            <h6>Ecografias</h6>
+                            <h6 class="mt-2">Ecografias</h6>
                             <table class="table table-hover">
                                 <thead class="thead-dark">
                                     <tr>
