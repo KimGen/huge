@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-group col-6">
                             <label for="user.eg">EG</label>
-                            <input type="text" class="form-control" id="fur.eg">
+                            <input type="text" class="form-control" id="fur.eg" disabled>
                         </div>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
             FExamen = new Date();
             
             EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
-            $("#fur\\.eg").val(EdadGestacional);
+            $("#fur\\.eg").val(EdadGestacional + " semanas");
         });
         <?php } ?>
     });
