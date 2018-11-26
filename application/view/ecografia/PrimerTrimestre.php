@@ -22,7 +22,7 @@
                 <dt class="col-2">FUR:</dt>
                 <dd class="col-2"><?php echo $this->fur->fur_fecha; ?></dd>
                 <dt class="col-2">FPP:</dt>
-                <dd class="col-2"></dd>
+                <dd class="col-2"><?php echo $this->fur->fpp_fecha: ?></dd>
             <?php } ?>
             </div>
         </div>
@@ -350,6 +350,19 @@
                 event.preventDefault();
                 $("#button\\.ecografia\\.guardar").focus();
             }
+        });
+
+        //calculos
+        $("#ecografia\\.fecha").on("change", function(){
+            var FExamen, FUM, EdadGestacional;
+            var undia = 1000 * 60 * 60 * 24;
+            var unasemana = undia * 7;
+            
+            FUM = new Date('<?php echo $this->fur->fur_fecha; ?>');
+            FExamen = new Date($(this).val());
+            
+            EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
+            $("#ecografia\\.eg").val(EdadGestacional);
         });
     });
 
