@@ -31,7 +31,7 @@ class FurModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT fur_id, paciente_rut, fur_fecha FROM fur WHERE user_id = :user_id AND paciente_rut = :paciente_rut LIMIT 1";
+        $sql = "SELECT fur_id, paciente_rut, fur_fecha, fpp_fecha FROM fur WHERE user_id = :user_id AND paciente_rut = :paciente_rut LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id'), ':paciente_rut' => $paciente_rut));
 
@@ -52,10 +52,12 @@ class FurModel
         }
 
         $database = DatabaseFactory::getFactory()->getConnection();
+  
+        $fpp_fecha = date("Y/m/d", strtotime("$fur_fecha +40 week"));
 
-        $sql = "INSERT INTO fur (paciente_rut, fur_fecha, user_id) VALUES (:paciente_rut, :fur_fecha, :user_id)";
+        $sql = "INSERT INTO fur (paciente_rut, fur_fecha, fpp_fecha, user_id) VALUES (:paciente_rut, :fur_fecha, :fpp_fecha, :user_id)";
         $query = $database->prepare($sql);
-        $query->execute(array(':paciente_rut' => $paciente_rut, ':fur_fecha' => $fur_fecha, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':paciente_rut' => $paciente_rut, ':fpp_fecha' => $fpp_fecha,':fur_fecha' => $fur_fecha, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;
