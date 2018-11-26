@@ -120,6 +120,17 @@
             $("#fur\\.fecha").val("");
             $("#fur\\.eg").val("");
         });
+        $("#fur\\.fecha").on("change", function(){
+            var FExamen, FUM, EdadGestacional;
+            var undia = 1000 * 60 * 60 * 24;
+            var unasemana = undia * 7;
+            
+            FUM = new Date($("#fur\\.fecha").val());
+            FExamen = new Date();
+            
+            EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
+            $("#fur\\.eg").val(EdadGestacional);
+        });
         <?php } ?>
     });
 </script>
