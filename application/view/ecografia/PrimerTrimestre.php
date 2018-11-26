@@ -22,7 +22,7 @@
                 <dt class="col-2">FUR:</dt>
                 <dd class="col-2"><?php echo $this->fur->fur_fecha; ?></dd>
                 <dt class="col-2">FPP:</dt>
-                <dd class="col-2"><?php echo $this->fur->fpp_fecha: ?></dd>
+                <dd class="col-2"><?php echo $this->fur->fpp_fecha; ?></dd>
             <?php } ?>
             </div>
         </div>
