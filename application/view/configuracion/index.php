@@ -93,7 +93,7 @@
                                                                 <tr>
                                                                 <th scope="col">ID</th>
                                                                 <th scope="col">Pais</th>
-                                                                <th scope="col">Region / Ciudad</th>
+                                                                <th scope="col">Region / Provincia / Ciudad</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody id="table.region">
