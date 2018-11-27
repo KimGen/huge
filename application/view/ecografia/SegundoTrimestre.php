@@ -37,20 +37,132 @@
                                     <input type="text" class="form-control" id="ecografia.eg" disabled>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.apellidos">Medida de embrión</label>
-                                    <input type="text" class="form-control" id="ecografia.lcn.mm">
+                                    <label for="ecografia.apellidos">DBP</label>
+                                    <input type="text" class="form-control" id="ecografia.dbp.mm">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.nacimiento">EG x LCN</label>
-                                    <input type="text" class="form-control" id="ecografia.lcn.eg" disabled>
+                                    <label for="ecografia.nacimiento">Pct.</label>
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dbpDE">
+                                        <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-centro" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 14%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-tres" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cuatro" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cien" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                    </div>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.nacionalidad">Promedio de Saco</label>
-                                    <input type="text" class="form-control" id="ecografia.saco.mm">
+                                    <label for="ecografia.nacionalidad">DOF</label>
+                                    <input type="text" class="form-control" id="ecografia.dof.mm">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.pais">EG x Saco</label>
-                                    <input type="text" class="form-control" id="ecografia.saco.eg" disabled>
+                                    <label for="ecografia.pais">Pct.</label>
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dofDE">
+                                        <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-centro" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 14%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-tres" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cuatro" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cien" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.nacionalidad">CC</label>
+                                    <input type="text" class="form-control" id="ecografia.cc.mm">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.pais">Pct.</label>
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ccDE">
+                                        <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-centro" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 14%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-tres" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cuatro" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cien" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.nacionalidad">CA</label>
+                                    <input type="text" class="form-control" id="ecografia.ca.mm">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.pais">Pct.</label>
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="caDE">
+                                        <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-centro" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 14%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-tres" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cuatro" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cien" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.nacionalidad">LF</label>
+                                    <input type="text" class="form-control" id="ecografia.lf.mm">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.pais">Pct.</label>
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lfDE">
+                                        <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-centro" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 14%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-tres" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cuatro" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cien" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.nacionalidad">BVM</label>
+                                    <input type="text" class="form-control" id="ecografia.bvm.mm">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.pais">Pct.</label>
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="bvmDE">
+                                        <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-centro" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 14%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-tres" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cuatro" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cien" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.nacionalidad">LH</label>
+                                    <input type="text" class="form-control" id="ecografia.lh.mm">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.pais">Pct.</label>
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhDE">
+                                        <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-centro" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 14%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-tres" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cuatro" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cien" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.nacionalidad">Diámetro cerebeloso transverso</label>
+                                    <input type="text" class="form-control" id="ecografia.cerebelo.mm">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="ecografia.pais">Pct.</label>
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cerebeloDE">
+                                        <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-centro" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 14%">|</div>
+                                        <div class="progress-bar bg-light text-primary pivote-tres" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cuatro" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light text-primary pivote-cien" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
+                                    </div>
                                 </div>
                                 <div class="accordion col-12" id="accordionExample">
                                     <div class="card">
