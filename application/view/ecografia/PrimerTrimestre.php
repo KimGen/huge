@@ -329,7 +329,7 @@
             $("#button\\.ecografia\\.nuevo").removeClass("d-none");
             $("#button\\.ecografia\\.guardar").addClass("d-none");
             $("#button\\.ecografia\\.cancelar").addClass("d-none");
-            $("#button\\.ecografia\\.imprimir").removeClass("d-none");
+            $("#button\\.ecografia\\.imprimir").addClass("d-none");
             $("#ecografia\\.fecha").val("");
             $("#ecografia\\.eg").val("");
             $("#ecografia\\.lcn\\.mm").val("");
