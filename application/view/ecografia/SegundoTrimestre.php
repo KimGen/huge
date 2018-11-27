@@ -483,11 +483,13 @@
 
         $("#ecografia\\.cc\\.mm").on("change", function(){
             if ($.isNumeric($("#ecografia\\.eg").val())){
+                pctcc($("#ecografia\\.eg").val(),  $("#ecografia\\.cc\\.mm").val());
             }
         });
 
         $("#ecografia\\.ca\\.mm").on("change", function(){
             if ($.isNumeric($("#ecografia\\.eg").val())){
+                pctca($("#ecografia\\.eg").val(),  $("#ecografia\\.ca\\.mm").val());
             }
         });
 
@@ -680,6 +682,111 @@
             ajustarProgreso(resultado, "dbpDE");
         }
     };
+
+    function pctcc(eg, cc) {
+
+        var pct3 = [],
+            pct97 = [];
+
+        pct3[0] = 64;   pct3[1] = 74;
+        pct3[2] = 88;   pct3[3] = 100;
+        pct3[4] = 113;  pct3[5] = 126;
+        pct3[6] = 137;  pct3[7] = 149;
+        pct3[8] = 161;  pct3[9] = 172;
+        pct3[10] = 183; pct3[11] = 194;
+        pct3[12] = 204; pct3[13] = 214;
+        pct3[14] = 224; pct3[15] = 233;
+        pct3[16] = 242; pct3[17] = 250;
+        pct3[18] = 258; pct3[19] = 267;
+        pct3[20] = 274; pct3[21] = 280;
+        pct3[22] = 287; pct3[23] = 293;
+        pct3[24] = 299; pct3[25] = 303;
+        pct3[26] = 308; pct3[27] = 311;
+        pct3[28] = 315;
+
+        pct97[0] = 81;  pct97[1] = 94;
+        pct97[2] = 106; pct97[3] = 120;
+        pct97[4] = 135; pct97[5] = 150;
+        pct97[6] = 165; pct97[7] = 179;
+        pct97[8] = 193; pct97[9] = 206;
+        pct97[10] = 219; pct97[11] = 232;
+        pct97[12] = 243; pct97[13] = 256;
+        pct97[14] = 268; pct97[15] = 279;
+        pct97[16] = 290; pct97[17] = 300;
+        pct97[18] = 310; pct97[19] = 319;
+        pct97[20] = 328; pct97[21] = 336;
+        pct97[22] = 343; pct97[23] = 351;
+        pct97[24] = 358; pct97[25] = 363;
+        pct97[26] = 368; pct97[27] = 373;
+        pct97[28] = 377;
+
+        eg = Math.trunc(eg);
+        cc = parseInt(cc);
+
+        if (eg < 12 || eg > 40) {
+
+        } else {
+            eg = eg - 12;
+            eg = parseInt(eg);
+            var uno = pct97[eg] - pct3[eg];
+            var dos = cc - pct3[eg];
+            ajustarProgreso(parseInt(95 / (uno) * (dos) + 3), "ccPct");
+        }
+    };
+
+    function pctca(eg, ca) {
+
+        var pct3 = [],
+            pct97 = [];
+
+        pct3[0] = 42;    pct3[1] = 52;
+        pct3[2] = 64;    pct3[3] = 75;
+        pct3[4] = 86;    pct3[5] = 97;
+        pct3[6] = 109;   pct3[7] = 119;
+        pct3[8] = 131;   pct3[9] = 141;
+        pct3[10] = 151;  pct3[11] = 161;
+        pct3[12] = 171;  pct3[13] = 181;
+        pct3[14] = 191;  pct3[15] = 200;
+        pct3[16] = 209;  pct3[17] = 218;
+        pct3[18] = 227;  pct3[19] = 236;
+        pct3[20] = 245;  pct3[21] = 253;
+        pct3[22] = 261;  pct3[23] = 269;
+        pct3[24] = 277;  pct3[25] = 285;
+        pct3[26] = 292;  pct3[27] = 299;
+        pct3[28] = 307;
+
+        pct97[0] = 71;   pct97[1] = 79;
+        pct97[2] = 92;   pct97[3] = 102;
+        pct97[4] = 113;  pct97[5] = 127;
+        pct97[6] = 141;  pct97[7] = 155;
+        pct97[8] = 170;  pct97[9] = 183;
+        pct97[10] = 192; pct97[11] = 209;
+        pct97[12] = 223; pct97[13] = 235;
+        pct97[14] = 248; pct97[15] = 260;
+        pct97[16] = 271; pct97[17] = 284;
+        pct97[18] = 295; pct97[19] = 306;
+        pct97[20] = 318; pct97[21] = 329;
+        pct97[22] = 339; pct97[23] = 349;
+        pct97[24] = 359; pct97[25] = 370;
+        pct97[26] = 380; pct97[27] = 389;
+        pct97[28] = 399;
+
+        eg = Math.trunc(eg);
+        ca = parseInt(ca);
+
+        if (eg < 12 || eg > 40) {
+
+        } else {
+            eg = eg - 12;
+            eg = parseInt(eg);
+            var uno = pct97[eg] - pct3[eg];
+            var dos = ca - pct3[eg];
+            var resultado = parseInt(95 / (uno) * (dos) + 3);
+            ajustarProgreso(resultado, "caPct");
+        }
+    };
+
+
 
     function imprInforme(muestra) {
         var ficha = muestra;
