@@ -570,7 +570,7 @@
             var unasemana = undia * 7;
             
             FUM = new Date('<?php echo $this->fur->fur_fecha; ?>');
-            FExamen = new Date($(this).val());
+            FExamen = new Date($("#ecografia\\.fecha").val());
             
             EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
 
