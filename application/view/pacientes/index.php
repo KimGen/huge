@@ -205,7 +205,7 @@
     });
 
     function maketable(){
-        $.get( "https://crecimientofetal.cl/pacientes/get").done(function( data ) {
+        $.get( "<?php echo Config::get('URL'); ?>pacientes/get").done(function( data ) {
             $("#table\\.pacientes").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
@@ -220,7 +220,7 @@
                 });
 
                 $("#table\\.pacientes > tr").on("click", function(){
-                    window.location.href = 'https://crecimientofetal.cl/ecografia/index/' + $(this).data("id");
+                    window.location.href = '<?php echo Config::get('URL'); ?>ecografia/index/' + $(this).data("id");
                 })
             }
         });
@@ -238,7 +238,7 @@
             accion: "nacionalidad"
         }
 
-        $.post( "https://crecimientofetal.cl/configuracion/api", region).done(function( data ) {
+        $.post( "<?php echo Config::get('URL'); ?>configuracion/api", region).done(function( data ) {
             $("#pacientes\\.pais").empty();
             $("#pacientes\\.nacionalidad").empty();
             if (Object.keys(data).length > 0) {
@@ -258,7 +258,7 @@
             nacionalidad_nombre: $("#pacientes\\.pais option:selected").text()
         }
 
-        $.post( "https://crecimientofetal.cl/configuracion/api", region).done(function( data ) {
+        $.post( "<?php echo Config::get('URL'); ?>configuracion/api", region).done(function( data ) {
             $("#pacientes\\.region").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
@@ -274,7 +274,7 @@
             accion: "prevision"
         }
 
-        $.post( "https://crecimientofetal.cl/configuracion/api", prevision).done(function( data ) {
+        $.post( "<?php echo Config::get('URL'); ?>configuracion/api", prevision).done(function( data ) {
             $("#pacientes\\.prevision").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
@@ -290,7 +290,7 @@
             accion: "lugar"
         }
 
-        $.post( "https://crecimientofetal.cl/configuracion/api", lugar).done(function( data ) {
+        $.post( "<?php echo Config::get('URL'); ?>configuracion/api", lugar).done(function( data ) {
             $("#pacientes\\.lugar").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
