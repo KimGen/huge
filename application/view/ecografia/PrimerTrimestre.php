@@ -229,16 +229,23 @@
                 $("#dialog\\.delete").remove();
                 $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + diferencia + '">Si</button>');
                 $("#dialog\\.delete").on("click", function(){
-                    let region = {accion: "primertrimestreDelete", ecografia_id: $(this).data("id")}
 
-                    $.post( "https://crecimientofetal.cl/ecografia/api", region).done(function( data ) {
-                        diferencia = diferencia * oneday;
-                        var FUM = new Date ('<?php echo $this->fur->fur_fecha; ?>');
-                        var B = new Date();
-                        B.setTime(FUM.getTime() + diferencia);
-                        let day = ("0" + B.getDate()).slice(-2);
-                        let month = ("0" + (B.getMonth() + 1)).slice(-2);
-                        let today = B.getFullYear()+"-"+(month)+"-"+(day) ;
+                    diferencia = $(this).data("id") * oneday;
+                    var FUM = new Date ('<?php echo $this->fur->fur_fecha; ?>');
+                    var B = new Date();
+                    B.setTime(FUM.getTime() + diferencia);
+                    let day = ("0" + B.getDate()).slice(-2);
+                    let month = ("0" + (B.getMonth() + 1)).slice(-2);
+                    let today = B.getFullYear()+"-"+(month)+"-"+(day) ;
+
+                    let fur = {
+                        accion: "furUpdate",
+                        paciente_rut: '<?php echo $this->paciente->paciente_rut; ?>',
+                        fur_fecha: today
+                    }
+
+                    $.post( "https://crecimientofetal.cl/ecografia/api", fur).done(function( data ) {
+                        window.location.href = 'https://crecimientofetal.cl/ecografia/primertrimestre/<?php echo $this->paciente->paciente_rut; ?>';
                     });
                 });
                 $("#dialog\\.view").modal("show");
