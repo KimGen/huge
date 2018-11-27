@@ -206,7 +206,7 @@
             $("#ecografia\\.anexo\\.izquierdo").val("aspecto normal");
             $("#ecografia\\.duglas\\.txt").val("libre");
             $("#ecografia\\.douglas\\.com").val("");
-            $("#ecografia\\.com").val("Fum operacional: <?php echo $this->fur->fur_fecha; ?>nFecha probable de parto: <?php echo $this->fur->fpp_fecha; ?>");
+            $("#ecografia\\.com").val("Fum operacional: <?php echo $this->fur->fur_fecha; ?>/nFecha probable de parto: <?php echo $this->fur->fpp_fecha; ?>");
         });
 
         $("#button\\.ecografia\\.guardar").on("click", function(){
