@@ -365,9 +365,9 @@
             $("#ecografia\\.eg").val(EdadGestacional);
         });
 
-        $("#ecografia\\.lcn").on("change", function(){
+        $("#ecografia\\.lcn\\.mm").on("change", function(){
             if ($.isNumeric($("#ecografia\\.eg").val())){
-                $("#ecografia\\.lcn\\.eg").val(eglcn($("#ecografia\\.lcn").val()));
+                $("#ecografia\\.lcn\\.eg").val(eglcn($("#ecografia\\.lcn\\.mm").val()));
             }
         })
     });
