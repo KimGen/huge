@@ -591,7 +591,7 @@
     function crearInformeEcoPrimTrim(){
 	
 	    var sacovitelinotxt = "";
-        if ($('#ecografia\\.vitelino\\.txt').val() == "no se observa"){
+        if ($('#ecografia\\.vitelino\\.txt option:selected').text() == "no se observa"){
             sacovitelinotxt = ".";
         }
         else{
@@ -630,10 +630,10 @@
         }
         else{
               if ($("#ecografia\\.fcf").val() == '(+) inicial'){
-                  fcftexto = " frecuencia cardiaca fetal " + $("#ecografia\\.fcf").val();
+                  fcftexto = " frecuencia cardiaca fetal " + $("#ecografia\\.fcf option:selected").text();
               }
               else {
-                   fcftexto = " frecuencia cardiaca fetal de " + $("#fecografia\\.fcf").val() +" x min.";
+                   fcftexto = " frecuencia cardiaca fetal de " + $("#fecografia\\.fcf option:selected").text() +" x min.";
               }
         }
 
@@ -647,23 +647,23 @@
                douglasinforme = ".";
         }
 
-        var LINEA1 = $("#ecografia\\.utero\\.uno").val() + " " + $("#ecografia\\.utero\\.dos").val() + ", " + $("#ecografia\\.cuerpo").val() + ".";
-        var LINEA2 = $("#ecografia\\.saco\\.txt").val() + sacogestacionaltxt;
-        var LINEA3 = $("#ecografia\\.vitelino\\.txt").val() + sacovitelinotxt;
-        var LINEA4 = $("#ecografia\\.embrion\\.txt").val() + fcftexto;
-        var LINEA5 = $("#ecografia\\.anexo\\.derecho").val();
-        var LINEA6 = $("#ecografia\\.anexo\\.izquierdo").val();
-        var LINEA7 = $("#ecografia\\.douglas\\.txt").val() + ", " + douglasinforme;
+        var LINEA1 = $("#ecografia\\.utero\\.uno option:selected").text() + " " + $("#ecografia\\.utero\\.dos option:selected").text() + ", " + $("#ecografia\\.cuerpo option:selected").text() + ".";
+        var LINEA2 = $("#ecografia\\.saco\\.txt option:selected").text() + sacogestacionaltxt;
+        var LINEA3 = $("#ecografia\\.vitelino\\.txt option:selected").text() + sacovitelinotxt;
+        var LINEA4 = $("#ecografia\\.embrion\\.txt option:selected").text() + fcftexto;
+        var LINEA5 = $("#ecografia\\.anexo\\.derecho option:selected").text();
+        var LINEA6 = $("#ecografia\\.anexo\\.izquierdo option:selected").text();
+        var LINEA7 = $("#ecografia\\.douglas\\.txt option:selected").text() + ", " + douglasinforme;
         var LINEA12 = '';
         var LINEA8 = '';
         if ($('#lcn').val() > 0){
-	        var LINEA9 = "Utero " + $("#ecografia\\.utero\\.uno").val() + " " + $("#ecografia\\.utero\\.dos").val() + ", " + $("#ecografia\\.cuerpo").val() + ".";
-	        var LINEA10 = "Exploración anexial derecha " + $("#ecografia\\.anexo\\.derecho").val();
-            var LINEA11 = "Exploración anexial izquierda " + $("#ecografia\\.anexo\\.izquierdo").val();
+	        var LINEA9 = "Utero " + $("#ecografia\\.utero\\.uno option:selected").text() + " " + $("#ecografia\\.utero\\.dos option:selected").text() + ", " + $("#ecografia\\.cuerpo option:selected").text() + ".";
+	        var LINEA10 = "Exploración anexial derecha " + $("#ecografia\\.anexo\\.derecho option:selected").text();
+            var LINEA11 = "Exploración anexial izquierda " + $("#ecografia\\.anexo\\.izquierdo option:selected").text();
         }
 	    else{
-	        var LINEA9 = "Gestación Inicial<br>Utero " + $("ecografia\\.utero\\.uno").val() + " " + $("#ecografia\\.utero\\.dos").val() + ", " + $("#ecografia\\.cuerpo").val() + ".";
-	        var LINEA10 = "Exploración anexial " + $("#ecografia\\.anexo\\.derecho").val();
+	        var LINEA9 = "Gestación Inicial<br>Utero " + $("ecografia\\.utero\\.uno option:selected").text() + " " + $("#ecografia\\.utero\\.dos option:selected").text() + ", " + $("#ecografia\\.cuerpo option:selected").text() + ".";
+	        var LINEA10 = "Exploración anexial " + $("#ecografia\\.anexo\\.derecho option:selected").text();
             var LINEA11 = "";
 	        LINEA12 = "Embrion no se observa";
 	    }
