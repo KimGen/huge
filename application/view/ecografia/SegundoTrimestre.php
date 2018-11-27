@@ -468,6 +468,48 @@
             $("#ecografia\\.com").val("");
         });
 
+        //calculos
+        $("#ecografia\\.dbp\\.mm").on("change", function(){
+            if ($.isNumeric($("#ecografia\\.eg").val())){
+                deDBP($("#ecografia\\.eg").val(), $("#ecografia\\.dbp\\.mm").val());
+            }
+        });
+
+        $("#ecografia\\.dof\\.mm").on("change", function(){
+            if ($.isNumeric($("#ecografia\\.eg").val())){
+
+            }
+        });
+
+        $("#ecografia\\.cc\\.mm").on("change", function(){
+            if ($.isNumeric($("#ecografia\\.eg").val())){
+            }
+        });
+
+        $("#ecografia\\.ca\\.mm").on("change", function(){
+            if ($.isNumeric($("#ecografia\\.eg").val())){
+            }
+        });
+
+        $("#ecografia\\.lf\\.mm").on("change", function(){
+            if ($.isNumeric($("#ecografia\\.eg").val())){
+            }
+        });
+
+        $("#ecografia\\.bvm\\.mm").on("change", function(){
+            if ($.isNumeric($("#ecografia\\.eg").val())){
+            }
+        });
+
+        $("#ecografia\\.lh\\.mm").on("change", function(){
+            if ($.isNumeric($("#ecografia\\.eg").val())){
+            }
+        });
+
+        $("#ecografia\\.cerebelo\\.mm").on("change", function(){
+            if ($.isNumeric($("#ecografia\\.eg").val())){
+            }
+        });
         //restricciones
         $("#ecografia\\.saco\\.txt").on("change", function(){
             if ($(this).val() == 'no se observa'){
@@ -588,288 +630,56 @@
         });
     }
 
-    function eglcn(lcn) {
+    function deDBP(eg, dbp) {
+        var DBPMenos2DE = [];
+        var DBPMas2DE = [];
 
-        var LCN = [[],[]];
+        DBPMenos2DE[0] = 14;  DBPMenos2DE[1] = 17;
+        DBPMenos2DE[2] = 19;  DBPMenos2DE[3] = 25;
+        DBPMenos2DE[4] = 29;  DBPMenos2DE[5] = 33;
+        DBPMenos2DE[6] = 34;  DBPMenos2DE[7] = 38;
+        DBPMenos2DE[8] = 41;  DBPMenos2DE[9] = 43;
+        DBPMenos2DE[10] = 46; DBPMenos2DE[11] = 49;
+        DBPMenos2DE[12] = 52; DBPMenos2DE[13] = 54;
+        DBPMenos2DE[14] = 57; DBPMenos2DE[15] = 61;
+        DBPMenos2DE[16] = 63; DBPMenos2DE[17] = 65;
+        DBPMenos2DE[18] = 69; DBPMenos2DE[19] = 69;
+        DBPMenos2DE[20] = 74; DBPMenos2DE[21] = 74;
+        DBPMenos2DE[22] = 77; DBPMenos2DE[23] = 78;
+        DBPMenos2DE[24] = 78; DBPMenos2DE[25] = 81;
+        DBPMenos2DE[26] = 85; DBPMenos2DE[27] = 88;
 
-        LCN[0][0] = 0.09; LCN[0][1] = 0.2; LCN[0][2] = 0.37;
-        LCN[0][3] = 0.57; LCN[0][4] = 0.7; LCN[0][5] = 0.8;
-        LCN[0][6] = 0.9; LCN[0][7] = 1; LCN[0][8] = 1.1;
-        LCN[0][9] = 1.12; LCN[0][10] = 1.13; LCN[0][11] = 1.18;
-        LCN[0][12] = 1.27; LCN[0][13] = 1.38; LCN[0][14] = 1.47;
-        LCN[0][15] = 1.58; LCN[0][16] = 1.65; LCN[0][17] = 1.72;
-        LCN[0][18] = 1.87; LCN[0][19] = 1.96; LCN[0][20] = 2.05;
-        LCN[0][21] = 2.18; LCN[0][22] = 2.25; LCN[0][23] = 2.35;
-        LCN[0][24] = 2.54; LCN[0][25] = 2.62; LCN[0][26] = 2.7;
-        LCN[0][27] = 2.9; LCN[0][28] = 3.08; LCN[0][29] = 3.16;
-        LCN[0][30] = 3.4; LCN[0][31] = 3.51; LCN[0][32] = 3.57;
-        LCN[0][33] = 3.76; LCN[0][34] = 3.85; LCN[0][35] = 4.05;
-        LCN[0][36] = 4.18; LCN[0][37] = 4.46; LCN[0][38] = 4.55;
-        LCN[0][39] = 4.66; LCN[0][40] = 4.88; LCN[0][41] = 5.07;
-        LCN[0][42] = 5.29; LCN[0][43] = 5.46; LCN[0][44] = 5.66;
-        LCN[0][45] = 5.87; LCN[0][46] = 6.01; LCN[0][47] = 6.27;
-        LCN[0][48] = 6.37; LCN[0][49] = 6.65; LCN[0][50] = 6.77;
-        LCN[0][51] = 7.08; LCN[0][52] = 7.19; LCN[0][53] = 7.39;
-        LCN[0][54] = 7.57; LCN[0][55] = 7.68; LCN[0][56] = 7.98;
-        LCN[0][57] = 8.09; LCN[0][58] = 8.35; LCN[0][59] = 8.48;
-        LCN[0][60] = 8.56; LCN[0][61] = 8.76; LCN[0][62] = 8.88;
-        LCN[0][63] = 9.09;
+        DBPMas2DE[0] = 25;    DBPMas2DE[1] = 29;
+        DBPMas2DE[2] = 33;    DBPMas2DE[3] = 35;
+        DBPMas2DE[4] = 41;    DBPMas2DE[5] = 42;
+        DBPMas2DE[6] = 46;    DBPMas2DE[7] = 50;
+        DBPMas2DE[8] = 52;    DBPMas2DE[9] = 56;
+        DBPMas2DE[10] = 59;   DBPMas2DE[11] = 63;
+        DBPMas2DE[12] = 66;   DBPMas2DE[13] = 70;
+        DBPMas2DE[14] = 71;   DBPMas2DE[15] = 75;
+        DBPMas2DE[16] = 77;   DBPMas2DE[17] = 81;
+        DBPMas2DE[18] = 83;   DBPMas2DE[19] = 87;
+        DBPMas2DE[20] = 88;   DBPMas2DE[21] = 91;
+        DBPMas2DE[22] = 94;   DBPMas2DE[23] = 95;
+        DBPMas2DE[24] = 97;   DBPMas2DE[25] = 99;
+        DBPMas2DE[26] = 97;   DBPMas2DE[27] = 106;
 
-        LCN[1][0] = 0; LCN[1][1] = 5.5; LCN[1][2] = 6;
-        LCN[1][3] = 6.2; LCN[1][4] = 6.4; LCN[1][5] = 6.5;
-        LCN[1][6] = 6.6; LCN[1][7] = 7.1; LCN[1][8] = 7.1;
-        LCN[1][9] = 7.1; LCN[1][10] = 7.2; LCN[1][11] = 7.3;
-        LCN[1][12] = 7.4; LCN[1][13] = 7.5; LCN[1][14] = 7.6;
-        LCN[1][15] = 8; LCN[1][16] = 8.1; LCN[1][17] = 8.2;
-        LCN[1][18] = 8.3; LCN[1][19] = 8.4; LCN[1][20] = 8.5;
-        LCN[1][21] = 8.6; LCN[1][22] = 9; LCN[1][23] = 9.1;
-        LCN[1][24] = 9.2; LCN[1][25] = 9.3; LCN[1][26] = 9.4;
-        LCN[1][27] = 9.5; LCN[1][28] = 10; LCN[1][29] = 10.1;
-        LCN[1][30] = 10.2; LCN[1][31] = 10.3; LCN[1][32] = 10.4;
-        LCN[1][33] = 10.5; LCN[1][34] = 10.6; LCN[1][35] = 11;
-        LCN[1][36] = 11.1; LCN[1][37] = 11.2; LCN[1][38] = 11.3;
-        LCN[1][39] = 11.4; LCN[1][40] = 11.5; LCN[1][41] = 11.6;
-        LCN[1][42] = 12; LCN[1][43] = 12.1; LCN[1][44] = 12.2;
-        LCN[1][45] = 12.3; LCN[1][46] = 12.4; LCN[1][47] = 12.5;
-        LCN[1][48] = 12.6; LCN[1][49] = 13; LCN[1][50] = 13.1;
-        LCN[1][51] = 13.2; LCN[1][52] = 13.3; LCN[1][53] = 13.4;
-        LCN[1][54] = 13.5; LCN[1][55] = 13.6; LCN[1][56] = 14;
-        LCN[1][57] = 14.1; LCN[1][58] = 14.2; LCN[1][59] = 14.3;
-        LCN[1][60] = 14.4; LCN[1][61] = 14.5; LCN[1][62] = 14.6;
-        LCN[1][63] = 15;
+        dbp = dbp.toString();
+        dbp = dbp.replace(",", ".");
+        dbp = parseFloat(dbp);
 
-        lcn = lcn.toString();
-        lcn = lcn.replace(",", ".");
-        lcn = parseFloat(lcn);
+        if (eg < 12 || eg > 40) {
+            return '';
+        } else {
+            eg = eg - 12;
+            eg = parseInt(eg);
 
-        if (isNaN(lcn) != true){
-            if (lcn > 90) {
-                return 0;
-            }
-            else if (lcn < 1){
-                return 0;
-            }
-            else {
-
-                var ValLCN1 = lcn / 10;
-
-                for (i = 1; i <= 63; i ++ ) {
-                if (LCN[0][i] >= ValLCN1) {
-                    var eglcn = LCN[1][i];
-                    i = 63;
-                }
-                }
-                return eglcn;
-            }
-        }
-        else{
-            return 0;
-        }
-    };
-
-    function egsaco(saco) {
-
-        var y = [];
-
-            y[5] =4.2;    y[6] =4.3;    y[7] =4.4;    y[8] =4.5;
-            y[9] =4.6;    y[10] =5;    y[11] =5.1;    y[12] =5.2;
-            y[13] =5.3;    y[14] =5.4;    y[15] =5.5;    y[16] =5.6;
-            y[17] =6;    y[18] =6.1;    y[19] =6.2;    y[20] =6.3;
-            y[21] =6.4;    y[22] =6.5;    y[23] =6.6;    y[24] =7;
-            y[25] =7.1;    y[26] =7.2;    y[27] =7.3;    y[28] =7.4;
-            y[29] =7.5;    y[30] =7.6;    y[31] =8;    y[32] =8.1;
-            y[33] =8.2;    y[34] =8.3;    y[35] =8.4;    y[36] =8.5;
-            y[37] =8.6;    y[38] =9;    y[39] =9.1;    y[40] =9.2;
-            y[41] =9.3;    y[42] =9.4;    y[43] =9.5;    y[44] =9.6;
-            y[45] =9.6;    y[46] =10;    y[47] =10.1;    y[48] =10.2;
-            y[49] =10.3;    y[50] =10.4;    y[51] =10.5;    y[52] =11;
-            y[53] =11.1;    y[54] =11.2;    y[55] =11.3;    y[56] =11.4;
-            y[57] =11.5;    y[58] =11.6;    y[59] =12;    y[60] =12.1;
-            y[61] =12.2;
-            
-            saco = saco.replace(",", ".");
-            var prs = parseInt(saco);
-
-            if (prs < 5) {
-                return 0;
-            }
-            else if (prs > 61) {
-                return 0;
-            }
-            else {
-                var egsaco = y[prs];
-                return egsaco;
-            }
-    };
-
-
-    function crearInformeEcoPrimTrim(){
-	
-	    var sacovitelinotxt = "";
-        if ($('#ecografia\\.vitelino\\.txt option:selected').text() == "no se observa"){
-            sacovitelinotxt = ".";
-        }
-        else{
-            
-	     sacovitelinotxt = " de diametro " + $('#ecografia\\.vitelino\\.mm').val() +" mm.";
-        }
-
-        var sacogestacionaltxt = $("#ecografia\\.saco\\.mm").val();
-
-        if (sacogestacionaltxt > 0){
-            sacogestacionaltxt = " diametro promedio " + sacogestacionaltxt +" mm.";
-        }
-        else{
-             sacogestacionaltxt = ".";
-		}
-		
-	    //si solo tiena saco
-        if ($('#ecografia\\.lcn\\.mm').val() < 1 && $('#ecografia\\.saco\\.mm').val() > 1){
-            var InformeString = "<div class='container-fluid'> <h3 class='page-header text-center'>Evaluación ecografía obstétrica de primer trimestre</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container-fluid'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>ANTECEDENTES</strong> </p><p><strong>FUM: </strong> :FUM <br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p>Cuerpo Uterino :LINEA1 <br>Saco Gestacional :LINEA2 <br>Saco Vitelino :LINEA3 <br>Embrión :LINEA4 <br>Exploración anexial derecha :LINEA5 <br>Exploración anexial izquierda :LINEA6 <br>Exploración de Douglas :LINEA7</p><p></p><p></p><p><strong style='color:#045dab;'>:TITULOBIOMETRIAS</strong> </p><p>:LINEA12 <br>:LINEA13</p><p></p><p></p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong><span style='color:#045dab;'> (Adicionar comentarios del examinador)</span> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='border-bottom:0;'>Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800 <br>Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992. <br>Referencia Diámetro biparital según gráfica de Hadlock y col. 1984 <br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>";
-        }
-        else if ($('#ecografia\\.lcn\\.mm').val() < 1 && $('#ecografia\\.saco\\.mm').val() < 1 && sacogestacionaltxt == "."){
-            var InformeString = "<div class='container-fluid'> <h3 class='page-header text-center'>Evaluación ecografía obstétrica de primer trimestre</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container-fluid'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>ANTECEDENTES</strong> </p><p><strong>FUM: </strong> :FUM <br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p>Cuerpo Uterino :LINEA1 <br>Exploración anexial derecha :LINEA5 <br>Exploración anexial izquierda :LINEA6 <br>Exploración de Douglas :LINEA7</p><p></p><p></p><p><strong style='color:#045dab;'>:TITULOBIOMETRIAS</strong> </p><p>:LINEA12 <br>:LINEA13</p><p></p><p></p><p><strong style='color:#045dab;'>HIPÓTESIS DIAGNÓSTICA</strong> </p><p>:LINEA8 :LINEA9 <br>:LINEA10 <br>:LINEA11</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='border-bottom:0;'>Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800 <br>Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992. <br>Referencia Diámetro biparital según gráfica de Hadlock y col. 1984 <br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>";
-        }
-        else
-        {
-            var InformeString = "<div class='container-fluid'> <h3 class='page-header text-center'>Evaluación ecografía obstétrica de primer trimestre</h3></div><span style='border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;'></span><div class='container-fluid'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>ANTECEDENTES</strong> </p><p><strong>FUM: </strong> :FUM <br><strong>EG (UPM): </strong> :EG semanas</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>DESCRIPCIÓN</strong> </p><p>Cuerpo Uterino :LINEA1 <br>Saco Gestacional :LINEA2 <br>Saco Vitelino :LINEA3 <br>Embrión :LINEA4 <br>Exploración anexial derecha :LINEA5 <br>Exploración anexial izquierda :LINEA6 <br>Exploración de Douglas :LINEA7</p><p></p><p></p><p><strong style='color:#045dab;'>:TITULOBIOMETRIAS</strong> </p><p>:LINEA12 <br>:LINEA13</p><p></p><p></p><p><strong style='color:#045dab;'>HIPÓTESIS DIAGNÓSTICA</strong> </p><p>:LINEA8 :LINEA9 <br>:LINEA10 <br>:LINEA11</p></div><div class='container-fluid'> <p><strong style='color:#045dab;'>COMENTARIOS Y OBSERVACIONES</strong> </p><p style='max-width: 700px;text-align: justify;'>:COMENTARIO</p></div><div class='container-fluid'> <p class='text-right top40'>Ecografista Dr(a): <strong>:ECOGRAFISTA</strong> </p><span style='border-top: 1px solid #000;width: 100% !important;display: block;'></span> <p>Fecha Informe: :DATEINFORME</p><span style='border-top: 2px solid #000;width: 100% !important;display: block;'></span> <p class='pie-pagina' style='border-bottom:0;'>Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800 <br>Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992. <br>Referencia Diámetro biparital según gráfica de Hadlock y col. 1984 <br>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>";
-        }
-
-        var fcftexto = $("#embrion").val();
-
-        if (fcftexto == 'no se observa aun'){
-              fcftexto = ".";
-        }
-        else if (fcftexto == 'act. no evidenciable'){
-              fcftexto = ".";
-        }
-        else{
-              if ($("#ecografia\\.fcf").val() == '(+) inicial'){
-                  fcftexto = " frecuencia cardiaca fetal " + $("#ecografia\\.fcf option:selected").text();
-              }
-              else {
-                   fcftexto = " frecuencia cardiaca fetal de " + $("#fecografia\\.fcf option:selected").text() +" x min.";
-              }
-        }
-
-        var douglasinforme = '';
-	
-        if ($("#ecografia\\.douglas\\.txt").val() == 'ocupado'){
-               douglasinforme = $("#ecografia\\.douglas\\.com").val();
-        }
-        else
-        {
-               douglasinforme = ".";
-        }
-
-        var LINEA1 = $("#ecografia\\.utero\\.uno option:selected").text() + " " + $("#ecografia\\.utero\\.dos option:selected").text() + ", " + $("#ecografia\\.cuerpo option:selected").text() + ".";
-        var LINEA2 = $("#ecografia\\.saco\\.txt option:selected").text() + sacogestacionaltxt;
-        var LINEA3 = $("#ecografia\\.vitelino\\.txt option:selected").text() + sacovitelinotxt;
-        var LINEA4 = $("#ecografia\\.embrion\\.txt option:selected").text() + fcftexto;
-        var LINEA5 = $("#ecografia\\.anexo\\.derecho option:selected").text();
-        var LINEA6 = $("#ecografia\\.anexo\\.izquierdo option:selected").text();
-        var LINEA7 = $("#ecografia\\.douglas\\.txt option:selected").text() + ", " + douglasinforme;
-        var LINEA12 = '';
-        var LINEA8 = '';
-        if ($('#lcn').val() > 0){
-	        var LINEA9 = "Utero " + $("#ecografia\\.utero\\.uno option:selected").text() + " " + $("#ecografia\\.utero\\.dos option:selected").text() + ", " + $("#ecografia\\.cuerpo option:selected").text() + ".";
-	        var LINEA10 = "Exploración anexial derecha " + $("#ecografia\\.anexo\\.derecho option:selected").text();
-            var LINEA11 = "Exploración anexial izquierda " + $("#ecografia\\.anexo\\.izquierdo option:selected").text();
-        }
-	    else{
-	        var LINEA9 = "Gestación Inicial<br>Utero " + $("ecografia\\.utero\\.uno option:selected").text() + " " + $("#ecografia\\.utero\\.dos option:selected").text() + ", " + $("#ecografia\\.cuerpo option:selected").text() + ".";
-	        var LINEA10 = "Exploración anexial " + $("#ecografia\\.anexo\\.derecho option:selected").text();
-            var LINEA11 = "";
-	        LINEA12 = "Embrion no se observa";
-	    }
-	
-        if (sacogestacionaltxt > 0){
-            LINEA12 = "Saco gestacional diámetro promedio de " + sacogestacionaltxt +" mm.<br>";
-            LINEA8 = "Edad gestacional estimada " + $("#ecografia\\.saco\\.eg").val() + " por saco gestacional.<br>";
-                    //eliminar referencias que no son alusivas a saco
-                    //comprobar si no hay lcn
-            //if ($("#lcn").val()( < 1){
-            //    $("#referencia-eco1").html("Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800<br><br>Software diseñado por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br>Este software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos,<br>es responsabilidad exclusiva de quien realiza y certifica este documento.");
-            //}
-        }
-
-        if ($('#ecografia\\.lcn\\.mm').val() > 0) {
-            LINEA12 = "Largo embrionario máximo de " + $("#ecografia\\.lcn\\.mm").val() + " mm.";
-            LINEA8 = "Edad gestacional estimada " + $("#ecografia\\.lcn\\.eg").val() + " semanas por LCN.<br>";
-        }
-	    var LINEA13 = '';
-	
-        if ($('eco1-dbp').val() > 0){
-            LINEA13 = "DBP: " + $("eco1-dbp").val() + "mm";
-        }
-
-	    var TITULOBIOMETRIAS = 'BIOMETRÍAS EMBRIO/FETAL';
-	
-        if ($('#ecografia\\.lcn\\.mm').val() < 1) {
-            if ($('#eco1-dbp').val() < 1) {
-                if (sacogestacionaltxt < 1){
-                    LINEA12 = '';
-                    LINEA8 = '';
-                    TITULOBIOMETRIAS = '';
-                }
-            }
-        }
-	
-        var paciente = '<?php echo $this->paciente->paciente_nombre . ' ' . $this->paciente->paciente_apellido; ?>';
-        var idpaciente = '<?php echo $this->paciente->paciente_rut; ?>';
-        var motivo = $( '#motivo-examen option:selected').text();
-        var ecografista = $( '#ecografista option:selected').text();
-
-        var fur = '<?php echo $this->fur->fur_fecha; ?>';
-        var fexamen = $( "#ecografia\\.fecha").val();
-        var eg = $( "#ecografia\\.eg").val();
-	
-        InformeString = InformeString.replace(":PACIENTE", paciente);
-        InformeString = InformeString.replace(":IDPACIENTE", idpaciente);
-        InformeString = InformeString.replace(":MOTIVO", motivo);
-        InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
-        
-        let now = new Date();
-        let day = ("0" + now.getDate()).slice(-2);
-        let month = ("0" + (now.getMonth() + 1)).slice(-2);
-
-        var dateInf = (day)+"/"+(month)+"/"+now.getFullYear();
-	
-        var comentario = $("#ecografia\\.com").val();
-        if (typeof comentario !== 'undefined'){
-            comentario = comentario.replace(/\r?\n/g, "<br>");
-        }
-        else{
-            comentario='';
-        }
-	
-        var patologiaObstetrica = $( '#patologiaObstetricaUno option:selected').text();
-        var edadmaterna = $( "select[name='edad_materna']").val();
-        
-        InformeString = InformeString.replace(":FUM", fur);
-        InformeString = InformeString.replace(":EDADMATERNA", edadmaterna);
-        InformeString = InformeString.replace(":FEXAMEN", fexamen);
-        InformeString = InformeString.replace(":EG", eg);
-        InformeString = InformeString.replace(":LINEA1", LINEA1);
-        InformeString = InformeString.replace(":LINEA2", LINEA2);
-        InformeString = InformeString.replace(":LINEA3", LINEA3);
-        InformeString = InformeString.replace(":LINEA4", LINEA4);
-        InformeString = InformeString.replace(":LINEA5", LINEA5);
-        InformeString = InformeString.replace(":LINEA6", LINEA6);
-        InformeString = InformeString.replace(":LINEA7", LINEA7);
-        InformeString = InformeString.replace(":LINEA8", LINEA8);
-        InformeString = InformeString.replace(":LINEA9", LINEA9);
-        InformeString = InformeString.replace(":LINEA10", LINEA10);
-        InformeString = InformeString.replace(":LINEA11", LINEA11);
-        InformeString = InformeString.replace(":LINEA12", LINEA12);
-        InformeString = InformeString.replace(":LINEA13", LINEA13);
-        InformeString = InformeString.replace(":TITULOBIOMETRIAS", TITULOBIOMETRIAS);
-        InformeString = InformeString.replace(":COMENTARIO", comentario);
-        InformeString = InformeString.replace(":DATEINFORME", dateInf);
-        InformeString = InformeString.replace(":PATOLOGIAOBSTETRICA", patologiaObstetrica);
-        
-        imprInforme(InformeString);
+            var uno = DBPMas2DE[eg] - DBPMenos2DE[eg];
+            var dos = dbp - DBPMenos2DE[eg];
+            var resultado = (parseInt(95 / (uno) * (dos) + 3));
+            ajustarProgreso(resultado, "dbpDE");
     }
+
 
     function imprInforme(muestra) {
         var ficha = muestra;
@@ -887,4 +697,55 @@
         ventimp.document.write(document);
         ventimp.document.close();
     }
+
+    function ajustarProgreso(valor, objeto) {
+        $("#" + objeto + " > .pivote-uno").html("");
+        $("#" + objeto + " > .pivote-dos").html("");
+        $("#" + objeto + " > .pivote-cero").html("|");
+        $("#" + objeto + " > .pivote-centro").html("|");
+        $("#" + objeto + " > .pivote-cien").html("|");
+        $("#" + objeto + " > .pivote-tres").html("");
+        $("#" + objeto + " > .pivote-cuatro").html("");
+
+        if (valor <= 6) {
+            $("#" + objeto + " > .pivote-cero").html("<strong style='color:red;'>X</strong>");
+        } else if (valor <= 10) {
+            $("#" + objeto + " > .pivote-uno").css("width", "10%");
+            $("#" + objeto + " > .pivote-uno").html("<strong style='color:red;'>X</strong>");
+            $("#" + objeto + " > .pivote-dos").css("width", "25%");
+        } else if (valor <= 20) {
+            $("#" + objeto + " > .pivote-uno").css("width", "17.5%");
+            $("#" + objeto + " > .pivote-uno").html("<strong style='color:red;'>X</strong>");
+            $("#" + objeto + " > .pivote-dos").css("width", "17.5%");
+        } else if (valor <= 30) {
+            $("#" + objeto + " > .pivote-uno").css("width", "20%");
+            $("#" + objeto + " > .pivote-dos").css("width", "15%");
+            $("#" + objeto + " > .pivote-dos").html("<strong style='color:red;'>X</strong>");
+        } else if (valor <= 40) {
+            $("#" + objeto + " > .pivote-uno").css("width", "25%");
+            $("#" + objeto + " > .pivote-dos").css("width", "10%");
+            $("#" + objeto + " > .pivote-dos").html("<strong style='color:red;'>X</strong>");
+        } else if (valor <= 50) {
+            $("#" + objeto + " > .pivote-centro").html("<strong style='color:red;'>X</strong>");
+        } else if (valor <= 60) {
+            $("#" + objeto + " > .pivote-tres").css("width", "10%");
+            $("#" + objeto + " > .pivote-tres").html("<strong style='color:red;'>X</strong>");
+            $("#" + objeto + " > .pivote-cuatro").css("width", "25%");
+        } else if (valor <= 70) {
+            $("#" + objeto + " > .pivote-tres").css("width", "17.5%");
+            $("#" + objeto + " > .pivote-tres").html("<strong style='color:red;'>X</strong>");
+            $("#" + objeto + " > .pivote-cuatro").css("width", "17.5%");
+        } else if (valor <= 80) {
+            $("#" + objeto + " > .pivote-tres").css("width", "20%");
+            $("#" + objeto + " > .pivote-cuatro").css("width", "15%");
+            $("#" + objeto + " > .pivote-cuatro").html("<strong style='color:red;'>X</strong>");
+        } else if (valor <= 90) {
+            $("#" + objeto + " > .pivote-tres").css("width", "25%");
+            $("#" + objeto + " > .pivote-cuatro").css("width", "10%");
+            $("#" + objeto + " > .pivote-cuatro").html("<strong style='color:red;'>X</strong>");
+        } else {
+            $("#" + objeto + " > .pivote-cien").html("<strong style='color:red;'>X</strong>");
+        }
+    }
+
 </script>
