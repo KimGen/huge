@@ -220,7 +220,7 @@
 
             if ($.isNumeric(lcn)){
                 let lcnEG = $("#ecografia\\.lcn\\.eg").val();
-                var eg1 = new Number((Math.floor(lcnEG) * 7) + Math.round((EGLCN - Math.floor(lcnEG)) * 7));
+                var eg1 = new Number((Math.floor(lcnEG) * 7) + Math.round((lcnEG - Math.floor(lcnEG)) * 7));
 				var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
                 var diferencia = (Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
                 
