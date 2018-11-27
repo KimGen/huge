@@ -885,7 +885,7 @@
         var uno = pct95[eg] - pct5[eg];
         var dos = bvm - pct5[eg];
         var resultado = parseInt(90 / (uno) * (dos) + 5);
-        ajustarProgreso(resultado, "bvmDE");
+        ajustarProgreso(resultado, "bvmPct");
         }
     }
 
@@ -1055,8 +1055,6 @@
         pct2dsmas[22] = 60;        pct2dsmas[23] = 62;
         pct2dsmas[24] = 62;        pct2dsmas[25] = 62;
 
-        var eg = 0;
-        var cb = 0;
         eg = Math.trunc(eg);
         cb = parseInt(cb);
 
