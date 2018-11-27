@@ -1,14 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-5">
-            <div class="btn-group m-3" role="group">
-                <button type="button" class="btn btn-outline-primary btn-lg" id="button.ecografia.nuevo"><i class="fas fa-plus"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.guardar"><i class="fas fa-save"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.cancelar"><i class="fas fa-ban"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.imprimir"><i class="fas fa-print"></i></button>
-            </div>
-        </div>
-        <div class="col-7">
+        <div class="col">
             <h4 class="text-right my-3">Ecografía Obstétrica Primer Trimestre</h4>
         </div>
     </div>
@@ -29,7 +21,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
+        <div class="col-8">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -153,6 +145,18 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="btn-group-vertical" role="group">
+                        <button type="button" class="btn btn-outline-primary btn-lg" id="button.ecografia.nuevo"><i class="fas fa-plus"></i></button>
+                        <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.guardar"><i class="fas fa-save"></i></button>
+                        <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.cancelar"><i class="fas fa-ban"></i></button>
+                        <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.imprimir"><i class="fas fa-print"></i></button>
                     </div>
                 </div>
             </div>
