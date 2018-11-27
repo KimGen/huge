@@ -19,16 +19,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarHome">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item <?php if (View::checkForActiveController($filename, "index")) { echo 'active'; } ?>">
-                        <a class="nav-link" href="<?php echo Config::get('URL'); ?>">Inicio <span class="sr-only">(current)</span></a>
-                    </li>
                     <?php if (Session::userIsLoggedIn()) { ?>
                         <li class="nav-item <?php if (View::checkForActiveController($filename, "dashboard")) { echo 'active'; } ?>">
                             <a class="nav-link" href="<?php echo Config::get('URL'); ?>pacientes/index">Pacientes</a>
                         </li>
                     <?php } else { ?>
-                        <li class="nav-item <?php if (View::checkForActiveController($filename, "register/index")) { echo 'active'; } ?>">
-                            <a class="nav-link" href="<?php echo Config::get('URL'); ?>register/index">Crear cuenta</a>
+                        <li class="nav-item <?php if (View::checkForActiveController($filename, "index")) { echo 'active'; } ?>">
+                            <a class="nav-link" href="<?php echo Config::get('URL'); ?>">Inicio <span class="sr-only">(current)</span></a>
                         </li>
                     <?php } ?>
                 </ul>
@@ -51,12 +48,6 @@
                                     <a class="dropdown-item <?php if (View::checkForActiveController($filename, "admin")) {echo 'active';} ?>" href="<?php echo Config::get('URL'); ?>admin/">Admin</a>
                                 <?php endif; ?>
                             </div>
-                        </li>
-                    </ul>
-                <?php } else { ?>
-                    <ul class="navbar-nav">
-                        <li class="nav-item <?php if (View::checkForActiveController($filename, "login/index")) { echo 'active'; } ?>">
-                            <a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo Config::get('URL'); ?>login/index">Ingresar</a>
                         </li>
                     </ul>
                 <?php } ?>
