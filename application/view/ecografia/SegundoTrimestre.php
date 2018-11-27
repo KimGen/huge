@@ -513,6 +513,7 @@
 
         $("#ecografia\\.cerebelo\\.mm").on("change", function(){
             if ($.isNumeric($("#ecografia\\.eg").val())){
+                pctcb($("#ecografia\\.eg").val(),  $("#ecografia\\.cerebelo\\.mm").val())
             }
         });
         //restricciones
@@ -872,9 +873,6 @@
         pct95[22] = 68; pct95[23] = 66;
         pct95[24] = 62;
 
-        var eg = 0,
-        bvm = 0;
-
         eg = parseFloat(eg);
         bvm = parseInt(bvm);
 
@@ -887,7 +885,7 @@
         var uno = pct95[eg] - pct5[eg];
         var dos = bvm - pct5[eg];
         var resultado = parseInt(90 / (uno) * (dos) + 5);
-        ajustarProgreso(resultado, "bvmPct");
+        ajustarProgreso(resultado, "bvmDE");
         }
     }
 
