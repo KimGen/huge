@@ -225,7 +225,7 @@
                 var diferencia = (Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
                 
                 $("#dialog\\.title").html("Ajuste");
-                $("#dialog\\.body").html('<p class="text-center text-danger">Días de diferencia observado entre edad gestacional por FUR referida y exámen ecográfico es de ' + diferencia+ ' días.</p><p>¿Desea hacer ajuste automático de la FUR?');
+                $("#dialog\\.body").html('<p class="text-center text-danger">Días de diferencia observado entre edad gestacional por FUR referida y exámen ecográfico es de ' + diferencia+ ' días.</p><p>¿Desea hacer ajuste automático de la FUR?</p>');
                 $("#dialog\\.delete").remove();
                 $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + diferencia + '">Si</button>');
                 $("#dialog\\.delete").on("click", function(){
@@ -560,6 +560,7 @@
             if (prs < 5) {
                 return 0;
             }
+            else if (prs > 61) {
                 return 0;
             }
             else {
