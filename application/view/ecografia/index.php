@@ -61,7 +61,7 @@
                     <h6 class="card-title">Ecografía Obstétrica 2° - 3° Trimestre</h6>
                     <p class="card-text">Valoración del crecimiento intrauterino</p>
                     <?php if ($this->fur) { ?>
-                        <a href="#ecoObsSegTrim" class="btn btn-primary">Ir a exámen</a>
+                        <a href="<?php echo Config::get('URL') . 'ecografia/segundotrimestre/' . $this->paciente->paciente_rut; ?>" class="btn btn-primary">Ir a exámen</a>
                     <?php } else { ?>
                         <a href="#" class="btn btn-danger">Ingrese una FUR</a>
                     <?php } ?>
