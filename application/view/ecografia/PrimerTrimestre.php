@@ -714,10 +714,11 @@
         InformeString = InformeString.replace(":MOTIVO", motivo);
         InformeString = InformeString.replace(":ECOGRAFISTA", ecografista);
         
-        var day = ("0" + aplication.day.getDate()).slice(-2);
-        var month = ("0" + (aplication.day.getMonth() + 1)).slice(-2);
+        let now = new Date();
+        let day = ("0" + now.getDate()).slice(-2);
+        let month = ("0" + (now.getMonth() + 1)).slice(-2);
 
-        var dateInf = (day)+"/"+(month)+"/"+aplication.day.getFullYear();
+        var dateInf = (day)+"/"+(month)+"/"+now.getFullYear();
 	
         var comentario = $("#ecografia\\.com").val();
         if (typeof comentario !== 'undefined'){
