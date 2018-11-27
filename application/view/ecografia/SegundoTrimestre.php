@@ -495,16 +495,19 @@
 
         $("#ecografia\\.lf\\.mm").on("change", function(){
             if ($.isNumeric($("#ecografia\\.eg").val())){
+                pctlf($("#ecografia\\.eg").val(),  $("#ecografia\\.lf\\.mm").val())
             }
         });
 
         $("#ecografia\\.bvm\\.mm").on("change", function(){
             if ($.isNumeric($("#ecografia\\.eg").val())){
+                pctbvm($("#ecografia\\.eg").val(),  $("#ecografia\\.bvm\\.mm").val())
             }
         });
 
         $("#ecografia\\.lh\\.mm").on("change", function(){
             if ($.isNumeric($("#ecografia\\.eg").val())){
+                pctlh($("#ecografia\\.eg").val(),  $("#ecografia\\.lh\\.mm").val())
             }
         });
 
@@ -786,6 +789,107 @@
         }
     };
 
+    function pctlf(eg, lf) {
+
+        var pct3 = [],
+        pct97 = [];
+
+        pct3[0] = 7;    pct3[1] = 9;
+        pct3[2] = 12;   pct3[3] = 15;
+        pct3[4] = 17;   pct3[5] = 21;
+        pct3[6] = 23;   pct3[7] = 26;
+        pct3[8] = 28;   pct3[9] = 30;
+        pct3[10] = 33;  pct3[11] = 35;
+        pct3[12] = 38;  pct3[13] = 40;
+        pct3[14] = 42;  pct3[15] = 44;
+        pct3[16] = 46;  pct3[17] = 48;
+        pct3[18] = 50;  pct3[19] = 52;        pct3[20] = 53;
+        pct3[21] = 55;  pct3[22] = 57;
+        pct3[23] = 59;  pct3[24] = 60;
+        pct3[25] = 62;  pct3[26] = 64;
+        pct3[27] = 65;  pct3[28] = 66;
+        pct97[0] = 12;  pct97[1] = 14;
+        pct97[2] = 17;  pct97[3] = 20;
+        pct97[4] = 23;  pct97[5] = 27;
+        pct97[6] = 31;  pct97[7] = 34;
+        pct97[8] = 38;  pct97[9] = 40;
+        pct97[10] = 43; pct97[11] = 47;
+        pct97[12] = 50; pct97[13] = 52;
+        pct97[14] = 56; pct97[15] = 58;
+        pct97[16] = 62; pct97[17] = 64;
+        pct97[18] = 66; pct97[19] = 68;
+        pct97[20] = 71; pct97[21] = 73;
+        pct97[22] = 75; pct97[23] = 78;
+        pct97[24] = 80; pct97[25] = 82;
+        pct97[26] = 84; pct97[27] = 86;
+        pct97[28] = 88;
+
+        eg = Math.trunc(parseFloat(eg));
+        lf = parseInt(lf);
+
+        if (eg < 12|| eg > 40) {
+
+        } else {
+            eg = eg - 12;
+            eg = parseInt(eg);
+            var uno = pct97[eg] - pct3[eg];
+            var dos = lf - pct3[eg];
+            var resultado = parseInt(95 / (uno) * (dos) + 3);
+            ajustarProgreso(resultado, "lfPct");
+        }
+    }
+
+    function pctbvm(eg, bvm) {
+
+        var pct5 = [],
+        pct95 = [];
+
+        pct5[0] = 23;   pct5[1] = 25;
+        pct5[2] = 27;   pct5[3] = 28;
+        pct5[4] = 29;   pct5[5] = 29;
+        pct5[6] = 30;   pct5[7] = 30;
+        pct5[8] = 30;   pct5[9] = 30;
+        pct5[10] = 30;  pct5[11] = 30;
+        pct5[12] = 30;  pct5[13] = 29;
+        pct5[14] = 29;  pct5[15] = 29;
+        pct5[16] = 29;  pct5[17] = 29;
+        pct5[18] = 28;  pct5[19] = 28;
+        pct5[20] = 27;  pct5[21] = 26;
+        pct5[22] = 24;  pct5[23] = 23;
+        pct5[24] = 21;
+
+        pct95[0] = 59;  pct95[1] = 62;
+        pct95[2] = 64;  pct95[3] = 66;
+        pct95[4] = 67;  pct95[5] = 68;
+        pct95[6] = 68;  pct95[7] = 68;
+        pct95[8] = 68;  pct95[9] = 68;
+        pct95[10] = 68; pct95[11] = 69;
+        pct95[12] = 69; pct95[13] = 69;
+        pct95[14] = 69; pct95[15] = 70;
+        pct95[16] = 71; pct95[17] = 72;
+        pct95[18] = 72; pct95[19] = 72;
+        pct95[20] = 71; pct95[21] = 70;
+        pct95[22] = 68; pct95[23] = 66;
+        pct95[24] = 62;
+
+        var eg = 0,
+        bvm = 0;
+
+        eg = parseFloat(eg);
+        bvm = parseInt(bvm);
+
+        if (eg < 16 || eg > 40) {
+
+        } else {
+        eg = eg - 16;
+        eg = parseInt(eg);
+
+        var uno = pct95[eg] - pct5[eg];
+        var dos = bvm - pct5[eg];
+        var resultado = parseInt(90 / (uno) * (dos) + 5);
+        ajustarProgreso(resultado, "bvmPct");
+        }
+    }
 
 
     function imprInforme(muestra) {
@@ -855,4 +959,118 @@
         }
     }
 
+    function pctlh(eg, lh) {
+
+        var pct05 = [];
+        var pct95 = [];
+
+        pct05[12] = 4.8;  pct95[12] = 12.3;
+        pct05[13] = 7.6;  pct95[13] = 15.1;
+        pct05[14] = 10.3; pct95[14] = 17.9;
+        pct05[15] = 13.1; pct95[15] = 20.7;
+        pct05[16] = 15.8; pct95[16] = 23.5;
+        pct05[17] = 18.5; pct95[17] = 26.3;
+        pct05[18] = 21.2; pct95[18] = 29.1;
+        pct05[19] = 23.8; pct95[19] = 31.6;
+        pct05[20] = 26.3; pct95[20] = 34.2;
+        pct05[21] = 28.8; pct95[21] = 36.7;
+        pct05[22] = 31.2; pct95[22] = 39.2;
+        pct05[23] = 33.5; pct95[23] = 41.6;
+        pct05[24] = 35.7; pct95[24] = 43.9;
+        pct05[25] = 37.9; pct95[25] = 46.1;
+        pct05[26] = 39.9; pct95[26] = 48.1;
+        pct05[27] = 41.9; pct95[27] = 50.1;
+        pct05[28] = 43.7; pct95[28] = 52.1;
+        pct05[29] = 45.5; pct95[29] = 53.9;
+        pct05[30] = 47.2; pct95[30] = 55.6;
+        pct05[31] = 48.9; pct95[31] = 57.3;
+        pct05[32] = 50.4; pct95[32] = 58.9;
+        pct05[33] = 52.1; pct95[33] = 60.5;
+        pct05[34] = 53.4; pct95[34] = 62.1;
+        pct05[35] = 54.8; pct95[35] = 63.5;
+        pct05[36] = 56.2; pct95[36] = 64.9;
+        pct05[37] = 57.6; pct95[37] = 66.4;
+        pct05[38] = 59.8; pct95[38] = 67.8;
+        pct05[39] = 60.4; pct95[39] = 69.3;
+        pct05[40] = 61.9; pct95[40] = 70.8;
+
+        eg = Math.trunc(eg);
+        var lh = parseInt(lh);
+
+        if (eg < 12 || eg > 40) {
+
+        } else {
+            eg = parseInt(eg);
+            var uno = pct95[eg] - pct05[eg];
+            var dos = lh - pct05[eg];
+            var resultado = (parseInt(95 / (uno) * (dos) + 5));
+            ajustarProgreso(resultado, "lhPct");
+        }
+    }
+
+    function pctcb(eg, cb) {
+
+        //cerebelo segun Hill
+        var pct2ds = [];
+        var pctmedia = [];
+        var pct2dsmas = [];
+
+        pct2ds[0] = 12;        pct2ds[1] = 14;
+        pct2ds[2] = 15;        pct2ds[3] = 16;
+        pct2ds[4] = 17;        pct2ds[5] = 18;
+        pct2ds[6] = 19;        pct2ds[7] = 20;
+        pct2ds[8] = 21;        pct2ds[9] = 22;
+        pct2ds[10] = 24;        pct2ds[11] = 26;
+        pct2ds[12] = 27;        pct2ds[13] = 29;
+        pct2ds[14] = 30;        pct2ds[15] = 31;
+        pct2ds[16] = 33;        pct2ds[17] = 36;
+        pct2ds[18] = 37;        pct2ds[19] = 38;
+        pct2ds[20] = 40;        pct2ds[21] = 40;
+        pct2ds[22] = 40;        pct2ds[23] = 41;
+        pct2ds[24] = 42;        pct2ds[25] = 44;
+
+        pctmedia[0] = 15;        pctmedia[1] = 16;
+        pctmedia[2] = 17;        pctmedia[3] = 18;
+        pctmedia[4] = 20;        pctmedia[5] = 20;
+        pctmedia[6] = 22;        pctmedia[7] = 23;
+        pctmedia[8] = 24;        pctmedia[9] = 26;
+        pctmedia[10] = 28;        pctmedia[11] = 30;
+        pctmedia[12] = 31;        pctmedia[13] = 33;
+        pctmedia[14] = 34;        pctmedia[15] = 37;
+        pctmedia[16] = 39;        pctmedia[17] = 41;
+        pctmedia[18] = 43;        pctmedia[19] = 46;
+        pctmedia[20] = 47;        pctmedia[21] = 49;
+        pctmedia[22] = 51;        pctmedia[23] = 51;
+        pctmedia[24] = 52;        pctmedia[25] = 52
+
+        pct2dsmas[0] = 18;        pct2dsmas[1] = 18;
+        pct2dsmas[2] = 19;        pct2dsmas[3] = 20;
+        pct2dsmas[4] = 22;        pct2dsmas[5] = 23;
+        pct2dsmas[6] = 25;        pct2dsmas[7] = 26;
+        pct2dsmas[8] = 27;        pct2dsmas[9] = 30;
+        pct2dsmas[10] = 32;        pct2dsmas[11] = 34;
+        pct2dsmas[12] = 34;        pct2dsmas[13] = 37;
+        pct2dsmas[14] = 38;        pct2dsmas[15] = 41;
+        pct2dsmas[16] = 43;        pct2dsmas[17] = 46;
+        pct2dsmas[18] = 48;        pct2dsmas[19] = 53;
+        pct2dsmas[20] = 56;        pct2dsmas[21] = 58;
+        pct2dsmas[22] = 60;        pct2dsmas[23] = 62;
+        pct2dsmas[24] = 62;        pct2dsmas[25] = 62;
+
+        var eg = 0;
+        var cb = 0;
+        eg = Math.trunc(eg);
+        cb = parseInt(cb);
+
+        if (eg < 15 || eg > 40) {
+
+        } else {
+            eg = eg - 15;
+            eg = parseInt(eg);
+            var uno = pct2dsmas[eg] - pct2ds[eg];
+            var dos = cb - pct2ds[eg];
+            var resultado = parseInt(95 / (uno) * (dos));
+            ajustarProgreso(resultado, "cerebeloDE");
+        }
+    }
 </script>
