@@ -83,8 +83,8 @@ class FurModel
         $database = DatabaseFactory::getFactory()->getConnection();
 
         $fpp_fecha = date("Y/m/d", strtotime("$fur_fecha +40 week"));
-        
-        $sql = "UPDATE notes SET fur_fecha = :fur_fecha WHERE paciente_rut = :paciente_rut AND user_id = :user_id LIMIT 1";
+
+        $sql = "UPDATE notes SET fur_fecha = :fur_fecha, fpp_fecha = :fpp_fecha WHERE paciente_rut = :paciente_rut AND user_id = :user_id LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':paciente_rut' => $paciente_rut, ':fpp_fecha' => $fpp_fecha, ':fur_fecha' => $fur_fecha, ':user_id' => Session::get('user_id')));
 
