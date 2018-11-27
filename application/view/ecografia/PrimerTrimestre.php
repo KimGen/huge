@@ -151,10 +151,10 @@
         </div>
         <div class="col-2">
             <div class="btn-group-vertical" role="group">
-                <button type="button" class="btn btn-outline-primary btn-lg" id="button.ecografia.nuevo">Nuevo Exámen</button>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.guardar">Guardar Exámen</button>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.cancelar">Cancelar Exámen</button>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.imprimir">Ver Informe</button>
+                <button type="button" class="btn btn-outline-primary" id="button.ecografia.nuevo">Nuevo Exámen</button>
+                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.guardar">Guardar Exámen</button>
+                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.cancelar">Cancelar Exámen</button>
+                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.imprimir">Ver Informe</button>
             </div>
         </div>
     </div>
