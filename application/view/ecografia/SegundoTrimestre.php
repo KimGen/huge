@@ -628,7 +628,7 @@
                 });
             }
         });
-    }
+    };
 
     function deDBP(eg, dbp) {
         var DBPMenos2DE = [];
@@ -678,8 +678,7 @@
             var dos = dbp - DBPMenos2DE[eg];
             var resultado = (parseInt(95 / (uno) * (dos) + 3));
             ajustarProgreso(resultado, "dbpDE");
-    }
-
+    };
 
     function imprInforme(muestra) {
         var ficha = muestra;
