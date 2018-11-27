@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="ccDE">Pct.</label>
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ccDE">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ccPct">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                         <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="caDE">Pct.</label>
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="caDE">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="caPct">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                         <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="lfDE">Pct.</label>
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lfDE">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lfPct">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                         <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -122,7 +122,7 @@
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="bvmDE">Pct.</label>
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="bvmDE">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="bvmPct">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                         <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -138,7 +138,7 @@
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="lhDE">Pct.</label>
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhDE">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhPct">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                         <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
