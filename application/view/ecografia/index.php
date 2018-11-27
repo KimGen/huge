@@ -108,8 +108,8 @@
                 fur_fecha: $("#fur\\.fecha").val()
             }
 
-            $.post( "https://crecimientofetal.cl/ecografia/api", fur).done(function( data ) {
-                window.location.href = 'https://crecimientofetal.cl/ecografia/index/<?php echo $this->paciente->paciente_rut; ?>';
+            $.post( "<?php echo Config::get('URL'); ?>ecografia/api", fur).done(function( data ) {
+                window.location.href = '<?php echo Config::get('URL'); ?>ecografia/index/<?php echo $this->paciente->paciente_rut; ?>';
             });
         });
         $("#button\\.fur\\.cancelar").on("click", function(){

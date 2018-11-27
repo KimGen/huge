@@ -251,8 +251,8 @@
                         fur_fecha: today
                     }
 
-                    $.post( "https://crecimientofetal.cl/ecografia/api", fur).done(function( data ) {
-                        window.location.href = 'https://crecimientofetal.cl/ecografia/primertrimestre/<?php echo $this->paciente->paciente_rut; ?>';
+                    $.post( "<?php echo Config::get('URL'); ?>ecografia/api", fur).done(function( data ) {
+                        window.location.href = '<?php echo Config::get('URL'); ?>ecografia/primertrimestre/<?php echo $this->paciente->paciente_rut; ?>';
                     });
                 });
                 $("#dialog\\.view").modal("show");
@@ -298,7 +298,7 @@
                 data: JSON.stringify(ecografia)
             }
 
-            $.post( "https://crecimientofetal.cl/ecografia/api", encap).done(function( data ) {
+            $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( data ) {
                 $("#ecografia\\.fecha").val("");
                 $("#ecografia\\.eg").val("");
                 $("#ecografia\\.lcn\\.mm").val("");
@@ -443,7 +443,7 @@
             accion: "primertrimestre",
         }
 
-        $.post( "https://crecimientofetal.cl/ecografia/api", encap).done(function( data ) {
+        $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( data ) {
             $("#table\\.ecografia").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
@@ -461,7 +461,7 @@
                     $("#dialog\\.delete").on("click", function(){
                         let region = {accion: "primertrimestreDelete", ecografia_id: $(this).data("id")}
 
-                        $.post( "https://crecimientofetal.cl/ecografia/api", region).done(function( data ) {
+                        $.post( "<?php echo Config::get('URL'); ?>ecografia/api", region).done(function( data ) {
                             $("#table\\.ecografia").empty();
                             makeTable();
                             $("#dialog\\.view").modal("hide");
