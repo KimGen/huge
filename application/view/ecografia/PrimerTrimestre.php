@@ -401,6 +401,15 @@
             FExamen = new Date($(this).val());
             
             EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
+
+            if (FExamen.getTime() < FUM.getTime()) {
+                EdadGestacional = "0";
+            } else if (((FExamen.getTime() - FUM.getTime()) / unasemana) > 42) {
+                EdadGestacional = "42";
+            } else {
+                EdadGestacional = Math.floor(EdadGestacional) + "." + Math.round((EdadGestacional - Math.floor(EdadGestacional)) * 7);
+            }
+
             $("#ecografia\\.eg").val(EdadGestacional);
         });
 
