@@ -29,19 +29,19 @@
                             <h6>Nueva Ecografía</h6>
                             <div class="row">
                                 <div class="form-group col-6">
-                                    <label for="ecografia.rut">Fecha de exámen</label>
+                                    <label for="ecografia.fecha">Fecha de exámen</label>
                                     <input type="date" class="form-control" id="ecografia.fecha">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.nombres">Edad Gestacional al exámen</label>
+                                    <label for="ecografia.eg">Edad Gestacional al exámen</label>
                                     <input type="text" class="form-control" id="ecografia.eg" disabled>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.apellidos">DBP</label>
+                                    <label for="ecografia.dbp.mm">DBP</label>
                                     <input type="text" class="form-control" id="ecografia.dbp.mm">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.nacimiento">Pct.</label>
+                                    <label for="dbpDE">Pct.</label>
                                     <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dbpDE">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -53,11 +53,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.nacionalidad">DOF</label>
+                                    <label for="ecografia.dof.mm">DOF</label>
                                     <input type="text" class="form-control" id="ecografia.dof.mm">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.pais">Pct.</label>
+                                    <label for="dofDE">Pct.</label>
                                     <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dofDE">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -69,11 +69,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.nacionalidad">CC</label>
+                                    <label for="ecografia.cc.mm">CC</label>
                                     <input type="text" class="form-control" id="ecografia.cc.mm">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.pais">Pct.</label>
+                                    <label for="ccDE">Pct.</label>
                                     <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ccDE">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -85,11 +85,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.nacionalidad">CA</label>
+                                    <label for="ecografia.ca.mm">CA</label>
                                     <input type="text" class="form-control" id="ecografia.ca.mm">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.pais">Pct.</label>
+                                    <label for="caDE">Pct.</label>
                                     <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="caDE">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -101,11 +101,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.nacionalidad">LF</label>
+                                    <label for="ecografia.lf.mm">LF</label>
                                     <input type="text" class="form-control" id="ecografia.lf.mm">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.pais">Pct.</label>
+                                    <label for="lfDE">Pct.</label>
                                     <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lfDE">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -117,11 +117,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.nacionalidad">BVM</label>
+                                    <label for="ecografia.bvm.mm">BVM</label>
                                     <input type="text" class="form-control" id="ecografia.bvm.mm">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.pais">Pct.</label>
+                                    <label for="bvmDE">Pct.</label>
                                     <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="bvmDE">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -133,11 +133,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.nacionalidad">LH</label>
+                                    <label for="ecografia.lh.mm">LH</label>
                                     <input type="text" class="form-control" id="ecografia.lh.mm">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.pais">Pct.</label>
+                                    <label for="lhDE">Pct.</label>
                                     <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhDE">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -149,11 +149,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.nacionalidad">Diámetro cerebeloso transverso</label>
+                                    <label for="ecografia.cerebelo.mm">Diámetro cerebeloso transverso</label>
                                     <input type="text" class="form-control" id="ecografia.cerebelo.mm">
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="ecografia.pais">Pct.</label>
+                                    <label for="cerebeloDE">Pct.</label>
                                     <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cerebeloDE">
                                         <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                         <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
