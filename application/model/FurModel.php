@@ -74,17 +74,19 @@ class FurModel
      * @param string $note_text new text of the specific note
      * @return bool feedback (was the update successful ?)
      */
-    public static function updateNote($note_id, $note_text)
+    public static function updateFur($paciente_rut, $fur_fecha)
     {
-        if (!$note_id || !$note_text) {
+        if (!$paciente_rut || !$fur_fecha) {
             return false;
         }
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "UPDATE notes SET note_text = :note_text WHERE note_id = :note_id AND user_id = :user_id LIMIT 1";
+        $fpp_fecha = date("Y/m/d", strtotime("$fur_fecha +40 week"));
+        
+        $sql = "UPDATE notes SET fur_fecha = :fur_fecha WHERE paciente_rut = :paciente_rut AND user_id = :user_id LIMIT 1";
         $query = $database->prepare($sql);
-        $query->execute(array(':note_id' => $note_id, ':note_text' => $note_text, ':user_id' => Session::get('user_id')));
+        $query->execute(array(':paciente_rut' => $paciente_rut, ':fpp_fecha' => $fpp_fecha, ':fur_fecha' => $fur_fecha, ':user_id' => Session::get('user_id')));
 
         if ($query->rowCount() == 1) {
             return true;

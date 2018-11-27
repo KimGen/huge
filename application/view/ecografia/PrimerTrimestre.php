@@ -206,10 +206,49 @@
             $("#ecografia\\.anexo\\.izquierdo").val("aspecto normal");
             $("#ecografia\\.duglas\\.txt").val("libre");
             $("#ecografia\\.douglas\\.com").val("");
-            $("#ecografia\\.com").val("");
+            $("#ecografia\\.com").val("Fum operacional: <?php echo $this->fur->fur_fecha; ?>nFecha probable de parto: <?php echo $this->fur->fpp_fecha; ?>");
         });
 
         $("#button\\.ecografia\\.guardar").on("click", function(){
+
+            //calcular la diferencia entre la eg operativa y la eg por lcn o saco
+            
+            let saco = $("#ecografia\\.saco\\.mm").val();
+            let lcn = $("#ecografia\\.lcn\\.mm").val();
+            let eg = $("#ecografia\\.eg").val();
+            var oneday = 1000 * 60 * 60 * 24;
+
+            if ($.isNumeric(lcn)){
+                let lcnEG = $("#ecografia\\.lcn\\.eg").val();
+                var eg1 = new Number((Math.floor(lcnEG) * 7) + Math.round((EGLCN - Math.floor(lcnEG)) * 7));
+				var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
+                var diferencia = (Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
+                
+                $("#dialog\\.title").html("Ajuste");
+                $("#dialog\\.body").html('<p class="text-center text-danger">Días de diferencia observado entre edad gestacional por FUR referida y exámen ecográfico es de ' + diferencia+ ' días.</p><p>¿Desea hacer ajuste automático de la FUR?');
+                $("#dialog\\.delete").remove();
+                $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + diferencia + '">Si</button>');
+                $("#dialog\\.delete").on("click", function(){
+                    let region = {accion: "primertrimestreDelete", ecografia_id: $(this).data("id")}
+
+                    $.post( "https://crecimientofetal.cl/ecografia/api", region).done(function( data ) {
+                        diferencia = diferencia * oneday;
+                        var FUM = new Date ('<?php echo $this->fur->fur_fecha; ?>');
+                        var B = new Date();
+                        B.setTime(FUM.getTime() + diferencia);
+                        let day = ("0" + B.getDate()).slice(-2);
+                        let month = ("0" + (B.getMonth() + 1)).slice(-2);
+                        let today = B.getFullYear()+"-"+(month)+"-"+(day) ;
+                    });
+                });
+                $("#dialog\\.view").modal("show");
+            }
+            else if ($.isNumeric(saco)){
+                let sacoEG = $("#ecografia\\.saco\\.eg").val();
+                let diferencia = eg - sacoEG;
+                alert(diferencia);
+            }
+
             $("#interface\\.ecografia").addClass("d-none");
             $("#button\\.ecografia\\.nuevo").removeClass("d-none");
             $("#button\\.ecografia\\.guardar").addClass("d-none");
@@ -283,7 +322,7 @@
             $("#ecografia\\.saco\\.eg").val("");
             $("#ecografia\\.utero\\.uno").val("central");
             $("#ecografia\\.utero\\.dos").val("anterior");
-            $("#ecografia\\.cuerpo").val("aspecto normal");
+            $("#ecografia\\.cuerpo").val("aspecto normal").trigger("change");
             $("#ecografia\\.saco\\.txt").val("normal").trigger("change");
             $("#ecografia\\.saco\\.mm\\.copia").val("");
             $("#ecografia\\.vitelino\\.txt").val("presente");
@@ -331,13 +370,6 @@
                 $("#ecografia\\.douglas\\.com").removeClass("d-none");
             }
         });
-        //copias
-        $("#ecografia\\.saco\\.mm").on("change", function(){
-            $("#ecografia\\.saco\\.mm\\.copia").val($(this).val());
-        });
-        $("#ecografia\\.lcn\\.mm").on("change", function(){
-            $("#ecografia\\.lcn\\.mm\\.copia").val($(this).val());
-        });
         //enters
         $("#ecografia\\.lcn\\.mm").keyup(function( event ) {
             if ( event.which == 13 ) {
@@ -366,10 +398,18 @@
         });
 
         $("#ecografia\\.lcn\\.mm").on("change", function(){
+            $("#ecografia\\.lcn\\.mm\\.copia").val($(this).val());
             if ($.isNumeric($("#ecografia\\.eg").val())){
                 $("#ecografia\\.lcn\\.eg").val(eglcn($("#ecografia\\.lcn\\.mm").val()));
             }
-        })
+        });
+
+        $("#ecografia\\.saco\\.mm").on("change", function(){
+            $("#ecografia\\.saco\\.mm\\.copia").val($(this).val());
+            if ($.isNumeric($("#ecografia\\.eg").val())){
+                $("#ecografia\\.saco\\.eg").val(eglcn($("#ecografia\\.saco\\.mm").val()));
+            }
+        });
     });
 
     function makeTable(){
@@ -485,5 +525,39 @@
         else{
             return 0;
         }
-        };
+    };
+
+    function egsaco(saco) {
+
+        var y = [];
+
+            y[5] =4.2;    y[6] =4.3;    y[7] =4.4;    y[8] =4.5;
+            y[9] =4.6;    y[10] =5;    y[11] =5.1;    y[12] =5.2;
+            y[13] =5.3;    y[14] =5.4;    y[15] =5.5;    y[16] =5.6;
+            y[17] =6;    y[18] =6.1;    y[19] =6.2;    y[20] =6.3;
+            y[21] =6.4;    y[22] =6.5;    y[23] =6.6;    y[24] =7;
+            y[25] =7.1;    y[26] =7.2;    y[27] =7.3;    y[28] =7.4;
+            y[29] =7.5;    y[30] =7.6;    y[31] =8;    y[32] =8.1;
+            y[33] =8.2;    y[34] =8.3;    y[35] =8.4;    y[36] =8.5;
+            y[37] =8.6;    y[38] =9;    y[39] =9.1;    y[40] =9.2;
+            y[41] =9.3;    y[42] =9.4;    y[43] =9.5;    y[44] =9.6;
+            y[45] =9.6;    y[46] =10;    y[47] =10.1;    y[48] =10.2;
+            y[49] =10.3;    y[50] =10.4;    y[51] =10.5;    y[52] =11;
+            y[53] =11.1;    y[54] =11.2;    y[55] =11.3;    y[56] =11.4;
+            y[57] =11.5;    y[58] =11.6;    y[59] =12;    y[60] =12.1;
+            y[61] =12.2;
+            
+            saco = saco.replace(",", ".");
+            var prs = parseInt(saco);
+
+            if (prs < 5) {
+                return 0;
+            }
+                return 0;
+            }
+            else {
+                var egsaco = y[prs];
+                return egsaco;
+            }
+    };
 </script>

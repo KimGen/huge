@@ -58,6 +58,9 @@ class EcografiaController extends Controller
             case "furNew":
                 $resultado = FurModel::createFur(Request::post('paciente_rut'),Request::post('fur_fecha'));
                 break;
+            case "furUpdate":
+                $resultado = FurModel::updateFur(Request::post('paciente_rut'),Request::post('fur_fecha'));
+                break;
             case "primertrimestre":
                 $resultado = EcografiaModel::getAllEcografias('primertrimestre');
                 break;
