@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-8">
+        <div class="col-10">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -149,7 +149,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-2">
             <div class="card">
                 <div class="card-body">
                     <div class="btn-group-vertical" role="group">
