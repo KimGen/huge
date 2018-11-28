@@ -177,64 +177,77 @@
                                 </div>
                                 <div class="tab-pane fade" id="texto" role="tabpanel" aria-labelledby="texto-tab">
                                     <div class="row pt-2">
-                                        <div class="form-group col-4">
-                                            <label for="ecografia.rut">Utero Ubicacion 1</label>
+                                        <div class="form-group col-6">
+                                            <label for="ecografia.rut">Presentación</label>
                                             <select class="form-control" id="ecografia.utero.uno"><option value="central">central</option><option value="lateralizado a la izquierda">lateralizado a la izquierda</option><option value="lateralizado a la derecha">lateralizado a la derecha</option></select>
                                         </div>
-                                        <div class="form-group col-4">
-                                            <label for="ecografia.nombres">Utero Ubicacion 2</label>
+                                        <div class="form-group col-6">
+                                            <label for="ecografia.nombres">Dorso Fetal</label>
                                             <select class="form-control" id="ecografia.utero.dos"><option value="anterior">anterior</option><option value="posterior">posterior</option></select>
                                         </div>
                                         <div class="form-group col-4">
-                                            <label for="ecografia.rut">Cuerpo Uternino</label>
+                                            <label for="ecografia.rut">Actividad cardiaca</label>
                                             <select class="form-control" id="ecografia.cuerpo"><option value="aspecto normal">aspecto normal</option><option value="nodulo unico">nodulo unico</option><option value="múltiples nódulos">múltiples nódulos</option><option value="malformaciones">malformaciones</option></select>
                                         </div>
-                                        <div class="form-group col-6">
-                                            <label for="ecografia.nombres">Saco Gestacional</label>
+                                        <div class="form-group col-4">
+                                            <label for="ecografia.nombres">Mov. Fetal</label>
                                             <select class="form-control" id="ecografia.saco.txt"><option value="normal">normal</option><option value="no se observa">no se observa</option><option value="múltiple">múltiple</option><option value="con pseudosaco">con pseudosaco</option><option value="con dpmto.parcial">con dpmto.parcial</option></select>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="ecografia.rut">mm</label>
-                                            <input type="text" class="form-control d-none" id="ecografia.saco.mm.copia" disabled>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="ecografia.nombres">Saco Vitelino</label>
-                                            <select class="form-control" id="ecografia.vitelino.txt"><option value="presente">presente</option><option value="no se observa" selected="">no se observa </option></select>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="ecografia.rut">Medida de saco vitelino</label>
-                                            <input type="text" class="form-control" id="ecografia.vitelino.mm">
-                                        </div>
-                                        <div class="form-group col-4">
-                                            <label for="ecografia.nombres">Embrión</label>
-                                            <select class="form-control" id="ecografia.embrion.txt"><option value="no se observa aun" selected="">no se observa aun</option><option value="act. no evidenciable">act. no evidenciable</option><option value="act. cardiaca evidenciable">act. cardiaca evidenciable</option><option value="con act. cardiaca (+)">con act. cardiaca (+)</option><option value="act. card. y Corp.(+)">act. card. y Corp.(+)</option><option value="act. card. y Corp. (-)">act. card. y Corp. (-)</option></select>
-                                        </div>
-                                        <div class="form-group col-4">
-                                            <label for="ecografia.rut">mm</label>
-                                            <input type="text" class="form-control d-none" id="ecografia.lcn.mm.copia" disabled>
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.nombres">FCF</label>
-                                            <select class="form-control d-none" id="ecografia.fcf"><option value="(+) inicial">(+) inicial</option><option value=" <90">&lt; 90</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option><option value="100">100</option><option value="101">101</option><option value="102">102</option><option value="103">103</option><option value="104">104</option><option value="105">105</option><option value="106">106</option><option value="107">107</option><option value="108">108</option><option value="109">109</option><option value="110">110</option><option value="111">111</option><option value="112">112</option><option value="113">113</option><option value="114">114</option><option value="115">115</option><option value="116">116</option><option value="117">117</option><option value="118">118</option><option value="119">119</option><option value="120">120</option><option value="121">121</option><option value="122">122</option><option value="123">123</option><option value="124">124</option><option value="125">125</option><option value="126">126</option><option value="127">127</option><option value="128">128</option><option value="129">129</option><option value="130">130</option><option value="131">131</option><option value="132">132</option><option value="133">133</option><option value="134">134</option><option value="135">135</option><option value="136">136</option><option value="137">137</option><option value="138">138</option><option value="139">139</option><option value="140" selected="">140</option><option value="141">141</option><option value="142">142</option><option value="143">143</option><option value="144">144</option><option value="145">145</option><option value="146">146</option><option value="147">147</option><option value="148">148</option><option value="149">149</option><option value="150">150</option><option value="151">151</option><option value="152">152</option><option value="153">153</option><option value="154">154</option><option value="155">155</option><option value="156">156</option><option value="157">157</option><option value="158">158</option><option value="159">159</option><option value="160">160</option><option value="161">161</option><option value="162">162</option><option value="163">163</option><option value="164">164</option><option value="165">165</option><option value="166">166</option><option value="167">167</option><option value="168">168</option><option value="169">169</option><option value="170">170</option><option value=" > 170">&gt; 170</option></select>
+                                            <select class="form-control" id="ecografia.fcf"><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option><option value="100">100</option><option value="101">101</option><option value="102">102</option><option value="103">103</option><option value="104">104</option><option value="105">105</option><option value="106">106</option><option value="107">107</option><option value="108">108</option><option value="109">109</option><option value="110">110</option><option value="111">111</option><option value="112">112</option><option value="113">113</option><option value="114">114</option><option value="115">115</option><option value="116">116</option><option value="117">117</option><option value="118">118</option><option value="119">119</option><option value="120">120</option><option value="121">121</option><option value="122">122</option><option value="123">123</option><option value="124">124</option><option value="125">125</option><option value="126">126</option><option value="127">127</option><option value="128">128</option><option value="129">129</option><option value="130">130</option><option value="131">131</option><option value="132">132</option><option value="133">133</option><option value="134">134</option><option value="135">135</option><option value="136">136</option><option value="137">137</option><option value="138">138</option><option value="139">139</option><option value="140" selected="">140</option><option value="141">141</option><option value="142">142</option><option value="143">143</option><option value="144">144</option><option value="145">145</option><option value="146">146</option><option value="147">147</option><option value="148">148</option><option value="149">149</option><option value="150">150</option><option value="151">151</option><option value="152">152</option><option value="153">153</option><option value="154">154</option><option value="155">155</option><option value="156">156</option><option value="157">157</option><option value="158">158</option><option value="159">159</option><option value="160">160</option><option value="161">161</option><option value="162">162</option><option value="163">163</option><option value="164">164</option><option value="165">165</option><option value="166">166</option><option value="167">167</option><option value="168">168</option><option value="169">169</option><option value="170">170</option></select>
+                                        </div>
+                                        <div class="form-group col-12">
+                                            <label for="ecografia.rut">Anatomia fetal</label>
+                                            <input type="text" class="form-control" id="ecografia.saco.mm.copia" disabled>
+                                        </div>
+                                        <div class="form-group col-12">
+                                            <label for="ecografia.nombres"><strong>Comentarios anatomia</strong></label>
+                                            <select class="form-control" id="ecografia.vitelino.txt"><option value="presente">presente</option><option value="no se observa" selected="">no se observa </option></select>
+                                        </div>
+                                        <div class="form-group col-4">
+                                            <label for="ecografia.rut">Placenta ubicación</label>
+                                            <input type="text" class="form-control" id="ecografia.vitelino.mm">
+                                        </div>
+                                        <div class="form-group col-4">
+                                            <label for="ecografia.nombres">Placenta inserción</label>
+                                            <select class="form-control" id="ecografia.embrion.txt"><option value="no se observa aun" selected="">no se observa aun</option><option value="act. no evidenciable">act. no evidenciable</option><option value="act. cardiaca evidenciable">act. cardiaca evidenciable</option><option value="con act. cardiaca (+)">con act. cardiaca (+)</option><option value="act. card. y Corp.(+)">act. card. y Corp.(+)</option><option value="act. card. y Corp. (-)">act. card. y Corp. (-)</option></select>
+                                        </div>
+                                        <div class="form-group col-4">
+                                            <label for="ecografia.rut">Placenta grado (Grannum)</label>
+                                            <input type="text" class="form-control" id="ecografia.lcn.mm.copia" disabled>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.rut">Anexo derecho</label>
+                                            <label for="ecografia.rut">Líquido amniótico</label>
                                             <select class="form-control" id="ecografia.anexo.derecho"><option value="aspecto normal">aspecto normal</option><option value="masa sólida">masa sólida</option><option value="masa eco negativa">masa eco negativa</option><option value="con ovario">con ovario</option></select>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.nombres">Anexo Izquierdo</label>
+                                            <label for="ecografia.nombres">BVM</label>
                                             <select class="form-control" id="ecografia.anexo.izquierdo"><option value="aspecto normal">aspecto normal</option><option value="masa sólida">masa sólida</option><option value="masa eco negativa">masa eco negativa</option><option value="con ovario">con ovario</option></select>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.rut">Douglas</label>
+                                            <label for="ecografia.rut">Cordón umbilical</label>
                                             <select class="form-control" id="ecografia.douglas.txt"><option value="libre">libre</option><option value="ocupado">ocupado</option></select>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.nombres">Comentarios Douglas</label>
-                                            <textarea class="form-control d-none" id="ecografia.douglas.com"></textarea>
+                                            <label for="ecografia.nombres">Número de vasos</label>
+                                            <textarea class="form-control" id="ecografia.douglas.com"></textarea>
                                         </div>
                                         <div class="form-group col-12">
-                                            <label for="ecografia.rut">Comentarios adicionales</label>
+                                            <div class="row p-2 rounded" style="background-color: #6c757d !important;">
+                                                <div class="col-6 mt-1">
+                                                    <h6><strong class="text-white">Seleccione el tipo de informe ecográfico deseado:</strong></h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <select id="ecografia.com.select" class="form-control">
+                                                        <option value="1" selected="">Informe relativo a crecimiento fetal</option>
+                                                        <option value="2">Informe relativo a edad gestacional</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-12">
+                                            <label for="ecografia.rut">Comentarios</label>
                                             <textarea class="form-control" id="ecografia.com"></textarea>
                                         </div>
                                     </div>
