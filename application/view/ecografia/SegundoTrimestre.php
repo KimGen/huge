@@ -179,19 +179,19 @@
                                     <div class="row pt-2">
                                         <div class="form-group col-6">
                                             <label for="ecografia.rut">Presentación</label>
-                                            <select class="form-control" id="ecografia.utero.uno"><option value="cefalica">Cefálica</option><option value="podalica">Podálica</option><option value="transversa">transversa</option><option value="indiferente">indiferente</option></select>
+                                            <select class="form-control" id="ecografia.presentacion"><option value="cefalica">Cefálica</option><option value="podalica">Podálica</option><option value="transversa">transversa</option><option value="indiferente">indiferente</option></select>
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.nombres">Dorso Fetal</label>
-                                            <select class="form-control" id="ecografia.utero.dos"><option value="anterior">Anterior</option><option value="lateral izquiedo">Lat. Izquierdo</option><option value="posterior">Posterior</option><option value="lateral derecho">Lat. Derecho</option></select>
+                                            <select class="form-control" id="ecografia.dorso.fetal"><option value="anterior">Anterior</option><option value="lateral izquiedo">Lat. Izquierdo</option><option value="posterior">Posterior</option><option value="lateral derecho">Lat. Derecho</option></select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.rut">Actividad cardiaca</label>
-                                            <select class="form-control" id="ecografia.cuerpo"><option value="aspecto normal">aspecto normal</option><option value="nodulo unico">nodulo unico</option><option value="múltiples nódulos">múltiples nódulos</option><option value="malformaciones">malformaciones</option></select>
+                                            <select class="form-control" id="ecografia.actividad.cardiaca"><option value="si">Si</option><option value="no">No</option><select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.nombres">Mov. Fetal</label>
-                                            <select class="form-control" id="ecografia.saco.txt"><option value="normal">normal</option><option value="no se observa">no se observa</option><option value="múltiple">múltiple</option><option value="con pseudosaco">con pseudosaco</option><option value="con dpmto.parcial">con dpmto.parcial</option></select>
+                                            <select class="form-control" id="ecografia.movimiento.fetal"><option value="si">Si</option><option value="no">No</option><select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.nombres">FCF</label>
@@ -199,39 +199,39 @@
                                         </div>
                                         <div class="form-group col-12">
                                             <label for="ecografia.rut">Anatomia fetal</label>
-                                            <select type="text" class="form-control" id="ecografia.saco.mm.copia" multiple=""><option value="no evaluada dirigidamente, pero el aspecto morfológico general es normal" selected="selected">No evaluada dirigidamente, pero el aspecto morfológico general es normal</option><option value="Descripcion general detallando distintos segmentos">Descripción general detallando distintos segmentos</option><option value="de aspecto general normal">de aspecto general normal</option><option value="hallazgos de siguientes patologías:">hallazgos ecográficos compatible con:</option></select>
+                                            <select type="text" class="form-control" id="ecografia.anatomia.fetal" multiple=""><option value="no evaluada dirigidamente, pero el aspecto morfológico general es normal" selected="selected">No evaluada dirigidamente, pero el aspecto morfológico general es normal</option><option value="Descripcion general detallando distintos segmentos">Descripción general detallando distintos segmentos</option><option value="de aspecto general normal">de aspecto general normal</option><option value="hallazgos de siguientes patologías:">hallazgos ecográficos compatible con:</option></select>
                                         </div>
                                         <div class="form-group col-12">
                                             <label for="ecografia.nombres"><strong>Comentarios anatomia</strong></label>
-                                            <select class="form-control" id="ecografia.vitelino.txt"><option value="presente">presente</option><option value="no se observa" selected="">no se observa </option></select>
+                                            <select class="form-control" id="ecografia.anatomia.com"><option value="presente">presente</option><option value="no se observa" selected="">no se observa </option></select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.rut">Placenta ubicación</label>
-                                            <select class="form-control" id="ecografia.vitelino.mm"><option value="normal">Normal</option><option value="prev. lateral">previa lateral</option><option value="prev. marginal">previa marginal</option><option value="prev. parcial">previa parcial</option><option value="prev. total">previa total</option></select>
+                                            <select class="form-control" id="ecografia.placenta.ubicacion"><option value="normal">Normal</option><option value="prev. lateral">previa lateral</option><option value="prev. marginal">previa marginal</option><option value="prev. parcial">previa parcial</option><option value="prev. total">previa total</option></select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.nombres">Placenta inserción</label>
-                                            <select class="form-control" id="ecografia.embrion.txt"><option value="anterior">anterior</option><option value="posterior">posterior</option><option value="fundica">fúndica</option><option value="baja">baja</option><option value="lat. derecha">lateral derecha</option><option value="lat. izquierda">lateral izquierda</option><option value="segmentaria">segmentaria</option></select>
+                                            <select class="form-control" id="ecografia.placenta.insercion"><option value="anterior">anterior</option><option value="posterior">posterior</option><option value="fundica">fúndica</option><option value="baja">baja</option><option value="lat. derecha">lateral derecha</option><option value="lat. izquierda">lateral izquierda</option><option value="segmentaria">segmentaria</option></select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.rut">Placenta grado (Grannum)</label>
-                                            <select class="form-control" id="ecografia.lcn.mm.copia"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+                                            <select class="form-control" id="ecografia.placenta.grado"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.rut">Líquido amniótico</label>
-                                            <select class="form-control" id="ecografia.anexo.derecho"><option value="normal">Normal</option><option value="disminuido">Disminuido</option><option value="aumentado">Aumentado</option></select>
+                                            <select class="form-control" id="ecografia.liquido.txt"><option value="normal">Normal</option><option value="disminuido">Disminuido</option><option value="aumentado">Aumentado</option></select>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.nombres">BVM</label>
-                                            <input type="text" class="form-control" id="ecografia.anexo.izquierdo">
+                                            <label for="ecografia.bvm.copia">BVM</label>
+                                            <input type="text" class="form-control" id="ecografia.bvm.mm.copia">
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.rut">Cordón umbilical</label>
-                                            <select class="form-control" id="ecografia.douglas.txt"><option value="inserción central">Inserción central</option><option value="inserción marginal">Inserción marginal</option><option value="inserción velamentosa">Inserción velamentosa</option><option value="inserción no evaluable">Inserción no evaluable</option></select>
+                                            <select class="form-control" id="ecografia.cordon.umbilical"><option value="inserción central">Inserción central</option><option value="inserción marginal">Inserción marginal</option><option value="inserción velamentosa">Inserción velamentosa</option><option value="inserción no evaluable">Inserción no evaluable</option></select>
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.nombres">Número de vasos</label>
-                                            <select class="form-control" id="ecografia.douglas.com"><option value="2">2</option><option selected="selected" value="3">3</option></select>
+                                            <select class="form-control" id="ecografia.numero.vasos"><option value="2">2</option><option selected="selected" value="3">3</option></select>
                                         </div>
                                         <div class="form-group col-12">
                                             <div class="row m-0 p-2 rounded" style="background-color: #6c757d !important;">
@@ -323,25 +323,31 @@
 
             $("#ecografia\\.fecha").val(today).trigger("change");
             $("#ecografia\\.eg").val("");
-            $("#ecografia\\.lcn\\.mm").val("");
-            $("#ecografia\\.lcn\\.eg").val("");
-            $("#ecografia\\.saco\\.mm").val("");
-            $("#ecografia\\.saco\\.eg").val("");
-            $("#ecografia\\.utero\\.uno").val("central");
-            $("#ecografia\\.utero\\.dos").val("anterior");
-            $("#ecografia\\.cuerpo").val("aspecto normal");
-            $("#ecografia\\.saco\\.txt").val("normal");
-            $("#ecografia\\.saco\\.mm\\.copia").val("");
-            $("#ecografia\\.vitelino\\.txt").val("presente");
-            $("#ecografia\\.vitelino\\.mm").val("");
-            $("#ecografia\\.embrion\\.txt").val("con act. cardiaca (+)");
-            $("#ecografia\\.lcn\\.mm\\.copia").val("");
-            $("#ecografia\\.fcf").val("140");
-            $("#ecografia\\.anexo\\.derecho").val("aspecto normal");
-            $("#ecografia\\.anexo\\.izquierdo").val("aspecto normal");
-            $("#ecografia\\.duglas\\.txt").val("libre");
-            $("#ecografia\\.douglas\\.com").val("");
-            $("#ecografia\\.com").val("Fum operacional: <?php echo $this->fur->fur_fecha; ?>/nFecha probable de parto: <?php echo $this->fur->fpp_fecha; ?>");
+            $("#ecografia\\.dbp\\.mm").val("");
+            $("#ecografia\\.dof\\.mm").val("");
+            $("#ecografia\\.cc\\.mm").val("");
+            $("#ecografia\\.ca\\.mm").val("");
+            $("#ecografia\\.lf\\.mm").val("");
+            $("#ecografia\\.bvm\\.mm").val("");
+            $("#ecografia\\.lh\\.mm").val("");
+            $("#ecografia\\.cerebelo\\.mm").val("");
+
+            $("#ecografia\\.presentacion").val("cefalica");
+            $("#ecografia\\.dorso\\.fetal").val("anterior");
+            $("#ecografia\\.actividad\\.cardiaca").val("Si");
+            $("#ecografia\\.movimiento\\.fetal").val("Si");
+            $("#ecografia\\.fcf").val(140);
+            $("#ecografia\\.anatomia\\.fetal").val("no evaluada dirigidamente, pero el aspecto morfológico general es normal");
+            $("#ecografia\\.anatomia\\.com").val("");
+            $("#ecografia\\.placenta\\.ubicacion").val("normal");
+            $("#ecografia\\.placenta\\.insercion").val("anterior");
+            $("#ecografia\\.placenta\\.grado").val("0");
+            $("#ecografia\\.liquido\\.txt").val("normal");
+            $("#ecografia\\.bvm\\.mm\\.copia").val("normal");
+            $("#ecografia\\.cordon\\.umbilical").val("inserción central");
+            $("#ecografia\\.numero\\.vasos").val(3);
+            $("#ecografia\\.com\\.select").val(1);
+            $("#ecografia\\.com").val("Crecimiento (peso) percentil , para gráfica de peso fetal Hadlock* /nLíquido amniótico normal, con bolsillo vertical mayor  mm.");
         });
 
         $("#button\\.ecografia\\.guardar").on("click", function(){
