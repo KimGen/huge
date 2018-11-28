@@ -36,7 +36,7 @@
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="medidas" role="tabpanel" aria-labelledby="medidas-tab">
-                                    <div class="row">
+                                    <div class="row pt-2">
                                         <div class="form-group col-6">
                                             <label for="ecografia.fecha">Fecha de exámen</label>
                                             <input type="date" class="form-control" id="ecografia.fecha">
@@ -176,7 +176,7 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="texto" role="tabpanel" aria-labelledby="texto-tab">
-                                    <div class="row">
+                                    <div class="row pt-2">
                                         <div class="form-group col-4">
                                             <label for="ecografia.rut">Utero Ubicacion 1</label>
                                             <select class="form-control" id="ecografia.utero.uno"><option value="central">central</option><option value="lateralizado a la izquierda">lateralizado a la izquierda</option><option value="lateralizado a la derecha">lateralizado a la derecha</option></select>
