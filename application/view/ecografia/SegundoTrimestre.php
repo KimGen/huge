@@ -203,7 +203,7 @@
                                         </div>
                                         <div class="form-group col-12">
                                             <label for="ecografia.nombres"><strong>Comentarios anatomia</strong></label>
-                                            <select class="form-control" id="ecografia.anatomia.com"><option value="presente">presente</option><option value="no se observa" selected="">no se observa </option></select>
+                                            <textarea class="form-control" rows="3" id="ecografia.anatomia.com"></textarea>
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.rut">Placenta ubicación</label>
@@ -334,8 +334,8 @@
 
             $("#ecografia\\.presentacion").val("cefalica");
             $("#ecografia\\.dorso\\.fetal").val("anterior");
-            $("#ecografia\\.actividad\\.cardiaca").val("Si");
-            $("#ecografia\\.movimiento\\.fetal").val("Si");
+            $("#ecografia\\.actividad\\.cardiaca").val("si");
+            $("#ecografia\\.movimiento\\.fetal").val("si");
             $("#ecografia\\.fcf").val(140);
             $("#ecografia\\.anatomia\\.fetal").val("no evaluada dirigidamente, pero el aspecto morfológico general es normal");
             $("#ecografia\\.anatomia\\.com").val("");
