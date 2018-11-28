@@ -63,7 +63,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade active" id="texto" role="tabpanel" aria-labelledby="texto-tab">
+                                <div class="tab-pane fade" id="texto" role="tabpanel" aria-labelledby="texto-tab">
                                     <div class="row">
                                         <div class="form-group col-4">
                                             <label for="ecografia.rut">Utero Ubicacion 1</label>
