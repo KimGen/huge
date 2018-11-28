@@ -234,7 +234,7 @@
                                             <textarea class="form-control" id="ecografia.douglas.com"></textarea>
                                         </div>
                                         <div class="form-group col-12">
-                                            <div class="row p-2 rounded" style="background-color: #6c757d !important;">
+                                            <div class="row m-0 p-2 rounded" style="background-color: #6c757d !important;">
                                                 <div class="col-6 mt-1">
                                                     <h6><strong class="text-white">Seleccione el tipo de informe ecográfico deseado:</strong></h6>
                                                 </div>
