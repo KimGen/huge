@@ -179,11 +179,11 @@
                                     <div class="row pt-2">
                                         <div class="form-group col-6">
                                             <label for="ecografia.rut">Presentación</label>
-                                            <select class="form-control" id="ecografia.utero.uno"><option value="central">central</option><option value="lateralizado a la izquierda">lateralizado a la izquierda</option><option value="lateralizado a la derecha">lateralizado a la derecha</option></select>
+                                            <select class="form-control" id="ecografia.utero.uno"><option value="cefalica">Cefálica</option><option value="podalica">Podálica</option><option value="transversa">transversa</option><option value="indiferente">indiferente</option></select>
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.nombres">Dorso Fetal</label>
-                                            <select class="form-control" id="ecografia.utero.dos"><option value="anterior">anterior</option><option value="posterior">posterior</option></select>
+                                            <select class="form-control" id="ecografia.utero.dos"><option value="anterior">Anterior</option><option value="lateral izquiedo">Lat. Izquierdo</option><option value="posterior">Posterior</option><option value="lateral derecho">Lat. Derecho</option></select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.rut">Actividad cardiaca</label>
@@ -199,7 +199,7 @@
                                         </div>
                                         <div class="form-group col-12">
                                             <label for="ecografia.rut">Anatomia fetal</label>
-                                            <input type="text" class="form-control" id="ecografia.saco.mm.copia" disabled>
+                                            <select type="text" class="form-control" id="ecografia.saco.mm.copia" multiple=""><option value="no evaluada dirigidamente, pero el aspecto morfológico general es normal" selected="selected">No evaluada dirigidamente, pero el aspecto morfológico general es normal</option><option value="Descripcion general detallando distintos segmentos">Descripción general detallando distintos segmentos</option><option value="de aspecto general normal">de aspecto general normal</option><option value="hallazgos de siguientes patologías:">hallazgos ecográficos compatible con:</option></select>
                                         </div>
                                         <div class="form-group col-12">
                                             <label for="ecografia.nombres"><strong>Comentarios anatomia</strong></label>
@@ -207,31 +207,31 @@
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.rut">Placenta ubicación</label>
-                                            <input type="text" class="form-control" id="ecografia.vitelino.mm">
+                                            <select class="form-control" id="ecografia.vitelino.mm"><option value="normal">Normal</option><option value="prev. lateral">previa lateral</option><option value="prev. marginal">previa marginal</option><option value="prev. parcial">previa parcial</option><option value="prev. total">previa total</option></select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.nombres">Placenta inserción</label>
-                                            <select class="form-control" id="ecografia.embrion.txt"><option value="no se observa aun" selected="">no se observa aun</option><option value="act. no evidenciable">act. no evidenciable</option><option value="act. cardiaca evidenciable">act. cardiaca evidenciable</option><option value="con act. cardiaca (+)">con act. cardiaca (+)</option><option value="act. card. y Corp.(+)">act. card. y Corp.(+)</option><option value="act. card. y Corp. (-)">act. card. y Corp. (-)</option></select>
+                                            <select class="form-control" id="ecografia.embrion.txt"><option value="anterior">anterior</option><option value="posterior">posterior</option><option value="fundica">fúndica</option><option value="baja">baja</option><option value="lat. derecha">lateral derecha</option><option value="lat. izquierda">lateral izquierda</option><option value="segmentaria">segmentaria</option></select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label for="ecografia.rut">Placenta grado (Grannum)</label>
-                                            <input type="text" class="form-control" id="ecografia.lcn.mm.copia" disabled>
+                                            <select class="form-control" id="ecografia.lcn.mm.copia"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.rut">Líquido amniótico</label>
-                                            <select class="form-control" id="ecografia.anexo.derecho"><option value="aspecto normal">aspecto normal</option><option value="masa sólida">masa sólida</option><option value="masa eco negativa">masa eco negativa</option><option value="con ovario">con ovario</option></select>
+                                            <select class="form-control" id="ecografia.anexo.derecho"><option value="normal">Normal</option><option value="disminuido">Disminuido</option><option value="aumentado">Aumentado</option></select>
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.nombres">BVM</label>
-                                            <select class="form-control" id="ecografia.anexo.izquierdo"><option value="aspecto normal">aspecto normal</option><option value="masa sólida">masa sólida</option><option value="masa eco negativa">masa eco negativa</option><option value="con ovario">con ovario</option></select>
+                                            <input type="text" class="form-control" id="ecografia.anexo.izquierdo">
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.rut">Cordón umbilical</label>
-                                            <select class="form-control" id="ecografia.douglas.txt"><option value="libre">libre</option><option value="ocupado">ocupado</option></select>
+                                            <select class="form-control" id="ecografia.douglas.txt"><option value="inserción central">Inserción central</option><option value="inserción marginal">Inserción marginal</option><option value="inserción velamentosa">Inserción velamentosa</option><option value="inserción no evaluable">Inserción no evaluable</option></select>
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.nombres">Número de vasos</label>
-                                            <textarea class="form-control" id="ecografia.douglas.com"></textarea>
+                                            <select class="form-control" id="ecografia.douglas.com"><option value="2">2</option><option selected="selected" value="3">3</option></select>
                                         </div>
                                         <div class="form-group col-12">
                                             <div class="row m-0 p-2 rounded" style="background-color: #6c757d !important;">
