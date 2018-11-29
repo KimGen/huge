@@ -45,21 +45,27 @@
                                             <label for="ecografia.nombres">Edad Gestacional al exámen</label>
                                             <input type="text" class="form-control" id="ecografia.eg" disabled>
                                         </div>
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-5">
                                             <label for="ecografia.apellidos">Medida de embrión</label>
                                             <input type="text" class="form-control" id="ecografia.lcn.mm">
                                         </div>
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-5">
                                             <label for="ecografia.nacimiento">EG x LCN</label>
                                             <input type="text" class="form-control" id="ecografia.lcn.eg" disabled>
                                         </div>
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-2">
+                                            <button type="button" class="btn btn-outline-info" id="graficoLcn"><i class="fas fa-chart-bar"></i></button>
+                                        </div>
+                                        <div class="form-group col-5">
                                             <label for="ecografia.nacionalidad">Promedio de Saco</label>
                                             <input type="text" class="form-control" id="ecografia.saco.mm">
                                         </div>
-                                        <div class="form-group col-6">
+                                        <div class="form-group col-5">
                                             <label for="ecografia.pais">EG x Saco</label>
                                             <input type="text" class="form-control" id="ecografia.saco.eg" disabled>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <button type="button" class="btn btn-outline-info" id="graficoLcn"><i class="fas fa-chart-bar"></i></button>
                                         </div>
                                     </div>
                                 </div>
