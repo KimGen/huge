@@ -601,7 +601,8 @@
                 EdadGestacional = Math.floor(EdadGestacional) + "." + Math.round((EdadGestacional - Math.floor(EdadGestacional)) * 7);
             }
 
-            $("#ecografia\\.eg").val(EdadGestacional);
+            var x = document.getElementById("ecografia.eg");
+            x.value = EdadGestacional;
         });
 
         $("#ecografia\\.lcn\\.mm").on("change", function(){
