@@ -471,30 +471,22 @@
                             data: (function() {
                                 var data = [];
                                 var I = 1;
-                                lcnegx[1] = 6;
-                                lcnegx[2] = 7;
-                                lcnegx[3] = 8;
-                                lcnegx[4] = 9;
-                                lcnegx[5] = 10;
-                                lcnegx[6] = 11;
-                                lcnegx[7] = 12;
-                                lcnegx[8] = 13;
-                                lcnegx[9] = 14;
-                                lcnegx[10] = 15;
 
                                 var data = [];
                                 $.each(response, function(i,value){
+
                                     var egLcn = parseInt(value.ecografia_eg);
                                     var lcn = parseInt(value.ecografia_lcn_mm);
                                     lcn = parseFloat(lcn) / 10;
-
-                                    for (i; i <= egLcn; i++) {
-                                        data.push({ y: 0, });
+                                    if (egLcn > 5 || egLcn < 16){
+                                        for (i; i <= egLcn; i++) {
+                                            data.push({ y: 0, });
+                                        }
+                                        data.push({
+                                            y: lcn,
+                                        });
+                                        i++;
                                     }
-                                    data.push({
-                                        y: lcn,
-                                    });
-                                    i++;
                                 });
                                 return data;
                             }())
