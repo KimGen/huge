@@ -45,27 +45,21 @@
                                             <label for="ecografia.nombres">Edad Gestacional al exámen</label>
                                             <input type="text" class="form-control" id="ecografia.eg" disabled>
                                         </div>
-                                        <div class="form-group col-5">
+                                        <div class="form-group col-6">
                                             <label for="ecografia.apellidos">Medida de embrión</label>
                                             <input type="text" class="form-control" id="ecografia.lcn.mm">
                                         </div>
-                                        <div class="form-group col-5">
+                                        <div class="form-group col-6">
                                             <label for="ecografia.nacimiento">EG x LCN</label>
                                             <input type="text" class="form-control" id="ecografia.lcn.eg" disabled>
                                         </div>
-                                        <div class="form-group col-2">
-                                            <button type="button" class="btn btn-outline-info" id="graficoLcn"><i class="fas fa-chart-bar"></i></button>
-                                        </div>
-                                        <div class="form-group col-5">
+                                        <div class="form-group col-6">
                                             <label for="ecografia.nacionalidad">Promedio de Saco</label>
                                             <input type="text" class="form-control" id="ecografia.saco.mm">
                                         </div>
-                                        <div class="form-group col-5">
+                                        <div class="form-group col-6">
                                             <label for="ecografia.pais">EG x Saco</label>
                                             <input type="text" class="form-control" id="ecografia.saco.eg" disabled>
-                                        </div>
-                                        <div class="form-group col-2">
-                                            <button type="button" class="btn btn-outline-info" id="graficoLcn"><i class="fas fa-chart-bar"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -161,6 +155,7 @@
                 <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.guardar">Guardar Exámen</button>
                 <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.cancelar">Cancelar Exámen</button>
                 <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.imprimir">Ver Informe</button>
+                <button type="button" class="btn btn-outline-primary" id="button.ecografia.lcn">Gráfico LCN</button>
             </div>
         </div>
     </div>
@@ -179,6 +174,7 @@
         </div>
     </div>
 </div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 <script>
     $(document).ready(function(){
         makeTable();
@@ -406,6 +402,110 @@
             }
         });
 
+        $("#button\\.ecografia\\.lcn").on("click", function(){
+            $("#dialog\\.title").html("Grafico de LCN");
+            $("#dialog\\.delete").remove();
+            $("#dialog\\.view").modal("show");
+
+            $('#dialog\\.body').html("<div class='row'><div class='col'><div id='graficoLcnBaseView'></div></div><div class='col'><div id='graficoLcnView'></div></div>");
+
+            let encap = {accion: "primertrimestre"}
+
+            $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( response ) {
+                $("#table\\.ecografia").empty();
+                if (Object.keys(response).length > 0) {
+                    $('#graficoLcnBaseView').highcharts({
+                        title: {
+                            text: 'LCN 6 a 15 semanas',
+                            x: -20
+                        },
+                        xAxis: {
+                            categories: ['6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Milimetros (mm)'
+                            },
+                            tickPositions: [0.2, 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 11]
+                        },
+                        credits: {
+                            enabled: false
+                        },
+                        colors: ['#313131', '#313131', '#313131'],
+                        plotOptions: {
+                            series: {
+                                enableMouseTracking: false
+                            }
+                        },
+                        series: [{
+                            name: '(-) 2DE',
+                            type: "line",
+                            marker: {
+                                enabled: false
+                            },
+                            data: [0.26, 0.77, 1.4, 2.05, 2.62, 3.55, 4.68, 5.82, 6.98, 8.02],
+                            dashStyle: 'shortdot'
+                        }, {
+                            name: 'Media',
+                            type: "line",
+                            marker: {
+                                enabled: false
+                            },
+                            data: [0.38, 0.89, 1.54, 2.25, 2.95, 4.05, 5.29, 6.65, 7.90, 9.01]
+                        }, {
+                            name: '(+) 2DE',
+                            type: "line",
+                            marker: {
+                                enabled: false
+                            },
+                            data: [0.53, 1.04, 1.71, 2.49, 3.32, 4.64, 6.08, 7.57, 8.91, 10.01],
+                            dashStyle: 'shortdot'
+                        }, {
+                            type: "line",
+                            name: 'LCN (Hadlock y col. Radiology 182. 501, 1992)',
+                            dashStyle: "Dot",
+                            marker: {
+                                symbol: 'square'
+                            },
+                            lineWidth: 0,
+                            data: (function() {
+                                var data = [];
+                                var I = 1;
+                                lcnegx[1] = 6;
+                                lcnegx[2] = 7;
+                                lcnegx[3] = 8;
+                                lcnegx[4] = 9;
+                                lcnegx[5] = 10;
+                                lcnegx[6] = 11;
+                                lcnegx[7] = 12;
+                                lcnegx[8] = 13;
+                                lcnegx[9] = 14;
+                                lcnegx[10] = 15;
+
+                                var data = [];
+                                $.each(response, function(i,value){
+                                    var egLcn = parseInt(value.ecografia_eg);
+                                    var lcn = parseInt(value.ecografia_lcn_mm);
+                                    lcn = parseFloat(lcn) / 10;
+
+                                    for (i; i <= egLcn; i++) {
+                                        data.push({ y: 0, });
+                                    }
+                                    data.push({
+                                        y: lcn,
+                                    });
+                                    i++;
+                                });
+                                return data;
+                            }())
+                        }]
+                    });
+                }
+                else{
+                    $('#dialog\\.body').html("<p>No hay datos</p>");
+                }
+            });
+        });
         //calculos
         $("#ecografia\\.fecha").on("change", function(){
             var FExamen, FUM, EdadGestacional;
