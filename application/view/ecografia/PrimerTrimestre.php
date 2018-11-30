@@ -407,7 +407,7 @@
             $("#dialog\\.delete").remove();
             $("#dialog\\.view").modal("show");
 
-            $('#dialog\\.body').html("<div class='row'><div class='col'><div id='graficoLcnBaseView'></div></div><div class='col'><div id='graficoLcnView'></div></div>");
+            $('#dialog\\.body').html("<div class='row'><div class='col'><div id='graficoLcnBaseView'></div></div></div>");
 
             let encap = {accion: "primertrimestre"}
 
