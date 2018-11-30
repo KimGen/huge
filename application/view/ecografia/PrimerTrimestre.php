@@ -412,7 +412,6 @@
             let encap = {accion: "primertrimestre"}
 
             $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( response ) {
-                $("#table\\.ecografia").empty();
                 if (Object.keys(response).length > 0) {
                     $('#graficoLcnBaseView').highcharts({
                         title: {
