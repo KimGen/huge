@@ -475,7 +475,7 @@
                                 var data = [];
                                 $.each(response, function(i,value){
 
-                                    var egLcn = parseInt(value.ecografia_eg);
+                                    var egLcn =  Math.trunc(value.ecografia_eg);
                                     var lcn = parseInt(value.ecografia_lcn_mm);
                                     lcn = parseFloat(lcn) / 10;
                                     if (egLcn > 5 || egLcn < 16){
