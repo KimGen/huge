@@ -478,13 +478,13 @@
                                     var lcn = parseInt(value.ecografia_lcn_mm);
                                     lcn = parseFloat(lcn) / 10;
                                     if (egLcn > 5 || egLcn < 16){
-                                        for (i; i <= egLcn; i++) {
+                                        for (I; I <= egLcn; i++) {
                                             data.push({ y: 0, });
                                         }
                                         data.push({
                                             y: lcn,
                                         });
-                                        i++;
+                                        I++;
                                     }
                                 });
                                 return data;
