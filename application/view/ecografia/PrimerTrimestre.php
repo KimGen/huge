@@ -469,7 +469,7 @@
                             lineWidth: 0,
                             data: (function() {
                                 var data = [];
-                                var I = 1;
+                                var I = 6;
 
                                 var data = [];
                                 $.each(response, function(i,value){
