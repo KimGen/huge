@@ -16,7 +16,7 @@
     </style>
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark g-success">
+    <nav class="navbar navbar-expand-lg navbar-dark g-verde">
         <div class="container">
             <a class="navbar-brand" href="<?php echo Config::get('URL'); ?>">CrecimientoFetal.cl</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHome" aria-controls="navbarHome" aria-expanded="false" aria-label="Toggle navigation">
