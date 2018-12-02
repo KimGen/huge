@@ -32,7 +32,7 @@
 <div class="container">
     <ol class="breadcrumb py-1">
     <?php if (Session::userIsLoggedIn()) { ?>
-        <li class="nav-item ml-auto">
+        <li class="nav-item mr-auto">
             <a class="nav-link" href="<?php echo Config::get('URL'); ?>pacientes/index">Pacientes</a>
         </li>
         <li class="nav-item dropdown">
