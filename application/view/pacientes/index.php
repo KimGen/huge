@@ -133,11 +133,11 @@
                 paciente_email: $("#pacientes\\.email").val(),
                 paciente_nacimiento: $("#pacientes\\.nacimiento").val(),
                 paciente_prevision: ($("#pacientes\\.prevision option:selected").val() == "") ? 0 : $("#pacientes\\.prevision option:selected").val(),
-                paciente_nacionalidad: $("#pacientes\\.nacionalidad").val(),
-                paciente_region: $("#pacientes\\.region").val(),
-                paciente_pais: $("#pacientes\\.pais").val(),
+                paciente_nacionalidad: ($("#pacientes\\.nacionalidad option:selected").val() == "") ? 0 : $("#pacientes\\.nacionalidad option:selected").val(),
+                paciente_region: ($("#pacientes\\.region option:selected").val() == "") ? 0 : $("#pacientes\\.region option:selected").val(),
+                paciente_pais: ($("#pacientes\\.pais option:selected").val() == "") ? 0 : $("#pacientes\\.pais option:selected").val(),
                 paciente_telefono: ($("#pacientes\\.telefono").val() == "") ? 0 : $("#pacientes\\.telefono").val(),
-                paciente_lugar: $("#pacientes\\.lugar").val()
+                paciente_lugar: ($("#pacientes\\.lugar option:selected").val() == "") ? 0 : $("#pacientes\\.lugar option:selected").val(),
             }
 
             $.post( "new", paciente).done(function( data ) {
