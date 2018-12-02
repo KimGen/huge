@@ -9,9 +9,9 @@
             <div class="row">
             <?php if ($this->fur) { ?>
                 <dt class="col-2">FUR:</dt>
-                <dd class="col-4"><?php echo $this->fur->fur_fecha; ?></dd>
+                <dd class="col-4"><?php echo date_format($this->fur->fur_fecha,"d/m/Y"); ?></dd>
                 <dt class="col-2">FPP:</dt>
-                <dd class="col-4"><?php echo $this->fur->fpp_fecha; ?></dd>
+                <dd class="col-4"><?php echo date_format($this->fur->fpp_fecha,"d/m/Y"); ?></dd>
             <?php } else { ?>
                 <div class="col-5">
                     <div class="btn-group" role="group">
