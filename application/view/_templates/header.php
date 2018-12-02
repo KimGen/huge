@@ -15,6 +15,7 @@
         }
     </style>
 <body>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-faded g-verde">
     <div class="container g-verde">
         <div class="row w-100">
             <div class="col-1">
@@ -27,6 +28,7 @@
             </div>
         </div>
     </div>
+</nav>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark g-verde">
         <div class="container">
