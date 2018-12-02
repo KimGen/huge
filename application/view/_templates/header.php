@@ -19,7 +19,7 @@
     <div class="container g-verde">
         <div class="row w-100">
             <div class="col-1">
-                <img class="img-fluid w-100" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
+                <img class="img-fluid w-100" src="<?php echo Config::get('URL'); ?>img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
             </div>
             <div class="col-11">
                 <p class="float-right" name="fechaHora" style="color: #f0df90;">Domingo, 2 de Diciembre 2018</p>
