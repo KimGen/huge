@@ -132,7 +132,7 @@
                 paciente_apellido: $("#pacientes\\.apellidos").val(),
                 paciente_email: $("#pacientes\\.email").val(),
                 paciente_nacimiento: $("#pacientes\\.nacimiento").val(),
-                paciente_prevision: ($("#pacientes\\.prevision").val() == "") ? 0 : $("#pacientes\\.prevision").val(),
+                paciente_prevision: ($("#pacientes\\.prevision option:selected").val() == "") ? 0 : $("#pacientes\\.prevision option:selected").val(),
                 paciente_nacionalidad: $("#pacientes\\.nacionalidad").val(),
                 paciente_region: $("#pacientes\\.region").val(),
                 paciente_pais: $("#pacientes\\.pais").val(),
