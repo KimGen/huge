@@ -15,6 +15,18 @@
         }
     </style>
 <body>
+    <div class="container">
+        <div class="row w-100">
+            <div class="col-1">
+                <img class="img-fluid w-100" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
+            </div>
+            <div class="col-11">
+                <p class="float-right" name="fechaHora" style="color: #f0df90;">Domingo, 2 de Diciembre 2018</p>
+                <h5 class="text-white mt-0 mb-1"><em>CrecimientoFetal.cl</em></h5>
+                <p class="text-white"><em>Ultrasonografía obstétrica básica para profesionales</em></p>
+            </div>
+        </div>
+    </div>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark g-verde">
         <div class="container">
