@@ -43,7 +43,7 @@
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.nombres">Edad Gestacional al exámen</label>
-                                            <input type="text" class="form-control" id="ecografia.eg" disabled>
+                                            <input type="text" class="form-control" id="ecografia.eg">
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.apellidos">Medida de embrión</label>
@@ -196,7 +196,6 @@
             let today = now.getFullYear()+"-"+(month)+"-"+(day) ;
 
             $("#ecografia\\.fecha").val(today).trigger("change");
-            $("#ecografia\\.eg").val("");
             $("#ecografia\\.lcn\\.mm").val("");
             $("#ecografia\\.lcn\\.eg").val("");
             $("#ecografia\\.saco\\.mm").val("");

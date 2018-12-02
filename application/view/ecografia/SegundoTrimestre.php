@@ -322,7 +322,6 @@
             let today = now.getFullYear()+"-"+(month)+"-"+(day) ;
 
             $("#ecografia\\.fecha").val(today).trigger("change");
-            $("#ecografia\\.eg").val("");
             $("#ecografia\\.dbp\\.mm").val("");
             $("#ecografia\\.dof\\.mm").val("");
             $("#ecografia\\.cc\\.mm").val("");

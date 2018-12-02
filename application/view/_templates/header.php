@@ -19,15 +19,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarHome">
                 <ul class="navbar-nav mr-auto">
-                    <?php if (Session::userIsLoggedIn()) { ?>
-                        <li class="nav-item <?php if (View::checkForActiveController($filename, "dashboard")) { echo 'active'; } ?>">
-                            <a class="nav-link" href="<?php echo Config::get('URL'); ?>pacientes/index">Pacientes</a>
-                        </li>
-                    <?php } else { ?>
-                        <li class="nav-item <?php if (View::checkForActiveController($filename, "index")) { echo 'active'; } ?>">
-                            <a class="nav-link" href="<?php echo Config::get('URL'); ?>">Inicio <span class="sr-only">(current)</span></a>
-                        </li>
-                    <?php } ?>
+                <?php if (Session::userIsLoggedIn()) { ?>
+                    <li class="nav-item <?php if (View::checkForActiveController($filename, "dashboard")) { echo 'active'; } ?>">
+                        <a class="nav-link" href="<?php echo Config::get('URL'); ?>pacientes/index">Pacientes</a>
+                    </li>
+                <?php } ?>
                 </ul>
                 <?php if (Session::userIsLoggedIn()) { ?>
                     <ul class="navbar-nav">
