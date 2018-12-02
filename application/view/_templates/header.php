@@ -15,7 +15,7 @@
         }
     </style>
 <body>
-    <div class="container">
+    <div class="container g-verde">
         <div class="row w-100">
             <div class="col-1">
                 <img class="img-fluid w-100" src="img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
