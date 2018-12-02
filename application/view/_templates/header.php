@@ -31,27 +31,30 @@
 </nav>
 <div class="container">
     <ol class="breadcrumb">
-        <?php if (Session::userIsLoggedIn()) { ?>
-                        <li class="nav-item dropdown float-right">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo Session::get('user_name'); ?> </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarUser">
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>configuracion/index"><i class="fas fa-cog"></i> Configuración</a>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/index">Mi cuenta</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/changeUserRole">Change account type</a>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editAvatar">Cambiar mi foto</a>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editusername">Cambiar mi nombre de usuario</a>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/edituseremail">Cambiar mi email</a>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/changePassword">Cambiar mi contraseña</a>
-                                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>login/logout">Salir</a>
-                                <div class="dropdown-divider"></div>
-                                <?php if (Session::get("user_account_type") == 7) : ?>
-                                    <a class="dropdown-item <?php if (View::checkForActiveController($filename, "admin")) {echo 'active';} ?>" href="<?php echo Config::get('URL'); ?>admin/">Admin</a>
-                                <?php endif; ?>
-                            </div>
-                        </li>
-                <?php } ?>
-        </ol>
+    <?php if (Session::userIsLoggedIn()) { ?>
+        <li class="nav-item <?php if (View::checkForActiveController($filename, "dashboard")) { echo 'active'; } ?>">
+            <a class="nav-link" href="<?php echo Config::get('URL'); ?>pacientes/index">Pacientes</a>
+        </li>
+        <li class="nav-item dropdown float-right">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo Session::get('user_name'); ?> </a>
+            <div class="dropdown-menu" aria-labelledby="navbarUser">
+                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>configuracion/index"><i class="fas fa-cog"></i> Configuración</a>
+                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/index">Mi cuenta</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/changeUserRole">Change account type</a>
+                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editAvatar">Cambiar mi foto</a>
+                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editusername">Cambiar mi nombre de usuario</a>
+                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/edituseremail">Cambiar mi email</a>
+                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/changePassword">Cambiar mi contraseña</a>
+                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>login/logout">Salir</a>
+                <div class="dropdown-divider"></div>
+            <?php if (Session::get("user_account_type") == 7) : ?>
+                    <a class="dropdown-item <?php if (View::checkForActiveController($filename, "admin")) {echo 'active';} ?>" href="<?php echo Config::get('URL'); ?>admin/">Admin</a>
+            <?php endif; ?>
+            </div>
+        </li>
+    <?php } ?>
+    </ol>
 </div>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark g-verde">
