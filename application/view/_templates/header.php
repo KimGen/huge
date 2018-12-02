@@ -29,24 +29,10 @@
         </div>
     </div>
 </nav>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark g-verde">
-        <div class="container">
-            <a class="navbar-brand" href="<?php echo Config::get('URL'); ?>">CrecimientoFetal.cl</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHome" aria-controls="navbarHome" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarHome">
-                <ul class="navbar-nav mr-auto">
-                <?php if (Session::userIsLoggedIn()) { ?>
-                    <li class="nav-item <?php if (View::checkForActiveController($filename, "dashboard")) { echo 'active'; } ?>">
-                        <a class="nav-link" href="<?php echo Config::get('URL'); ?>pacientes/index">Pacientes</a>
-                    </li>
-                <?php } ?>
-                </ul>
-                <?php if (Session::userIsLoggedIn()) { ?>
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
+<div class="container">
+    <ol class="breadcrumb">
+        <?php if (Session::userIsLoggedIn()) { ?>
+                        <li class="nav-item dropdown float-right">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo Session::get('user_name'); ?> </a>
                             <div class="dropdown-menu" aria-labelledby="navbarUser">
                                 <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>configuracion/index"><i class="fas fa-cog"></i> Configuración</a>
@@ -64,8 +50,25 @@
                                 <?php endif; ?>
                             </div>
                         </li>
-                    </ul>
                 <?php } ?>
+        </ol>
+</div>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark g-verde">
+        <div class="container">
+            <a class="navbar-brand" href="<?php echo Config::get('URL'); ?>">CrecimientoFetal.cl</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHome" aria-controls="navbarHome" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarHome">
+                <ul class="navbar-nav mr-auto">
+                <?php if (Session::userIsLoggedIn()) { ?>
+                    <li class="nav-item <?php if (View::checkForActiveController($filename, "dashboard")) { echo 'active'; } ?>">
+                        <a class="nav-link" href="<?php echo Config::get('URL'); ?>pacientes/index">Pacientes</a>
+                    </li>
+                <?php } ?>
+                </ul>
+                
             </div>
         </div>
     </nav>
