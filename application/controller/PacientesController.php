@@ -27,7 +27,7 @@ class PacientesController extends Controller
 
     public function one()
     {
-        $this->View->renderJSON(PacientesModel::getPacientes(Request::post('paciente_rut')));
+        $this->View->renderJSON(PacientesModel::getPaciente(Request::post('paciente_rut')));
     }
 
     public function new()
