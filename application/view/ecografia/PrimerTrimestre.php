@@ -296,7 +296,7 @@
 
                                 $.post( "<?php echo Config::get('URL'); ?>ecografia/api", fur).done(function( data ) {
 
-                                    let ecografia_id = $("#table\\.ecografia > tr:first-child").data(id);
+                                    let ecografia_id = $("#table\\.ecografia > tr:first-child").data("id");
                                     ecografia["ecografia_id"] = ecografia_id;
 
                                     let ecografia_fecha = $("#table\\.ecografia > tr:first-child > td:first-child").html();
