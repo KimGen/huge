@@ -6,7 +6,6 @@
                 <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.nuevo"><i class="fas fa-plus"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.guardar"><i class="fas fa-save"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.cancelar"><i class="fas fa-ban"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.paciente.eliminar"><i class="fas fa-trash"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg" id="button.paciente.buscar"><i class="fas fa-search"></i></button>
                 <div class="btn btn-outline-primary btn-lg d-none" id="interface.paciente.buscar"><input type="text" class="form-control" id="busqueda.pacientes" placeholder="buscar por rut o apellido"></div>
             </div>
@@ -215,15 +214,13 @@
                             prevision = this.text;
                         }
                     });
-                    let fila = '<tr data-id="' + value.paciente_rut + '"><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td></tr>';
+                    let fila = '<tr data-id="' + value.paciente_rut + '"><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td><td><button type="button" class="btn btn-outline-primary" id="button.paciente.eliminar"><i class="fas fa-trash"></i></button></td></tr>';
                     $("#table\\.pacientes").append(fila);
                 });
 
                 $("#table\\.pacientes > tr").on("click", function(){
                     window.location.href = '<?php echo Config::get('URL'); ?>ecografia/index/' + $(this).data("id");
                 });
-
-                $("#button\\.paciente\\.eliminar").removeClass("d-none");
             }
         });
     }
