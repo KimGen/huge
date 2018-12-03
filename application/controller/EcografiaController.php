@@ -83,6 +83,9 @@ class EcografiaController extends Controller
             case "primertrimestreNew":
                 $resultado = EcografiaModel::createEcografia('primertrimestre', Request::post('data'));
                 break;
+            case "primertrimestreUpdate":
+                $resultado = EcografiaModel::updateEcografia('primertrimestre', Request::post('data'));
+                break;
             case "primertrimestreDelete":
                 $resultado = EcografiaModel::deleteEcografia('primertrimestre', Request::post('ecografia_id'));
                 break;

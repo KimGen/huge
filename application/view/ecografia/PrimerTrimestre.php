@@ -220,54 +220,6 @@
         });
 
         $("#button\\.ecografia\\.guardar").on("click", function(){
-
-            //calcular la diferencia entre la eg operativa y la eg por lcn o saco
-            
-            let saco = $("#ecografia\\.saco\\.mm").val();
-            let lcn = $("#ecografia\\.lcn\\.mm").val();
-            let eg = $("#ecografia\\.eg").val();
-            var oneday = 1000 * 60 * 60 * 24;
-
-            if ($.isNumeric(lcn)){
-                let lcnEG = $("#ecografia\\.lcn\\.eg").val();
-                var eg1 = new Number((Math.floor(lcnEG) * 7) + Math.round((lcnEG - Math.floor(lcnEG)) * 7));
-				var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
-                var diferencia = (Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
-                
-                if (diferencia != 0 && Math.abs(diferencia) > 3){
-                $("#dialog\\.title").html("Ajuste");
-                $("#dialog\\.body").html('<p class="text-center text-danger">Días de diferencia observado entre edad gestacional por FUR referida y exámen ecográfico es de  ' + diferencia + ' días.</p><p class="text-center text-danger">¿Desea hacer ajuste automático de la FUR?</p>');
-                $("#dialog\\.delete").remove();
-                $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + diferencia + '">Si</button>');
-                $("#dialog\\.delete").on("click", function(){
-
-                    diferencia = $(this).data("id") * oneday;
-                    var FUM = new Date ('<?php echo $this->fur->fur_fecha; ?>');
-                    var B = new Date();
-                    B.setTime(FUM.getTime() + diferencia);
-                    let day = ("0" + B.getDate()).slice(-2);
-                    let month = ("0" + (B.getMonth() + 1)).slice(-2);
-                    let today = B.getFullYear()+"-"+(month)+"-"+(day) ;
-
-                    let fur = {
-                        accion: "furUpdate",
-                        paciente_rut: '<?php echo $this->paciente->paciente_rut; ?>',
-                        fur_fecha: today
-                    }
-
-                    $.post( "<?php echo Config::get('URL'); ?>ecografia/api", fur).done(function( data ) {
-                        window.location.href = '<?php echo Config::get('URL'); ?>ecografia/primertrimestre/<?php echo $this->paciente->paciente_rut; ?>';
-                    });
-                });
-                $("#dialog\\.view").modal("show");
-                }
-            }
-            else if ($.isNumeric(saco)){
-                let sacoEG = $("#ecografia\\.saco\\.eg").val();
-                let diferencia = eg - sacoEG;
-                alert(diferencia);
-            }
-
             $("#interface\\.ecografia").addClass("d-none");
             $("#button\\.ecografia\\.nuevo").removeClass("d-none");
             $("#button\\.ecografia\\.guardar").addClass("d-none");
@@ -305,6 +257,77 @@
             }
 
             $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( data ) {
+                if (data.resultado == 1){
+                    //calcular la diferencia entre la eg operativa y la eg por lcn o saco
+                    
+                    let saco = $("#ecografia\\.saco\\.mm").val();
+                    let lcn = $("#ecografia\\.lcn\\.mm").val();
+                    let eg = $("#ecografia\\.eg").val();
+                    var oneday = 1000 * 60 * 60 * 24;
+
+                    if ($.isNumeric(lcn)){
+                        let lcnEG = $("#ecografia\\.lcn\\.eg").val();
+                        var eg1 = new Number((Math.floor(lcnEG) * 7) + Math.round((lcnEG - Math.floor(lcnEG)) * 7));
+                        var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
+                        var diferencia = (Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
+                        
+                        if (diferencia != 0 && Math.abs(diferencia) > 3){
+                            $("#dialog\\.title").html("Ajuste");
+                            $("#dialog\\.body").html('<p class="text-center text-danger">Días de diferencia observado entre edad gestacional por FUR referida y exámen ecográfico es de  ' + diferencia + ' días.</p><p class="text-center text-danger">¿Desea hacer ajuste automático de la FUR?</p>');
+                            $("#dialog\\.delete").remove();
+                            $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + diferencia + '">Si</button>');
+                            $("#dialog\\.delete").on("click", function(){
+
+                                diferencia = $(this).data("id") * oneday;
+                                var FUM = new Date ('<?php echo $this->fur->fur_fecha; ?>');
+                                var B = new Date();
+                                B.setTime(FUM.getTime() + diferencia);
+                                let day = ("0" + B.getDate()).slice(-2);
+                                let month = ("0" + (B.getMonth() + 1)).slice(-2);
+                                let today = B.getFullYear()+"-"+(month)+"-"+(day) ;
+
+                                let fur = {
+                                    accion: "furUpdate",
+                                    paciente_rut: '<?php echo $this->paciente->paciente_rut; ?>',
+                                    fur_fecha: today
+                                }
+
+                                //$.post( "<?php echo Config::get('URL'); ?>ecografia/api", fur).done(function( data ) {
+
+                                //    ecografia["ecografia_id"] = 1;
+
+                                //    FUM = new Date(fur.fur_fecha);
+                                //    FExamen = new Date(ecografia.ecografia_fecha);
+            
+                                //    EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
+
+                                //    if (FExamen.getTime() < FUM.getTime()) {
+                                //        EdadGestacional = "0";
+                                //    } else if (((FExamen.getTime() - FUM.getTime()) / unasemana) > 42) {
+                                //        EdadGestacional = "42";
+                                //    } else {
+                                //        EdadGestacional = Math.floor(EdadGestacional) + "." + Math.round((EdadGestacional - Math.floor(EdadGestacional)) * 7);
+                                //    }
+
+                                //    let encap = {
+                                //        accion: "primertrimestreUpdate",
+                                //        data: JSON.stringify(ecografia)
+                                //    }
+
+                                //    $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( data ) {
+                                //        window.location.href = '<?php echo Config::get('URL'); ?>ecografia/primertrimestre/<?php echo $this->paciente->paciente_rut; ?>';
+                                //    });
+                                //});
+                            });
+                        };
+                        $("#dialog\\.view").modal("show");
+                    }
+                    else if ($.isNumeric(saco)){
+                        let sacoEG = $("#ecografia\\.saco\\.eg").val();
+                        let diferencia = eg - sacoEG;
+                    }
+                }
+                
                 $("#ecografia\\.fecha").val("");
                 $("#ecografia\\.eg").val("");
                 $("#ecografia\\.lcn\\.mm").val("");
