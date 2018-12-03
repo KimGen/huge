@@ -190,6 +190,7 @@
             $("#button\\.ecografia\\.guardar").removeClass("d-none");
             $("#button\\.ecografia\\.cancelar").removeClass("d-none");
             $("#button\\.ecografia\\.imprimir").removeClass("d-none");
+            $("#button\\.ecografia\\.lcn").addClass("d-none");
 
             let now = new Date();
             let day = ("0" + now.getDate()).slice(-2);
@@ -272,6 +273,7 @@
             $("#button\\.ecografia\\.guardar").addClass("d-none");
             $("#button\\.ecografia\\.cancelar").addClass("d-none");
             $("#button\\.ecografia\\.imprimir").addClass("d-none");
+            $("#button\\.ecografia\\.lcn").removeClass("d-none");
 
             let ecografia = {
                 ecografia_fecha:$("#ecografia\\.fecha").val(),
@@ -334,6 +336,7 @@
             $("#button\\.ecografia\\.guardar").addClass("d-none");
             $("#button\\.ecografia\\.cancelar").addClass("d-none");
             $("#button\\.ecografia\\.imprimir").addClass("d-none");
+            $("#button\\.ecografia\\.lcn").removeClass("d-none");
             $("#ecografia\\.fecha").val("");
             $("#ecografia\\.eg").val("");
             $("#ecografia\\.lcn\\.mm").val("");
