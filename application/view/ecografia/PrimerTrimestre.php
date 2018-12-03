@@ -232,7 +232,7 @@
 				var eg2 = new Number((Math.floor(eg) * 7) + Math.round((eg - Math.floor(eg)) * 7));
                 var diferencia = (Math.floor(eg2 - eg1) + Math.round(((eg2 - eg1) - Math.floor(eg2 - eg1)) * 7));
                 
-                if (diferencia != 0 || diferencia < -3 || diferencia > 3){
+                if (diferencia != 0 || Math.abs(diferencia) > 3){
                 $("#dialog\\.title").html("Ajuste");
                 $("#dialog\\.body").html('<p class="text-center text-danger">Días de diferencia observado entre edad gestacional por FUR referida y exámen ecográfico es de  ' + diferencia + ' días.</p><p class="text-center text-danger">¿Desea hacer ajuste automático de la FUR?</p>');
                 $("#dialog\\.delete").remove();
