@@ -252,7 +252,7 @@
                     var paciente = {
                         paciente_rut: id_paciente
                     }
-                    $.post( "<?php echo Config::get('URL'); ?>pacientes/delete", paciente).done(function( data ) {
+                    $.post( "<?php echo Config::get('URL'); ?>pacientes/one", paciente).done(function( data ) {
                         $("#dialog\\.body").html('<p class="text-center"'> + data.paciente_nombre + ' ' + data.paciente_apellido + '</p>');
                     });
 
