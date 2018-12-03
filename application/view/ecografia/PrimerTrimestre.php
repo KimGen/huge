@@ -257,9 +257,8 @@
             }
 
             $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( data ) {
-                if (data.resultado == 1){
+                if (data.cantidad == 1){
                     //calcular la diferencia entre la eg operativa y la eg por lcn o saco
-                    
                     let saco = $("#ecografia\\.saco\\.mm").val();
                     let lcn = $("#ecografia\\.lcn\\.mm").val();
                     let eg = $("#ecografia\\.eg").val();
