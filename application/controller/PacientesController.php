@@ -25,6 +25,11 @@ class PacientesController extends Controller
         $this->View->renderJSON(PacientesModel::getAllPacientes());
     }
 
+    public function one()
+    {
+        $this->View->renderJSON(PacientesModel::getPacientes(Request::post('paciente_rut')));
+    }
+
     public function new()
     {
         $this->View->renderJSON(PacientesModel::createPaciente(Request::post('paciente_rut'), Request::post('paciente_nombre'), Request::post('paciente_apellido'), Request::post('paciente_email'), Request::post('paciente_nacimiento'), Request::post('paciente_prevision'), Request::post('paciente_nacionalidad'), Request::post('paciente_region'), Request::post('paciente_pais'), Request::post('paciente_telefono'), Request::post('paciente_lugar')));

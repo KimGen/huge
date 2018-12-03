@@ -249,13 +249,19 @@
 
                 $(".eliminar").on("click", function(){
                     var id_paciente = $(this).data("id");
-                    $("#dialog\\.body").html("Eliminar un paciente");
+                    var paciente = {
+                        paciente_rut: id_paciente
+                    }
+                    $.post( "<?php echo Config::get('URL'); ?>pacientes/delete", paciente).done(function( data ) {
+                        $("#dialog\\.body").html('<p class="text-center"'>data.paciente_nombre + ' ' + data.paciente_apellido'</p>');
+                    });
+
                     $("#dialog\\.title").html("¿Está seguro de eliminar el paciente seleccionado?");
-                    $("#dialog\\.footer").html('<button type="button" class="btn btn-secondary" id="button.paciente.eliminar" data-id="' + id_paciente +'"><i class="fas fa-trash"></i></button>');
+                    $("#dialog\\.footer").append('<button type="button" class="btn btn-secondary" id="button.paciente.eliminar" data-id="' + id_paciente +'"><i class="fas fa-trash"></i></button>');
 
                     $("#button\\.paciente\\.eliminar").on("click", function(){
                         var paciente = {
-                            paciente_rut: $(this).data("id"),
+                            paciente_rut: $(this).data("id")
                         }
                         $.post( "<?php echo Config::get('URL'); ?>pacientes/delete", paciente).done(function( data ) {
                             maketable();
