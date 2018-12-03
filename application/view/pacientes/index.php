@@ -79,7 +79,7 @@
                                     <th scope="col">Apellido</th>
                                     <th scope="col">Edad</th>
                                     <th scope="col">Previsión</th>
-                                    <th scope="col" colspan="2">acciones</th>
+                                    <th scope="col">acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody id="table.pacientes">
@@ -215,7 +215,7 @@
                             prevision = this.text;
                         }
                     });
-                    let fila = '<tr data-id="' + value.paciente_rut + '"><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td><td><button type="button" class="btn btn-outline-primary"><i class="fas fa-pen"></i></button></td><td><button type="button" class="btn btn-outline-primary"><i class="fas fa-trash"></i></button></td></tr>';
+                    let fila = '<tr data-id="' + value.paciente_rut + '"><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td><td><div class="btn-group" role="group"><button type="button" class="btn btn-outline-primary"><i class="fas fa-pen"></i></button><button type="button" class="btn btn-outline-primary"><i class="fas fa-trash"></i></button></div></td></tr>';
                     $("#table\\.pacientes").append(fila);
                 });
 
