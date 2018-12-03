@@ -1,5 +1,14 @@
 <div class="container">
     <div class="row">
+        <div class="col-5">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-primary" id="button.ecografia.nuevo">Nuevo Exámen</button>
+                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.guardar">Guardar Exámen</button>
+                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.cancelar">Cancelar Exámen</button>
+                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.imprimir">Ver Informe</button>
+                <button type="button" class="btn btn-outline-primary" id="button.ecografia.lcn">Gráfico LCN</button>
+            </div>
+        </div>
         <div class="col">
             <h4 class="text-right my-3">Ecografía Obstétrica Primer Trimestre</h4>
         </div>
@@ -21,7 +30,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-10">
+        <div class="col-12">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -147,15 +156,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="btn-group-vertical" role="group">
-                <button type="button" class="btn btn-outline-primary" id="button.ecografia.nuevo">Nuevo Exámen</button>
-                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.guardar">Guardar Exámen</button>
-                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.cancelar">Cancelar Exámen</button>
-                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.imprimir">Ver Informe</button>
-                <button type="button" class="btn btn-outline-primary" id="button.ecografia.lcn">Gráfico LCN</button>
             </div>
         </div>
     </div>
