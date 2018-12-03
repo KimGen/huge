@@ -274,6 +274,7 @@
                             $("#dialog\\.title").html("Ajuste");
                             $("#dialog\\.body").html('<p class="text-center text-danger">Días de diferencia observado entre edad gestacional por FUR referida y exámen ecográfico es de  ' + diferencia + ' días.</p><p class="text-center text-danger">¿Desea hacer ajuste automático de la FUR?</p>');
                             $("#dialog\\.delete").remove();
+                            $("#dialog\\.footer > button").html("No");
                             $("#dialog\\.footer").append('<button type="button" class="btn btn-danger" id="dialog.delete" data-id="' + diferencia + '">Si</button>');
                             $("#dialog\\.delete").on("click", function(){
 
