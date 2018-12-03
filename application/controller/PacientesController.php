@@ -34,4 +34,9 @@ class PacientesController extends Controller
     {
         $this->View->renderJSON(PacientesModel::updatePaciente(Request::post('paciente_rut'), Request::post('paciente_nombre'), Request::post('paciente_apellido'), Request::post('paciente_email'), Request::post('paciente_nacimiento'), Request::post('paciente_prevision'), Request::post('paciente_nacionalidad'), Request::post('paciente_region'), Request::post('paciente_pais'), Request::post('paciente_telefono'), Request::post('paciente_lugar')));
     }
+
+    public function delete()
+    {
+        $this->View->renderJSON(PacientesModel::deletePaciente(Request::post('paciente_rut')));
+    }
 }

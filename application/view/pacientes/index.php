@@ -79,7 +79,7 @@
                                     <th scope="col">Apellido</th>
                                     <th scope="col">Edad</th>
                                     <th scope="col">Previsión</th>
-                                    <th scope="col">acciones</th>
+                                    <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody id="table.pacientes">
@@ -88,6 +88,20 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="dialog.view">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="dialog.title"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body" id="dialog.body"></div>
+            <div class="modal-footer" id="dialog.footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
     </div>
@@ -215,12 +229,39 @@
                             prevision = this.text;
                         }
                     });
-                    let fila = '<tr data-id="' + value.paciente_rut + '"><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td><td><div class="btn-group" role="group"><button type="button" class="btn btn-outline-primary"><i class="fas fa-pen"></i></button><button type="button" class="btn btn-outline-primary"><i class="fas fa-trash"></i></button></div></td></tr>';
+                    let fila = '<tr data-id="' + value.paciente_rut + '"><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td><td><div class="btn-group" role="group"><button type="button" class="btn btn-outline-primary modificar" data-id="' + value.paciente_rut + '"><i class="fas fa-pen"></i></button><button type="button" class="btn btn-outline-primary eliminar" data-id="' + value.paciente_rut + '"><i class="fas fa-trash"></i></button></div></td></tr>';
                     $("#table\\.pacientes").append(fila);
                 });
 
                 $("#table\\.pacientes > tr").on("click", function(){
                     window.location.href = '<?php echo Config::get('URL'); ?>ecografia/index/' + $(this).data("id");
+                });
+
+                $(".modificar").on("click", function(){
+                    var id_paciente = $(this).data("id");
+                    
+                    $("#dialog\\.body").html("");
+                    $("#dialog\\.title").html("");
+                    $("#dialog\\.footer").html("");
+                    $("#dialog\\.view").modal("show");
+
+                });
+
+                $(".eliminar").on("click", function(){
+                    var id_paciente = $(this).data("id");
+                    $("#dialog\\.body").html("Eliminar un paciente");
+                    $("#dialog\\.title").html("¿Está seguro de eliminar el paciente seleccionado?");
+                    $("#dialog\\.footer").html('<button type="button" class="btn btn-secondary" id="button.paciente.eliminar" data-id="' + id_paciente +'"><i class="fas fa-trash"></i></button>');
+
+                    $("#button\\.paciente\\.eliminar").("click", function(){
+                        var paciente = {
+                            paciente_rut: $(this).data("id"),
+                        }
+                        $.post( "<?php echo Config::get('URL'); ?>pacientes/delete", paciente).done(function( data ) {
+                            maketable();
+                        });
+                    });
+                    $("#dialog\\.view").modal("show");
                 });
             }
         });
