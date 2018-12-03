@@ -259,6 +259,7 @@
             $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( data ) {
                 if (data.cantidad == 1){
                     //calcular la diferencia entre la eg operativa y la eg por lcn o saco
+
                     let saco = $("#ecografia\\.saco\\.mm").val();
                     let lcn = $("#ecografia\\.lcn\\.mm").val();
                     let eg = $("#ecografia\\.eg").val();
@@ -281,6 +282,7 @@
                                 diferencia = $(this).data("id") * oneday;
                                 var FUM = new Date ('<?php echo $this->fur->fur_fecha; ?>');
                                 var B = new Date();
+
                                 B.setTime(FUM.getTime() + diferencia);
                                 let day = ("0" + B.getDate()).slice(-2);
                                 let month = ("0" + (B.getMonth() + 1)).slice(-2);
@@ -292,32 +294,35 @@
                                     fur_fecha: today
                                 }
 
-                                //$.post( "<?php echo Config::get('URL'); ?>ecografia/api", fur).done(function( data ) {
+                                $.post( "<?php echo Config::get('URL'); ?>ecografia/api", fur).done(function( data ) {
 
-                                //    ecografia["ecografia_id"] = 1;
+                                    let ecografia_id = $("#table\\.ecografia > tr:first-child").data(id);
+                                    ecografia["ecografia_id"] = ecografia_id;
 
-                                //    FUM = new Date(fur.fur_fecha);
-                                //    FExamen = new Date(ecografia.ecografia_fecha);
+                                    let ecografia_fecha = $("#table\\.ecografia > tr:first-child > td:first-child").html();
+
+                                    let FUM = new Date(fur.fur_fecha);
+                                    let FExamen = new Date(ecografia_fecha);
             
-                                //    EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
+                                    let EdadGestacional = ((FExamen.getTime() - FUM.getTime()) / unasemana).toFixed(1);
 
-                                //    if (FExamen.getTime() < FUM.getTime()) {
-                                //        EdadGestacional = "0";
-                                //    } else if (((FExamen.getTime() - FUM.getTime()) / unasemana) > 42) {
-                                //        EdadGestacional = "42";
-                                //    } else {
-                                //        EdadGestacional = Math.floor(EdadGestacional) + "." + Math.round((EdadGestacional - Math.floor(EdadGestacional)) * 7);
-                                //    }
+                                    if (FExamen.getTime() < FUM.getTime()) {
+                                        ecografia["ecografia_eg"] = "0";
+                                    } else if (((FExamen.getTime() - FUM.getTime()) / unasemana) > 42) {
+                                        ecografia["ecografia_eg"] = "42";
+                                    } else {
+                                        ecografia["ecografia_eg"] = Math.floor(EdadGestacional) + "." + Math.round((EdadGestacional - Math.floor(EdadGestacional)) * 7);
+                                    }
 
-                                //    let encap = {
-                                //        accion: "primertrimestreUpdate",
-                                //        data: JSON.stringify(ecografia)
-                                //    }
+                                    let encap = {
+                                        accion: "primertrimestreUpdate",
+                                        data: JSON.stringify(ecografia)
+                                    }
 
-                                //    $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( data ) {
-                                //        window.location.href = '<?php echo Config::get('URL'); ?>ecografia/primertrimestre/<?php echo $this->paciente->paciente_rut; ?>';
-                                //    });
-                                //});
+                                    $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( data ) {
+                                        window.location.href = '<?php echo Config::get('URL'); ?>ecografia/primertrimestre/<?php echo $this->paciente->paciente_rut; ?>';
+                                    });
+                                });
                             });
                         };
                         $("#dialog\\.view").modal("show");

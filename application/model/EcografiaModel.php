@@ -90,23 +90,20 @@ class EcografiaModel
      * @param string $ecografia_text new text of the specific ecografia
      * @return bool feedback (was the update successful ?)
      */
+
     public static function updateEcografia($tabla,$data)
     {
-        if (!$ecografia_id || !$ecografia_text) {
-            return false;
-        }
+        if (!$tabla || !$data) {return false;}
 
         $database = DatabaseFactory::getFactory()->getConnection();
 
         if ($tabla == 'primertrimestre'){
             $sql = "UPDATE primertrimestre SET ecografia_fecha = :ecografia_fecha, ecografia_eg = :ecografia_eg, ecografia_lcn_mm = :ecografia_lcn_mm, ecografia_lcn_eg = :ecografia_lcn_eg, ecografia_saco_mm = :ecografia_saco_mm, ecografia_saco_eg = :ecografia_saco_eg, ecografia_utero_uno = :ecografia_utero_uno, ecografia_utero_dos = :ecografia_utero_dos, ecografia_cuerpo = :ecografia_cuerpo, ecografia_saco_txt = :ecografia_saco_txt, ecografia_saco_mm_copia = :ecografia_saco_mm_copia, ecografia_vitelino_txt = :ecografia_vitelino_txt, ecografia_vitelino_mm = :ecografia_vitelino_mm, ecografia_embrion_txt = :ecografia_embrion_txt, ecografia_lcn_mm_copia = :ecografia_lcn_mm_copia, ecografia_fcf = :ecografia_fcf, ecografia_anexo_derecho = :ecografia_anexo_derecho, ecografia_anexo_izquierdo = :ecografia_anexo_izquierdo, ecografia_douglas_txt = :ecografia_douglas_txt, ecografia_douglas_com = :ecografia_douglas_com, ecografia_com = :ecografia_com WHERE ecografia_id = :ecografia_id AND user_id = :user_id LIMIT 1";
             $query = $database->prepare($sql);
-            $query->execute(array(':ecografia_id' => $ecografia_id, ':ecografia_text' => $ecografia_text, ':user_id' => Session::get('user_id')));
+            $query->execute(array(':ecografia_id' => $data->ecografia_id, ':ecografia_fecha' => $data->ecografia_fecha, ':ecografia_eg' => $data->ecografia_eg, ':ecografia_lcn_mm' => $data->ecografia_lcn_mm, ':ecografia_lcn_eg' => $data->ecografia_lcn_eg, ':ecografia_saco_mm' => $data->ecografia_saco_mm, ':ecografia_saco_eg' => $data->ecografia_saco_eg, ':ecografia_utero_uno' => $data->ecografia_utero_uno, ':ecografia_utero_dos' => $data->ecografia_utero_dos, ':ecografia_cuerpo' => $data->ecografia_cuerpo, ':ecografia_saco_txt' => $data->ecografia_saco_txt, ':ecografia_saco_mm_copia' => $data->ecografia_saco_mm_copia, ':ecografia_vitelino_txt' => $data->ecografia_vitelino_txt, ':ecografia_vitelino_mm' => $data->ecografia_vitelino_mm, ':ecografia_embrion_txt' => $data->ecografia_embrion_txt, ':ecografia_lcn_mm_copia' => $data->ecografia_lcn_mm_copia, ':ecografia_fcf' => $data->ecografia_fcf, ':ecografia_anexo_derecho' => $data->ecografia_anexo_derecho, ':ecografia_anexo_izquierdo' => $data->ecografia_anexo_izquierdo, ':ecografia_douglas_txt' => $data->ecografia_douglas_txt, ':ecografia_douglas_com' => $data->ecografia_douglas_com, ':ecografia_com' => $data->ecografia_com, ':user_id' => Session::get('user_id')));
         }
 
-        if ($query->rowCount() == 1) {
-            return true;
-        }
+        if ($query->rowCount() == 1) {return true;}
 
         Session::add('feedback_negative', Text::get('FEEDBACK_NOTE_EDITING_FAILED'));
         return false;
