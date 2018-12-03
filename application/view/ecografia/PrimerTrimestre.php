@@ -324,8 +324,8 @@
                                     });
                                 });
                             });
-                        };
-                        $("#dialog\\.view").modal("show");
+                            $("#dialog\\.view").modal("show");
+                        };  
                     }
                     else if ($.isNumeric(saco)){
                         let sacoEG = $("#ecografia\\.saco\\.eg").val();
