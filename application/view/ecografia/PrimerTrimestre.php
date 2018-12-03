@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-5">
             <div class="btn-group" role="group">
-                <button type="button" class="btn btn-outline-primary" id="button.ecografia.nuevo"><i class="fas file-medical"></i></button>
+                <button type="button" class="btn btn-outline-primary" id="button.ecografia.nuevo"><i class="fas fa-file-medical"></i></button>
                 <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.guardar"><i class="fas fa-save"></i></button>
                 <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.cancelar"><i class="fas fa-ban"></i></button>
                 <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.imprimir"><i class="fas fa-print"></i></button>
-                <button type="button" class="btn btn-outline-primary" id="button.ecografia.lcn"><i class="fas chart-bar"></i></button>
+                <button type="button" class="btn btn-outline-primary" id="button.ecografia.lcn"><i class="fas fa-chart-bar"></i></button>
             </div>
         </div>
         <div class="col">
