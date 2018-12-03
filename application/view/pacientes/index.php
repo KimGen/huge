@@ -239,7 +239,7 @@
 
                 $(".modificar").on("click", function(){
                     var id_paciente = $(this).data("id");
-                    
+
                     $("#dialog\\.body").html("");
                     $("#dialog\\.title").html("");
                     $("#dialog\\.footer").html("");
@@ -253,7 +253,7 @@
                     $("#dialog\\.title").html("¿Está seguro de eliminar el paciente seleccionado?");
                     $("#dialog\\.footer").html('<button type="button" class="btn btn-secondary" id="button.paciente.eliminar" data-id="' + id_paciente +'"><i class="fas fa-trash"></i></button>');
 
-                    $("#button\\.paciente\\.eliminar").("click", function(){
+                    $("#button\\.paciente\\.eliminar").on("click", function(){
                         var paciente = {
                             paciente_rut: $(this).data("id"),
                         }
