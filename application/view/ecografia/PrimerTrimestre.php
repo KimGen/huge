@@ -144,10 +144,11 @@
                             <table class="table table-hover">
                                 <thead class="thead-dark">
                                     <tr>
-                                    <th scope="col">Fecha</th>
-                                    <th scope="col">EG</th>
-                                    <th scope="col">Saco</th>
-                                    <th scope="col">LCN</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">EG</th>
+                                        <th scope="col">Saco</th>
+                                        <th scope="col">LCN</th>
+                                        <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody id="table.ecografia">
@@ -545,11 +546,11 @@
             $("#table\\.ecografia").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
-                    let fila = '<tr id="' + value.ecografia_id + '"><td>' + value.ecografia_fecha + '</td><td>' + value.ecografia_eg + '</td><td>' + value.ecografia_saco_mm + '</td><td>' + value.ecografia_lcn_mm + '<button type="button" data-id="' + value.ecografia_id + '" class="btn btn-outline-warning px-3 eliminar-ecografia float-right"><i class="fas fa-trash"></i></button></td></tr>';
+                    let fila = '<tr id="' + value.ecografia_id + '"><td>' + value.ecografia_fecha + '</td><td>' + value.ecografia_eg + '</td><td>' + value.ecografia_saco_mm + '</td><td>' + value.ecografia_lcn_mm + '</td><td><div class="btn-group" role="group"><button type="button" class="btn btn-outline-secondary modificar" data-id="' + value.ecografia_id + '"><i class="fas fa-pen"></i></button><button type="button" class="btn btn-outline-secondary eliminar" data-id="' + value.ecografia_id + '"><i class="fas fa-trash"></i></button></div></tr>';
                     $("#table\\.ecografia").append(fila);
                 });
 
-                $(".eliminar-ecografia").on("click", function(){
+                $(".eliminar").on("click", function(){
                     let ecografia_id = $(this).data("id");
 
                     $("#dialog\\.title").html("Eliminar ecografia");
