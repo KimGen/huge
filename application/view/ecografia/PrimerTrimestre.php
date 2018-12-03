@@ -264,6 +264,8 @@
                     let lcn = $("#ecografia\\.lcn\\.mm").val();
                     let eg = $("#ecografia\\.eg").val();
                     var oneday = 1000 * 60 * 60 * 24;
+                    var undia = 1000 * 60 * 60 * 24;
+                    var unasemana = undia * 7;
 
                     if ($.isNumeric(lcn)){
                         let lcnEG = $("#ecografia\\.lcn\\.eg").val();
