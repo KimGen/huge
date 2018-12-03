@@ -253,7 +253,7 @@
                         paciente_rut: id_paciente
                     }
                     $.post( "<?php echo Config::get('URL'); ?>pacientes/one", paciente).done(function( data ) {
-                        $("#dialog\\.body").html('<p class="text-center"'> + data.paciente_nombre + ' ' + data.paciente_apellido + '</p>');
+                        $("#dialog\\.body").html('<p class="text-center">' + data.paciente_nombre + ' ' + data.paciente_apellido + '</p>');
                     });
 
                     $("#dialog\\.title").html("¿Está seguro de eliminar el paciente seleccionado?");
