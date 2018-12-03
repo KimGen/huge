@@ -221,7 +221,9 @@
 
                 $("#table\\.pacientes > tr").on("click", function(){
                     window.location.href = '<?php echo Config::get('URL'); ?>ecografia/index/' + $(this).data("id");
-                })
+                });
+
+                $("#button\\.paciente\\.eliminar").removeClass("d-none");
             }
         });
     }
