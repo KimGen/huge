@@ -68,9 +68,9 @@ class EcografiaModel
 
             if ($query->rowCount() == 1) {
 
-                $sql = "SELECT ecografia_id FROM primertrimestre WHERE user_id = :user_id AND ecografia_id = :ecografia_id";
+                $sql = "SELECT ecografia_id FROM primertrimestre WHERE user_id = :user_id";
                 $query = $database->prepare($sql);
-                $query->execute(array(':user_id' => Session::get('user_id'), ':ecografia_id' => $ecografia_id));
+                $query->execute(array(':user_id' => Session::get('user_id')));
 
                 $resultado = new stdClass();
                 $resultado->cantidad = $query->rowCount();
