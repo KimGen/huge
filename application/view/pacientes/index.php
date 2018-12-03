@@ -229,11 +229,11 @@
                             prevision = this.text;
                         }
                     });
-                    let fila = '<tr data-id="' + value.paciente_rut + '"><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td><td><div class="btn-group" role="group"><button type="button" class="btn btn-outline-primary modificar" data-id="' + value.paciente_rut + '"><i class="fas fa-pen"></i></button><button type="button" class="btn btn-outline-primary eliminar" data-id="' + value.paciente_rut + '"><i class="fas fa-trash"></i></button></div></td></tr>';
+                    let fila = '<tr data-id="' + value.paciente_rut + '"><td>' + value.paciente_rut + '</td><td>' + value.paciente_nombre + '</td><td>' + value.paciente_apellido + '</td><td>' + value.paciente_nacimiento +' años</td><td>' + prevision +'</td><td><div class="btn-group" role="group"><button type="button" class="btn btn-outline-secondary modificar" data-id="' + value.paciente_rut + '"><i class="fas fa-pen"></i></button><button type="button" class="btn btn-outline-secondary eliminar" data-id="' + value.paciente_rut + '"><i class="fas fa-trash"></i></button><button type="button" class="btn btn-outline-primary examen" data-id="' + value.paciente_rut + '"><i class="fas fa-notes-medical"></i></button></div></td></tr>';
                     $("#table\\.pacientes").append(fila);
                 });
 
-                $("#table\\.pacientes > tr").on("click", function(){
+                $(".examen").on("click", function(){
                     window.location.href = '<?php echo Config::get('URL'); ?>ecografia/index/' + $(this).data("id");
                 });
 
