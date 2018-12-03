@@ -257,7 +257,7 @@
                     });
 
                     $("#dialog\\.title").html("¿Está seguro de eliminar el paciente seleccionado?");
-                    $("#dialog\\.footer").append('<button type="button" class="btn btn-secondary" id="button.paciente.eliminar" data-id="' + id_paciente +'"><i class="fas fa-trash"></i></button>');
+                    $("#dialog\\.footer").append('<button type="button" class="btn btn-outline-danger" id="button.paciente.eliminar" data-id="' + id_paciente +'"><i class="fas fa-trash"></i></button>');
 
                     $("#button\\.paciente\\.eliminar").on("click", function(){
                         var paciente = {
