@@ -97,7 +97,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="dialog.title"></h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body" id="dialog.body"></div>
             <div class="modal-footer" id="dialog.footer">
@@ -257,6 +256,7 @@
                     });
 
                     $("#dialog\\.title").html("¿Está seguro de eliminar el paciente seleccionado?");
+                    $("#button\\.paciente\\.eliminar").remove();
                     $("#dialog\\.footer").append('<button type="button" class="btn btn-outline-danger" id="button.paciente.eliminar" data-id="' + id_paciente +'"><i class="fas fa-trash"></i></button>');
 
                     $("#button\\.paciente\\.eliminar").on("click", function(){
