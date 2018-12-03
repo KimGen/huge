@@ -101,7 +101,7 @@
             </div>
             <div class="modal-body" id="dialog.body"></div>
             <div class="modal-footer" id="dialog.footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
     </div>
