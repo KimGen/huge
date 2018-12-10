@@ -253,20 +253,47 @@
                     $.post( "<?php echo Config::get('URL'); ?>pacientes/one", paciente).done(function( data ) {
                         $("#dialog\\.body").html('<div class="row"><div class="form-group col-3"><label for="user.rut">RUT o DNI</label><input type="number" class="form-control" id="dialog.pacientes.rut"></div><div class="form-group col-3"><label for="user.nombres">Nombres</label><input type="text" class="form-control" id="dialog.pacientes.nombres"></div><div class="form-group col-3"><label for="user.apellidos">Apellidos</label><input type="text" class="form-control" id="dialog.pacientes.apellidos"></div><div class="form-group col-3"><label for="user.nacimiento">Edad</label><select class="form-control" id="dialog.pacientes.nacimiento"></select></div><div class="form-group col-3"><label for="user.nacionalidad">Pais de origen</label><select class="form-control" id="dialog.pacientes.nacionalidad"></select></div><div class="form-group col-3"><label for="user.pais">Pais de residencia</label><select class="form-control" id="dialog.pacientes.pais"></select></div><div class="form-group col-3"><label for="user.region">Región o Provincia de residencia</label><select class="form-control" id="dialog.pacientes.region"></select></div><div class="form-group col-3"><label for="user.lugar">Lugar de control</label><select class="form-control" id="dialog.pacientes.lugar"></select></div><div class="form-group col-3"><label for="user.email">Correo Electrónico</label><input type="email" class="form-control" id="dialog.pacientes.email"></div><div class="form-group col-3"><label for="user.telefono">Telefono</label><input type="number" class="form-control" id="dialog.pacientes.telefono"></div><div class="form-group col-3"><label for="user.prevision">Previsión</label><select class="form-control" id="dialog.pacientes.prevision"></select></div></div>');
                         $("#dialog\\.title").html("Modificar paciente");
+                        $("#dialog\\.footer").append('<button type="button" class="btn btn-outline-danger" id="dialog.button.paciente.guardar" data-id="' + paciente.paciente_rut +'"><i class="fas fa-save"></i></button>');
+                        
+                        makeEdad();
+
+                        var options = $("#pacientes\\.nacionalidad > option").clone();
+                        $('#dialog\\.pacientes\\.nacionalidad').append(options);
+                        $('#dialog\\.pacientes\\.pais').append(options);
+
+                        options = $("#pacientes\\.prevision > option").clone();
+                        $('#dialog\\.pacientes\\.prevision').append(options);
+                        options = $("#pacientes\\.lugar > option").clone();
+                        $('#dialog\\.pacientes\\.lugar').append(options);
+
+                        $("#dialog\\.pacientes\\.pais").on("change", function(){
+                            let region = {
+                                accion: "region",
+                                nacionalidad_nombre: $("##dialog\\.pacientes\\.pais option:selected").text()
+                            }
+
+                            $.post( "<?php echo Config::get('URL'); ?>configuracion/api", region).done(function( data ) {
+                                $("#dialog\\.pacientes\\.region").empty();
+                                if (Object.keys(data).length > 0) {
+                                    $.each(data, function(i,value){
+                                        let option = "<option value=" + value.region_id + ">" + value.region_text + "</option>";
+                                        $("#dialog\\.pacientes\\.region").append(option);
+                                    });
+                                }
+                            });
+                        });
 
                         $("#dialog\\.pacientes\\.rut").val(data.paciente_rut);
                         $("#dialog\\.pacientes\\.nombres").val(data.paciente_nombre);
                         $("#dialog\\.pacientes\\.apellidos").val(data.paciente_apellido);
                         $("#dialog\\.pacientes\\.nacimiento").val(data.paciente_nacimiento);
                         $("#dialog\\.pacientes\\.nacionalidad").val(data.paciente_nacionalidad);
-                        $("#dialog\\.pacientes\\.pais").val(data.paciente_pais);
-                        $("#dialog\\.pacientes\\.region").val(data.paciente_region);
+                        $("#dialog\\.pacientes\\.pais").val(data.paciente_pais).trigger("change");
                         $("#dialog\\.pacientes\\.lugar").val(data.paciente_lugar);
                         $("#dialog\\.pacientes\\.email").val(data.paciente_email);
                         $("#dialog\\.pacientes\\.telefono").val(data.paciente_telefono);
                         $("#dialog\\.pacientes\\.prevision").val(data.paciente_prevision);
 
-                        $("#dialog\\.footer").append('<button type="button" class="btn btn-outline-danger" id="dialog.button.paciente.guardar" data-id="' + paciente.paciente_rut +'"><i class="fas fa-save"></i></button>');
 
                         $("#dialog\\.button\\.paciente\\.guardar").on("click", function(){
                             let paciente = {
@@ -288,8 +315,9 @@
                                 $("#dialog\\.view").modal("hide");
                             });
                         });
-                    });
 
+                        $("#dialog\\.pacientes\\.region").val(data.paciente_region);
+                    });
                     $("#dialog\\.view").modal("show");
                 });
 
@@ -321,9 +349,13 @@
     }
 
     function makeEdad(){
+        $("#pacientes\\.nacimiento").append(option);
+        $("#dialog\\.pacientes\\.nacimiento").append(option);
+
         for (i = 10; i < 51; i++) {
             let option = "<option value=" + i + ">" + i + "</option>";
             $("#pacientes\\.nacimiento").append(option);
+            $("#dialog\\.pacientes\\.nacimiento").append(option);
         }
     }
 
