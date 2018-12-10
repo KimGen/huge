@@ -177,8 +177,8 @@
                                 </div>
                                 <div class="tab-pane fade" id="texto" role="tabpanel" aria-labelledby="texto-tab">
                                     <div class="row pt-2">
+                                        <label for="ecografia.rut" class="col-12">Evaluación de líquido amniótico (cualitativa / semicuantitativa)</label>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.rut">Evaluación de líquido amniótico (cualitativa / semicuantitativa)</label>
                                             <select class="form-control" id="ecografia.presentacion"><option value="normal">Normal</option><option value="disminuido">Disminuido</option><option value="aumentado">Aumentado</option></select>
                                         </div>
                                         <div class="form-group col-6">
@@ -196,15 +196,15 @@
                                             <label for="ecografia.nombres">Presentacion</label>
                                             <select class="form-control" id="ecografia.anatomia.fetal"><option value="cefalica" selected="">Cefalica</option><option value="podalica">Podálica</option><option value="transversa">Transversa</option><option value="indiferente">Indiferente</option></select>
                                         </div>
-                                        <div class="form-group col-4">
+                                        <div class="form-group col-12">
                                             <label for="ecografia.rut">Motilidad Fetal</label>
                                             <select class="form-control" id="ecografia.placenta.ubicacion"><option value="hiperactivo" selected="">Hiperactivo</option><option value="activo">Activo</option><option value="hipoactivo">Hipoactivo</option><option value="inmovil">Inmovil</option></select>
                                         </div>
-                                        <div class="form-group col-4">
+                                        <div class="form-group col-12">
                                             <label for="ecografia.nombres">Placenta Ubicación</label>
                                             <select class="form-control" id="ecografia.placenta.insercion"><option value="anterior" selected="">Anterior</option><option value="posterior">Posterior</option><option value="fúndica">Fúndica</option><option value="baja">baja</option><option value="lat. derecha">Lat. derecha</option><option value="lat. izquierda">Lat. izquierda</option><option value="otro">Otro</option></select>
                                         </div>
-                                        <div class="form-group col-4">
+                                        <div class="form-group col-12">
                                             <label for="ecografia.rut">Comentarios y obsevaciones <small>(La interpretación clínica de los datos es responsabilidad exclusiva de quien realiza y certifica este exámen)</small></label>
                                             <textarea class="form-control" id="ecografia.com"></textarea>
                                         </div>
