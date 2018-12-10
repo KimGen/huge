@@ -311,7 +311,7 @@
                                 paciente_lugar: ($("#pacientes\\.lugar option:selected").val() == "") ? 0 : $("#pacientes\\.lugar option:selected").val(),
                             }
 
-                            $.post( "new", paciente).done(function( data ) {
+                            $.post( "update", paciente).done(function( data ) {
                                 maketable();
                                 $("#dialog\\.view").modal("hide");
                             });
