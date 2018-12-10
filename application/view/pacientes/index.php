@@ -269,7 +269,7 @@
                         $("#dialog\\.pacientes\\.pais").on("change", function(){
                             let region = {
                                 accion: "region",
-                                nacionalidad_nombre: $("##dialog\\.pacientes\\.pais option:selected").text()
+                                nacionalidad_nombre: $("#dialog\\.pacientes\\.pais option:selected").text()
                             }
 
                             $.post( "<?php echo Config::get('URL'); ?>configuracion/api", region).done(function( data ) {
