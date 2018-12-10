@@ -14,7 +14,7 @@ class PacientesModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT user_id, paciente_rut, paciente_nombre, paciente_apellido, paciente_email, paciente_nacimiento, paciente_prevision, paciente_nacionalidad, paciente_region FROM pacientes WHERE user_id = :user_id LIMIT 20";
+        $sql = "SELECT user_id, paciente_rut, paciente_nombre, paciente_apellido, paciente_email, paciente_nacimiento, paciente_prevision, paciente_nacionalidad, paciente_region,paciente_telefono, paciente_lugar,paciente_region, paciente_pais FROM pacientes WHERE user_id = :user_id LIMIT 20";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id')));
 
@@ -31,7 +31,7 @@ class PacientesModel
     {
         $database = DatabaseFactory::getFactory()->getConnection();
 
-        $sql = "SELECT paciente_rut, paciente_nombre, paciente_apellido, paciente_email, paciente_nacimiento, paciente_prevision, paciente_nacionalidad, paciente_region FROM pacientes WHERE user_id = :user_id AND paciente_rut = :paciente_rut LIMIT 1";
+        $sql = "SELECT paciente_rut, paciente_nombre, paciente_apellido, paciente_email, paciente_nacimiento, paciente_prevision, paciente_nacionalidad, paciente_region, paciente_telefono, paciente_lugar,paciente_region, paciente_pais FROM pacientes WHERE user_id = :user_id AND paciente_rut = :paciente_rut LIMIT 1";
         $query = $database->prepare($sql);
         $query->execute(array(':user_id' => Session::get('user_id'), ':paciente_rut' => $paciente_rut));
 
