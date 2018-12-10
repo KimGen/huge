@@ -63,6 +63,22 @@ class EcografiaController extends Controller
         }
     }
 
+    public function doppler($paciente = "")
+    {
+        if ($paciente == ""){
+            Session::add('feedback_negative', 'Debe seleccionar un paciente');
+            Redirect::to("pacientes/");
+        }
+        else{
+            $elPaciente = PacientesModel::getPaciente($paciente);
+            $fur = FurModel::getFur($paciente);
+            $this->View->render('ecografia/Doppler', array(
+                'paciente' => $elPaciente,
+                'fur' => $fur
+            ));
+        }
+    }
+
     public function api(){
         $accion = Request::post('accion');
         $resultado = "";

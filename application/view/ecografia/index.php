@@ -75,7 +75,7 @@
                     <h6 class="card-title">Flujometría Doppler Materna y/o Fetal</h6>
                     <p class="card-text">Complemento a la biometría de crecimiento</p>
                     <?php if ($this->fur) { ?>
-                        <a href="#ecoDoppler" class="btn btn-primary">Ir a exámen</a>
+                        <a href="<?php echo Config::get('URL') . 'ecografia/doppler/' . $this->paciente->paciente_rut; ?>" class="btn btn-primary">Ir a exámen</a>
                     <?php } else { ?>
                         <a href="#" class="btn btn-danger">Ingrese una FUR</a>
                     <?php } ?>
