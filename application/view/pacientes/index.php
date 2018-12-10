@@ -259,6 +259,7 @@
 
                         var options = $("#pacientes\\.nacionalidad > option").clone();
                         $("#dialog\\.pacientes\\.nacionalidad").append(options);
+                        options = $("#pacientes\\.nacionalidad > option").clone();
                         $("#dialog\\.pacientes\\.pais").append(options);
 
                         options = $("#pacientes\\.prevision > option").clone();
