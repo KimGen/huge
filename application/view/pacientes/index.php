@@ -258,8 +258,8 @@
                         makeEdad();
 
                         var options = $("#pacientes\\.nacionalidad > option").clone();
-                        $('#dialog\\.pacientes\\.nacionalidad').append(options);
-                        $('#dialog\\.pacientes\\.pais').append(options);
+                        $("#dialog\\.pacientes\\.nacionalidad").append(options);
+                        $("#dialog\\.pacientes\\.pais").append(options);
 
                         options = $("#pacientes\\.prevision > option").clone();
                         $('#dialog\\.pacientes\\.prevision').append(options);
