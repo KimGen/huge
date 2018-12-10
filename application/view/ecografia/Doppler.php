@@ -178,76 +178,34 @@
                                 <div class="tab-pane fade" id="texto" role="tabpanel" aria-labelledby="texto-tab">
                                     <div class="row pt-2">
                                         <div class="form-group col-6">
-                                            <label for="ecografia.rut">Presentación</label>
-                                            <select class="form-control" id="ecografia.presentacion"><option value="cefalica">Cefálica</option><option value="podalica">Podálica</option><option value="transversa">transversa</option><option value="indiferente">indiferente</option></select>
+                                            <label for="ecografia.rut">Evaluación de líquido amniótico (cualitativa / semicuantitativa)</label>
+                                            <select class="form-control" id="ecografia.presentacion"><option value="normal">Normal</option><option value="disminuido">Disminuido</option><option value="aumentado">Aumentado</option></select>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.nombres">Dorso Fetal</label>
-                                            <select class="form-control" id="ecografia.dorso.fetal"><option value="anterior">Anterior</option><option value="lateral izquiedo">Lat. Izquierdo</option><option value="posterior">Posterior</option><option value="lateral derecho">Lat. Derecho</option></select>
-                                        </div>
-                                        <div class="form-group col-4">
-                                            <label for="ecografia.rut">Actividad cardiaca</label>
-                                            <select class="form-control" id="ecografia.actividad.cardiaca"><option value="si">Si</option><option value="no">No</option><select>
-                                        </div>
-                                        <div class="form-group col-4">
-                                            <label for="ecografia.nombres">Mov. Fetal</label>
-                                            <select class="form-control" id="ecografia.movimiento.fetal"><option value="si">Si</option><option value="no">No</option><select>
-                                        </div>
-                                        <div class="form-group col-4">
-                                            <label for="ecografia.nombres">FCF</label>
-                                            <select class="form-control" id="ecografia.fcf"><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option><option value="100">100</option><option value="101">101</option><option value="102">102</option><option value="103">103</option><option value="104">104</option><option value="105">105</option><option value="106">106</option><option value="107">107</option><option value="108">108</option><option value="109">109</option><option value="110">110</option><option value="111">111</option><option value="112">112</option><option value="113">113</option><option value="114">114</option><option value="115">115</option><option value="116">116</option><option value="117">117</option><option value="118">118</option><option value="119">119</option><option value="120">120</option><option value="121">121</option><option value="122">122</option><option value="123">123</option><option value="124">124</option><option value="125">125</option><option value="126">126</option><option value="127">127</option><option value="128">128</option><option value="129">129</option><option value="130">130</option><option value="131">131</option><option value="132">132</option><option value="133">133</option><option value="134">134</option><option value="135">135</option><option value="136">136</option><option value="137">137</option><option value="138">138</option><option value="139">139</option><option value="140" selected="">140</option><option value="141">141</option><option value="142">142</option><option value="143">143</option><option value="144">144</option><option value="145">145</option><option value="146">146</option><option value="147">147</option><option value="148">148</option><option value="149">149</option><option value="150">150</option><option value="151">151</option><option value="152">152</option><option value="153">153</option><option value="154">154</option><option value="155">155</option><option value="156">156</option><option value="157">157</option><option value="158">158</option><option value="159">159</option><option value="160">160</option><option value="161">161</option><option value="162">162</option><option value="163">163</option><option value="164">164</option><option value="165">165</option><option value="166">166</option><option value="167">167</option><option value="168">168</option><option value="169">169</option><option value="170">170</option></select>
+                                            <div class="input-group"><div class="input-group-prepend"><div class="input-group-text">BVM</div></div><input id="bvmDoppler" type="number" min="001" max="999" class="form-control"><div class="input-group-append"><div class="input-group-text">mm.</div></div></div>
                                         </div>
                                         <div class="form-group col-12">
-                                            <label for="ecografia.rut">Anatomia fetal</label>
-                                            <select type="text" class="form-control" id="ecografia.anatomia.fetal" multiple=""><option value="no evaluada dirigidamente, pero el aspecto morfológico general es normal" selected="selected">No evaluada dirigidamente, pero el aspecto morfológico general es normal</option><option value="Descripcion general detallando distintos segmentos">Descripción general detallando distintos segmentos</option><option value="de aspecto general normal">de aspecto general normal</option><option value="hallazgos de siguientes patologías:">hallazgos ecográficos compatible con:</option></select>
+                                            <label for="ecografia.rut">Motivo del exámen</label>
+                                            <select class="form-control" id="ecografia.actividad.cardiaca"><option value="RCIU Emb. Previo">RCIU Emb. Previo</option><option value="RCIU No PEG > p10">RCIU No PEG &gt; p10</option><option value="RCIU Moderado < p10">RCIU Moderado &lt; p10</option><option value="RCIU Severo < p3">RCIU Severo &lt; p3</option><option value="Seguimiento Evolución">Seguimiento Evolución</option><option value="Síndrome Hipertensivo">Síndrome Hipertensivo</option><option value="Preeclampsia">Preeclampsia</option><option value="Desnutrición Materna">Desnutrición Materna</option><option value="Amenaza Pto. Prematuro">Amenaza Pto. Prematuro</option><option value="Tabaquismo">Tabaquismo</option><option value="Otra Patología ARO">Otra Patología ARO</option><option value="Sin Patología ARO">Sin Patología ARO</option><option value="Estudio Doppler" selected="">Estudio Doppler</option><option value="Estudio Doppler materno">Estudio Doppler materno</option><select>
                                         </div>
                                         <div class="form-group col-12">
-                                            <label for="ecografia.nombres"><strong>Comentarios anatomia</strong></label>
-                                            <textarea class="form-control" rows="3" id="ecografia.anatomia.com"></textarea>
-                                        </div>
-                                        <div class="form-group col-4">
-                                            <label for="ecografia.rut">Placenta ubicación</label>
-                                            <select class="form-control" id="ecografia.placenta.ubicacion"><option value="normal">Normal</option><option value="prev. lateral">previa lateral</option><option value="prev. marginal">previa marginal</option><option value="prev. parcial">previa parcial</option><option value="prev. total">previa total</option></select>
-                                        </div>
-                                        <div class="form-group col-4">
-                                            <label for="ecografia.nombres">Placenta inserción</label>
-                                            <select class="form-control" id="ecografia.placenta.insercion"><option value="anterior">anterior</option><option value="posterior">posterior</option><option value="fundica">fúndica</option><option value="baja">baja</option><option value="lat. derecha">lateral derecha</option><option value="lat. izquierda">lateral izquierda</option><option value="segmentaria">segmentaria</option></select>
-                                        </div>
-                                        <div class="form-group col-4">
-                                            <label for="ecografia.rut">Placenta grado (Grannum)</label>
-                                            <select class="form-control" id="ecografia.placenta.grado"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="ecografia.rut">Líquido amniótico</label>
-                                            <select class="form-control" id="ecografia.liquido.txt"><option value="normal">Normal</option><option value="disminuido">Disminuido</option><option value="aumentado">Aumentado</option></select>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="ecografia.bvm.copia">BVM</label>
-                                            <input type="text" class="form-control" id="ecografia.bvm.mm.copia">
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="ecografia.rut">Cordón umbilical</label>
-                                            <select class="form-control" id="ecografia.cordon.umbilical"><option value="inserción central">Inserción central</option><option value="inserción marginal">Inserción marginal</option><option value="inserción velamentosa">Inserción velamentosa</option><option value="inserción no evaluable">Inserción no evaluable</option></select>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="ecografia.nombres">Número de vasos</label>
-                                            <select class="form-control" id="ecografia.numero.vasos"><option value="2">2</option><option selected="selected" value="3">3</option></select>
+                                            <label for="ecografia.rut">Antecedentes Obstétricos</label>
+                                            <select class="form-control" id="ecografia.anatomia.fetal"><option value="RCIU Emb. Previo">RCIU Emb. Previo</option><option value="RCIU No PEG > p10">RCIU No PEG &gt; p10</option><option value="RCIU Moderado < p10">RCIU Moderado &lt; p10</option><option value="RCIU Severo < p3">RCIU Severo &lt; p3</option><option value="Síndrome Hipertensivo">Síndrome Hipertensivo</option><option value="Desnutrición Materna">Desnutrición Materna</option><option value="Amenaza Pto. Prematuro">Amenaza Pto. Prematuro</option><option value="Tabaquismo">Tabaquismo</option><option value="Otra Patología ARO">Otra Patología ARO</option><option value="Sin Patología ARO">Sin Patología ARO</option></select>
                                         </div>
                                         <div class="form-group col-12">
-                                            <div class="row m-0 p-2 rounded" style="background-color: #6c757d !important;">
-                                                <div class="col-6 mt-1">
-                                                    <h6><strong class="text-white">Seleccione el tipo de informe ecográfico deseado:</strong></h6>
-                                                </div>
-                                                <div class="col-6">
-                                                    <select id="ecografia.com.select" class="form-control">
-                                                        <option value="1" selected="">Informe relativo a crecimiento fetal</option>
-                                                        <option value="2">Informe relativo a edad gestacional</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                            <label for="ecografia.nombres">Presentacion</label>
+                                            <select class="form-control" id="ecografia.anatomia.fetal"><option value="cefalica" selected="">Cefalica</option><option value="podalica">Podálica</option><option value="transversa">Transversa</option><option value="indiferente">Indiferente</option></select>
                                         </div>
-                                        <div class="form-group col-12">
-                                            <label for="ecografia.rut">Comentarios</label>
+                                        <div class="form-group col-4">
+                                            <label for="ecografia.rut">Motilidad Fetal</label>
+                                            <select class="form-control" id="ecografia.placenta.ubicacion"><option value="hiperactivo" selected="">Hiperactivo</option><option value="activo">Activo</option><option value="hipoactivo">Hipoactivo</option><option value="inmovil">Inmovil</option></select>
+                                        </div>
+                                        <div class="form-group col-4">
+                                            <label for="ecografia.nombres">Placenta Ubicación</label>
+                                            <select class="form-control" id="ecografia.placenta.insercion"><option value="anterior" selected="">Anterior</option><option value="posterior">Posterior</option><option value="fúndica">Fúndica</option><option value="baja">baja</option><option value="lat. derecha">Lat. derecha</option><option value="lat. izquierda">Lat. izquierda</option><option value="otro">Otro</option></select>
+                                        </div>
+                                        <div class="form-group col-4">
+                                            <label for="ecografia.rut">Comentarios y obsevaciones <small>(La interpretación clínica de los datos es responsabilidad exclusiva de quien realiza y certifica este exámen)</small></label>
                                             <textarea class="form-control" id="ecografia.com"></textarea>
                                         </div>
                                     </div>
