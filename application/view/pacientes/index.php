@@ -349,8 +349,8 @@
     }
 
     function makeEdad(){
-        $("#pacientes\\.nacimiento").append(option);
-        $("#dialog\\.pacientes\\.nacimiento").append(option);
+        $("#pacientes\\.nacimiento").empty();
+        $("#dialog\\.pacientes\\.nacimiento").empty();
 
         for (i = 10; i < 51; i++) {
             let option = "<option value=" + i + ">" + i + "</option>";
