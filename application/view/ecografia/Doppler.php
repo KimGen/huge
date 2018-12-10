@@ -94,7 +94,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.ca.mm">CA</label>
+                                            <label for="ecografia.ca.mm">IP Arteria Umbilical</label>
                                             <input type="text" class="form-control" id="ecografia.ca.mm">
                                         </div>
                                         <div class="form-group col-6">
@@ -110,7 +110,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.lf.mm">LF</label>
+                                            <label for="ecografia.lf.mm">IP Arteria C. Media</label>
                                             <input type="text" class="form-control" id="ecografia.lf.mm">
                                         </div>
                                         <div class="form-group col-6">
@@ -126,7 +126,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.bvm.mm">BVM</label>
+                                            <label for="ecografia.bvm.mm">Cuociente Cerebro Placentario</label>
                                             <input type="text" class="form-control" id="ecografia.bvm.mm">
                                         </div>
                                         <div class="form-group col-6">
@@ -142,7 +142,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.lh.mm">LH</label>
+                                            <label for="ecografia.lh.mm">Ductus Venoso</label>
                                             <input type="text" class="form-control" id="ecografia.lh.mm">
                                         </div>
                                         <div class="form-group col-6">
@@ -158,7 +158,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.cerebelo.mm">Diámetro cerebeloso transverso</label>
+                                            <label for="ecografia.cerebelo.mm">Pick sistólico máximo de ACM</label>
                                             <input type="text" class="form-control" id="ecografia.cerebelo.mm">
                                         </div>
                                         <div class="form-group col-6">
