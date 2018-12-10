@@ -215,6 +215,10 @@
         $("#pacientes\\.pais").on("change", function(){
             makeRegion();
         });
+
+        $('#dialog\\.view').on('hidden.bs.modal', function (e) {
+            $("#button\\.paciente\\.eliminar").remove();
+        })
     });
 
     function maketable(){
@@ -239,11 +243,24 @@
                 $(".modificar").on("click", function(){
                     var id_paciente = $(this).data("id");
 
-                    $("#dialog\\.body").html("");
-                    $("#dialog\\.title").html("");
-                    $("#dialog\\.footer").html("");
-                    $("#dialog\\.view").modal("show");
+                    var paciente = {
+                        paciente_rut: id_paciente
+                    }
 
+                    $("#dialog\\.body").html('<p class="text-center">Cargando...</p>');
+
+                    $.post( "<?php echo Config::get('URL'); ?>pacientes/one", paciente).done(function( data ) {
+                        $("#dialog\\.body").html('<div class="row"><div class="form-group col-3"><label for="user.rut">RUT o DNI</label><input type="number" class="form-control" id="dialog.pacientes.rut"></div><div class="form-group col-3"><label for="user.nombres">Nombres</label><input type="text" class="form-control" id="dialog.pacientes.nombres"></div><div class="form-group col-3"><label for="user.apellidos">Apellidos</label><input type="text" class="form-control" id="dialog.pacientes.apellidos"></div><div class="form-group col-3"><label for="user.nacimiento">Edad</label><select class="form-control" id="dialog.pacientes.nacimiento"></select></div><div class="form-group col-3"><label for="user.nacionalidad">Pais de origen</label><select class="form-control" id="dialog.pacientes.nacionalidad"></select></div><div class="form-group col-3"><label for="user.pais">Pais de residencia</label><select class="form-control" id="dialog.pacientes.pais"></select></div><div class="form-group col-3"><label for="user.region">Región o Provincia de residencia</label><select class="form-control" id="dialog.pacientes.region"></select></div><div class="form-group col-3"><label for="user.lugar">Lugar de control</label><select class="form-control" id="dialog.pacientes.lugar"></select></div><div class="form-group col-3"><label for="user.email">Correo Electrónico</label><input type="email" class="form-control" id="dialog.pacientes.email"></div><div class="form-group col-3"><label for="user.telefono">Telefono</label><input type="number" class="form-control" id="dialog.pacientes.telefono"></div><div class="form-group col-3"><label for="user.prevision">Previsión</label><select class="form-control" id="dialog.pacientes.prevision"></select></div></div>');
+                        $("#dialog\\.title").html("Modificar paciente");
+
+                        $("#dialog\\.pacientes\\.rut").val("");
+                        $("#dialog\\.pacientes\\.nombres").val("");
+                        $("#dialog\\.pacientes\\.apellidos").val("");
+                        $("#dialog\\.pacientes\\.nacimiento").val("");
+                        $("#dialog\\.footer").append('<button type="button" class="btn btn-outline-danger" id="button.paciente.eliminar" data-id="' + id_paciente +'"><i class="fas fa-save"></i></button>');
+                    });
+
+                    $("#dialog\\.view").modal("show");
                 });
 
                 $(".eliminar").on("click", function(){
@@ -251,12 +268,12 @@
                     var paciente = {
                         paciente_rut: id_paciente
                     }
+
                     $.post( "<?php echo Config::get('URL'); ?>pacientes/one", paciente).done(function( data ) {
                         $("#dialog\\.body").html('<p class="text-center">' + data.paciente_nombre + ' ' + data.paciente_apellido + '</p>');
                     });
 
                     $("#dialog\\.title").html("¿Está seguro de eliminar el paciente seleccionado?");
-                    $("#button\\.paciente\\.eliminar").remove();
                     $("#dialog\\.footer").append('<button type="button" class="btn btn-outline-danger" id="button.paciente.eliminar" data-id="' + id_paciente +'"><i class="fas fa-trash"></i></button>');
 
                     $("#button\\.paciente\\.eliminar").on("click", function(){
