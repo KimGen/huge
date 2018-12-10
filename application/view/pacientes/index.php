@@ -298,17 +298,17 @@
 
                         $("#dialog\\.button\\.paciente\\.guardar").on("click", function(){
                             let paciente = {
-                                paciente_rut: $("#pacientes\\.rut").val(),
-                                paciente_nombre: $("#pacientes\\.nombres").val(),
-                                paciente_apellido: $("#pacientes\\.apellidos").val(),
-                                paciente_email: $("#pacientes\\.email").val(),
-                                paciente_nacimiento: $("#pacientes\\.nacimiento").val(),
-                                paciente_prevision: ($("#pacientes\\.prevision option:selected").val() == "") ? 0 : $("#pacientes\\.prevision option:selected").val(),
-                                paciente_nacionalidad: ($("#pacientes\\.nacionalidad option:selected").val() == "") ? 0 : $("#pacientes\\.nacionalidad option:selected").val(),
-                                paciente_region: ($("#pacientes\\.region option:selected").val() == "") ? 0 : $("#pacientes\\.region option:selected").val(),
-                                paciente_pais: ($("#pacientes\\.pais option:selected").val() == "") ? 0 : $("#pacientes\\.pais option:selected").val(),
-                                paciente_telefono: ($("#pacientes\\.telefono").val() == "") ? 0 : $("#pacientes\\.telefono").val(),
-                                paciente_lugar: ($("#pacientes\\.lugar option:selected").val() == "") ? 0 : $("#pacientes\\.lugar option:selected").val(),
+                                paciente_rut: $("#dialog\\.pacientes\\.rut").val(),
+                                paciente_nombre: $("#dialog\\.pacientes\\.nombres").val(),
+                                paciente_apellido: $("#dialog\\.pacientes\\.apellidos").val(),
+                                paciente_email: $("#dialog\\.pacientes\\.email").val(),
+                                paciente_nacimiento: $("#dialog\\.pacientes\\.nacimiento").val(),
+                                paciente_prevision: ($("#dialog\\.pacientes\\.prevision option:selected").val() == "") ? 0 : $("#dialog\\.pacientes\\.prevision option:selected").val(),
+                                paciente_nacionalidad: ($("#dialog\\.pacientes\\.nacionalidad option:selected").val() == "") ? 0 : $("#dialog\\.pacientes\\.nacionalidad option:selected").val(),
+                                paciente_region: ($("#dialog\\.pacientes\\.region option:selected").val() == "") ? 0 : $("#dialog\\.pacientes\\.region option:selected").val(),
+                                paciente_pais: ($("#dialog\\.pacientes\\.pais option:selected").val() == "") ? 0 : $("#dialog\\.pacientes\\.pais option:selected").val(),
+                                paciente_telefono: ($("#dialog\\.pacientes\\.telefono").val() == "") ? 0 : $("#dialog\\.pacientes\\.telefono").val(),
+                                paciente_lugar: ($("#dialog\\.pacientes\\.lugar option:selected").val() == "") ? 0 : $("#dialog\\.pacientes\\.lugar option:selected").val(),
                             }
 
                             $.post( "update", paciente).done(function( data ) {
