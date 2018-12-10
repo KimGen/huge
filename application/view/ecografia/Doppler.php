@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h4 class="text-right my-3">Ecografía Obstétrica Segundo, Tercer Trimestre</h4>
+            <h4 class="text-right my-3">Ecografía Doppler</h4>
         </div>
     </div>
     <div class="card mb-2">
@@ -46,12 +46,12 @@
                                             <input type="text" class="form-control" id="ecografia.eg" disabled>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.dbp.mm">DBP</label>
-                                            <input type="text" class="form-control" id="ecografia.dbp.mm">
+                                            <label for="ecografia.dbp.mm">Arteria Uterina Derecha</label>
+                                            <input type="text" class="form-control" id="ecografia.aud.mm">
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="dbpDE">Pct.</label>
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dbpDE">
+                                            <label for="audPct">Pct.</label>
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="audPct">
                                                 <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                                 <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                                 <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -62,12 +62,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.dof.mm">DOF</label>
-                                            <input type="text" class="form-control" id="ecografia.dof.mm">
+                                            <label for="ecografia.dof.mm">Arteria Uterina Izquierda</label>
+                                            <input type="text" class="form-control" id="ecografia.aui.mm">
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="dofDE">Pct.</label>
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dofDE">
+                                            <label for="auiPct">Pct.</label>
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="auiPct">
                                                 <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                                 <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                                 <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -78,12 +78,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.cc.mm">CC</label>
-                                            <input type="text" class="form-control" id="ecografia.cc.mm">
+                                            <label for="ecografia.cc.mm">Promedio de Aterias Uterinas</label>
+                                            <input type="text" class="form-control" id="ecografia.auprom.mm">
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ccDE">Pct.</label>
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ccPct">
+                                            <label for="aupromPct">Pct.</label>
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="aupromPct">
                                                 <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                                 <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                                 <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -262,11 +262,10 @@
                                     <tr>
                                         <th scope="col">Fecha</th>
                                         <th scope="col">EG</th>
-                                        <th scope="col">PFE</th>
-                                        <th scope="col">Pct. Peso</th>
-                                        <th scope="col">Pct. CC/CA</th>
-                                        <th scope="col">Pct. CA</th>
-                                        <th scope="col">Pct. BVM</th>
+                                        <th scope="col">Pct. Uterinas</th>
+                                        <th scope="col">Pct. Umbilical</th>
+                                        <th scope="col">Pct. C. Media</th>
+                                        <th scope="col">Rel. CM/AU</th>
                                     </tr>
                                 </thead>
                                 <tbody id="table.ecografia">
@@ -629,7 +628,7 @@
             $("#table\\.ecografia").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
-                    let fila = '<tr id="' + value.ecografia_id + '"><td>' + value.ecografia_fecha + '</td><td>' + value.ecografia_eg + '</td><td>' + value.ecografia_PFE + '</td><td>' + value.pac_peso + '<button type="button" data-id="' + value.ecografia_id + '" class="btn btn-outline-warning px-3 eliminar-ecografia float-right"><i class="fas fa-trash"></i></button></td></tr>';
+                    let fila = '<tr id="' + value.ecografia_id + '"><td>' + value.ecografia_fecha + '</td><td>' + value.ecografia_eg + '</td><td>' + '<button type="button" data-id="' + value.ecografia_id + '" class="btn btn-outline-warning px-3 eliminar-ecografia float-right"><i class="fas fa-trash"></i></button></td></tr>';
                     $("#table\\.ecografia").append(fila);
                 });
 
