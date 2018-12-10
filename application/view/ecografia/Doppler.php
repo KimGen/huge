@@ -46,7 +46,7 @@
                                             <input type="text" class="form-control" id="ecografia.eg" disabled>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.dbp.mm">Arteria Uterina Derecha</label>
+                                            <label for="ecografia.aud.mm">Arteria Uterina Derecha</label>
                                             <input type="text" class="form-control" id="ecografia.aud.mm">
                                         </div>
                                         <div class="form-group col-6">
@@ -62,7 +62,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.dof.mm">Arteria Uterina Izquierda</label>
+                                            <label for="ecografia.aui.mm">Arteria Uterina Izquierda</label>
                                             <input type="text" class="form-control" id="ecografia.aui.mm">
                                         </div>
                                         <div class="form-group col-6">
@@ -78,7 +78,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.cc.mm">Promedio de Aterias Uterinas</label>
+                                            <label for="ecografia.auprom.mm">Promedio de Aterias Uterinas</label>
                                             <input type="text" class="form-control" id="ecografia.auprom.mm">
                                         </div>
                                         <div class="form-group col-6">
@@ -94,12 +94,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.ca.mm">IP Arteria Umbilical</label>
-                                            <input type="text" class="form-control" id="ecografia.ca.mm">
+                                            <label for="ecografia.ipau.mm">IP Arteria Umbilical</label>
+                                            <input type="text" class="form-control" id="ecografia.ipau.mm">
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="caDE">Pct.</label>
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="caPct">
+                                            <label for="ipauPct">Pct.</label>
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ipauPct">
                                                 <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                                 <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                                 <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -110,12 +110,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.lf.mm">IP Arteria C. Media</label>
-                                            <input type="text" class="form-control" id="ecografia.lf.mm">
+                                            <label for="ecografia.ipacm.mm">IP Arteria C. Media</label>
+                                            <input type="text" class="form-control" id="ecografia.ipacm.mm">
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="lfDE">Pct.</label>
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lfPct">
+                                            <label for="ipacmPct">Pct.</label>
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ipacmPct">
                                                 <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                                 <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                                 <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -126,12 +126,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.bvm.mm">Cuociente Cerebro Placentario</label>
-                                            <input type="text" class="form-control" id="ecografia.bvm.mm">
+                                            <label for="ecografia.ccp.mm">Cuociente Cerebro Placentario</label>
+                                            <input type="text" class="form-control" id="ecografia.ccp.mm">
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="bvmDE">Pct.</label>
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="bvmPct">
+                                            <label for="ccpPct">Pct.</label>
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="ccpPct">
                                                 <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                                 <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                                 <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -142,12 +142,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.lh.mm">Ductus Venoso</label>
-                                            <input type="text" class="form-control" id="ecografia.lh.mm">
+                                            <label for="ecografia.dv.mm">Ductus Venoso</label>
+                                            <input type="text" class="form-control" id="ecografia.dv.mm">
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="lhDE">Pct.</label>
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="lhPct">
+                                            <label for="dvPct">Pct.</label>
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="dvPct">
                                                 <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                                 <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                                 <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -158,12 +158,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="ecografia.cerebelo.mm">Pick sistólico máximo de ACM</label>
-                                            <input type="text" class="form-control" id="ecografia.cerebelo.mm">
+                                            <label for="ecografia.psmacm.mm">Pick sistólico máximo de ACM</label>
+                                            <input type="text" class="form-control" id="ecografia.psmacm.mm">
                                         </div>
                                         <div class="form-group col-6">
-                                            <label for="cerebeloDE">Pct.</label>
-                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="cerebeloDE">
+                                            <label for="psmacmPct">Pct.</label>
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0" id="psmacmPct">
                                                 <div class="progress-bar bg-light text-primary pivote-cero" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 15%">|</div>
                                                 <div class="progress-bar bg-light text-primary pivote-uno" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
                                                 <div class="progress-bar bg-light text-primary pivote-dos" role="progressbar" style="width: 14%" aria-valuemin="0" aria-valuemax="100"></div>
