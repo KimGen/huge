@@ -32,7 +32,7 @@
         </div>
     </div>
 </nav>
-<nav class="navbar navbar-expand-lg text-white bg-info">
+<nav class="navbar navbar-expand-lg bg-info">
     <div class="container">
   <a class="navbar-brand d-block d-sm-none" href="#">Menu</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,13 +41,13 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo Config::get('URL'); ?>"><i class="fas fa-home"></i></a>
+        <a class="nav-link text-white" href="<?php echo Config::get('URL'); ?>"><i class="fas fa-home"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link text-white" href="#">Features</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link text-white" href="#">Pricing</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,7 +60,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Acerca de la plataforma</a>
+        <a class="nav-link text-white" href="#">Acerca de la plataforma</a>
       </li>
     </ul>
   </div>
