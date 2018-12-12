@@ -18,6 +18,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12 d-none" id="interface.pacientes">
+                            <h5 class="text-primary">Nuevo Paciente</h5>
                             <div class="row">
                                 <div class="form-group col-3">
                                     <label for="user.rut">RUT o DNI</label>

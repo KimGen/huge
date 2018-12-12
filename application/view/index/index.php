@@ -30,7 +30,7 @@
         <div class="col-3">
             <div class="card">
                 <div class="card-body">
-                    <h5>Bienvenido <?php echo Session::get('user_name'); ?></h5>
+                    <h5>Bienvenido<br><?php echo Session::get('user_name'); ?></h5>
                     <p>Seleccione las opciones del menú superior para continuar</p>
                 </div>
             </div>

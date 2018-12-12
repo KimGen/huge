@@ -23,4 +23,9 @@ class IndexController extends Controller
     {
         $this->View->render('index/acerca');
     }
+
+    public function contacto()
+    {
+        $this->View->render('index/contacto');
+    }
 }
