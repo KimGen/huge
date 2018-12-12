@@ -1,6 +1,8 @@
 <div class="container">
 <div class="row">
-<div class="col-6">
+<div class="col-6 ">
+    <div class="card">
+        <div class="card-body">
 <h4>Acerca de la plataforma</h4>
 <div class="row">
 <div class="col">
@@ -23,7 +25,11 @@
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="col-6">
+<div class="card">
+        <div class="card-body">
 <h4>Acerca del autor</h4>
 <div class="row">
 <div class="col-2">
@@ -36,6 +42,8 @@
 <li><small>Valoración del crecimiento intrauterino mediante exámen ultrasonográfico y flujometría Doppler.</small></li>
 <li><small>Valoración clinica del recién nacido. <a href="#postnatal">ver proyecto</a></small></li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 </div>
