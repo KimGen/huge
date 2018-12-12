@@ -49,7 +49,7 @@
 </div>
 </div>
 </div>
-<div class="row bg-faded rounded">
+<div class="row pt-2">
 <div class="col">
 <div class="card">
         <div class="card-body">
