@@ -18,6 +18,7 @@
 <li><small>Aplicación para smartphone Android e iOS. <a href="https://play.google.com/store/apps/details?id=cl.wetrust.calculadorecografico">calculador ecográfico</a></small></li>
 </ul>
 <p class="text-justify mb-0"><small><strong>Proyecto a realizar, evaluación postnatal del crecimiento intrauterino</strong></small></p>
+<p class="text-justify mb-0"><small></p>
 <ul>
 <li><small>Curvas de peso customizadas, valorar efecto modulador de variables biológicas materno/fetales en la categorización del peso al nacer. <a href="https://play.google.com/store/apps/details?id=cl.wetrust.ajustepesorn">Ajuste al Peso RN</a></small></li>
 <li><small>Validación clínica modelo customizado.</small></li>
