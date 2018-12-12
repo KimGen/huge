@@ -60,11 +60,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Acerca de la plataforma</a>
                     </li>
-                    <li class="nav-item mr-auto">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Contacto</a>
                     </li>
                     <?php if (Session::userIsLoggedIn()) { ?>
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-md"></i> <?php echo Session::get('user_name'); ?> </a>
                             <div class="dropdown-menu" aria-labelledby="navbarUser">
