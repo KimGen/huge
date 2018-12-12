@@ -14,7 +14,7 @@
             background-color:#009688;
         }
         body{
-            background-image:url(img/skelatal_weave.png);
+            background-image:url('<?php echo Config::get('URL'); ?>img/skelatal_weave.png');
         }
     </style>
 <body>
