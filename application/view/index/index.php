@@ -3,7 +3,7 @@
     <p class="text-center"><small><em>Software obstétrico propiedad intelectual Dr. Rudecindo Lagos, Maternidad Hospital Regional de Temuco, Facultad de Medicina Universidad de La Frontera Temuco - Chile</em></small></p>
     <div class="row">
     <?php if (Session::userIsLoggedIn() == false) { ?>
-        <div class="col-4">
+        <div class="col-3">
             <div class="card">
                 <div class="card-body">
                     <h5>Ingresar a la plataforma</h5>
