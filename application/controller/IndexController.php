@@ -18,4 +18,9 @@ class IndexController extends Controller
     {
         $this->View->render('index/index');
     }
+
+    public function acerca_de_crecimientofetal()
+    {
+        $this->View->render('index/acerca');
+    }
 }

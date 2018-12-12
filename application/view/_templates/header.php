@@ -58,7 +58,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Acerca de la plataforma</a>
+                        <a class="nav-link" href="<?php echo Config::get('URL'); ?>index/acerca_de_crecimientofetal">Acerca de la plataforma</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacto</a>
