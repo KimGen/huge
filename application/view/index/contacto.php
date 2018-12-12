@@ -4,7 +4,24 @@
             <div class="card">
                 <div class="card-body">
                     <h4>Contacto</h4>
-                    <p>Puede usar el siguiente formulario para escribir sus sugerencias e inquitudes, se responderá a la brevedad</p> 
+                    <p>Puede usar el siguiente formulario para escribir sus sugerencias e inquitudes, se responderá a la brevedad</p>
+                    <form>
+                    <div class="form-group">
+                            <label for="exampleInputEmail1">Su nombre</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Correo electrónico</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Mensaje</label>
+                            <textarea class="form-control" id="exampleInputPassword1"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
                 </div>
             </div>
         </div>
