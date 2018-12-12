@@ -62,6 +62,9 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Acerca de la plataforma</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contacto</a>
+      </li>
     </ul>
   </div>
   </div>
