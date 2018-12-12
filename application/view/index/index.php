@@ -26,7 +26,16 @@
                 </div>
             </div>
         </div>
-        <?php } ?>
+    <?php } else { ?>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Bienvenido <?php echo Session::get('user_name'); ?></h5>
+                    <p>Seleccione las opciones del menú superior para continuar</p>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
         <div class="col">
             <div class="card">
                 <div class="card-body">
