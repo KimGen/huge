@@ -18,81 +18,72 @@
         }
     </style>
 <body>
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-faded g-verde">
-    <div class="container g-verde">
-        <div class="row w-100">
-            <div class="col-1">
-                <img class="img-fluid w-100" src="<?php echo Config::get('URL'); ?>img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
-            </div>
-            <div class="col-11">
-                <p class="float-right" name="fechaHora" style="color: #f0df90;">Domingo, 2 de Diciembre 2018</p>
-                <h5 class="text-white mt-0 mb-1"><em>CrecimientoFetal.cl</em></h5>
-                <p class="text-white"><em>Ultrasonografía obstétrica básica para profesionales</em></p>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded g-verde">
+        <div class="container g-verde">
+            <div class="row w-100">
+                <div class="col-1">
+                    <img class="img-fluid w-100" src="<?php echo Config::get('URL'); ?>img/ic_launcher-web.png" alt="logo" style="max-width: 128px;">
+                </div>
+                <div class="col-11">
+                    <p class="float-right" name="fechaHora" style="color: #f0df90;">Domingo, 2 de Diciembre 2018</p>
+                    <h5 class="text-white mt-0 mb-1"><em>CrecimientoFetal.cl</em></h5>
+                    <p class="text-white"><em>Ultrasonografía obstétrica básica para profesionales</em></p>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
-<nav class="navbar navbar-expand-lg bg-white shadow">
-    <div class="container">
-  <a class="navbar-brand d-block d-sm-none" href="#">Menu</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo Config::get('URL'); ?>"><i class="fas fa-home"></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pacientes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Ecografía Obstétrica</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Aprendizaje
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">¿Cómo usar la plataforma?</a>
-          <a class="dropdown-item" href="#">¿Cómo calcular EG?</a>
-          <a class="dropdown-item" href="#">¿Cómo realizar una ecografía de primer trimestre?</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Acerca de la plataforma</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contacto</a>
-      </li>
-    </ul>
-  </div>
-  </div>
-</nav>
-<div class="container">
-    <ol class="breadcrumb py-1">
-    <?php if (Session::userIsLoggedIn()) { ?>
-        <li class="nav-item mr-auto">
-            <a class="nav-link" href="<?php echo Config::get('URL'); ?>pacientes/index"><i class="fas fa-home"></i> Pacientes</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-md"></i> <?php echo Session::get('user_name'); ?> </a>
-            <div class="dropdown-menu" aria-labelledby="navbarUser">
-                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>configuracion/index"><i class="fas fa-cog"></i> Configuración</a>
-                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/index">Mi cuenta</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/changeUserRole">Change account type</a>
-                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editAvatar">Cambiar mi foto</a>
-                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editusername">Cambiar mi nombre de usuario</a>
-                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/edituseremail">Cambiar mi email</a>
-                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/changePassword">Cambiar mi contraseña</a>
-                <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>login/logout">Salir</a>
-                <div class="dropdown-divider"></div>
-            <?php if (Session::get("user_account_type") == 7) : ?>
-                    <a class="dropdown-item <?php if (View::checkForActiveController($filename, "admin")) {echo 'active';} ?>" href="<?php echo Config::get('URL'); ?>admin/">Admin</a>
-            <?php endif; ?>
+    </nav>
+    <nav class="navbar navbar-expand-lg bg-white shadow">
+        <div class="container">
+            <a class="navbar-brand d-block d-sm-none" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="<?php echo Config::get('URL'); ?>"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo Config::get('URL'); ?>pacientes/index">Pacientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ecografía Obstétrica</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aprendizaje</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">¿Cómo usar la plataforma?</a>
+                            <a class="dropdown-item" href="#">¿Cómo calcular EG?</a>
+                            <a class="dropdown-item" href="#">¿Cómo realizar una ecografía de primer trimestre?</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de la plataforma</a>
+                    </li>
+                    <li class="nav-item mr-auto">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <?php if (Session::userIsLoggedIn()) { ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-md"></i> <?php echo Session::get('user_name'); ?> </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUser">
+                            <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>configuracion/index"><i class="fas fa-cog"></i> Configuración</a>
+                            <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/index">Mi cuenta</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/changeUserRole">Change account type</a>
+                            <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editAvatar">Cambiar mi foto</a>
+                            <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/editusername">Cambiar mi nombre de usuario</a>
+                            <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/edituseremail">Cambiar mi email</a>
+                            <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>user/changePassword">Cambiar mi contraseña</a>
+                            <a class="dropdown-item" href="<?php echo Config::get('URL'); ?>login/logout">Salir</a>
+                            <div class="dropdown-divider"></div>
+                            <?php if (Session::get("user_account_type") == 7) : ?>
+                            <a class="dropdown-item <?php if (View::checkForActiveController($filename, "admin")) {echo 'active';} ?>" href="<?php echo Config::get('URL'); ?>admin/">Admin</a>
+                            <?php endif; ?>
+                        </div>
+                    </li>
+                    <?php } ?>
+                </ul>
             </div>
-        </li>
-    <?php } ?>
-    </ol>
-</div>
+        </div>
+    </nav>
