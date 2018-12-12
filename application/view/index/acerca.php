@@ -51,7 +51,11 @@
 </div>
 <div class="row bg-faded rounded">
 <div class="col">
+<div class="card">
+        <div class="card-body">
 <p class="text-center pb-0 mb-0"><small><em>Herramientas informáticas (aplicación web y apps para smartphone), tienen como objetivo principal favorecer cálculo y análisis preliminar de <strong>DATOS</strong> ecográfico obtenidos en el examen. Datos procesados en referencia a estándares internacionales de uso habitual, que de forma protocolizada son convertidos en <strong>INFORMACIÓN</strong> clínica. El uso de esta información es de exclusiva responsabilidad de quien realiza y certifica el examen y dependerá del <strong>JUCIO CLÍNICO</strong> del ecografista.</em></small></p>
+</div>
+</div>
 </div>
 </div>
 </div>
