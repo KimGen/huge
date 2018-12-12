@@ -13,6 +13,9 @@
         .g-verde {
             background-color:#009688;
         }
+        body{
+            background-image:url(img/skelatal_weave.png);
+        }
     </style>
 <body>
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded g-verde">
