@@ -44,7 +44,7 @@
         <a class="nav-link" href="<?php echo Config::get('URL'); ?>"><i class="fas fa-home"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Ecografía Obstétrica</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>
