@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+    <div class="row p-2">
         <div class="col-6">
             <div class="card">
                 <div class="card-body">
