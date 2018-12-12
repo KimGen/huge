@@ -39,7 +39,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="<?php echo Config::get('URL'); ?>"><i class="fas fa-home"></i></a>
                     </li>
@@ -65,7 +65,7 @@
                     </li>
                 </ul>
                 <?php if (Session::userIsLoggedIn()) { ?>
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-md"></i> <?php echo Session::get('user_name'); ?> </a>
                         <div class="dropdown-menu" aria-labelledby="navbarUser">
