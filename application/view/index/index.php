@@ -27,13 +27,17 @@
             </div>
         </div>
         <?php } ?>
-        <div class="card">
-            <div class="card-body">
-                <div class="col">
-                    <p class="text-justify text-azul"><small><em>Sitio web diseñado para profesionales de la salud (médicos) vinculados con la vigilancia del control prenatal.<br>El objetivo de esta aplicación es facilitar a los educandos y profesionales en formación, valoración de datos obstétricos ecográficos relacionados con la vigilancia del crecimiento fetal.<br>Actualmente el software consta de tres módulos, estrechamente relacionados entre sí, módulos mediante los cuales se pretende orientar al examinador en los tópicos que a continuación se señalan:<br><br>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Determinación ecográfica de la edad gestacional<br>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valoración de biometrías y crecimiento fetal<br>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flujometria Doppler Materno / Fetal básico.</em></small></p>
-                </div>
-                <div class="col-3">
-                    <img src="https://servidor.crecimientofetal.cl/img/feto-computador.png" class="img-fluid">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-7">
+                            <p class="text-justify text-azul"><small><em>Sitio web diseñado para profesionales de la salud (médicos) vinculados con la vigilancia del control prenatal.<br>El objetivo de esta aplicación es facilitar a los educandos y profesionales en formación, valoración de datos obstétricos ecográficos relacionados con la vigilancia del crecimiento fetal.<br>Actualmente el software consta de tres módulos, estrechamente relacionados entre sí, módulos mediante los cuales se pretende orientar al examinador en los tópicos que a continuación se señalan:<br><br>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Determinación ecográfica de la edad gestacional<br>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valoración de biometrías y crecimiento fetal<br>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flujometria Doppler Materno / Fetal básico.</em></small></p>
+                        </div>
+                        <div class="col-5">
+                            <img src="https://servidor.crecimientofetal.cl/img/feto-computador.png" class="img-fluid">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
