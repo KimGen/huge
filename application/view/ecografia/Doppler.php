@@ -184,23 +184,23 @@
                                         <div class="form-group col-6">
                                             <div class="input-group"><div class="input-group-prepend"><div class="input-group-text">BVM</div></div><input id="bvmDoppler" type="number" min="001" max="999" class="form-control"><div class="input-group-append"><div class="input-group-text">mm.</div></div></div>
                                         </div>
-                                        <div class="form-group col-12">
+                                        <div class="form-group col-6">
                                             <label for="ecografia.motivo">Motivo del exámen</label>
                                             <select class="form-control" id="ecografia.motivo"><option value="RCIU Emb. Previo">RCIU Emb. Previo</option><option value="RCIU No PEG > p10">RCIU No PEG &gt; p10</option><option value="RCIU Moderado < p10">RCIU Moderado &lt; p10</option><option value="RCIU Severo < p3">RCIU Severo &lt; p3</option><option value="Seguimiento Evolución">Seguimiento Evolución</option><option value="Síndrome Hipertensivo">Síndrome Hipertensivo</option><option value="Preeclampsia">Preeclampsia</option><option value="Desnutrición Materna">Desnutrición Materna</option><option value="Amenaza Pto. Prematuro">Amenaza Pto. Prematuro</option><option value="Tabaquismo">Tabaquismo</option><option value="Otra Patología ARO">Otra Patología ARO</option><option value="Sin Patología ARO">Sin Patología ARO</option><option value="Estudio Doppler" selected>Estudio Doppler</option><option value="Estudio Doppler materno">Estudio Doppler materno</option><select>
                                         </div>
-                                        <div class="form-group col-12">
+                                        <div class="form-group col-6">
                                             <label for="ecografia.antecedentes">Antecedentes Obstétricos</label>
                                             <select class="form-control" id="ecografia.antecedentes"><option value="RCIU Emb. Previo">RCIU Emb. Previo</option><option value="RCIU No PEG > p10">RCIU No PEG &gt; p10</option><option value="RCIU Moderado < p10">RCIU Moderado &lt; p10</option><option value="RCIU Severo < p3">RCIU Severo &lt; p3</option><option value="Síndrome Hipertensivo">Síndrome Hipertensivo</option><option value="Desnutrición Materna">Desnutrición Materna</option><option value="Amenaza Pto. Prematuro">Amenaza Pto. Prematuro</option><option value="Tabaquismo">Tabaquismo</option><option value="Otra Patología ARO">Otra Patología ARO</option><option value="Sin Patología ARO">Sin Patología ARO</option></select>
                                         </div>
-                                        <div class="form-group col-12">
+                                        <div class="form-group col-6">
                                             <label for="ecografia.presentacion">Presentacion</label>
                                             <select class="form-control" id="ecografia.presentacion"><option value="cefalica" selected="">Cefalica</option><option value="podalica">Podálica</option><option value="transversa">Transversa</option><option value="indiferente">Indiferente</option></select>
                                         </div>
-                                        <div class="form-group col-12">
+                                        <div class="form-group col-6">
                                             <label for="ecografia.motilidad">Motilidad Fetal</label>
                                             <select class="form-control" id="ecografia.motilidad"><option value="hiperactivo" selected="">Hiperactivo</option><option value="activo">Activo</option><option value="hipoactivo">Hipoactivo</option><option value="inmovil">Inmovil</option></select>
                                         </div>
-                                        <div class="form-group col-12">
+                                        <div class="form-group col-6">
                                             <label for="ecografia.placenta.ubicacion">Placenta Ubicación</label>
                                             <select class="form-control" id="ecografia.placenta.ubicacion"><option value="anterior" selected="">Anterior</option><option value="posterior">Posterior</option><option value="fúndica">Fúndica</option><option value="baja">baja</option><option value="lat. derecha">Lat. derecha</option><option value="lat. izquierda">Lat. izquierda</option><option value="otro">Otro</option></select>
                                         </div>
