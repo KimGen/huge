@@ -8,12 +8,12 @@
         <div class="card-body">
             <div class="row">
             <?php if ($this->fur) { ?>
-                <dt class="col-2">FUR:</dt>
-                <dd class="col-4"><?php $date=date_create($this->fur->fur_fecha); echo date_format($date,"d/m/Y"); ?></dd>
-                <dt class="col-2">EG al día de hoy:</dt>
+                <dt class="col-1">FUR:</dt>
+                <dd class="col-3"><?php $date=date_create($this->fur->fur_fecha); echo date_format($date,"d/m/Y"); ?></dd>
+                <dt class="col-1">EG:</dt>
                 <dd class="col-2"></dd>
-                <dt class="col-2">FPP:</dt>
-                <dd class="col-4"><?php $date2=date_create($this->fur->fpp_fecha); echo date_format($date2,"d/m/Y"); ?></dd>
+                <dt class="col-1">FPP:</dt>
+                <dd class="col-3"><?php $date2=date_create($this->fur->fpp_fecha); echo date_format($date2,"d/m/Y"); ?></dd>
             <?php } else { ?>
                 <div class="col-5">
                     <div class="btn-group" role="group">
