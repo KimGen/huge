@@ -1,12 +1,10 @@
 <div class="container">
     <h3 class="text-right my-2">Evaluación ultrasonográfica</h3>
-    <dl class="row">
-        <dt class="col-1">Paciente:</dt>
-        <dd class="col-11"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
-    </dl>
     <div class="card mb-2">
         <div class="card-body">
-            <div class="row">
+            <dl class="row">
+                <dt class="col-2">Paciente:</dt>
+                <dd class="col-2"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
             <?php if ($this->fur) { ?>
                 <dt class="col-1">FUR:</dt>
                 <dd class="col-3"><?php $date=date_create($this->fur->fur_fecha); echo date_format($date,"d/m/Y"); ?></dd>
@@ -38,7 +36,7 @@
                     </div>
                 </div>
             <?php } ?>
-            </div>
+            </dl>
         </div>
     </div>
     <div class="row">
