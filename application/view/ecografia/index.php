@@ -7,11 +7,11 @@
                 <dd class="col-2"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
             <?php if ($this->fur) { ?>
                 <dt class="col-1">FUR:</dt>
-                <dd class="col-3"><?php $date=date_create($this->fur->fur_fecha); echo date_format($date,"d/m/Y"); ?></dd>
+                <dd class="col-2"><?php $date=date_create($this->fur->fur_fecha); echo date_format($date,"d/m/Y"); ?></dd>
                 <dt class="col-1">EG:</dt>
-                <dd class="col-2"></dd>
+                <dd class="col-1"></dd>
                 <dt class="col-1">FPP:</dt>
-                <dd class="col-3"><?php $date2=date_create($this->fur->fpp_fecha); echo date_format($date2,"d/m/Y"); ?></dd>
+                <dd class="col-2"><?php $date2=date_create($this->fur->fpp_fecha); echo date_format($date2,"d/m/Y"); ?></dd>
             <?php } else { ?>
                 <div class="col-5">
                     <div class="btn-group" role="group">
