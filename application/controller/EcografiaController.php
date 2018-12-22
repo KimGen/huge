@@ -26,7 +26,8 @@ class EcografiaController extends Controller
             $fur = FurModel::getFur($paciente);
             $this->View->render('ecografia/index', array(
                 'paciente' => $elPaciente,
-                'fur' => $fur
+                'fur' => $fur,
+                'eg' => self::calcularEg($fur->fur_fecha)
             ));
         }
     }
@@ -108,5 +109,19 @@ class EcografiaController extends Controller
         }
 
         return $this->View->renderJSON($resultado);
+    }
+
+    private function calcularEg($FUR){
+        $date=date_create($FUR);
+        $hoy = getdate();
+        $d = $hoy['mday'];
+        $m = $hoy['mon'];
+        $y = $hoy['year'];
+
+        $diff = $date->diff(date_create($y . "-" .$m . "-" . $d));
+        $EG = ($diff->days) / 7;
+        $truncar = 10**0;
+        $EG = intval($EG * $truncar) / $truncar;
+        return $EG = $EG . "." .(($diff->days) -($EG*7));
     }
 }

@@ -3,26 +3,16 @@
     <div class="card mb-2">
         <div class="card-body">
             <dl class="row">
-                <dt class="col-2">Paciente:</dt>
+                <dt class="col-1 pr-0">Paciente:</dt>
                 <dd class="col-2"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
             <?php if ($this->fur) { 
                 $date=date_create($this->fur->fur_fecha);
                 $date2=date_create($this->fur->fpp_fecha);
-                $hoy = getdate();
-                $d = $hoy['mday'];
-                $m = $hoy['mon'];
-                $y = $hoy['year'];
-
-                $diff = $date->diff(date_create($y . "-" .$m . "-" . $d));
-                $EG = ($diff->days) / 7;
-                $truncar = 10**0;
-                $EG = intval($EG * $truncar) / $truncar;
-                $EG = $EG . "." .(($diff->days) -($EG*7));
                 ?>
                 <dt class="col-1">FUR:</dt>
                 <dd class="col-2"><?php echo date_format($date,"d/m/Y"); ?></dd>
                 <dt class="col-1">EG:</dt>
-                <dd class="col-1"><?php echo $EG; ?></dd>
+                <dd class="col-1"><?php echo $this->eg; ?></dd>
                 <dt class="col-1">FPP:</dt>
                 <dd class="col-2"><?php echo date_format($date2,"d/m/Y"); ?></dd>
             <?php } else { ?>
