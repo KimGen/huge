@@ -10,7 +10,8 @@
                 $date2=date_create($this->fur->fpp_fecha);
                 $diff = $date->diff($date2);
                 $EG = ($diff->days) / 7;
-                bcdiv($EG, '1', 0);
+                $truncar = 10**0;
+                $EG = intval($EG * $truncar) / $truncar;
                 $EG = $EG . "." .(($diff->days) -($EG*7));
                 ?>
                 <dt class="col-1">FUR:</dt>
