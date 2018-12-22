@@ -8,7 +8,12 @@
             <?php if ($this->fur) { 
                 $date=date_create($this->fur->fur_fecha);
                 $date2=date_create($this->fur->fpp_fecha);
-                $diff = $date->diff($date2);
+                $hoy = getdate();
+                $d = $hoy['mday'];
+                $m = $hoy['mon'];
+                $y = $hoy['year'];
+
+                $diff = $date->diff($hoy);
                 $EG = ($diff->days) / 7;
                 $truncar = 10**0;
                 $EG = intval($EG * $truncar) / $truncar;
