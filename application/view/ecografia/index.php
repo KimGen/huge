@@ -11,7 +11,7 @@
                 $diff = $date->diff($date2);
                 $EG = ($diff->days) / 7;
                 bcdiv($EG, '1', 0);
-                $EG = $EG . "." -.(($diff->days) -($EG*7));
+                $EG = $EG . "." .(($diff->days) -($EG*7));
                 ?>
                 <dt class="col-1">FUR:</dt>
                 <dd class="col-2"><?php echo date_format($date,"d/m/Y"); ?></dd>
