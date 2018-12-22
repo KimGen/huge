@@ -13,7 +13,7 @@
                 $m = $hoy['mon'];
                 $y = $hoy['year'];
 
-                $diff = $date->diff($y . "-" .$m . "-" . $d);
+                $diff = $date->diff(date_create($y . "-" .$m . "-" . $d));
                 $EG = ($diff->days) / 7;
                 $truncar = 10**0;
                 $EG = intval($EG * $truncar) / $truncar;
