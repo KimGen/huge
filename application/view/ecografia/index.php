@@ -8,7 +8,7 @@
             <?php if ($this->fur) { 
                 $date=date_create($this->fur->fur_fecha);
                 $date2=date_create($this->fur->fpp_fecha);
-                $hoy = getdate();
+                $hoy = date_create(getdate());
                 $d = $hoy['mday'];
                 $m = $hoy['mon'];
                 $y = $hoy['year'];
