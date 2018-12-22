@@ -5,13 +5,20 @@
             <dl class="row">
                 <dt class="col-2">Paciente:</dt>
                 <dd class="col-2"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
-            <?php if ($this->fur) { ?>
+            <?php if ($this->fur) { 
+                $date=date_create($this->fur->fur_fecha);
+                $date2=date_create($this->fur->fpp_fecha);
+                $diff = $date->diff($date2);
+                $EG = ($diff->days) / 7;
+                bcdiv($EG, '1', 0);
+                $EG = $EG . "." -.(($diff->days) -($EG*7));
+                ?>
                 <dt class="col-1">FUR:</dt>
-                <dd class="col-2"><?php $date=date_create($this->fur->fur_fecha); echo date_format($date,"d/m/Y"); ?></dd>
+                <dd class="col-2"><?php echo date_format($date,"d/m/Y"); ?></dd>
                 <dt class="col-1">EG:</dt>
-                <dd class="col-1"></dd>
+                <dd class="col-1"><?php echo $EG; ?></dd>
                 <dt class="col-1">FPP:</dt>
-                <dd class="col-2"><?php $date2=date_create($this->fur->fpp_fecha); echo date_format($date2,"d/m/Y"); ?></dd>
+                <dd class="col-2"><?php echo date_format($date2,"d/m/Y"); ?></dd>
             <?php } else { ?>
                 <div class="col-5">
                     <div class="btn-group" role="group">
