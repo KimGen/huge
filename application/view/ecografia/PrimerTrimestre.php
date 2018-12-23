@@ -18,7 +18,7 @@
             <div class="row">
             <?php if ($this->paciente) { ?>
                 <div class="col-3"><strong>Paciente:</strong> <?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></div>
-            <?php if ($this->fur) { ?>
+            <?php } if ($this->fur) { ?>
                 <div class="col-3"><strong>FUR:</strong> <?php echo date_format(date_create($this->fur->fur_fecha),"d/m/Y"); ?></div>
                 <div class="col-3"><strong>EG:</strong> <?php echo $this->eg; ?> semanas</div>
                 <div class="col-3"><strong>FPP:</strong> <?php echo date_format(date_create($this->fur->fpp_fecha),"d/m/Y"); ?></div>
