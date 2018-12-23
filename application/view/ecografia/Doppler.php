@@ -648,7 +648,7 @@
 
             let ipau = pctau($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val());
             ajustarProgreso(ipau, "ipauPct");
-            promCCP($("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val());
+            promCCP($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val());
         }
     });
     $("#ecografia\\.ipacm\\.mm").on("keyup", function(event){
@@ -658,7 +658,7 @@
 
             let ipacm = pctacm($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val());
             ajustarProgreso(ipacm, "ipacmPct");
-            promCCP($("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val());
+            promCCP($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val());
         }
     });
 
@@ -849,7 +849,7 @@
         }
     }
 
-    function promCCP(ipacm, ipau){
+    function promCCP(eg,ipacm, ipau){
 
         ipacm = ipacm.toString();
         ipacm = ipacm.replace(',', '.');
