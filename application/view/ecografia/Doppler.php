@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.auprom.mm">Promedio de Aterias Uterinas</label>
-                                            <input type="text" class="form-control" id="ecografia.auprom.mm">
+                                            <input type="text" class="form-control" id="ecografia.auprom.mm" disabled>
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="aupromPct">Pct.</label>
@@ -124,7 +124,7 @@
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ecografia.ccp.mm">Cuociente Cerebro Placentario</label>
-                                            <input type="text" class="form-control" id="ecografia.ccp.mm">
+                                            <input type="text" class="form-control" id="ecografia.ccp.mm" disabled>
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="ccpPct">Pct.</label>
