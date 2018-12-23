@@ -2,19 +2,12 @@
     <h3 class="text-right my-2">Evaluación ultrasonográfica</h3>
     <div class="card mb-2">
         <div class="card-body">
-            <dl class="row">
-                <dt class="col-1 pr-0">Paciente:</dt>
-                <dd class="col-2"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
-            <?php if ($this->fur) { 
-                $date=date_create($this->fur->fur_fecha);
-                $date2=date_create($this->fur->fpp_fecha);
-                ?>
-                <dt class="col-1 pr-0">FUR:</dt>
-                <dd class="col-2"><?php echo date_format($date,"d/m/Y"); ?></dd>
-                <dt class="col-1 pr-0">EG:</dt>
-                <dd class="col-1"><?php echo $this->eg; ?> semanas</dd>
-                <dt class="col-1 pr-0">FPP:</dt>
-                <dd class="col-2"><?php echo date_format($date2,"d/m/Y"); ?></dd>
+            <div class="row">
+                <div class="col-3">Paciente: <?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></div>
+            <?php if ($this->fur) { ?>
+                <div class="col-3">FUR: <?php echo date_format(date_create($this->fur->fur_fecha),"d/m/Y"); ?></div>
+                <div class="col-3">EG: <?php echo $this->eg; ?> semanas</div>
+                <div class="col-3">FPP: <?php echo date_format(date_create($this->fur->fpp_fecha),"d/m/Y"); ?></div>
             <?php } else { ?>
                 <div class="col-5">
                     <div class="btn-group" role="group">
