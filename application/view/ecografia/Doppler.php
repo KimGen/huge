@@ -704,7 +704,7 @@
                 
                 eg = parseInt(eg);
                 uno = pct95[eg] - pct5[eg];
-                dos = utd - pct5[eg];
+                dos = ut - pct5[eg];
                 resultado = parseInt(90 / (uno) * (dos) + 5);
 
                 let pctUTD = '';
