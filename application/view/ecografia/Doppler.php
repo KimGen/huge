@@ -250,7 +250,7 @@
         makeTable();
 
         $("#button\\.ecografia\\.imprimir").on("click", function(){
-            crearInformeEcoPrimTrim();
+            crearInformeDoppler();
         });
 
         $("#button\\.ecografia\\.nuevo").on("click", function(){
@@ -511,19 +511,6 @@
                 $("#ecografia\\.douglas\\.com").removeClass("d-none");
             }
         });
-        //enters
-        $("#ecografia\\.lcn\\.mm").keyup(function( event ) {
-            if ( event.which == 13 ) {
-                event.preventDefault();
-                $("#ecografia\\.saco\\.mm").focus();
-            }
-        });
-        $("#ecografia\\.saco\\.mm").keyup(function( event ) {
-            if ( event.which == 13 ) {
-                event.preventDefault();
-                $("#button\\.ecografia\\.guardar").focus();
-            }
-        });
 
         //calculos
         $("#ecografia\\.fecha").on("change", function(){
@@ -671,6 +658,113 @@
             $("#button\\.ecografia\\.guardar").focus();
         }
     });
+
+    function crearInformeDoppler() {
+        var InformeString = '<div class=\'container\'> <h3>Evaluación de flujometria doppler materno fetal</h3></div><span style=\'border-top: 1px solid #000;width: 100% !important;display: block;border-bottom: 2px solid #000;padding-top: 2px;margin-bottom:15px;\'></span><div class=\'container\'> <p><strong>Paciente Sra. (Srta.): </strong>:PACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Edad Materna: </strong> :EDADMATERNA años.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Fecha de Exámen: </strong>:FEXAMEN</p><p><strong> ID Paciente: </strong>:IDPACIENTE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Motivo de exámen: </strong> :MOTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Patología Obstétrica: </strong>:PATOLOGIAOBSTETRICA</p><p><strong>FUM: </strong> :FUM <br><strong>Ege: </strong> :EG semanas <br><strong>FPP: </strong> :FPP</p></div><div class=\'container\'> <p><strong style=\'color:#045dab;\'>ANTECEDENTES</strong> <small>(Descripción general del feto y anexos ovulares)</small> </p><p>Motivo del exámen: :MOTIVODOPPLER <br>Antecedentes Obstétricos: :ANTECEDENTES <br>Feto en Presentación: :PRESENTACION <br>Motilidad Fetal: :MOTILIDAD <br>Ubicación Placentaria: :UBICACION <br>Líquido Amniótico***: :LIQUIDO <br>Medida única de BVM***: :BVM</p></div><div class=\'container\'> <table class=\'table\'> <thead> <tr> <th style=\'color:#045dab;\'>FLUJOMETRIA DOPPLER</th> <th style=\'text-align:center;\'>IP Observado</th> <th style=\'text-align:center;\'>Percentiles de IP</th> <th style=\'text-align:center;\'>Referencia para Edad</th> </tr></thead> <tbody> <tr> <td>Arteria Uterina Derecha*</td><td style=\'text-align:center;\'>:UD</td><td style=\'text-align:center;\'>:UDTXT</td><td style=\'text-align:center;\'>:UDRGO</td></tr><tr> <td>Arteria Uterina Izquierda*</td><td style=\'text-align:center;\'>:UI</td><td style=\'text-align:center;\'>:UITXT</td><td style=\'text-align:center;\'>:UIRGO</td></tr><tr> <td style=\'border-top: 1px dashed #045dab;\'>Promedio Arterias Uterinas*</td><td style=\'text-align:center;border-top: 1px dashed #045dab;\'>:UPROM</td><td style=\'text-align:center;border-top: 1px dashed #045dab;\'>:UPROMTXT</td><td style=\'text-align:center;border-top: 1px dashed #045dab;\'>:UPROMRGO</td></tr><tr> <td style=\'padding-top: 15px !important;border-top: 1px dashed #045dab;\'>Arteria Umbilical**</td><td style=\'text-align:center;padding-top: 15px !important;border-top: 1px dashed #045dab;\'>:AU</td><td style=\'text-align:center;padding-top: 15px !important;border-top: 1px dashed #045dab;\'>:AUTXT</td><td style=\'text-align:center;padding-top: 15px !important;border-top: 1px dashed #045dab;\'>:AURGO</td></tr><tr> <td style=\'padding-bottom: 15px !important;\'>Arteria Cerebral Media**</td><td style=\'text-align:center;padding-bottom: 15px !important;\'>:ACM</td><td style=\'text-align:center;padding-bottom: 15px !important;\'>:ACMTXT</td><td style=\'text-align:center;padding-bottom: 15px !important;\'>:ACMRGO</td></tr><tr> <td style=\'border-top: 1px dashed #045dab;\'>Cuociente Cerebro Placentario ( CCP )**</td><td style=\'text-align:center;border-top: 1px dashed #045dab;\'>:CCP</td><td style=\'text-align:center;border-top: 1px dashed #045dab;\'>:CCPTXT</td><td style=\'text-align:center;border-top: 1px dashed #045dab;\'>:CCPRGO</td></tr><tr> <td style=\'border-top: 1px dashed #045dab;\'></td><td style=\'border-top: 1px dashed #045dab;\'></td><td style=\'border-top: 1px dashed #045dab;\'></td><td style=\'border-top: 1px dashed #045dab;\'></td></tr></tbody> </table></div><div class=\'container\'> <p style=\'padding-bottom:0px;margin-bottom:0px;\'><strong style=\'color:#045dab;\'>COMENTARIOS Y OBSERVACIONES</strong> <small>&nbsp;&nbsp;&nbsp;(Espacio a completar por el ecografista)</small> </p><p style=\'max-width: 700px;text-align: justify;\'>:COMENTARIO</p></div><div class=\'container\'> <p class=\'text-right top40\' style=\'margin-right:100px;\'>Ecografista Dr(a): :ECOGRAFISTA</p><span style=\'border-top: 1px solid #000;width: 100% !important;display: block;\'></span> <p>Fecha Informe: :DATEINFORME</p><span style=\'border-top: 2px solid #000;width: 100% !important;display: block;\'></span> <p class=\'pie-pagina\'>* Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32 <br>** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127 <br>*** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</p><p class=\'pie-pagina-dos\'>Herramienta informática diseñada por Dr. Rudecindo Lagos S. Médico gineco-obstetra ultrasonografista y Cristopher Castro G. Ingenieria Civil.<br><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong> </p></div>';
+        var paciente = "<?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?>";
+        var idpaciente = $('#id-paciente').val();
+        var motivo = $('#motivo-examen option:selected').text();
+        var ecografista = $('#ecografista option:selected').text();
+        var fur = "<?php echo date_format(date_create($this->fur->fur_fecha),"d/m/Y"); ?>";
+        var fexamen = $('#ecografia\\.fecha').val();
+        var eg = $('#ecografia\\.eg').val();
+        var fpp = "<?php echo date_format(date_create($this->fur->fpp_fecha),"d/m/Y"); ?>";
+        var bvm = $('#bvmDoppler').val();
+        var comentario = $('#comentarios-doppler').val();
+        if (typeof comentario !== 'undefined') {
+            comentario = comentario.replace(/\r?\n/g, '<br>');
+        } 
+        else {
+            comentario = '';
+        }
+
+        var motivoDoppler = $('#motivo-doppler').val();
+        var antecedentes = $('#antecedentes-doppler').val();
+        var motilidad = $('#motilidad-doppler').val();
+        var ubicacion = $('#ubicacion-doppler').val();
+        var liquido = $('#liqAmnioDoppler').val();
+        var ud = $('#ecografia\\.aud\\.mm').val();
+        var udTxt = $('#audPctTxt').val();
+        var udRgo = '( ' + $('#audRngo').val() + ' )';
+        var ui = $('#ecografia\\.aui\\.mm').val();
+        var uiTxt = $('#auiPctTxt').val();
+        var uiRgo = '( ' + $('#auiRngo').val() + ' )';
+        var uprom = '<strong>' + $('#ecografia\\.auprom\\.mm').val() + '</strong>';
+        var upromTxt = '<strong>' + $('#auPctTxt').val() + '</strong>';
+        var upromRgo = '<strong>( ' + $('#auRngo').val() + ' )</strong>';
+        var au = $('#ecografia\\.ipau\\.mm').val();
+        var auTxt = $('#ipauPctTxt').val();
+        var auRgo = '( ' + $('#ipauRngo').val() + ' )';
+        var acm = $('#ecografia\\.ipacm\\.mm').val();
+        var acmTxt = $('#ipacmPctTxt').val();
+        var acmRgo = '( ' + $('#ipacmRngo').val() + ' )';
+        var ccp = '<strong>' + $('#ecografia\\.ccp\\.mm').val() + '</strong>';
+        var ccpTxt = '<strong>' + $('#ccpPctTxt').val() + '</strong>';
+        var ccpRgo = '<strong>( ' + $('#ccpRngo').val() + ' )</strong>';
+        var presentacion = $('#presentacion-doppler').val();
+        var edadmaterna = $('select[name=\'edad_materna\']').val();
+        var day = ('0' + aplication.day.getDate()).slice( - 2);
+        var month = ('0' + (aplication.day.getMonth() + 1)).slice( - 2);
+        var dateInf = (day) + '/' + (month) + '/' + aplication.day.getFullYear();
+        var patologiaObstetrica = $('#patologiaObstetricaUno option:selected').text();
+
+        InformeString = InformeString.replace(':PACIENTE', paciente);
+        InformeString = InformeString.replace(':IDPACIENTE', idpaciente);
+        InformeString = InformeString.replace(':MOTIVO', motivo);
+        InformeString = InformeString.replace(':ECOGRAFISTA', ecografista);
+        InformeString = InformeString.replace(':EDADMATERNA', edadmaterna);
+        InformeString = InformeString.replace(':FUM', fur);
+        InformeString = InformeString.replace(':FEXAMEN', fexamen);
+        InformeString = InformeString.replace(':EG', eg);
+        InformeString = InformeString.replace(':FPP', fpp);
+        InformeString = InformeString.replace(':MOTIVODOPPLER', motivoDoppler);
+        InformeString = InformeString.replace(':ANTECEDENTES', antecedentes);
+        InformeString = InformeString.replace(':MOTILIDAD', motilidad);
+        InformeString = InformeString.replace(':UBICACION', ubicacion);
+        InformeString = InformeString.replace(':LIQUIDO', liquido);
+        InformeString = InformeString.replace(':PRESENTACION', presentacion);
+        InformeString = InformeString.replace(':BVM', bvm);
+        InformeString = InformeString.replace(':UD', ud);
+        InformeString = InformeString.replace(':UDRGO', udRgo);
+        InformeString = InformeString.replace(':UDTXT', udTxt);
+        InformeString = InformeString.replace(':UI', ui);
+        InformeString = InformeString.replace(':UIRGO', uiRgo);
+        InformeString = InformeString.replace(':UITXT', uiTxt);
+        InformeString = InformeString.replace(':UPROM', uprom);
+        InformeString = InformeString.replace(':UPROMRGO', upromRgo);
+        InformeString = InformeString.replace(':UPROMTXT', upromTxt);
+        InformeString = InformeString.replace(':AU', au);
+        InformeString = InformeString.replace(':AURGO', auRgo);
+        InformeString = InformeString.replace(':AUTXT', auTxt);
+        InformeString = InformeString.replace(':ACM', acm);
+        InformeString = InformeString.replace(':ACMRGO', acmRgo);
+        InformeString = InformeString.replace(':ACMTXT', acmTxt);
+        InformeString = InformeString.replace(':CCP', ccp);
+        InformeString = InformeString.replace(':CCPRGO', ccpRgo);
+        InformeString = InformeString.replace(':CCPTXT', ccpTxt);
+        InformeString = InformeString.replace(':COMENTARIO', comentario);
+        InformeString = InformeString.replace(':DATEINFORME', dateInf);
+        InformeString = InformeString.replace(':PATOLOGIAOBSTETRICA', patologiaObstetrica);
+        imprInforme(InformeString);
+    }
+
+    function imprInforme(muestra)
+    {
+        var ficha = muestra;
+        var document = '<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8"><title>Impresión de Gráficos</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"><link rel="stylesheet" href="consulta.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">:ESTILO</head><body><div class="container"><div style="width:35%;text-align:center;" class="membrete">:MEMBRETE</div></div><div class="container" style="margin-top:50px !important;">:DATOS</div>:FUNCION</body></html>';
+        var ventimp = window.open(' ', 'popimpr');
+        var estilo = '<style>@media print{*{margin:0;padding:0;border:0}p,th,td{font-size:11px;line-height:17px;margin-bottom:7px}th,td{margin:0 !important;padding:0 !important}.pie-pagina{font-size:9px}.pie-pagina-dos{font-size:10px}#lineclear{clear:both}h3{font-size:130%;text-align:center}h3::first-letter{font-size:100%}.membrete::first-letter{font-size:14px;}.membrete::first-line{font-size:14px;}.membrete{font-size:10px;}}</style>';
+        var funcion = '<script>document.addEventListener("DOMContentLoaded",function(event){var ventimp=window;ventimp.print();ventimp.close();});</script>';
+        var membrete = $('#membrete').val().replace(/\r\n|\r|\n/g, '<br />');
+        document = document.replace(':DATOS', ficha);
+        document = document.replace(':ESTILO', estilo);
+        document = document.replace(':FUNCION', funcion);
+        document = document.replace(new RegExp('invisible', 'g'), '');
+        document = document.replace(':MEMBRETE', membrete);
+        ventimp.document.write(document);
+        ventimp.document.close();
+        ventimp.show();
+    }
 
     function pctut(eg, ut) {
         var pct5 = [], pct95 = [];
