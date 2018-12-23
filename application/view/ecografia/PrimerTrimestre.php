@@ -22,7 +22,7 @@
                 <div class="col-3"><strong>FUR:</strong> <?php echo date_format(date_create($this->fur->fur_fecha),"d/m/Y"); ?></div>
                 <div class="col-3"><strong>EG:</strong> <?php echo $this->eg; ?> semanas</div>
                 <div class="col-3"><strong>FPP:</strong> <?php echo date_format(date_create($this->fur->fpp_fecha),"d/m/Y"); ?></div>
-            <?php } else { ?>
+            <?php } ?>
             </div>
         </div>
     </div>
