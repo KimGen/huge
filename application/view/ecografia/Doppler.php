@@ -626,12 +626,6 @@
     $("#ecografia\\.aui\\.mm").on("keyup", function(event){
         if ( event.which == 13 ) {
             event.preventDefault();
-            $("#ecografia\\.auprom\\.mm").focus();
-        }
-    });
-    $("#ecografia\\.auprom\\.mm").on("keyup", function(event){
-        if ( event.which == 13 ) {
-            event.preventDefault();
             $("#ecografia\\.ipau\\.mm").focus();
         }
     });
@@ -642,12 +636,6 @@
         }
     });
     $("#ecografia\\.ipacm\\.mm").on("keyup", function(event){
-        if ( event.which == 13 ) {
-            event.preventDefault();
-            $("#ecografia\\.ccp\\.mm").focus();
-        }
-    });
-    $("#ecografia\\.ccp\\.mm").on("keyup", function(event){
         if ( event.which == 13 ) {
             event.preventDefault();
             $("#ecografia\\.dv\\.mm").focus();
