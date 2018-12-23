@@ -621,13 +621,7 @@
             event.preventDefault();
             $("#ecografia\\.aui\\.mm").focus();
             let ut = pctut($("#ecografia\\.eg").val(), $("#ecografia\\.aud\\.mm").val());
-            ajustarProgreso(ut, "audPct");
-
-            let uct = parseFloat($("#ecografia\\.aud\\.mm").val()) + parseFloat($("#ecografia\\.aui\\.mm").val());
-
-            if (uct > 0){
-                uct = uct / 2; $("#ecografia\\.auprom\\.mm").val(uct).trigger("change");
-            }
+            promUterinas($("#ecografia\\.aud\\.mm").val(), $("#ecografia\\.aui\\.mm").val());
         }
     });
 
@@ -637,12 +631,7 @@
             $("#ecografia\\.ipau\\.mm").focus();
             let ut = pctut($("#ecografia\\.eg").val(), $("#ecografia\\.aui\\.mm").val());
             ajustarProgreso(ut, "auiPct");
-
-            let uct = parseFloat($("#ecografia\\.aud\\.mm").val()) + parseFloat($("#ecografia\\.aui\\.mm").val());
-
-            if (uct > 0){
-                uct = uct /2; $("#ecografia\\.auprom\\.mm").val(uct).trigger("change");
-            }
+            promUterinas($("#ecografia\\.aud\\.mm").val(), $("#ecografia\\.aui\\.mm").val());
         }
     });
 
@@ -655,14 +644,20 @@
         if ( event.which == 13 ) {
             event.preventDefault();
             $("#ecografia\\.ipau\\.mm").focus();
+            
             let ipau = pctau($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val());
             ajustarProgreso(ipau, "ipauPct");
+            promCCP($("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val());
         }
     });
     $("#ecografia\\.ipacm\\.mm").on("keyup", function(event){
         if ( event.which == 13 ) {
             event.preventDefault();
             $("#ecografia\\.dv\\.mm").focus();
+
+            let ipacm = pctacm($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val());
+            ajustarProgreso(ipacm, "ipacmPct");
+            promCCP($("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val());
         }
     });
 
@@ -670,6 +665,8 @@
         if ( event.which == 13 ) {
             event.preventDefault();
             $("#ecografia\\.psmacm\\.mm").focus();
+            let dv = pctau($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val());
+            ajustarProgreso(dv, "dvPct");
         }
     });
 
@@ -677,6 +674,8 @@
         if ( event.which == 13 ) {
             event.preventDefault();
             $("#button\\.ecografia\\.guardar").focus();
+            let psmacm = pctau($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val());
+            ajustarProgreso(psmacm, "psmacmPct");
         }
     });
 
@@ -724,7 +723,6 @@
                 dos = ut - pct5[eg];
                 resultado = parseInt(90 / (uno) * (dos) + 5);
 
-                let pctUTD = '';
                 if (resultado > 99) {
                     return 0;
                 } 
@@ -738,6 +736,24 @@
             else{
                 return 0;
             }
+        }
+    }
+
+    function promUterinas(aud, aui){
+
+        aud = aud.toString();
+        aud = aud.replace(',', '.');
+        aud = parseFloat(aud);
+
+        aui = aui.toString();
+        aui = aui.replace(',', '.');
+        aui = parseFloat(aui);
+
+        let uct = parseFloat(aud) + parseFloat(aui);
+
+        if (uct > 0){
+            uct = uct /2;
+            $("#ecografia\\.auprom\\.mm").val(uct).trigger("change");
         }
     }
 
@@ -786,6 +802,113 @@
             }
         }
     }
+
+    function pctacm(eg, acm) {
+        var pct5 = [], pct95 = [];
+
+        pct5[0] = 1.24;
+        pct5[1] = 1.29;pct5[2] = 1.34;pct5[3] = 1.37;pct5[4] = 1.4;pct5[5] = 1.43;
+        pct5[6] = 1.44;pct5[7] = 1.45;pct5[8] = 1.45;pct5[9] = 1.44;pct5[10] = 1.43;
+        pct5[11] = 1.41;pct5[12] = 1.38;pct5[13] = 1.34;pct5[14] = 1.3;pct5[15] = 1.25;
+        pct5[16] = 1.19;pct5[17] = 1.13;pct5[18] = 1.05;pct5[19] = 0.98;pct5[20] = 0.89;
+
+        pct95[0] = 1.98;
+        pct95[1] = 2.12;pct95[2] = 2.25;pct95[3] = 2.36;pct95[4] = 2.45;pct95[5] = 2.53;
+        pct95[6] = 2.59;pct95[7] = 2.63;pct95[8] = 2.66;pct95[9] = 2.67;pct95[10] = 2.67;
+        pct95[11] = 2.65;pct95[12] = 2.62;pct95[13] = 2.56;pct95[14] = 2.5;pct95[15] = 2.41;
+        pct95[16] = 2.31;pct95[17] = 2.2;pct95[18] = 2.07;pct95[19] = 1.92;pct95[20] = 1.76;
+
+        acm = acm.toString();
+        acm = acm.replace(',', '.');
+        acm = parseFloat(acm);
+
+        if (eg < 20) {
+            return 0;
+        } 
+        else if (eg > 40)
+        {
+            return 0;
+        } 
+        else {
+            eg = eg - 20;
+            eg = parseInt(eg);
+            var uno = pct95[eg] - pct5[eg];
+            var dos = acm - pct5[eg];
+            var resultado = parseInt(90 / (uno) * (dos) + 5);
+
+            if (resultado > 99) {
+                return 0;
+            } 
+            else if (resultado < 1) {
+                return 0;
+            } 
+            else {
+                return resultado;
+            }
+        }
+    }
+
+    function promCCP(ipacm, ipau){
+
+        ipacm = ipacm.toString();
+        ipacm = ipacm.replace(',', '.');
+        ipacm = parseFloat(ipacm);
+
+        ipau = ipau.toString();
+        ipau = ipau.replace(',', '.');
+        ipau = parseFloat(ipau);
+
+        if (ipau > 0 && ipacm > 0){
+            let ccp = parseFloat(ipacm) / parseFloat(ipau);
+            ccp = pctccp(eg, ccp);
+            ajustarProgreso(ccp, "ccpPct");
+        }
+    }
+
+    function pctccp(eg, ccp) {
+        var pct5 = [], pct95 = [];
+        
+        pct5[20] = 0.78;
+        pct5[21] = 0.87;pct5[22] = 0.95;pct5[23] = 1.02;pct5[24] = 1.09;pct5[25] = 1.15;
+        pct5[26] = 1.2;pct5[27] = 1.24;pct5[28] = 1.28;pct5[29] = 1.31;pct5[30] = 1.33;
+        pct5[31] = 1.35;pct5[32] = 1.36;pct5[33] = 1.36;pct5[34] = 1.36;pct5[35] = 1.34;
+        pct5[36] = 1.32;pct5[37] = 1.3;pct5[38] = 1.26;pct5[39] = 1.22;pct5[40] = 1.18;
+
+        pct95[20] = 1.68;
+        pct95[21] = 1.88;pct95[22] = 2.06;pct95[23] = 2.22;pct95[24] = 2.36;
+        pct95[25] = 2.49;pct95[26] = 2.6;pct95[27] = 2.7;pct95[28] = 2.78;pct95[29] = 2.84;
+        pct95[30] = 2.89;pct95[31] = 2.92;pct95[32] = 2.93;pct95[33] = 2.93;pct95[34] = 2.91;
+        pct95[35] = 2.87;pct95[36] = 2.82;pct95[37] = 2.75;pct95[38] = 2.67;pct95[39] = 2.57;
+        
+        ccp = ccp.toString();
+        ccp = ccp.replace(',', '.');
+        ccp = parseFloat(ccp);
+
+        if (eg < 20) {
+            return 0;
+        } 
+        else if (eg > 40)
+        {
+            return 0;
+        } 
+        else {
+            eg = parseInt(eg);
+            uno = pct95[eg] - pct5[eg];
+            dos = ccp - pct5[eg];
+            resultado = parseInt(90 / (uno) * (dos) + 5);
+
+            if (resultado > 99) {
+                return 0;
+            } 
+            else if (resultado < 1) {
+                return 0;
+            } 
+            else {
+                return resultado;
+            }
+        }
+    }
+
 
     function ajustarProgreso(valor, objeto) {
         $('#' + objeto + ' > .pivote-uno').html('');
