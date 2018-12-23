@@ -620,6 +620,8 @@
         if ( event.which == 13 ) {
             event.preventDefault();
             $("#ecografia\\.aui\\.mm").focus();
+            let ut = pctut($("#ecografia\\.eg").val(), $("#ecografia\\.aud\\.mm").val());
+            ajustarProgreso(ut, "audPct");
         }
     });
 
@@ -627,12 +629,17 @@
         if ( event.which == 13 ) {
             event.preventDefault();
             $("#ecografia\\.ipau\\.mm").focus();
+            let ut = pctut($("#ecografia\\.eg").val(), $("#ecografia\\.aui\\.mm").val());
+            ajustarProgreso(ut, "auiPct");
         }
     });
+
     $("#ecografia\\.ipau\\.mm").on("keyup", function(event){
         if ( event.which == 13 ) {
             event.preventDefault();
-            $("#ecografia\\.ipacm\\.mm").focus();
+            $("#ecografia\\.ipau\\.mm").focus();
+            let ipau = pctau($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val());
+            ajustarProgreso(ipau, "ipauPct");
         }
     });
     $("#ecografia\\.ipacm\\.mm").on("keyup", function(event){
@@ -641,12 +648,14 @@
             $("#ecografia\\.dv\\.mm").focus();
         }
     });
+
     $("#ecografia\\.dv\\.mm").on("keyup", function(event){
         if ( event.which == 13 ) {
             event.preventDefault();
             $("#ecografia\\.psmacm\\.mm").focus();
         }
     });
+
     $("#ecografia\\.psmacm\\.mm").on("keyup", function(event){
         if ( event.which == 13 ) {
             event.preventDefault();
@@ -654,4 +663,170 @@
         }
     });
 
+    function pctut(eg, ut) {
+        var pct5 = [], pct95 = [];
+
+        pct5[0] = 1.23;
+        pct5[1] = 1.18;pct5[2] = 1.11;pct5[3] = 1.05;pct5[4] = 0.99;pct5[5] = 0.94;
+        pct5[6] = 0.89;pct5[7] = 0.85;pct5[8] = 0.81;pct5[9] = 0.78;pct5[10] = 0.74;
+        pct5[11] = 0.71;pct5[12] = 0.69;pct5[13] = 0.66;pct5[14] = 0.64;pct5[15] = 0.62;
+        pct5[16] = 0.6;pct5[17] = 0.58;pct5[18] = 0.56;pct5[19] = 0.55;pct5[20] = 0.54;
+        pct5[21] = 0.52;pct5[22] = 0.51;pct5[23] = 0.51;pct5[24] = 0.51;pct5[25] = 0.49;
+        pct5[26] = 0.48;pct5[27] = 0.48;pct5[28] = 0.47;pct5[29] = 0.47;pct5[30] = 0.47;
+        
+        pct95[0] = 2.84;
+        pct95[1] = 2.71;pct95[2] = 2.53;pct95[3] = 2.38;pct95[4] = 2.24;pct95[5] = 2.11;
+        pct95[6] = 1.99;pct95[7] = 1.88;pct95[8] = 1.79;pct95[9] = 1.71;pct95[10] = 1.61;
+        pct95[11] = 1.54;pct95[12] = 1.47;pct95[13] = 1.41;pct95[14] = 1.35;pct95[15] = 1.3;
+        pct95[16] = 1.25;pct95[17] = 1.21;pct95[18] = 1.17;pct95[19] = 1.13;pct95[20] = 1.11;
+        pct95[21] = 1.06;pct95[22] = 1.04;pct95[23] = 1.01;pct95[24] = 0.99;pct95[25] = 0.97;
+        pct95[26] = 0.95;pct95[27] = 0.94;pct95[28] = 0.92;pct95[29] = 0.91;pct95[30] = 0.91;
+
+        ut = ut.toString();
+        ut = ut.replace(',', '.');
+        ut = parseFloat(ut);
+
+        if (eg < 10) {
+            return 0;
+        } 
+        else if (eg > 40)
+        {
+            return 0;
+        } 
+        else {
+
+            eg = eg - 10;
+            var uno = 0;
+            var dos = 0;
+            var resultado = '';
+
+            if (ut > 0) {
+                
+                eg = parseInt(eg);
+                uno = pct95[eg] - pct5[eg];
+                dos = utd - pct5[eg];
+                resultado = parseInt(90 / (uno) * (dos) + 5);
+
+                let pctUTD = '';
+                if (resultado > 99) {
+                    return 0;
+                } 
+                else if (resultado < 1) {
+                    return 0;
+                } 
+                else {
+                    return resultado;
+                }
+            }
+            else{
+                return 0;
+            }
+        }
+    }
+
+    function pctau(eg, aumb) {
+        var pct5 = [], pct95 = [];
+
+        pct5[0] = 0.97;
+        pct5[1] = 0.95;pct5[2] = 0.94;pct5[3] = 0.92;pct5[4] = 0.9;pct5[5] = 0.89;
+        pct5[6] = 0.87;pct5[7] = 0.85;pct5[8] = 0.82;pct5[9] = 0.8;pct5[10] = 0.78;
+        pct5[11] = 0.75;pct5[12] = 0.73;pct5[13] = 0.7;pct5[14] = 0.67;pct5[15] = 0.65;
+        pct5[16] = 0.62;pct5[17] = 0.58;pct5[18] = 0.55;pct5[19] = 0.52;pct5[20] = 0.49;
+
+        pct95[0] = 1.6;
+        pct95[1] = 1.56;pct95[2] = 1.53;pct95[3] = 1.5;pct95[4] = 1.46;pct95[5] = 1.43;
+        pct95[6] = 1.4;pct95[7] = 1.37;pct95[8] = 1.35;pct95[9] = 1.32;pct95[10] = 1.29;
+        pct95[11] = 1.27;pct95[12] = 1.25;pct95[13] = 1.22;pct95[14] = 1.2;pct95[15] = 1.18;
+        pct95[16] = 1.16;pct95[17] = 1.14;pct95[18] = 1.13;pct95[19] = 1.11;pct95[20] = 1.09;
+ 
+        aumb = aumb.toString();
+        aumb = aumb.replace(',', '.');
+        aumb = parseFloat(aumb);
+
+        if (eg < 20) {
+            return 0;
+        } 
+        else if (eg > 40)
+        {
+            return 0;
+        } 
+        else {
+            eg = eg - 20;
+            eg = parseInt(eg);
+
+            var uno = pct95[eg] - pct5[eg];
+            var dos = aumb - pct5[eg];
+            var resultado = parseInt(90 / (uno) * (dos) + 5);
+
+            if (resultado > 99) {
+                return 0;
+            } 
+            else if (resultado < 1) {
+                return 0;
+            } 
+            else {
+                return resultado;
+            }
+        }
+    }
+
+    function ajustarProgreso(valor, objeto) {
+        $('#' + objeto + ' > .pivote-uno').html('');
+        $('#' + objeto + ' > .pivote-dos').html('');
+        $('#' + objeto + ' > .pivote-cero').html('|');
+        $('#' + objeto + ' > .pivote-centro').html('|');
+        $('#' + objeto + ' > .pivote-cien').html('|');
+        $('#' + objeto + ' > .pivote-tres').html('');
+        $('#' + objeto + ' > .pivote-cuatro').html('');
+
+        if (valor <= 6) {
+            $('#' + objeto + ' > .pivote-cero').html('<strong style=\'color:red;\'>X</strong>');
+        } 
+        else if (valor <= 10) {
+            $('#' + objeto + ' > .pivote-uno').css('width', '10%');
+            $('#' + objeto + ' > .pivote-uno').html('<strong style=\'color:red;\'>X</strong>');
+            $('#' + objeto + ' > .pivote-dos').css('width', '25%');
+        } 
+        else if (valor <= 20) {
+            $('#' + objeto + ' > .pivote-uno').css('width', '17.5%');
+            $('#' + objeto + ' > .pivote-uno').html('<strong style=\'color:red;\'>X</strong>');
+            $('#' + objeto + ' > .pivote-dos').css('width', '17.5%');
+        } 
+        else if (valor <= 30) {
+            $('#' + objeto + ' > .pivote-uno').css('width', '20%');
+            $('#' + objeto + ' > .pivote-dos').css('width', '15%');
+            $('#' + objeto + ' > .pivote-dos').html('<strong style=\'color:red;\'>X</strong>');
+        } 
+        else if (valor <= 40) {
+            $('#' + objeto + ' > .pivote-uno').css('width', '25%');
+            $('#' + objeto + ' > .pivote-dos').css('width', '10%');
+            $('#' + objeto + ' > .pivote-dos').html('<strong style=\'color:red;\'>X</strong>');
+        } 
+        else if (valor <= 50) {
+            $('#' + objeto + ' > .pivote-centro').html('<strong style=\'color:red;\'>X</strong>');
+        } 
+        else if (valor <= 60) {
+            $('#' + objeto + ' > .pivote-tres').css('width', '10%');
+            $('#' + objeto + ' > .pivote-tres').html('<strong style=\'color:red;\'>X</strong>');
+            $('#' + objeto + ' > .pivote-cuatro').css('width', '25%');
+        } 
+        else if (valor <= 70) {
+            $('#' + objeto + ' > .pivote-tres').css('width', '17.5%');
+            $('#' + objeto + ' > .pivote-tres').html('<strong style=\'color:red;\'>X</strong>');
+            $('#' + objeto + ' > .pivote-cuatro').css('width', '17.5%');
+        } 
+        else if (valor <= 80) {
+            $('#' + objeto + ' > .pivote-tres').css('width', '20%');
+            $('#' + objeto + ' > .pivote-cuatro').css('width', '15%');
+            $('#' + objeto + ' > .pivote-cuatro').html('<strong style=\'color:red;\'>X</strong>');
+        } 
+        else if (valor <= 90) {
+            $('#' + objeto + ' > .pivote-tres').css('width', '25%');
+            $('#' + objeto + ' > .pivote-cuatro').css('width', '10%');
+            $('#' + objeto + ' > .pivote-cuatro').html('<strong style=\'color:red;\'>X</strong>');
+        } 
+        else {
+            $('#' + objeto + ' > .pivote-cien').html('<strong style=\'color:red;\'>X</strong>');
+        }
+    }
 </script>
