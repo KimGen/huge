@@ -648,7 +648,7 @@
 
             let ipau = pctau($("#ecografia\\.eg").val(), $("#ecografia\\.ipau\\.mm").val());
             ajustarProgreso(ipau, "ipauPct");
-            promCCP($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val());
+            $("#ecografia\\.ccp\\.mm").val(promCCP($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val())).trigger("change");
         }
     });
     $("#ecografia\\.ipacm\\.mm").on("keyup", function(event){
@@ -658,8 +658,12 @@
 
             let ipacm = pctacm($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val());
             ajustarProgreso(ipacm, "ipacmPct");
-            promCCP($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val());
+            $("#ecografia\\.ccp\\.mm").val(promCCP($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val())).trigger("change");
         }
+    });
+
+    $("#ecografia\\.ccp\\.mm").on("change", function(){
+        ajustarProgreso($("#ecografia\\.ccp\\.mm").val(), "ccpPct");
     });
 
     $("#ecografia\\.dv\\.mm").on("keyup", function(event){
@@ -861,8 +865,10 @@
 
         if (ipau > 0 && ipacm > 0){
             let ccp = parseFloat(ipacm) / parseFloat(ipau);
-            ccp = pctccp(eg, ccp);
-            ajustarProgreso(ccp, "ccpPct");
+            return ccp;
+        }
+        else{
+            return 0;
         }
     }
 
