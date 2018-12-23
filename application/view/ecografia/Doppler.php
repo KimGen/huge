@@ -609,4 +609,61 @@
         });
     };
 
+    $("#ecografia\\.fecha").on("keyup", function(event){
+        if ( event.which == 13 ) {
+            event.preventDefault();
+            $("#ecografia\\.aud\\.mm").focus();
+        }
+    });
+
+    $("#ecografia\\.aud\\.mm").on("keyup", function(event){
+        if ( event.which == 13 ) {
+            event.preventDefault();
+            $("#ecografia\\.aui\\.mm").focus();
+        }
+    });
+
+    $("#ecografia\\.aui\\.mm").on("keyup", function(event){
+        if ( event.which == 13 ) {
+            event.preventDefault();
+            $("#ecografia\\.auprom\\.mm").focus();
+        }
+    });
+    $("#ecografia\\.auprom\\.mm").on("keyup", function(event){
+        if ( event.which == 13 ) {
+            event.preventDefault();
+            $("#ecografia\\.ipau\\.mm").focus();
+        }
+    });
+    $("#ecografia\\.ipau\\.mm").on("keyup", function(event){
+        if ( event.which == 13 ) {
+            event.preventDefault();
+            $("#ecografia\\.ipacm\\.mm").focus();
+        }
+    });
+    $("#ecografia\\.ipacm\\.mm").on("keyup", function(event){
+        if ( event.which == 13 ) {
+            event.preventDefault();
+            $("#ecografia\\.ccp\\.mm").focus();
+        }
+    });
+    $("#ecografia\\.ccp\\.mm").on("keyup", function(event){
+        if ( event.which == 13 ) {
+            event.preventDefault();
+            $("#ecografia\\.dv\\.mm").focus();
+        }
+    });
+    $("#ecografia\\.dv\\.mm").on("keyup", function(event){
+        if ( event.which == 13 ) {
+            event.preventDefault();
+            $("#ecografia\\.psmacm\\.mm").focus();
+        }
+    });
+    $("#ecografia\\.psmacm\\.mm").on("keyup", function(event){
+        if ( event.which == 13 ) {
+            event.preventDefault();
+            $("#button\\.ecografia\\.guardar").focus();
+        }
+    });
+
 </script>
