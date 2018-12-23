@@ -621,6 +621,7 @@
             event.preventDefault();
             $("#ecografia\\.aui\\.mm").focus();
             let ut = pctut($("#ecografia\\.eg").val(), $("#ecografia\\.aud\\.mm").val());
+            ajustarProgreso(ut, "audPct");
             promUterinas($("#ecografia\\.aud\\.mm").val(), $("#ecografia\\.aui\\.mm").val());
         }
     });
@@ -644,7 +645,7 @@
         if ( event.which == 13 ) {
             event.preventDefault();
             $("#ecografia\\.ipau\\.mm").focus();
-            
+
             let ipau = pctau($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val());
             ajustarProgreso(ipau, "ipauPct");
             promCCP($("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val());
