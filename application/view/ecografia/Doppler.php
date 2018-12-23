@@ -644,9 +644,9 @@
     $("#ecografia\\.ipau\\.mm").on("keyup", function(event){
         if ( event.which == 13 ) {
             event.preventDefault();
-            $("#ecografia\\.ipau\\.mm").focus();
+            $("#ecografia\\.ipacm\\.mm").focus();
 
-            let ipau = pctau($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val());
+            let ipau = pctau($("#ecografia\\.eg").val(), $("#ecografia\\.ipau\\.mm").val());
             ajustarProgreso(ipau, "ipauPct");
             promCCP($("#ecografia\\.eg").val(), $("#ecografia\\.ipacm\\.mm").val(), $("#ecografia\\.ipau\\.mm").val());
         }
