@@ -622,6 +622,12 @@
             $("#ecografia\\.aui\\.mm").focus();
             let ut = pctut($("#ecografia\\.eg").val(), $("#ecografia\\.aud\\.mm").val());
             ajustarProgreso(ut, "audPct");
+
+            let uct = $("#ecografia\\.aud\\.mm").val() + $("#ecografia\\.aui\\.mm").val();
+
+            if (uct > 0){
+                uct = uct /2; $("#ecografia\\.auprom\\.mm").val(uct).trigger("change");
+            }
         }
     });
 
@@ -631,7 +637,18 @@
             $("#ecografia\\.ipau\\.mm").focus();
             let ut = pctut($("#ecografia\\.eg").val(), $("#ecografia\\.aui\\.mm").val());
             ajustarProgreso(ut, "auiPct");
+
+            let uct = $("#ecografia\\.aud\\.mm").val() + $("#ecografia\\.aui\\.mm").val();
+
+            if (uct > 0){
+                uct = uct /2; $("#ecografia\\.auprom\\.mm").val(uct).trigger("change");
+            }
         }
+    });
+
+    $("#ecografia\\.auprom\\.mm").on("change", function(event){
+        let ut = pctut($("#ecografia\\.eg").val(), $("#ecografia\\.auprom\\.mm").val());
+        ajustarProgreso(ut, "aupromPct");
     });
 
     $("#ecografia\\.ipau\\.mm").on("keyup", function(event){
