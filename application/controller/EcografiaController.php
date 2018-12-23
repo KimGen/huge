@@ -43,7 +43,8 @@ class EcografiaController extends Controller
             $fur = FurModel::getFur($paciente);
             $this->View->render('ecografia/PrimerTrimestre', array(
                 'paciente' => $elPaciente,
-                'fur' => $fur
+                'fur' => $fur,
+                'eg' => self::calcularEg($fur->fur_fecha)
             ));
         }
     }
@@ -59,7 +60,8 @@ class EcografiaController extends Controller
             $fur = FurModel::getFur($paciente);
             $this->View->render('ecografia/SegundoTrimestre', array(
                 'paciente' => $elPaciente,
-                'fur' => $fur
+                'fur' => $fur,
+                'eg' => self::calcularEg($fur->fur_fecha)
             ));
         }
     }
@@ -75,7 +77,8 @@ class EcografiaController extends Controller
             $fur = FurModel::getFur($paciente);
             $this->View->render('ecografia/Doppler', array(
                 'paciente' => $elPaciente,
-                'fur' => $fur
+                'fur' => $fur,
+                'eg' => self::calcularEg($fur->fur_fecha)
             ));
         }
     }

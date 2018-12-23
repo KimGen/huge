@@ -8,17 +8,12 @@
         <div class="card-body">
             <div class="row">
             <?php if ($this->paciente) { ?>
-                <dt class="col-2">Nombre:</dt>
-                <dd class="col-2"><?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></dd>
-            <?php } ?>
+                <div class="col-3"><strong>Paciente:</strong> <?php echo $this->paciente->paciente_nombre . ' ' .$this->paciente->paciente_apellido; ?></div>
             <?php if ($this->fur) { ?>
-                <dt class="col-1">FUR:</dt>
-                <dd class="col-2"><?php $date=date_create($this->fur->fur_fecha); echo date_format($date,"d/m/Y"); ?></dd>
-                <dt class="col-1">EG:</dt>
-                <dd class="col-1"></dd>
-                <dt class="col-1">FPP:</dt>
-                <dd class="col-2"><?php $date2=date_create($this->fur->fpp_fecha); echo date_format($date2,"d/m/Y"); ?></dd>
-            <?php } ?>
+                <div class="col-3"><strong>FUR:</strong> <?php echo date_format(date_create($this->fur->fur_fecha),"d/m/Y"); ?></div>
+                <div class="col-3"><strong>EG:</strong> <?php echo $this->eg; ?> semanas</div>
+                <div class="col-3"><strong>FPP:</strong> <?php echo date_format(date_create($this->fur->fpp_fecha),"d/m/Y"); ?></div>
+            <?php } else { ?>
             </div>
         </div>
     </div>
