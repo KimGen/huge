@@ -435,13 +435,13 @@
         });
 
         $("#button\\.ecografia\\.lcn").on("click", function(){
-            $("#dialog\\.title").html("Grafico de LCN");
+            $("#dialog\\.title").html("Gráfico de Longitud Cefalo - Nalgas (LCN)");
             $("#dialog\\.delete").remove();
             $("#dialog\\.view").modal("show");
 
             $('#dialog\\.body').html("<div class='row'><div class='col'><div id='graficoLcnBaseView'></div></div></div>");
 
-            let encap = {accion: "primertrimestre"}
+            leta encap = {accion: "primertrimestre"}
 
             $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( response ) {
                 if (Object.keys(response).length > 0) {
