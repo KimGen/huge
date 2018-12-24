@@ -441,7 +441,7 @@
 
             $('#dialog\\.body').html("<div class='row'><div class='col'><div id='graficoLcnBaseView'></div></div></div>");
 
-            leta encap = {accion: "primertrimestre"}
+            let encap = {accion: "primertrimestre"}
 
             $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( response ) {
                 if (Object.keys(response).length > 0) {
