@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-5">
             <div class="btn-group" role="group">
-                <button type="button" class="btn btn-outline-primary" id="button.ecografia.nuevo"><i class="fas fa-plus"></i> Nuevo exámen</button>
-                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.guardar"><i class="fas fa-save"></i> Guardar exámen</button>
-                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.cancelar"><i class="fas fa-ban"></i> Cancelar exámen</button>
-                <button type="button" class="btn btn-outline-primary d-none" id="button.ecografia.imprimir"><i class="fas fa-print"></i> Imprimir</button>
-                <button type="button" class="btn btn-outline-primary" id="button.ecografia.lcn"><i class="fas fa-chart-bar"></i> Gráficos</button>
+                <button type="button" class="btn btn-outline-primary bg-light" id="button.ecografia.nuevo"><i class="fas fa-plus"></i> Nuevo exámen</button>
+                <button type="button" class="btn btn-outline-primary bg-light d-none" id="button.ecografia.guardar"><i class="fas fa-save"></i> Guardar exámen</button>
+                <button type="button" class="btn btn-outline-primary bg-light d-none" id="button.ecografia.cancelar"><i class="fas fa-ban"></i> Cancelar exámen</button>
+                <button type="button" class="btn btn-outline-primary bg-light d-none" id="button.ecografia.imprimir"><i class="fas fa-print"></i> Imprimir</button>
+                <button type="button" class="btn btn-outline-primary bg-light" id="button.ecografia.lcn"><i class="fas fa-chart-bar"></i> Gráficos</button>
             </div>
         </div>
         <div class="col">
