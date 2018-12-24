@@ -203,7 +203,7 @@
             $("#ecografia\\.utero\\.uno").val("central");
             $("#ecografia\\.utero\\.dos").val("anterior");
             $("#ecografia\\.cuerpo").val("aspecto normal");
-            $("#ecografia\\.saco\\.txt").val("normal");
+            $("#ecografia\\.saco\\.txt").val("normal").trigger("change");
             $("#ecografia\\.saco\\.mm\\.copia").val("");
             $("#ecografia\\.vitelino\\.txt").val("presente");
             $("#ecografia\\.vitelino\\.mm").val("");
