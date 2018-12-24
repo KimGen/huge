@@ -435,7 +435,7 @@
         });
 
         $("#button\\.ecografia\\.lcn").on("click", function(){
-            $("#dialog\\.title").html("Gráfico de Longitud Cefalo - Nalgas (LCN)");
+            $("#dialog\\.title").html("Gráfico de Longitud Cefalo Nalgas (LCN)");
             $("#dialog\\.delete").remove();
             $("#dialog\\.view").modal("show");
 
