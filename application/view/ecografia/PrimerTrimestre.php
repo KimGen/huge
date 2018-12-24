@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-5">
             <div class="btn-group" role="group">
-                <button type="button" class="btn btn-outline-primary btn-lg" id="button.ecografia.nuevo"><i class="fas fa-plus"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.guardar"><i class="fas fa-save"></i></button>
-                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.cancelar"><i class="fas fa-ban"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-lg" id="button.ecografia.nuevo"><i class="fas fa-plus"></i> Nuevo exámen</button>
+                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.guardar"><i class="fas fa-save"></i> Guardar exámen</button>
+                <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.cancelar"><i class="fas fa-ban"></i> Cancelar exámen</button>
                 <button type="button" class="btn btn-outline-primary btn-lg d-none" id="button.ecografia.imprimir"><i class="fas fa-print"></i></button>
                 <button type="button" class="btn btn-outline-primary btn-lg" id="button.ecografia.lcn"><i class="fas fa-chart-bar"></i></button>
             </div>
@@ -435,7 +435,7 @@
         });
 
         $("#button\\.ecografia\\.lcn").on("click", function(){
-            $("#dialog\\.title").html("Gráfico de Longitud Cefalo Nalgas (LCN)");
+            $("#dialog\\.title").html("Gráfico de Longitud Cefalo Nalgas (LCN 6 a 15 semanas)");
             $("#dialog\\.delete").remove();
             $("#dialog\\.view").modal("show");
 
@@ -447,7 +447,7 @@
                 if (Object.keys(response).length > 0) {
                     $('#graficoLcnBaseView').highcharts({
                         title: {
-                            text: 'LCN 6 a 15 semanas',
+                            text: 'LCN',
                             x: -20
                         },
                         xAxis: {
