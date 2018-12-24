@@ -437,7 +437,7 @@
         });
 
         $("#button\\.ecografia\\.lcn").on("click", function(){
-            $("#dialog\\.title").html("Gráfico de Longitud Cefalo Nalgas (LCN 6 a 15 semanas)");
+            $("#dialog\\.title").html("Gráfico de Longitud Cefalo Nalgas (LCN)");
             $("#dialog\\.delete").remove();
             $("#dialog\\.view").modal("show");
 
@@ -449,7 +449,7 @@
                 if (Object.keys(response).length > 0) {
                     $('#graficoLcnBaseView').highcharts({
                         title: {
-                            text: 'LCN',
+                            text: 'LCN 6 a 15 semanas',
                             x: -20
                         },
                         xAxis: {
@@ -581,6 +581,28 @@
                     let fila = '<tr id="' + value.ecografia_id + '"><td>' + value.ecografia_fecha + '</td><td>' + value.ecografia_eg + '</td><td>' + value.ecografia_saco_mm + '</td><td>' + value.ecografia_lcn_mm + '</td><td><div class="btn-group" role="group"><button type="button" class="btn btn-outline-secondary modificar" data-id="' + value.ecografia_id + '"><i class="fas fa-pen"></i> Modificar</button><button type="button" class="btn btn-outline-secondary eliminar" data-id="' + value.ecografia_id + '"><i class="fas fa-trash"></i></button></div></tr>';
                     $("#table\\.ecografia").append(fila);
                 });
+
+                $(".modificar").on("click", function(){
+                    let encap = {accion: "primertrimestre"}
+
+                    $.post( "<?php echo Config::get('URL'); ?>ecografia/api", encap).done(function( response ) {
+                        if (Object.keys(response).length > 0) {
+                            $.each(response, function(i,value){
+                                var egLcn =  Math.trunc(value.ecografia_eg);
+                                var lcn = parseInt(value.ecografia_lcn_mm);
+                            });
+                        }
+                    });
+                });
+        });
+    }
+    else{
+        $('#dialog\\.body').html("<p>No hay datos</p>");
+    }
+});
+});
+                })
+
 
                 $(".eliminar").on("click", function(){
                     let ecografia_id = $(this).data("id");
