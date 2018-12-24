@@ -207,7 +207,7 @@
             $("#ecografia\\.saco\\.mm\\.copia").val("");
             $("#ecografia\\.vitelino\\.txt").val("presente");
             $("#ecografia\\.vitelino\\.mm").val("");
-            $("#ecografia\\.embrion\\.txt").val("con act. cardiaca (+)");
+            $("#ecografia\\.embrion\\.txt").val("con act. cardiaca (+)").trigger("change");
             $("#ecografia\\.lcn\\.mm\\.copia").val("");
             $("#ecografia\\.fcf").val("140");
             $("#ecografia\\.anexo\\.derecho").val("aspecto normal");
