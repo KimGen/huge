@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-5">
-            <div class="btn-group" role="group">
+            <div class="btn-group my-3" role="group">
                 <button type="button" class="btn btn-outline-primary bg-light" id="button.ecografia.nuevo"><i class="fas fa-plus"></i> Nuevo exámen</button>
                 <button type="button" class="btn btn-outline-primary bg-light d-none" id="button.ecografia.guardar"><i class="fas fa-save"></i> Guardar exámen</button>
                 <button type="button" class="btn btn-outline-primary bg-light d-none" id="button.ecografia.cancelar"><i class="fas fa-ban"></i> Cancelar exámen</button>
