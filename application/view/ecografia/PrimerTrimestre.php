@@ -576,7 +576,7 @@
             $("#table\\.ecografia").empty();
             if (Object.keys(data).length > 0) {
                 $.each(data, function(i,value){
-                    let fila = '<tr id="' + value.ecografia_id + '"><td>' + value.ecografia_fecha + '</td><td>' + value.ecografia_eg + '</td><td>' + value.ecografia_saco_mm + '</td><td>' + value.ecografia_lcn_mm + '</td><td><div class="btn-group" role="group"><button type="button" class="btn btn-outline-secondary modificar" data-id="' + value.ecografia_id + '"><i class="fas fa-pen"></i></button><button type="button" class="btn btn-outline-secondary eliminar" data-id="' + value.ecografia_id + '"><i class="fas fa-trash"></i></button></div></tr>';
+                    let fila = '<tr id="' + value.ecografia_id + '"><td>' + value.ecografia_fecha + '</td><td>' + value.ecografia_eg + '</td><td>' + value.ecografia_saco_mm + '</td><td>' + value.ecografia_lcn_mm + '</td><td><div class="btn-group" role="group"><button type="button" class="btn btn-outline-secondary modificar" data-id="' + value.ecografia_id + '"><i class="fas fa-pen"></i> Modificar</button><button type="button" class="btn btn-outline-secondary eliminar" data-id="' + value.ecografia_id + '"><i class="fas fa-trash"></i></button></div></tr>';
                     $("#table\\.ecografia").append(fila);
                 });
 
