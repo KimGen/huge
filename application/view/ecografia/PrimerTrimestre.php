@@ -188,6 +188,7 @@
             $("#button\\.ecografia\\.cancelar").removeClass("d-none");
             $("#button\\.ecografia\\.imprimir").removeClass("d-none");
             $("#button\\.ecografia\\.lcn").addClass("d-none");
+            $("#table\\.ecografia").empty();
 
             let now = new Date();
             let day = ("0" + now.getDate()).slice(-2);
