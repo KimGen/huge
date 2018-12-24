@@ -386,6 +386,7 @@
             $("#ecografia\\.duglas\\.txt").val("libre");
             $("#ecografia\\.douglas\\.com").val("");
             $("#ecografia\\.com").val("");
+            makeTable();
         });
 
         //restricciones
