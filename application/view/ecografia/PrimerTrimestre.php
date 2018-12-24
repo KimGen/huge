@@ -594,15 +594,6 @@
                         }
                     });
                 });
-        });
-    }
-    else{
-        $('#dialog\\.body').html("<p>No hay datos</p>");
-    }
-});
-});
-                })
-
 
                 $(".eliminar").on("click", function(){
                     let ecografia_id = $(this).data("id");
