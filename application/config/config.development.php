@@ -137,7 +137,7 @@ return array(
     'EMAIL_SMTP_HOST' => 'smtp.gmail.com',
     'EMAIL_SMTP_AUTH' => true,
     'EMAIL_SMTP_USERNAME' => 'consultaecografica@gmail.com',
-    'EMAIL_SMTP_PASSWORD' => 'consulta',
+    'EMAIL_SMTP_PASSWORD' => 'temucochile',
     'EMAIL_SMTP_PORT' => 465,
     'EMAIL_SMTP_ENCRYPTION' => 'ssl',
     /**
